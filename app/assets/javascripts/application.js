@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require "sprockets/es6"
+//= require angular.min.js
+//= require main
 //= require_tree .
