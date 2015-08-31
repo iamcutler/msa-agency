@@ -6,9 +6,28 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-controller="AppController as AppCtrl">
 
-<div ng-controller="AppController" ui-view>
+<header class="main">
+  <a href="" class="nav">
+    <div class="nav-btn">
+      <div class="nav-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      MENU
+    </div>
+  </a>
+
+  <h1 class="logo">
+    <a ui-sref="home">McDonald / Selznick Agency</a>
+  </h1>
+
+  <h2>A Talent Agency</h2>
+</header>
+
+<div ui-view>
   <%= yield %>
 </div>
 
