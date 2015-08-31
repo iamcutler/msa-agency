@@ -1,4 +1,14 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+'use strict';
 
-angular.module('MSAAgency', []);
+angular.module('MSAAgency.controllers', []);
+angular.module('MSAAgency.services', []);
+angular.module('MSAAgency.directives', []);
+angular.module('MSAAgency.filters', []);
+
+angular.module('MSAAgency', [
+  'MSAAgency.controllers',
+  'MSAAgency.services',
+  'MSAAgency.directives',
+  'MSAAgency.filters',
+  'ui.router'
+]);
