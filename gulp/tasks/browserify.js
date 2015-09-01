@@ -1,5 +1,6 @@
 var _            = require('lodash');
 var browserify   = require('browserify');
+var babelify     = require('babelify');
 var browserSync  = require('browser-sync');
 var bundleLogger = require('../util/bundleLogger');
 var config       = require('../config').browserify;
@@ -25,6 +26,7 @@ var browserifyTask = function(callback, devMode) {
       bundleLogger.start(bundleConfig.outputName);
 
       return b
+        .transform(babelify)
         .bundle()
         .on('error', handleErrors)
         .pipe(source(bundleConfig.outputName))
