@@ -21,6 +21,21 @@ angular.module('MSAAgency.directives')
       </h1>
 
       <h2>A Talent Agency</h2>
+    
+      <div class="right-col">
+        <ul class="contact-numbers">
+          <li>
+            <span>Los Angeles:</span>
+            <a href="tel:3239576680">323-957-6680</a>
+          </li>
+          <li>
+            <span>New York:</span>
+            <a href="tel:6462376928">646-237-6928</a>
+          </li>
+        </ul>
+    
+        <social-icons></social-icons>
+      </div>
     </header>
     `
   };

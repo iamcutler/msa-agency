@@ -26,6 +26,7 @@ require('./angular/controllers/AppController');
 // Directives
 require('./angular/directives/main-header');
 require('./angular/directives/main-footer');
+require('./angular/directives/social-icons');
 
 // Filters
 

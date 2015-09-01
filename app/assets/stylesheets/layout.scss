@@ -5,13 +5,14 @@
   - Author: iamcutler
 */
 
-/* 1.0 General layout  */
+/* 1.0 Globals  */
 html, body {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
+  font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,6 +20,59 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+// Social icons
+ul.social-icons {
+  height: 38px;
+  margin: 0;
+  
+  li {
+    float: left;
+    width: 38px;
+    height: 38px;
+    list-style: none;
+    margin-left: 10px;
+    
+    a {
+      background: url('social-icons.png') no-repeat;
+      background: url('social-icons.svg') no-repeat;
+      width: 38px;
+      height: 38px;
+      border: 2px $msa-orange solid;
+      border-radius: 100px;
+      transition: background-color .5s;
+      display: block;
+      overflow: hidden;
+      text-index: -9999px;
+      
+      &:hover {
+        background-color: $msa-orange;
+      }
+    }
+    
+    &.facebook {
+      a {
+        background-position: 14px center;
+      }
+    }
+    &.twitter {
+      a {
+        background-position: -20px center;
+      }
+    }
+    &.instagram {
+      a {
+        background-position: -58px center;
+      }
+    }
+    &.youtube {
+      a {
+        background-position: -95px center;
+      }
+    }
+  }
+}
+
+/* 2.0 Header */
 header {
   &.main {
     background: #1c1c1c;
@@ -62,8 +116,8 @@ header {
       left: 144px;
 
       a {
-        background: url(asset-path('brand.png')) no-repeat;
-        background: url(asset-path('brand.svg')) no-repeat;
+        background: url('brand.png') no-repeat;
+        background: url('brand.svg') no-repeat;
         width: 130px;
         height: 68px;
         overflow: hidden;
@@ -86,9 +140,38 @@ header {
       letter-spacing: 14px;
       margin-left: -180px;
     }
+    
+    .right-col {
+      position: fixed;
+      top: 8px;
+      right: 20px;
+      text-align: right;
+      
+      ul.contact-numbers {
+        margin: 0;
+        
+        li {
+          list-style: none;
+          
+          span {
+            color: #FFF;
+          }
+          
+          a {
+            color: $msa-orange;
+            text-decoration: none;
+          }
+        }
+      }
+      
+      ul.social-icons {
+        margin-top: 10px;
+      }
+    }
   }
 }
 
+/* 3.0 Footer */
 footer {
   &.main {
     background: #1c1c1c;
