@@ -1,45 +1,17 @@
-var gulp = require('gulp');
-var util = require('gulp-util');
-var watchify = require('watchify');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var browserify = require('browserify');
-var uglify = require('gulp-uglify');
-var source = require('vinyl-source-stream');
-var _ = require('lodash');
+/*
+  gulpfile.js
+  ===========
+  Rather than manage one giant configuration file responsible
+  for creating multiple tasks, each task has been broken out into
+  its own file in gulp/tasks. Any files in that directory get
+  automatically required below.
 
-// ------------------ Main tasks ----------------- //
-gulp.task('watch', ['watch-sass', 'watch-scss']);
-gulp.task('default', ['compile-sass', 'compile-scss', 'compress-js']);
+  To add a new task, simply add a new task file that directory.
+  gulp/tasks/default.js specifies the default set of tasks to run
+  when you run `gulp`.
+*/
 
-// ------------------ Sub tasks ------------------ //
-// Javascripts
-gulp.task('compress-js', function() {
-  return gulp.src('app/assets/javascripts/**')
-    .pipe(uglify())
-    .pipe(gulp.dest('public/assets/javascripts'));
-});
+var requireDir = require('require-dir');
 
-gulp.task('watch-sass', function() {
-  gulp.watch('app/assets/stylesheets/**/*.sass', ['compile-sass']);
-});
-
-gulp.task('watch-scss', function() {
-  gulp.watch('app/assets/stylesheets/**/*.scss', ['compile-scss']);
-});
-
-gulp.task('compile-sass', function() {
-  gulp.src('app/assets/stylesheets/**/*.sass')
-      .pipe(sourcemaps.init())
-      .pipe(sass({ indentedSyntax: true, errLogToConsole: true }))
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest('public/assets/stylesheets'));
-});
-
-gulp.task('compile-scss', function() {
-  gulp.src('app/assets/stylesheets/**/*.scss')
-      .pipe(sourcemaps.init())
-      .pipe(sass({ indentedSyntax: false, errLogToConsole: true }))
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest('public/assets/stylesheets'));
-});
+// Require all tasks in gulp/tasks, including subfolders
+requireDir('./gulp/tasks', { recurse: true });

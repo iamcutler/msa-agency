@@ -1,5 +1,8 @@
 'use strict';
 
+require('angular/angular.min');
+require('angular-ui-router/build/angular-ui-router.min');
+
 angular.module('MSAAgency.controllers', []);
 angular.module('MSAAgency.services', []);
 angular.module('MSAAgency.directives', []);
@@ -12,3 +15,16 @@ angular.module('MSAAgency', [
   'MSAAgency.filters',
   'ui.router'
 ]);
+
+// Configuration
+require('./angular/config');
+require('./angular/routes');
+
+// Controllers
+require('./angular/controllers/AppController');
+
+// Directives
+
+// Filters
+
+// Services
