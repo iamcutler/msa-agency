@@ -24,6 +24,8 @@ require('./angular/routes');
 require('./angular/controllers/AppController');
 
 // Directives
+require('./angular/directives/main-header');
+require('./angular/directives/main-footer');
 
 // Filters
 

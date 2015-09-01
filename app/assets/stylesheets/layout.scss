@@ -1,3 +1,5 @@
+@import 'variables';
+
 /*
   - Client: MSA Agency
   - Author: iamcutler
@@ -83,6 +85,31 @@ header {
       text-transform: uppercase;
       letter-spacing: 14px;
       margin-left: -180px;
+    }
+  }
+}
+
+footer {
+  &.main {
+    background: #1c1c1c;
+    padding-top: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    
+    .credit-bar {
+      background: #000;
+      color: #FFF;
+      margin-top: 20px;
+      padding: 30px 20px;
+    }
+    
+    .powered-by {
+      float: right;
+      
+      a {
+        color: $msa-orange;
+        text-decoration: none;
+      }
     }
   }
 }
