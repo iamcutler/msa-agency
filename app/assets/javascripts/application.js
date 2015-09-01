@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require turbolinks
 //= require 'angular.min'
 //= require 'angular-ui-router.min'
 //= require main
