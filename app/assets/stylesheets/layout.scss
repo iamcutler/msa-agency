@@ -7,11 +7,13 @@
 
 /* 1.0 Globals  */
 html, body {
+  background: $background-color;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: $primary-font, sans-serif;
+  font-weight: 400;
   font-size: $font-size;
 }
 
@@ -74,6 +76,8 @@ ul.social-icons {
 
 /* 2.0 Header */
 header {
+  font-weight: $primary-font-weight-thin;
+
   &.main {
     background: #1c1c1c;
     color: #FFF;
@@ -146,6 +150,7 @@ nav#sidebar-nav {
   position: fixed;
   top: 0;
   left: -$sidebar-width;
+  font-weight: $primary-font-weight-thin;
   transition: left .5s ease-in-out;
 
   // Open sidebar
@@ -218,14 +223,21 @@ nav#sidebar-nav {
             background: $secondary-grey url('search-icon.svg') 12px 8px no-repeat;
             color: #FFF;
             width: 186px;
-            border: none;
+            border: 2px #252525 solid;
             font-size: 14px;
             padding: 6px 6px 6px 28px;
+            font-weight: $primary-font-weight-thin;
             outline: none;
+            transition: border .4s ease-in-out;
+            appearance: none;
+
+            &:focus {
+                border-color: #595959;
+            }
 
             &::-webkit-input-placeholder { color: #FFF; }
-            &::-moz-placeholder { color: #FFF; } /* firefox 19+ */
-            &:-ms-input-placeholder { color: #FFF; } /* ie */
+            &::-moz-placeholder { color: #FFF; }
+            &:-ms-input-placeholder { color: #FFF; }
             &:-moz-placeholder { color: #FFF; }
         }
     }
@@ -257,6 +269,8 @@ nav#sidebar-nav {
 
 /* 4.0 Footer */
 footer {
+  font-weight: $primary-font-weight-thin;
+
   &.main {
     background: #1c1c1c;
     padding-top: 20px;
