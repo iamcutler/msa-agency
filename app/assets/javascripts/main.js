@@ -3,11 +3,7 @@
 require('angular/angular.min');
 require('angular-ui-router/build/angular-ui-router.min');
 
-angular.module('MSAAgency.controllers', []);
-angular.module('MSAAgency.services', []);
-angular.module('MSAAgency.directives', []);
-angular.module('MSAAgency.filters', []);
-
+// AngularJS
 angular.module('MSAAgency', [
   'MSAAgency.controllers',
   'MSAAgency.services',
@@ -21,14 +17,20 @@ require('./angular/config');
 require('./angular/routes');
 
 // Controllers
-require('./angular/controllers/AppController');
+import AppController from './angular/controllers/AppController';
+
+angular.module('MSAAgency.controllers', [])
+    .controller('AppController', AppController);
+
+// Services
+angular.module('MSAAgency.services', []);
 
 // Directives
+angular.module('MSAAgency.directives', []);
 require('./angular/directives/main-header');
 require('./angular/directives/main-footer');
 require('./angular/directives/navigation');
 require('./angular/directives/social-icons');
 
 // Filters
-
-// Services
+angular.module('MSAAgency.filters', []);
