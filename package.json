@@ -61,6 +61,7 @@
     "watchify": "^2.2.1"
   },
   "devDependencies": {
+    "gulp-ng-annotate": "^1.1.0",
     "gulp-watch": "^4.1.1",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.9",

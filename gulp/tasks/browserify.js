@@ -8,6 +8,7 @@ var gulp         = require('gulp');
 var handleErrors = require('../util/handleErrors');
 var source       = require('vinyl-source-stream');
 var watchify     = require('watchify');
+var ngAnnotate   = require('gulp-ng-annotate');
 
 var browserifyTask = function(callback, devMode) {
 
@@ -30,6 +31,7 @@ var browserifyTask = function(callback, devMode) {
         .bundle()
         .on('error', handleErrors)
         .pipe(source(bundleConfig.outputName))
+        .pipe(ngAnnotate())
         .pipe(gulp.dest(bundleConfig.dest))
         .on('end', reportFinished)
         .pipe(browserSync.reload({stream:true}));
