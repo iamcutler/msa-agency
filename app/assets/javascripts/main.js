@@ -26,11 +26,16 @@ angular.module('MSAAgency.controllers', [])
 angular.module('MSAAgency.services', []);
 
 // Directives
-angular.module('MSAAgency.directives', []);
-require('./angular/directives/main-header');
-require('./angular/directives/main-footer');
-require('./angular/directives/navigation');
-require('./angular/directives/social-icons');
+import Navigation from './angular/directives/Navigation';
+import ToggleNavigation from './angular/directives/ToggleNavigation';
+
+angular.module('MSAAgency.directives', [])
+    .directive('navigation', Navigation)
+    .directive('toggleNavigation', ToggleNavigation);
+
+require('./angular/directives/MainHeader');
+require('./angular/directives/MainFooter');
+require('./angular/directives/SocialIcons');
 
 // Filters
 angular.module('MSAAgency.filters', []);

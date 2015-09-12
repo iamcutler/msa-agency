@@ -24,14 +24,14 @@ h1, h2, h3, h4, h5, h6 {
 ul.social-icons {
   height: 38px;
   margin: 0;
-  
+
   li {
     float: left;
     width: 38px;
     height: 38px;
     list-style: none;
     margin-left: 10px;
-    
+
     a {
       background: url('social-icons.png') no-repeat;
       background: url('social-icons.svg') no-repeat;
@@ -43,12 +43,12 @@ ul.social-icons {
       display: block;
       overflow: hidden;
       text-index: -9999px;
-      
+
       &:hover {
         background-color: $msa-orange;
       }
     }
-    
+
     &.facebook {
       a {
         background-position: 14px center;
@@ -110,30 +110,30 @@ header {
       letter-spacing: 14px;
       margin-left: -180px;
     }
-    
+
     .right-col {
       position: fixed;
       top: 8px;
       right: 20px;
       text-align: right;
-      
+
       ul.contact-numbers {
         margin: 0;
-        
+
         li {
           list-style: none;
-          
+
           span {
             color: #FFF;
           }
-          
+
           a {
             color: $msa-orange;
             text-decoration: none;
           }
         }
       }
-      
+
       ul.social-icons {
         margin-top: 10px;
       }
@@ -142,12 +142,21 @@ header {
 }
 
 /* 3.0 Navigation */
-nav.main {
+nav#sidebar-nav {
   position: fixed;
   top: 0;
-  
+  left: -$sidebar-width;
+  transition: left .5s ease-in-out;
+
+  // Open sidebar
+  &.open {
+      left: 0;
+  }
+
   .nav-btn {
+    position: absolute;
     background: #252525;
+    left: $sidebar-width;
     color: #FFF;
     width: 112px;
     height: 112px;
@@ -155,7 +164,7 @@ nav.main {
     text-decoration: none;
     display: block;
   }
-  
+
   .btn {
     width: 30px;
     text-align: center;
@@ -175,15 +184,16 @@ nav.main {
       }
     }
   }
-  
+
   .nav-sidebar {
     background: $primary-grey;
-    width: 216px;
-    
+    width: $sidebar-width;
+    height: 100vh;
+
     .brand {
       background: $msa-orange;
       height: $header-height;
-      
+
       a {
         position: relative;
         top: 20px;
@@ -197,6 +207,29 @@ nav.main {
         text-indent: -9999px;
       }
     }
+
+    // Main navigation links
+    ul.main-links {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+
+            a {
+                color: #FFF;
+                padding: 8px 22px;
+                text-decoration: none;
+                text-transform: uppercase;
+                display: block;
+                transition: background .5s;
+
+                &:Hover {
+                    background: $secondary-grey;
+                }
+            }
+        }
+    }
   }
 }
 
@@ -207,17 +240,17 @@ footer {
     padding-top: 20px;
     font-size: 12px;
     text-transform: uppercase;
-    
+
     .credit-bar {
       background: #000;
       color: #FFF;
       margin-top: 20px;
       padding: 30px 20px;
     }
-    
+
     .powered-by {
       float: right;
-      
+
       a {
         color: $msa-orange;
         text-decoration: none;
