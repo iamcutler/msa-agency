@@ -18,11 +18,13 @@ require('./angular/routes');
 
 // Controllers
 import AppController from './angular/controllers/App';
+import SplashController from './angular/controllers/Splash';
 import NavigationController from './angular/controllers/Navigation';
 import SearchController from './angular/controllers/Search';
 
 angular.module('MSAAgency.controllers', [])
     .controller('AppController', AppController)
+    .controller('SplashController', SplashController)
     .controller('NavigationController', NavigationController)
     .controller('SearchController', SearchController);
 

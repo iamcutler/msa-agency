@@ -5,6 +5,11 @@ angular.module('MSAAgency')
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
+        .state('splash', {
+            url: '/',
+            templateUrl: 'templates/splash.html',
+            controller: 'SplashController as SplashCtrl'
+        })
         .state('app', {
             url: '/',
             templateUrl: 'templates/app.html'
