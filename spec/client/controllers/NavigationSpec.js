@@ -25,19 +25,34 @@ describe('Controller: Navigation', function() {
     });
 
     describe('method: search', function() {
-        it('should redirect to search page if form is valid', function() {
+        beforeEach(function() {
             NavCtrl.q = "MSA Agency";
-            NavCtrl.search(true);
-            $scope.$digest();
-
-            expect($state.go).toHaveBeenCalledWith('app.search', { q: 'MSA Agency' });
         });
 
-        it('should NOT redirect to search page if form is invalid', function() {
-            NavCtrl.search(false);
-            $scope.$digest();
+        describe('on valid search', function() {
+            beforeEach(function() {
+                NavCtrl.search(true);
+                $scope.$digest();
+            });
 
-            expect($state.go).not.toHaveBeenCalled();
+            it('should redirect to search page', function() {
+                expect($state.go).toHaveBeenCalledWith('app.search', { q: 'MSA Agency' });
+            });
+
+            it('should clear search string after redirect', function() {
+                expect(NavCtrl.q).toBe('');
+            });
+        });
+
+        describe('on invalid search', function() {
+            beforeEach(function() {
+                NavCtrl.search(false);
+                $scope.$digest();
+            });
+
+            it('should NOT redirect to search page', function() {
+                expect($state.go).not.toHaveBeenCalled();
+            });
         });
     });
 });

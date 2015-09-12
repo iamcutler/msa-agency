@@ -13,6 +13,9 @@ export default class NavigationController {
     {
         if(isValid) {
             this.$state.go('app.search', { q: this.q });
+
+            // Clear search string
+            this.q = '';
         }
     }
 }
