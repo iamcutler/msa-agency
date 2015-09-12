@@ -77,37 +77,7 @@ header {
   &.main {
     background: #1c1c1c;
     color: #FFF;
-    height: 112px;
-
-    a.nav {
-      background: #252525;
-      color: #FFF;
-      width: 112px;
-      height: 112px;
-      font-size: 10px;
-      text-decoration: none;
-      display: block;
-
-      .nav-btn {
-        width: 30px;
-        text-align: center;
-        padding: 38px;
-
-        .nav-lines {
-          height: 20px;
-          margin-bottom: 6px;
-
-          .line {
-            background: #FFF;
-            height: 4px;
-
-            &:nth-child(2) {
-              margin: 4px 0;
-            }
-          }
-        }
-      }
-    }
+    height: $header-height;
 
     // Logo
     h1 {
@@ -171,7 +141,66 @@ header {
   }
 }
 
-/* 3.0 Footer */
+/* 3.0 Navigation */
+nav.main {
+  position: fixed;
+  top: 0;
+  
+  .nav-btn {
+    background: #252525;
+    color: #FFF;
+    width: 112px;
+    height: 112px;
+    font-size: 10px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .btn {
+    width: 30px;
+    text-align: center;
+    padding: 38px;
+
+    .nav-lines {
+      height: 20px;
+      margin-bottom: 6px;
+
+      .line {
+        background: #FFF;
+        height: 4px;
+
+        &:nth-child(2) {
+          margin: 4px 0;
+        }
+      }
+    }
+  }
+  
+  .nav-sidebar {
+    background: $primary-grey;
+    width: 216px;
+    
+    .brand {
+      background: $msa-orange;
+      height: $header-height;
+      
+      a {
+        position: relative;
+        top: 20px;
+        left: 40px;
+        background: url('brand.png') no-repeat;
+        background: url('brand.svg') no-repeat;
+        width: 130px;
+        height: 68px;
+        overflow: hidden;
+        display: block;
+        text-indent: -9999px;
+      }
+    }
+  }
+}
+
+/* 4.0 Footer */
 footer {
   &.main {
     background: #1c1c1c;

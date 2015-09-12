@@ -6,9 +6,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body ng-controller="AppController as AppCtrl">
+<body ng-controller="AppController as AppCtrl" ng-strict-di>
 
 <main-header></main-header>
+<navigation></navigation>
 
 <div ui-view>
   <%= yield %>
