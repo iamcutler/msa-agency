@@ -1,17 +1,9 @@
 // Angular routes
 
 angular.module('MSAAgency')
-.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-    // Default page if no routes are found
+.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
 
-    // Enable HTML5 push state
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-    });
-
-    // Routes
     $stateProvider
         .state('app', {
             url: '/',
