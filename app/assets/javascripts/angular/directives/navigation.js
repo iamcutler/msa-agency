@@ -17,7 +17,7 @@ export default function Navigation() {
 
                 <div class="nav-sidebar" ng-controller="NavigationController as NavCtrl">
                     <div class="brand">
-                        <a ui-sref="home">McDonald/Selznick Associates</a>
+                        <a ui-sref="splash">McDonald/Selznick Associates</a>
                     </div>
 
                     <!-- Search -->
