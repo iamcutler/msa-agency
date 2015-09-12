@@ -14,6 +14,19 @@ angular.module('MSAAgency')
             url: '/',
             templateUrl: 'templates/app.html'
         })
+        // Home
+        .state('app.home', {
+            templateUrl: 'templates/home.html',
+            controller: 'HomeController as HomeCtrl',
+            abstract: true
+        })
+            // Los Angeles
+            .state('app.home.los-angeles', {
+                url: 'los-angeles'
+            })
+            .state('app.home.new-york', {
+                url: 'new-york'
+            })
         .state('app.search', {
             url: 'search/:q',
             templateUrl: 'templates/search.html',
