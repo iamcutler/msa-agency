@@ -1,6 +1,6 @@
 <!-- Splash!!!! <a ui-sref="app.home.los-angeles">Go</a> -->
 <section id="splash-header">
-    <video id="splash-video" autoplay loop>
+    <video id="splash-video" autoplay loop muted>
         <source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" type="video/mp4">
         Your browser does not support the video.
     </video>
@@ -10,6 +10,13 @@
                 <img src="/assets/brand.png" />
             </object>
         </h1>
+
+        <div class="choose-city-container los-angeles">
+            <choose-city city-name="Los Angeles" state="app.home.los-angeles"></choose-city>
+        </div>
+        <div class="choose-city-container new-york">
+            <choose-city city-name="New York" state="app.home.new-york"></choose-city>
+        </div>
     </div>
 </section>
 

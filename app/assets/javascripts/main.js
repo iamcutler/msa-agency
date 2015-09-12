@@ -34,10 +34,12 @@ angular.module('MSAAgency.controllers', [])
 angular.module('MSAAgency.services', []);
 
 // Directives
+import ChooseCity from './angular/directives/ChooseCity';
 import Navigation from './angular/directives/Navigation';
 import ToggleNavigation from './angular/directives/ToggleNavigation';
 
 angular.module('MSAAgency.directives', [])
+    .directive('chooseCity', ChooseCity)
     .directive('navigation', Navigation)
     .directive('toggleNavigation', ToggleNavigation);
 
