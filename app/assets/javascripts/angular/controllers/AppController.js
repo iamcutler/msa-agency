@@ -1,5 +1,5 @@
 export default class AppController {
-    constructor($rootScope) {
-        this.$rootScope = $rootScope;
-    }
+  constructor($rootScope) {
+    this.$rootScope = $rootScope;
+  }
 }
