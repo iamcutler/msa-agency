@@ -1,6 +1,6 @@
 describe('Directive: ResizeElement', function() {
     var $rootScope, $scope, $compile, element, elementWithNoWidth, elementWithNoHeight;
-    var elementWithOffSetBottom;
+    var elementWithOffSetBottom, elementWithOffsetTop;
 
     beforeEach(function() {
         module('MSAAgency', 'MSAAgency.directives');
@@ -14,6 +14,7 @@ describe('Directive: ResizeElement', function() {
             elementWithNoWidth = angular.element('<div resize-element resize-width="false"></div>');
             elementWithNoHeight = angular.element('<div resize-element resize-height="false"></div>');
             elementWithOffSetBottom = angular.element('<div resize-element offset-bottom="200"></div>');
+            elementWithOffSetTop = angular.element('<div resize-element offset-top="112"></div>');
         });
     });
 
@@ -34,6 +35,12 @@ describe('Directive: ResizeElement', function() {
             element = $compile(elementWithOffSetBottom)($scope);
 
             expect(element.isolateScope().offsetBottom).toEqual('200');
+        });
+
+        it('should pass in offset top to pad top of screen', function() {
+            element = $compile(elementWithOffSetTop)($scope);
+
+            expect(element.isolateScope().offsetTop).toEqual('112');
         });
     });
 });

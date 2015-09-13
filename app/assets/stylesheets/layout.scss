@@ -258,10 +258,52 @@ nav#sidebar-nav {
                 text-decoration: none;
                 text-transform: uppercase;
                 display: block;
+                white-space: nowrap;
                 transition: background .5s;
 
-                &:Hover {
+                &:hover {
                     background: $secondary-grey;
+                }
+            }
+
+            &:hover {
+                > a {
+                    background: $secondary-grey;
+                }
+            }
+
+            &:hover {
+                > ul {
+                    width: 160px;
+                }
+            }
+
+            > ul {
+                position: absolute;
+                background: $secondary-grey;
+                top: $header-height;
+                left: 216px;
+                width: 0;
+                height: 100vh;
+                padding-left: 0;
+                overflow: hidden;
+                transition: width 0.4s ease-in-out;
+
+                li a:hover {
+                    background: $msa-orange;
+                }
+
+                // Menu spacing
+                &.home {
+                    padding-top: 73px;
+                }
+
+                &.about-us {
+                    padding-top: 108px;
+                }
+
+                &.talent {
+                    padding-top: 143px;
                 }
             }
         }

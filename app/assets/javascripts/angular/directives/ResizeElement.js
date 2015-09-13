@@ -5,7 +5,8 @@ export default function ResizeElement($window) {
         scope: {
             resizeWidth: '@',
             resizeHeight: '@',
-            offsetBottom: '@'
+            offsetBottom: '@',
+            offsetTop: '@'
         },
         link: (scope, element) => {
             scope.$watch(() => {
@@ -15,7 +16,12 @@ export default function ResizeElement($window) {
                 };
             }, (newValue) => {
                 if(scope.resizeWidth !== "false") element.css('width', `${newValue.width}px`);
-                if(scope.resizeHeight !== "false") element.css('height', `${newValue.height - (scope.offsetBottom ? Number(scope.offsetBottom) : 0)}px`);
+                if(scope.resizeHeight !== "false") {
+                    element.css(
+                        'height',
+                        `${newValue.height - (scope.offsetBottom ? Number(scope.offsetBottom) : 0) - (scope.offsetTop ? Number(scope.offsetTop) : 0)}px`
+                    );
+                };
             }, true);
 
             angular.element($window).bind('resize', () => {

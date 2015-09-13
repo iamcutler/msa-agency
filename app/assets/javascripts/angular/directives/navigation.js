@@ -27,9 +27,31 @@ export default function Navigation() {
                     <!-- End Search -->
 
                     <ul class="main-links">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Talent</a></li>
+                        <li>
+                            <a href="">Home</a>
+                            <ul class="home" resize-element resize-width="false" offset-top="112">
+                                <li><a ui-sref="app.home.los-angeles">Los Angeles</a></li>
+                                <li><a ui-sref="app.home.new-york">New York</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">About Us</a>
+                            <ul class="about-us" resize-element resize-width="false" offset-top="112">
+                                <li><a ui-sref="app.home.los-angeles">Staff</a></li>
+                                <li><a ui-sref="app.home.new-york">Affiliations</a></li>
+                                <li><a ui-sref="app.home.new-york">Legacy</a></li>
+                                <li><a ui-sref="app.home.new-york">Archives</a></li>
+                                <li><a ui-sref="app.home.new-york">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Talent</a>
+                            <ul class="talent" resize-element resize-width="false" offset-top="112">
+                                <li><a ui-sref="app.home.los-angeles">Dance</a></li>
+                                <li><a ui-sref="app.home.new-york">Creative</a></li>
+                                <li><a ui-sref="app.home.new-york">Educators</a></li>
+                            </ul>
+                        </li>
                         <li><a href="">News</a></li>
                         <li><a href="">Contact Us</a></li>
                         <li><a href="">Submissions</a></li>
