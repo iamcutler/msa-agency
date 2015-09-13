@@ -3,7 +3,7 @@ export default function Navigation() {
         restrict: 'E',
         replace: true,
         template: `
-            <nav role="navigation" id="sidebar-nav">
+            <nav role="navigation" id="sidebar-nav" ng-controller="NavigationController as NavCtrl">
                 <a href="" class="nav-btn" toggle-navigation>
                     <div class="btn">
                         <div class="nav-lines">
@@ -15,7 +15,7 @@ export default function Navigation() {
                     </div>
                 </a>
 
-                <div class="nav-sidebar" ng-controller="NavigationController as NavCtrl">
+                <div class="nav-sidebar" resize-element resize-width="false">
                     <div class="brand">
                         <a ui-sref="splash">McDonald/Selznick Associates</a>
                     </div>
