@@ -36,11 +36,13 @@ angular.module('MSAAgency.services', []);
 // Directives
 import ChooseCity from './angular/directives/ChooseCity';
 import Navigation from './angular/directives/Navigation';
+import ResizeElement from './angular/directives/ResizeElement';
 import ToggleNavigation from './angular/directives/ToggleNavigation';
 
 angular.module('MSAAgency.directives', [])
     .directive('chooseCity', ChooseCity)
     .directive('navigation', Navigation)
+    .directive('resizeElement', ResizeElement)
     .directive('toggleNavigation', ToggleNavigation);
 
 require('./angular/directives/MainHeader');
