@@ -3,10 +3,11 @@ export default function NewsArticle() {
         restrict: 'E',
         replace: true,
         scope: {
-            data: '='
+            data: '=',
+            spotlight: '@'
         },
         template: `
-            <article class="news-article">
+            <article class="news-article" ng-class="{ 'spotlight': spotlight === 'true' }">
                 <figure>
                     <img ng-src="{{ data.image }}" alt="{{ data.title }}" />
                 </figure>

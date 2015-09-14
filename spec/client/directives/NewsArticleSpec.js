@@ -1,5 +1,5 @@
 describe('Directive: newsArticle', function() {
-    var $rootScope, $scope, $compile, element;
+    var $rootScope, $scope, $compile, element, elementWithSpotlight;
     var mocks;
 
     beforeEach(function() {
@@ -22,13 +22,27 @@ describe('Directive: newsArticle', function() {
             $scope.article = mocks.articles[0];
 
             element = angular.element('<news-article data="article"></news-article>');
-            element = $compile(element)($scope);
+            elementWithSpotlight = angular.element('<news-article data="article" spotlight="true"></news-article>');
         });
     });
 
     describe('isolate scope', function() {
         it('should pass in article data', function() {
+            element = $compile(element)($scope);
+
             expect(element.isolateScope().data).toEqual(mocks.articles[0]);
+        });
+
+        it('should pass optional boolean spotlight as true for spotlight styling', function() {
+            elementWithSpotlight = $compile(elementWithSpotlight)($scope);
+
+            expect(elementWithSpotlight.isolateScope().spotlight).toBe('true');
+        });
+
+        it('should have spotlight as undefined if not defined', function() {
+            element = $compile(element)($scope);
+
+            expect(element.isolateScope().spotlight).toBeUndefined();
         });
     });
 });

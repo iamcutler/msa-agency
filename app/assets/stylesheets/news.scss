@@ -12,6 +12,10 @@ section#msa-news {
             list-style: none;
             display: inline-block;
             margin: 15px;
+
+            &:nth-child(1) {
+                width: 570px;
+            }
         }
     }
 }
@@ -90,5 +94,10 @@ article.news-article {
                 background: $primary-grey;
             }
         }
+    }
+
+    // Spotlight article
+    &.spotlight {
+        width: 570px;
     }
 }
