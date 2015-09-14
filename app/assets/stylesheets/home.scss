@@ -1,0 +1,13 @@
+@import 'variables';
+
+section#msa-slogan {
+    background: $primary-grey;
+    padding: 30px 0;
+
+    h2 {
+        color: $msa-orange;
+        text-align: center;
+        font-size: 26px;
+        font-weight: $font-primary-weight;
+    }
+}
