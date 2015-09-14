@@ -35,12 +35,16 @@ angular.module('MSAAgency.services', []);
 
 // Directives
 import ChooseCity from './angular/directives/ChooseCity';
+import LatestNews from './angular/directives/LatestNews';
+import NewsArticle from './angular/directives/NewsArticle';
 import Navigation from './angular/directives/Navigation';
 import ResizeElement from './angular/directives/ResizeElement';
 import ToggleNavigation from './angular/directives/ToggleNavigation';
 
 angular.module('MSAAgency.directives', [])
     .directive('chooseCity', ChooseCity)
+    .directive('latestNews', LatestNews)
+    .directive('newsArticle', NewsArticle)
     .directive('navigation', Navigation)
     .directive('resizeElement', ResizeElement)
     .directive('toggleNavigation', ToggleNavigation);
