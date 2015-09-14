@@ -11,11 +11,10 @@ export default function LatestNews() {
                     Latest News
                 </header>
 
-                <ul>
-                    <li ng-repeat="article in data | limitTo: 6">
-                        <news-article data="article" spotlight="{{ $index === 0 }}"></news-article>
-                    </li>
-                </ul>
+                <div class="articles">
+                    <news-article data="article" spotlight="{{ $index === 0 }}" ng-repeat-start="article in data | limitTo: 6"></news-article>
+                    <newsletter-widget ng-repeat-end ng-if="$index === 0"></newsletter-widget>
+                </div>
             </section>
         `
     };

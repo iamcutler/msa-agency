@@ -1,0 +1,56 @@
+@import 'variables';
+
+// Newsletter widget
+div.newsletter-widget {
+    position: relative;
+    background: #2f2f2f;
+    color: #FFF;
+    border-radius: 6px;
+
+    h5 {
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: $font-primary-weight-thin;
+    }
+
+    h6 {
+        font-size: 14px;
+    }
+
+    form {
+        margin: 16px 0 0 0;
+        padding: 0;
+
+        input {
+            background: #1c1c1c;
+            width: 100%;
+            color: #787878;
+            font-size: 14px;
+            padding: 12px;
+            border: 2px #1c1c1c solid;
+            box-sizing: border-box;
+            transition: border 0.4s ease-in-out;
+
+            &:focus {
+                border-color: #595959;
+            }
+        }
+
+        button {
+            background: $msa-orange;
+            color: #FFF;
+            width: 100%;
+            font-size: 16px;
+            border: none;
+            padding: 8px;
+            margin-top: 10px;
+        }
+    }
+
+    span.bottom-notice {
+        position: absolute;
+        bottom: 10px;
+        color: #a6a6a6;
+        font-size: 12px;
+    }
+}

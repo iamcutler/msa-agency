@@ -21,6 +21,7 @@ import AppController from './angular/controllers/App';
 import SplashController from './angular/controllers/Splash';
 import HomeController from './angular/controllers/Home';
 import NavigationController from './angular/controllers/Navigation';
+import NewsletterController from './angular/controllers/Newsletter';
 import SearchController from './angular/controllers/Search';
 
 angular.module('MSAAgency.controllers', [])
@@ -28,6 +29,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('SplashController', SplashController)
     .controller('HomeController', HomeController)
     .controller('NavigationController', NavigationController)
+    .controller('NewsletterController', NewsletterController)
     .controller('SearchController', SearchController);
 
 // Services
@@ -37,6 +39,7 @@ angular.module('MSAAgency.services', []);
 import ChooseCity from './angular/directives/ChooseCity';
 import LatestNews from './angular/directives/LatestNews';
 import NewsArticle from './angular/directives/NewsArticle';
+import NewsletterWidget from './angular/directives/NewsletterWidget';
 import Navigation from './angular/directives/Navigation';
 import ResizeElement from './angular/directives/ResizeElement';
 import ToggleNavigation from './angular/directives/ToggleNavigation';
@@ -45,6 +48,7 @@ angular.module('MSAAgency.directives', [])
     .directive('chooseCity', ChooseCity)
     .directive('latestNews', LatestNews)
     .directive('newsArticle', NewsArticle)
+    .directive('newsletterWidget', NewsletterWidget)
     .directive('navigation', Navigation)
     .directive('resizeElement', ResizeElement)
     .directive('toggleNavigation', ToggleNavigation);
