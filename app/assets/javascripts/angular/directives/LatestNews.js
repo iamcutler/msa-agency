@@ -3,11 +3,14 @@ export default function LatestNews() {
         restrict: 'E',
         replace: true,
         scope: {
-            title: '@',
             data: '='
         },
         template: `
             <section id="msa-news">
+                <header class="section-header">
+                    Latest News
+                </header>
+
                 <ul>
                     <li ng-repeat="article in data">
                         <news-article data="article"></news-article>
