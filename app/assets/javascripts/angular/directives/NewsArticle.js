@@ -9,7 +9,9 @@ export default function NewsArticle() {
         template: `
             <article class="news-article" ng-class="{ 'spotlight': spotlight === 'true' }">
                 <figure>
-                    <img ng-src="{{ data.image }}" alt="{{ data.title }}" />
+                    <a href="">
+                        <img ng-src="{{ data.image }}" alt="{{ data.title }}" />
+                    </a>
                 </figure>
 
                 <header>
