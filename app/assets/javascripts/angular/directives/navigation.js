@@ -30,26 +30,26 @@ export default function Navigation() {
                         <li>
                             <a href="">Home</a>
                             <ul class="home" resize-element resize-width="false" offset-top="112">
-                                <li><a ui-sref="app.home.los-angeles">Los Angeles</a></li>
-                                <li><a ui-sref="app.home.new-york">New York</a></li>
+                                <li><a ui-sref="app.home.los-angeles" toggle-navigation>Los Angeles</a></li>
+                                <li><a ui-sref="app.home.new-york" toggle-navigation>New York</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="">About Us</a>
                             <ul class="about-us" resize-element resize-width="false" offset-top="112">
-                                <li><a ui-sref="app.home.los-angeles">Staff</a></li>
-                                <li><a ui-sref="app.home.new-york">Affiliations</a></li>
-                                <li><a ui-sref="app.home.new-york">Legacy</a></li>
-                                <li><a ui-sref="app.home.new-york">Archives</a></li>
-                                <li><a ui-sref="app.home.new-york">FAQ</a></li>
+                                <li><a ui-sref="app.home.los-angeles" toggle-navigation>Staff</a></li>
+                                <li><a ui-sref="app.home.new-york" toggle-navigation>Affiliations</a></li>
+                                <li><a ui-sref="app.home.new-york" toggle-navigation>Legacy</a></li>
+                                <li><a ui-sref="app.home.new-york" toggle-navigation>Archives</a></li>
+                                <li><a ui-sref="app.home.new-york" toggle-navigation>FAQ</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="">Talent</a>
                             <ul class="talent" resize-element resize-width="false" offset-top="112">
-                                <li><a ui-sref="app.home.los-angeles">Dance</a></li>
-                                <li><a ui-sref="app.home.new-york">Creative</a></li>
-                                <li><a ui-sref="app.home.new-york">Educators</a></li>
+                                <li><a ui-sref="app.home.los-angeles" toggle-navigation>Dance</a></li>
+                                <li><a ui-sref="app.home.new-york" toggle-navigation>Creative</a></li>
+                                <li><a ui-sref="app.home.new-york" toggle-navigation>Educators</a></li>
                             </ul>
                         </li>
                         <li><a href="">News</a></li>
