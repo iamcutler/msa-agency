@@ -1,340 +1,348 @@
 @import 'variables';
 
 /*
-  - Client: MSA Agency
-  - Author: iamcutler
+- Client: MSA Agency
+- Author: iamcutler
 */
 
 /* 1.0 Globals  */
 html, body {
-  background: $background-color;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: $primary-font, sans-serif;
-  font-weight: 400;
-  font-size: $font-size;
-  overflow-x: hidden;
+    background: $background-color;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: $font-primary, sans-serif;
+    font-weight: 400;
+    font-size: $font-size;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 // Social icons
 ul.social-icons {
-  height: 38px;
-  margin: 0;
-  padding: 0;
-
-  li {
-    width: 38px;
     height: 38px;
-    list-style: none;
-    margin-left: 10px;
-    display: inline-block;
+    margin: 0;
+    padding: 0;
 
-    a {
-      background: url('/assets/social-icons.png') no-repeat;
-      background: url('/assets/social-icons.svg') no-repeat;
-      width: 38px;
-      height: 38px;
-      border: 2px $msa-orange solid;
-      border-radius: 100px;
-      transition: background-color .5s;
-      display: block;
-      overflow: hidden;
-      text-index: -9999px;
+    li {
+        width: 38px;
+        height: 38px;
+        list-style: none;
+        margin-left: 10px;
+        display: inline-block;
 
-      &:hover {
-        background-color: $msa-orange;
-      }
-    }
+        a {
+            background: url('/assets/social-icons.png') no-repeat;
+            background: url('/assets/social-icons.svg') no-repeat;
+            width: 38px;
+            height: 38px;
+            border: 2px $msa-orange solid;
+            border-radius: 100px;
+            transition: background-color .5s;
+            display: block;
+            overflow: hidden;
+            text-index: -9999px;
 
-    &.facebook {
-      a {
-        background-position: 14px center;
-      }
+            &:hover {
+                background-color: $msa-orange;
+            }
+        }
+
+        &.facebook {
+            a {
+                background-position: 14px center;
+            }
+        }
+        &.twitter {
+            a {
+                background-position: -20px center;
+            }
+        }
+        &.instagram {
+            a {
+                background-position: -58px center;
+            }
+        }
+        &.youtube {
+            a {
+                background-position: -95px center;
+            }
+        }
     }
-    &.twitter {
-      a {
-        background-position: -20px center;
-      }
-    }
-    &.instagram {
-      a {
-        background-position: -58px center;
-      }
-    }
-    &.youtube {
-      a {
-        background-position: -95px center;
-      }
-    }
-  }
 }
 
 /* 2.0 Header */
 header {
-  font-weight: $primary-font-weight-thin;
+    position: relative;
+    font-weight: $font-primary-weight-thin;
 
-  &.main {
-    background: #1c1c1c;
-    color: #FFF;
-    height: $header-height;
+    &.main {
+        background: #1c1c1c;
+        color: #FFF;
+        height: $header-height;
 
-    // Logo
-    h1 {
-      position: fixed;
-      top: 22px;
-      left: 144px;
+        // Logo
+        h1 {
+            position: absolute;
+            top: 22px;
+            left: 144px;
 
-      a {
-        background: url('/assets/brand.png') no-repeat;
-        background: url('/assets/brand.svg') no-repeat;
-        width: 130px;
-        height: 68px;
-        overflow: hidden;
-        display: block;
-        text-indent: -9999px;
-      }
-    }
-
-    // Tagline
-    h2 {
-      position: fixed;
-      top: 38px;
-      left: 50%;
-      background: #252525;
-      width: 360px;
-      font-size: 16px;
-      padding: 10px 0 10px 20px;
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: 14px;
-      margin-left: -180px;
-    }
-
-    .right-col {
-      position: fixed;
-      top: 8px;
-      right: 20px;
-      text-align: right;
-
-      ul.contact-numbers {
-        margin: 0;
-
-        li {
-          list-style: none;
-
-          span {
-            color: #FFF;
-          }
-
-          a {
-            color: $msa-orange;
-            text-decoration: none;
-          }
+            a {
+                background: url('/assets/brand.png') no-repeat;
+                background: url('/assets/brand.svg') no-repeat;
+                width: 130px;
+                height: 68px;
+                overflow: hidden;
+                display: block;
+                text-indent: -9999px;
+            }
         }
-      }
 
-      ul.social-icons {
-        margin-top: 10px;
-      }
+        // Tagline
+        h2 {
+            position: absolute;
+            top: 38px;
+            left: 50%;
+            background: #252525;
+            width: 360px;
+            font-size: 16px;
+            padding: 10px 0 10px 20px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 14px;
+            margin-left: -180px;
+        }
+
+        .right-col {
+            position: absolute;
+            top: 8px;
+            right: 20px;
+            text-align: right;
+
+            ul.contact-numbers {
+                margin: 0;
+
+                li {
+                    list-style: none;
+
+                    span {
+                        color: #FFF;
+                    }
+
+                    a {
+                        color: $msa-orange;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            ul.social-icons {
+                margin-top: 10px;
+            }
+        }
     }
-  }
 }
 
 /* 3.0 Navigation */
 nav#sidebar-nav {
-  position: fixed;
-  top: 0;
-  left: -$sidebar-width;
-  font-weight: $primary-font-weight-thin;
-  transition: left .5s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: -$sidebar-width;
+    font-weight: $font-primary-weight-thin;
+    transition: left .5s ease-in-out;
+    z-index: 10;
 
-  // Open sidebar
-  &.open {
-      left: 0;
-  }
+    // Open sidebar
+    &.open {
+        left: 0;
 
-  .nav-btn {
-    position: absolute;
-    background: #252525;
-    left: $sidebar-width;
-    color: #FFF;
-    width: 112px;
-    height: 112px;
-    font-size: 10px;
-    text-decoration: none;
-    display: block;
-  }
-
-  .btn {
-    width: 30px;
-    text-align: center;
-    padding: 38px;
-
-    .nav-lines {
-      height: 20px;
-      margin-bottom: 6px;
-
-      .line {
-        background: #FFF;
-        height: 4px;
-
-        &:nth-child(2) {
-          margin: 4px 0;
+        // Allow sub menu only when open is active
+        ul.main-links li > ul {
+            display: block !important;
         }
-      }
     }
-  }
 
-  .nav-sidebar {
-    background: $primary-grey;
-    width: $sidebar-width;
-    height: 100vh;
-
-    // Logo
-    .brand {
-      background: $msa-orange;
-      height: $header-height;
-
-      a {
-        position: relative;
-        top: 20px;
-        left: 40px;
-        background: url('/assets/brand.png') no-repeat;
-        background: url('/assets/brand.svg') no-repeat;
-        width: 130px;
-        height: 68px;
-        overflow: hidden;
+    .nav-btn {
+        position: absolute;
+        background: #252525;
+        left: $sidebar-width;
+        color: #FFF;
+        width: 112px;
+        height: 112px;
+        font-size: 10px;
+        text-decoration: none;
         display: block;
-        text-indent: -9999px;
-      }
     }
 
-    // Search bar
-    form[id="sidebar-search"] {
-        margin: 24px 16px 16px;
+    .btn {
+        width: 30px;
+        text-align: center;
+        padding: 38px;
 
-        input[type="search"] {
-            background: $secondary-grey url('/assets/search-icon.png') 12px 8px no-repeat;
-            background: $secondary-grey url('/assets/search-icon.svg') 12px 8px no-repeat;
-            color: #FFF;
-            width: 186px;
-            border: 2px #252525 solid;
-            font-size: 14px;
-            padding: 6px 6px 6px 28px;
-            font-weight: $primary-font-weight-thin;
-            outline: none;
-            transition: border .4s ease-in-out;
-            appearance: none;
+        .nav-lines {
+            height: 20px;
+            margin-bottom: 6px;
 
-            &:focus {
-                border-color: #595959;
+            .line {
+                background: #FFF;
+                height: 4px;
+
+                &:nth-child(2) {
+                    margin: 4px 0;
+                }
             }
-
-            &::-webkit-input-placeholder { color: #FFF; }
-            &::-moz-placeholder { color: #FFF; }
-            &:-ms-input-placeholder { color: #FFF; }
-            &:-moz-placeholder { color: #FFF; }
         }
     }
 
-    // Main navigation links
-    ul.main-links {
-        margin: 0;
-        padding: 0;
+    .nav-sidebar {
+        background: $primary-grey;
+        width: $sidebar-width;
+        height: 100vh;
 
-        li {
-            list-style: none;
+        // Logo
+        .brand {
+            background: $msa-orange;
+            height: $header-height;
 
             a {
-                color: #e2e2e2;
-                padding: 8px 22px;
-                text-decoration: none;
-                text-transform: uppercase;
+                position: relative;
+                top: 20px;
+                left: 40px;
+                background: url('/assets/brand.png') no-repeat;
+                background: url('/assets/brand.svg') no-repeat;
+                width: 130px;
+                height: 68px;
+                overflow: hidden;
                 display: block;
-                white-space: nowrap;
-                transition: background .5s;
+                text-indent: -9999px;
+            }
+        }
+
+        // Search bar
+        form[id="sidebar-search"] {
+            margin: 24px 16px 16px;
+
+            input[type="search"] {
+                background: $secondary-grey url('/assets/search-icon.png') 12px 8px no-repeat;
+                background: $secondary-grey url('/assets/search-icon.svg') 12px 8px no-repeat;
+                color: #FFF;
+                width: 186px;
+                border: 2px #252525 solid;
+                font-size: 14px;
+                padding: 6px 6px 6px 28px;
+                font-weight: $font-primary-weight-thin;
+                outline: none;
+                transition: border .4s ease-in-out;
+                appearance: none;
+
+                &:focus {
+                    border-color: #595959;
+                }
+
+                &::-webkit-input-placeholder { color: #FFF; }
+                &::-moz-placeholder { color: #FFF; }
+                &:-ms-input-placeholder { color: #FFF; }
+                &:-moz-placeholder { color: #FFF; }
+            }
+        }
+
+        // Main navigation links
+        ul.main-links {
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+
+                a {
+                    color: #e2e2e2;
+                    padding: 8px 22px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    display: block;
+                    white-space: nowrap;
+                    transition: background .5s;
+
+                    &:hover {
+                        background: $secondary-grey;
+                    }
+                }
 
                 &:hover {
-                    background: $secondary-grey;
+                    > a {
+                        background: $secondary-grey;
+                    }
                 }
-            }
 
-            &:hover {
-                > a {
-                    background: $secondary-grey;
+                &:hover {
+                    > ul {
+                        width: 160px;
+                    }
                 }
-            }
 
-            &:hover {
                 > ul {
-                    width: 160px;
-                }
-            }
+                    position: absolute;
+                    background: $secondary-grey;
+                    top: $header-height;
+                    left: 216px;
+                    width: 0;
+                    height: 100vh;
+                    padding-left: 0;
+                    overflow: hidden;
+                    display: none;
+                    transition: width 0.4s ease-in-out;
 
-            > ul {
-                position: absolute;
-                background: $secondary-grey;
-                top: $header-height;
-                left: 216px;
-                width: 0;
-                height: 100vh;
-                padding-left: 0;
-                overflow: hidden;
-                transition: width 0.4s ease-in-out;
+                    li a:hover {
+                        background: $msa-orange;
+                    }
 
-                li a:hover {
-                    background: $msa-orange;
-                }
+                    // Menu spacing
+                    &.home {
+                        padding-top: 73px;
+                    }
 
-                // Menu spacing
-                &.home {
-                    padding-top: 73px;
-                }
+                    &.about-us {
+                        padding-top: 108px;
+                    }
 
-                &.about-us {
-                    padding-top: 108px;
-                }
-
-                &.talent {
-                    padding-top: 143px;
+                    &.talent {
+                        padding-top: 143px;
+                    }
                 }
             }
         }
     }
-  }
 }
 
 /* 4.0 Footer */
 footer {
-  font-weight: $primary-font-weight-thin;
+    font-weight: $font-primary-weight-thin;
 
-  &.main {
-    background: #1c1c1c;
-    padding-top: 20px;
-    font-size: 12px;
-    text-transform: uppercase;
+    &.main {
+        background: #1c1c1c;
+        padding-top: 20px;
+        font-size: 12px;
+        text-transform: uppercase;
 
-    .credit-bar {
-      background: #000;
-      color: #FFF;
-      margin-top: 20px;
-      padding: 30px 20px;
+        .credit-bar {
+            background: #000;
+            color: #FFF;
+            margin-top: 20px;
+            padding: 30px 20px;
+        }
+
+        .powered-by {
+            float: right;
+
+            a {
+                color: $msa-orange;
+                text-decoration: none;
+            }
+        }
     }
-
-    .powered-by {
-      float: right;
-
-      a {
-        color: $msa-orange;
-        text-decoration: none;
-      }
-    }
-  }
 }

@@ -7,10 +7,13 @@ $font-size: 16px;
 $sidebar-width: 216px; // Navigation sidebar width
 
 // Fonts
-$primary-font: 'Lato';
-$primary-font-weight: 400;
-$primary-font-weight-thin: 300;
+$font-primary: 'Lato';
+$font-primary-weight: 400;
+$font-primary-weight-thin: 300;
 
 // Color Palette
 $primary-grey: #343434;
 $secondary-grey: #252525;
+
+// Responsive
+$media-desktop-width: 1200px;
