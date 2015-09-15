@@ -11,3 +11,22 @@ section#msa-slogan {
         font-weight: $font-primary-weight;
     }
 }
+
+section#get-social {
+    background: $primary-grey;
+    color: #FFF;
+    padding: 30px 0;
+
+    header {
+        text-align: center;
+    }
+
+    .social-feeds {
+        display: flex;
+        justify-content: space-between;
+
+        > div {
+            flex-grow: 1;
+        }
+    }
+}

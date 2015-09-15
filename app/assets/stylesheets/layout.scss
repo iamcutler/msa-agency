@@ -27,6 +27,12 @@ input, textarea, button {
     outline: none;
 }
 
+// Application container
+.app-container {
+    width: $media-desktop-width;
+    margin: 0 auto;
+}
+
 // Social icons
 ul.social-icons {
     height: 38px;

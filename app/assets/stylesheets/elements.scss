@@ -1,5 +1,11 @@
 @import 'variables';
 
+// Media slider
+section.media-slider {
+    background: #000;
+    height: 480px;
+}
+
 // Newsletter widget
 div.newsletter-widget {
     position: relative;
@@ -53,5 +59,41 @@ div.newsletter-widget {
         bottom: 10px;
         color: #a6a6a6;
         font-size: 12px;
+    }
+}
+
+// Social feeds
+.social-feed {
+    .connect-bar {
+        position: relative;
+        background: #202020;
+        height: 34px;
+        padding: 4px;
+        text-align: center;
+
+        .username {
+            color: $sub-heading-grey;
+            margin-top: 6px;
+            display: block;
+        }
+
+        a.follow-us {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            height: 34px;
+            background: $msa-orange;
+            color: $secondary-font-color;
+            font-size: 14px;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 0 16px;
+
+            &:before {
+                content: ' ';
+                margin-top: 8px;
+                display: block;
+            }
+        }
     }
 }
