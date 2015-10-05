@@ -360,12 +360,66 @@ footer {
     &.main {
         background: #1c1c1c;
         padding-top: 20px;
-        font-size: 12px;
         text-transform: uppercase;
+
+        .app-container {
+            padding: 20px 0 30px 0;
+        }
+
+        .app-container > div {
+            display: inline-block;
+        }
+
+        .addresses {
+            float: left;
+            width: 50%;
+
+            .address {
+                color: #898989;
+                text-align: center;
+
+                &:nth-child(1) {
+                    margin-bottom: 20px;
+                }
+
+                span.location {
+                    color: #e68504;
+                }
+            }
+        }
+
+        .navigation {
+            float: right;
+            width: 50%;
+
+            ul {
+                margin: 0;
+                vertical-align: top;
+                display: inline-block;
+
+                li {
+                    list-style: none;
+
+                    a {
+                        color: #e2e2e2;
+                        text-decoration: none;
+                    }
+
+                    &.sub {
+                        a {
+                            color: #a7a7a7;
+                            font-size: 16px;
+                            text-transform: lowercase;
+                        }
+                    }
+                }
+            }
+        }
 
         .credit-bar {
             background: #000;
             color: #FFF;
+            font-size: 12px;
             margin-top: 20px;
             padding: 30px 20px;
         }

@@ -41,12 +41,12 @@ import LatestNews from './angular/directives/LatestNews';
 import MediaSlider from './angular/directives/MediaSlider';
 import NewsArticle from './angular/directives/NewsArticle';
 import NewsletterWidget from './angular/directives/NewsletterWidget';
-import Navigation from './angular/directives/Navigation';
 import ResizeElement from './angular/directives/ResizeElement';
 import ToggleNavigation from './angular/directives/ToggleNavigation';
 
 // Components
 import InstagramFeed from './angular/components/InstagramFeed';
+import Navigation from './angular/components/Navigation';
 import SocialSection from './angular/components/SocialSection';
 import TwitterFeed from './angular/components/TwitterFeed';
 
