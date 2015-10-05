@@ -33,7 +33,12 @@ angular.module('MSAAgency.controllers', [])
     .controller('SearchController', SearchController);
 
 // Services
-angular.module('MSAAgency.services', []);
+import CommonService from './angular/services/Common';
+import SocialService from './angular/services/Social';
+
+angular.module('MSAAgency.services', [])
+    .service('CommonService', CommonService)
+    .service('SocialService', SocialService);
 
 // Directives
 import ChooseCity from './angular/directives/ChooseCity';
