@@ -26,7 +26,48 @@ section#get-social {
         justify-content: space-between;
 
         > div {
+            max-width: 50%;
             flex-grow: 1;
+
+            article {
+                min-height: 60px;
+                padding: 10px 0;
+                border-bottom: 1px #575757 solid;
+
+                figure {
+                    float: left;
+                    width: 60px;
+                    height: 60px;
+                    overflow: hidden;
+                    margin: 0;
+
+                    img {
+                        width: 60px;
+                        min-height: 60px;
+                    }
+                }
+
+                .tweet {
+                    font-size: 14px;
+                    margin-left: 70px;
+
+                    span {
+                        &.timestamp {
+                            float: right;
+                        }
+
+                        &.author {
+                            width: 100%;
+                            display: block;
+                            margin-bottom: 6px;
+                        }
+
+                        &.author, &.timestamp {
+                            color: #a9a9a9;
+                        }
+                    }
+                }
+            }
         }
     }
 }

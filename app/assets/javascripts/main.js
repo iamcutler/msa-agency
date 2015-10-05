@@ -37,16 +37,18 @@ angular.module('MSAAgency.services', []);
 
 // Directives
 import ChooseCity from './angular/directives/ChooseCity';
-import InstagramFeed from './angular/directives/InstagramFeed';
 import LatestNews from './angular/directives/LatestNews';
 import MediaSlider from './angular/directives/MediaSlider';
 import NewsArticle from './angular/directives/NewsArticle';
 import NewsletterWidget from './angular/directives/NewsletterWidget';
 import Navigation from './angular/directives/Navigation';
 import ResizeElement from './angular/directives/ResizeElement';
-import SocialSection from './angular/directives/SocialSection';
 import ToggleNavigation from './angular/directives/ToggleNavigation';
-import TwitterFeed from './angular/directives/TwitterFeed';
+
+// Components
+import InstagramFeed from './angular/components/InstagramFeed';
+import SocialSection from './angular/components/SocialSection';
+import TwitterFeed from './angular/components/TwitterFeed';
 
 angular.module('MSAAgency.directives', [])
     .directive('chooseCity', ChooseCity)
@@ -61,9 +63,9 @@ angular.module('MSAAgency.directives', [])
     .directive('toggleNavigation', ToggleNavigation)
     .directive('twitterFeed', TwitterFeed);
 
-require('./angular/directives/MainHeader');
-require('./angular/directives/MainFooter');
-require('./angular/directives/SocialIcons');
+require('./angular/components/MainHeader');
+require('./angular/components/MainFooter');
+require('./angular/components/SocialIcons');
 
 // Filters
 angular.module('MSAAgency.filters', []);

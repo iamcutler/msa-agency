@@ -11,6 +11,16 @@ export default function TwitterFeed() {
                     <span class="username">@MSAAgency</span>
                     <a href="https://twitter.com/MSAAGENCY" target="_blank" class="follow-us">Follow</a>
                 </div>
+                <article ng-repeat="item in data">
+                    <figure>
+                        <img ng-src="{{ item.user.profile_image_url_https }}">
+                    </figure>
+                    <div class="tweet">
+                        <span class="timestamp">{{ item.created_at | date: 'MMM dd' }}</span>
+                        <span class="author">{{ item.user.name }}</span>
+                        <span class="text">{{ item.text }}</span>
+                    </div>
+                </article>
             </div>
         `,
         link: (scope) => {
