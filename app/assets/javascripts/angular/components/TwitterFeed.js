@@ -18,7 +18,7 @@ export default function TwitterFeed() {
                     <div class="tweet">
                         <span class="timestamp">{{ item.created_at | date: 'MMM dd' }}</span>
                         <span class="author">{{ item.user.name }}</span>
-                        <span class="text">{{ item.text }}</span>
+                        <span class="text" ng-bind-html="item.text | getTwitterLinks"></span>
                     </div>
                 </article>
             </div>

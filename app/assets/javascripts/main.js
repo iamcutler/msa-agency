@@ -73,4 +73,7 @@ require('./angular/components/MainFooter');
 require('./angular/components/SocialIcons');
 
 // Filters
-angular.module('MSAAgency.filters', []);
+import GetTwitterLinks from './angular/filters/GetTwitterLinks';
+
+angular.module('MSAAgency.filters', [])
+    .filter('getTwitterLinks', GetTwitterLinks);
