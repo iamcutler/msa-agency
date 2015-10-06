@@ -17,6 +17,7 @@ require('./angular/config');
 require('./angular/routes');
 
 // Controllers
+import AboutController from './angular/controllers/About';
 import AppController from './angular/controllers/App';
 import SplashController from './angular/controllers/Splash';
 import HomeController from './angular/controllers/Home';
@@ -25,6 +26,7 @@ import NewsletterController from './angular/controllers/Newsletter';
 import SearchController from './angular/controllers/Search';
 
 angular.module('MSAAgency.controllers', [])
+    .controller('AboutController', AboutController)
     .controller('AppController', AppController)
     .controller('SplashController', SplashController)
     .controller('HomeController', HomeController)
@@ -52,6 +54,7 @@ import ToggleNavigation from './angular/directives/ToggleNavigation';
 // Components
 import InstagramFeed from './angular/components/InstagramFeed';
 import Navigation from './angular/components/Navigation';
+import RosterSlider from './angular/components/RosterSlider';
 import SocialSection from './angular/components/SocialSection';
 import TwitterFeed from './angular/components/TwitterFeed';
 
@@ -64,6 +67,7 @@ angular.module('MSAAgency.directives', [])
     .directive('newsletterWidget', NewsletterWidget)
     .directive('navigation', Navigation)
     .directive('resizeElement', ResizeElement)
+    .directive('rosterSlider', RosterSlider)
     .directive('socialSection', SocialSection)
     .directive('toggleNavigation', ToggleNavigation)
     .directive('twitterFeed', TwitterFeed);

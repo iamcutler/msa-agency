@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 // Media slider
 section.media-slider {
@@ -93,6 +94,114 @@ div.newsletter-widget {
                 content: ' ';
                 margin-top: 8px;
                 display: block;
+            }
+        }
+    }
+}
+
+// Roster slider
+.roster-slider {
+    span.title {
+        color: $msa-orange;
+        font-size: 20px;
+        margin: 20px 60px;
+        display: block;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+
+        li {
+            width: 200px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+            list-style: none;
+            transform-style: preserve-3d;
+            transition: all 0.4s ease-in-out;
+
+            .thumbnail {
+                position: relative;
+                background: #000;
+                width: 100%;
+                height: $roster-slider-height;
+                overflow: hidden;
+                text-decoration: none;
+                display: block;
+
+                img {
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    min-height: $roster-slider-height;
+                }
+
+                .overlay {
+                    position: relative;
+                    white-space: normal;
+                    display: none;
+
+                    .arrow {
+                        @include background-image('enter-arrow');
+                        background-repeat: no-repeat;
+                        background-position: 11px 11px;
+                        width: 18px;
+                        height: 18px;
+                        padding: 10px;
+                        border: 2px #FFF solid;
+                        border-radius: 100px;
+                        margin: 20px auto 8px auto;
+                        display: block;
+                    }
+
+                    .overlay-name {
+                        color: #FFF;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        display: block;
+                    }
+
+                    .overlay-position {
+                        color: #a4a4a4;
+                        font-size: 14px;
+                        padding: 0 10px;
+                    }
+
+                    .overlay-name, .overlay-position {
+                        text-shadow: 0 0 6px #000;
+                    }
+                }
+            }
+
+            .name {
+                color: #FFF;
+                font-size: 14px;
+                text-transform: uppercase;
+                display: block;
+                margin-top: 10px;
+            }
+
+            // Hover state
+            &:hover {
+                width: 250px;
+
+                .thumbnail {
+                    height: 140px;
+
+                    img {
+                        @include opacity(0.5);
+                    }
+                }
+
+                .thumbnail .overlay {
+                    display: block;
+                }
+
+                .name {
+                    visibility: hidden;
+                }
             }
         }
     }
