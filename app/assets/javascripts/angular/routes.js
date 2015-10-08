@@ -37,11 +37,6 @@ angular.module('MSAAgency')
         .state('app.about', {
             url: 'about',
             controller: 'AboutController as AboutCtrl',
-            template: `
-                <section class="twilight">
-                    <roster-slider title="Los Angeles" roster="AboutCtrl.staff.losAngeles"></roster-slider>
-                    <roster-slider title="New York" roster="AboutCtrl.staff.newYork"></roster-slider>
-                </section>
-            `
+            templateUrl: 'templates/about.html'
         });
 });

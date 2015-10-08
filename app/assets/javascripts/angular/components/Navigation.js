@@ -35,7 +35,7 @@ export default function Navigation() {
                             </ul>
                         </li>
                         <li>
-                            <a href="">About Us</a>
+                            <a ui-sref="app.about" toggle-navigation>About Us</a>
                             <ul class="about-us" resize-element resize-width="false" offset-top="112">
                                 <li><a ui-sref="app.home.los-angeles" toggle-navigation>Staff</a></li>
                                 <li><a ui-sref="app.home.new-york" toggle-navigation>Affiliations</a></li>

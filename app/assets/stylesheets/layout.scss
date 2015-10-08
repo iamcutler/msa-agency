@@ -333,23 +333,28 @@ nav#sidebar-nav {
 header.section-header {
     font-size: $section-header-font-size;
     text-align: center;
-    margin: 40px auto;
-    padding: 6px;
+    text-transform: uppercase;
+    margin: 30px auto;
+    padding: 6px 0;
 
-    &:before {
-        width: 100px;
+    &:before, &:after {
+        width: 140px;
         content: ' ';
-        border-top: 2px #d7d7d7 solid;
+        border-top: 3px #d7d7d7 solid;
         display: block;
-        margin: auto;
+        margin: 0 auto 8px auto;
     }
 
     &:after {
-        content: ' ';
-        width: 100px;
-        border-bottom: 2px #d7d7d7 solid;
-        display: block;
-        margin: 5px auto 0 auto;
+        margin: 8px auto 0 auto;
+    }
+
+    &.twilight {
+        color: #FFF;
+
+        &:before, &:after {
+            border-color: #1f1f1f;
+        }
     }
 }
 
