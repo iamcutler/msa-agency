@@ -13,7 +13,7 @@ export default function RosterSlider() {
                 <div class="roster">
                     <ul>
                         <li ng-repeat="member in roster">
-                            <a href="" class="thumbnail">
+                            <a href="" class="thumbnail" title="">
                                 <img ng-src="{{ member.img }}" alt="{{ member.name }}">
                                 <div class="overlay">
                                     <span class="arrow"></span>

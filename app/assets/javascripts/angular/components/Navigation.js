@@ -47,9 +47,9 @@ export default function Navigation() {
                         <li>
                             <a href="">Talent</a>
                             <ul class="talent" resize-element resize-width="false" offset-top="112">
-                                <li><a ui-sref="app.home.los-angeles" toggle-navigation>Dance</a></li>
-                                <li><a ui-sref="app.home.new-york" toggle-navigation>Creative</a></li>
-                                <li><a ui-sref="app.home.new-york" toggle-navigation>Educators</a></li>
+                                <li><a ui-sref="app.talent.category({ category: 'dance' })" toggle-navigation>Dance</a></li>
+                                <li><a ui-sref="app.talent.category({ category: 'creative' })" toggle-navigation>Creative</a></li>
+                                <li><a ui-sref="app.talent.category({ category: 'educators' })" toggle-navigation>Educators</a></li>
                             </ul>
                         </li>
                         <li><a href="">News</a></li>

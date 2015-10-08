@@ -38,5 +38,16 @@ angular.module('MSAAgency')
             url: 'about',
             controller: 'AboutController as AboutCtrl',
             templateUrl: 'templates/about.html'
-        });
+        })
+        // Talent
+        .state('app.talent', {
+            url: 'talent',
+            template: '<ui-view></ui-view>',
+            abstract: true
+        })
+            .state('app.talent.category', {
+                url: '/category/:category',
+                controller: 'TalentCategoryController as TalentCategoryCtrl',
+                templateUrl: 'templates/talent-category.html'
+            });
 });

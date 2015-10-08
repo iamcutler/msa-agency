@@ -1,0 +1,7 @@
+<section class="twilight">
+    <header class="section-header twilight">
+        {{ ::TalentCategoryCtrl.talentCategory }} Talent
+    </header>
+
+    <roster-slider title="{{ name.replace('_', ' ') }}" roster="talent" ng-repeat="(name, talent) in ::TalentCategoryCtrl.talent"></roster-slider>
+</section>
