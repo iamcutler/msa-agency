@@ -24,6 +24,7 @@ import HomeController from './angular/controllers/Home';
 import NavigationController from './angular/controllers/Navigation';
 import NewsletterController from './angular/controllers/Newsletter';
 import SearchController from './angular/controllers/Search';
+import TalentController from './angular/controllers/Talent';
 import TalentCategoryController from './angular/controllers/TalentCategory';
 
 angular.module('MSAAgency.controllers', [])
@@ -34,6 +35,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('NavigationController', NavigationController)
     .controller('NewsletterController', NewsletterController)
     .controller('SearchController', SearchController)
+    .controller('TalentController', TalentController)
     .controller('TalentCategoryController', TalentCategoryController);
 
 // Services
