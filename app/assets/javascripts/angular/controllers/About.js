@@ -1,6 +1,5 @@
 export default class AboutController {
-    constructor()
-    {
+    constructor() {
         this.staff = {
             losAngeles: [
                 { name: 'Julie McDonald', title: 'Founder/Sr. Agent', img: 'http://www.msaagency.com/images/staff/74858411100511.jpg' },

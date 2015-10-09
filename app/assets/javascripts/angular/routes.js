@@ -39,6 +39,11 @@ angular.module('MSAAgency')
             controller: 'AboutController as AboutCtrl',
             templateUrl: 'templates/about.html'
         })
+        .state('app.staff', {
+            url: 'about/staff',
+            controller: 'AboutController as AboutCtrl',
+            templateUrl: 'templates/about.html'
+        })
         // Talent
         .state('app.talent', {
             url: 'talent',
