@@ -8,7 +8,9 @@
     text-transform: uppercase;
 }
 
+// ----------------------------------------
 // Header
+// ----------------------------------------
 header.talent {
     background: #000;
     color: #FFF;
@@ -23,6 +25,7 @@ header.talent {
         position: absolute;
         top: 0;
         left: 0;
+        width: 100%;
 
         img {
             width: 100%;
@@ -102,7 +105,9 @@ header.talent {
     }
 }
 
+// ----------------------------------------
 // Navigation
+// ----------------------------------------
 nav.talent-navigation {
     background: #1c1c1c;
     white-space: nowrap;
@@ -143,12 +148,16 @@ nav.talent-navigation {
     }
 }
 
+// ----------------------------------------
 // Sections
+// ----------------------------------------
 section[id^='talent-'] {
     padding: 40px 0;
 }
 
+// ----------------------------------------
 // Resume
+// ----------------------------------------
 section#talent-resume {
     .resume-list {
         margin-top: 20px;
@@ -167,10 +176,38 @@ section#talent-resume {
         .resume-row {
             background: #FFF;
             font-size: 14px;
-            padding: 6px;
+            padding: 10px;
             margin-bottom: 4px;
             display: flex;
             justify-content: space-between;
+        }
+    }
+}
+
+// ----------------------------------------
+// Photos
+// ----------------------------------------
+section#talent-photos {
+    background: $secondary-grey;
+    font-size: 0;
+
+    a.photo:link, a.photo:visited {
+        background: #000;
+        width: (100% / 5);
+        height: 176px;
+        overflow: hidden;
+        display: inline-block;
+
+        img {
+            width: 100%;
+            min-height: 100%;
+            transition: all $transition-duration $transition-easing;
+        }
+
+        &:hover {
+            img {
+                opacity: 0.6;
+            }
         }
     }
 }
