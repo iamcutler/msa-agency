@@ -62,6 +62,7 @@ import RosterSlider from './angular/components/RosterSlider';
 import SocialSection from './angular/components/SocialSection';
 import TalentResume from './angular/components/TalentResume';
 import TalentHeader from './angular/components/TalentHeader';
+import TalentNavigation from './angular/components/TalentNavigation';
 import TalentSectionHeader from './angular/components/TalentSectionHeader';
 import TwitterFeed from './angular/components/TwitterFeed';
 
@@ -77,6 +78,7 @@ angular.module('MSAAgency.directives', [])
     .directive('rosterSlider', RosterSlider)
     .directive('socialSection', SocialSection)
     .directive('talentHeader', TalentHeader)
+    .directive('talentNavigation', TalentNavigation)
     .directive('talentResume', TalentResume)
     .directive('talentSectionHeader', TalentSectionHeader)
     .directive('toggleNavigation', ToggleNavigation)
