@@ -3,19 +3,25 @@ angular.module('MSAAgency.directives')
   return {
     restrict: 'E',
     replace: true,
+    scope: {
+        facebook: '@',
+        twitter: '@',
+        instagram: '@',
+        youtube: '@'
+    },
     template: `
       <ul class="social-icons">
-        <li class="facebook">
-          <a href="https://www.facebook.com/MSAagency" target="_blank"></a>
+        <li class="facebook" ng-if="facebook">
+          <a href="{{ facebook }}" target="_blank"></a>
         </li>
-        <li class="twitter">
-          <a href="https://twitter.com/MSAAGENCY" target="_blank"></a>
+        <li class="twitter" ng-if="twitter">
+          <a href="{{ twitter }}" target="_blank"></a>
         </li>
-        <li class="instagram">
-          <a href="https://instagram.com/msaagency" target="_blank"></a>
+        <li class="instagram" ng-if="instagram">
+          <a href="{{ instagram }}" target="_blank"></a>
         </li>
-        <li class="youtube">
-          <a href="https://www.youtube.com/user/MSAGlobalLeader" target="_blank"></a>
+        <li class="youtube" ng-if="youtube">
+          <a href="{{ youtube }}" target="_blank"></a>
         </li>
       </ul>
     `

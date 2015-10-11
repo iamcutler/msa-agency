@@ -1,6 +1,6 @@
 describe('Directive: ResizeElement', function() {
     var $rootScope, $scope, $compile, element, elementWithNoWidth, elementWithNoHeight;
-    var elementWithOffSetBottom, elementWithOffsetTop;
+    var elementWithOffSetBottom, elementWithOffsetTop, elementWithOffSetTop;
 
     beforeEach(function() {
         module('MSAAgency', 'MSAAgency.directives');
