@@ -60,6 +60,7 @@ import InstagramFeed from './angular/components/InstagramFeed';
 import Navigation from './angular/components/Navigation';
 import RosterSlider from './angular/components/RosterSlider';
 import SocialSection from './angular/components/SocialSection';
+import TalentHeader from './angular/components/TalentHeader';
 import TwitterFeed from './angular/components/TwitterFeed';
 
 angular.module('MSAAgency.directives', [])
@@ -73,6 +74,7 @@ angular.module('MSAAgency.directives', [])
     .directive('resizeElement', ResizeElement)
     .directive('rosterSlider', RosterSlider)
     .directive('socialSection', SocialSection)
+    .directive('talentHeader', TalentHeader)
     .directive('toggleNavigation', ToggleNavigation)
     .directive('twitterFeed', TwitterFeed);
 
