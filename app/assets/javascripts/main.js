@@ -64,6 +64,7 @@ import TalentHeader from './angular/components/TalentHeader';
 import TalentPhotos from './angular/components/TalentPhotos';
 import TalentNavigation from './angular/components/TalentNavigation';
 import TalentResume from './angular/components/TalentResume';
+import TalentVideos from './angular/components/TalentVideos';
 import TalentSectionHeader from './angular/components/TalentSectionHeader';
 import TwitterFeed from './angular/components/TwitterFeed';
 
@@ -83,6 +84,7 @@ angular.module('MSAAgency.directives', [])
     .directive('talentPhotos', TalentPhotos)
     .directive('talentResume', TalentResume)
     .directive('talentSectionHeader', TalentSectionHeader)
+    .directive('talentVideos', TalentVideos)
     .directive('toggleNavigation', ToggleNavigation)
     .directive('twitterFeed', TwitterFeed);
 
