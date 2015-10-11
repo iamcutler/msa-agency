@@ -10,6 +10,7 @@ describe('Component: SocialIcons', () => {
             $compile = $injector.get('$compile');
 
             social = {
+                website: 'http://msaagency.com',
                 facebook: "https://www.facebook.com/MSAagency",
                 twitter: "https://twitter.com/MSAAGENCY",
                 instagram: "https://instagram.com/msaagency",
@@ -20,6 +21,7 @@ describe('Component: SocialIcons', () => {
              * Elements
              **/
             element = angular.element(`<social-icons
+                website="${social.website}"
                 facebook="${social.facebook}"
                 twitter="${social.twitter}"
                 instagram="${social.instagram}"
@@ -33,6 +35,10 @@ describe('Component: SocialIcons', () => {
     });
 
     describe('isolate scope:', () => {
+        it('should pass website url', () => {
+            expect(element.isolateScope().website).toEqual(social.website);
+        });
+
         it('should pass facebook url', () => {
             expect(element.isolateScope().facebook).toEqual(social.facebook);
         });

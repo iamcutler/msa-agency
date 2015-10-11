@@ -17,7 +17,12 @@ export default function TalentHeader() {
                     <h1>Napoleon and Tabitha Dumo</h1>
                     <h3>Creative Directors/Choreographers</h3>
 
-                    <social-icons></social-icons>
+                    <social-icons
+                        website="http://shop.nappytabs.com/"
+                        facebook="http://msaagency.com/nappytabs"
+                        twitter="http://msaagency.com/nappytabs"
+                        instagram="https://instagram.com/nappytabs/"
+                        youtube="http://www.youtube.com/user/Nappytabs"></social-icons>
 
                     <div class="button-group">
                         <a href="" class="book-btn">Book</a>
