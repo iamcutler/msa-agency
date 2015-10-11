@@ -4,7 +4,7 @@ export default function TalentResume() {
         replace: true,
         scope: {},
         template: `
-            <section class="talent-resume">
+            <section id="talent-resume">
                 <div class="app-container">
                     <div class="resume-list">
                         <span class="resume-category">Concerts / Tours / Events:</span>
