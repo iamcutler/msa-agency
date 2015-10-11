@@ -1,4 +1,4 @@
-describe('Directive: ChooseCity', function() {
+describe('Component: ChooseCity', function() {
     var $rootScope, $scope, $compile, element;
 
     beforeEach(function() {
