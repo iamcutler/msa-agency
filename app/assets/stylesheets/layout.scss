@@ -29,7 +29,8 @@ input, textarea, button {
 
 // Application container
 .app-container {
-    width: $media-desktop-width;
+    max-width: $media-desktop-width;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
