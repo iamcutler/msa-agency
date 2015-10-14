@@ -6,12 +6,12 @@ export default function TalentHeader() {
         template: `
             <header class="talent">
                 <div class="background">
-                    <img src="http://www.lissfaindance.org/press/downloads/LissFainDance_LindseyFitzmorris_Looking,Looking.jpg">
+                    <img src="http://msaagency.com/images/clients/528356101013.jpeg">
                 </div>
 
                 <div class="talent">
                     <a href="" class="talent-thumb">
-                        <img src="http://www.lissfaindance.org/press/downloads/LissFainDance_LindseyFitzmorris_Looking,Looking.jpg">
+                        <img src="http://msaagency.com/images/clients/21132325101013.jpeg">
                     </a>
 
                     <h1>Napoleon and Tabitha Dumo</h1>
