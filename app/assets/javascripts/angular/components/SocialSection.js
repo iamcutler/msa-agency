@@ -10,6 +10,7 @@ export default function SocialSection() {
             <section id="get-social">
                 <div class="app-container">
                     <header>
+                        <i></i>
                         Get social with MSA
                     </header>
 
