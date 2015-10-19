@@ -12,19 +12,49 @@
     .slide-navigation {
         position: absolute;
         top: 0;
-        background: #000;
         width: 10%;
         height: 100%;
         opacity: 0.6;
-        filter: blur(6px);
         cursor: pointer;
+        z-index: 2;
 
-        &.previous {
-            z-index: 1000;
+        .overlay {
+            background: #000;
+            width: 100%;
+            height: 100%;
+            filter: blur(6px);
+        }
+
+        &:hover {
+            .arrow {
+                background-position-y: -121px;
+            }
         }
 
         &.next {
             right: 0;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 170px;
+            left: 50%;
+            @include background-image('slider-arrows');
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            width: 37px;
+            height: 120px;
+            overflow: hidden;
+            margin-left: -18px;
+            display: block;
+
+            &.left {
+
+            }
+
+            &.right {
+                background-position-x: -39px;
+            }
         }
     }
 

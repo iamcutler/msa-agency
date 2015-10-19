@@ -7,7 +7,10 @@ export default function MediaSlider($timeout, $interval) {
         },
         template: `
             <section id="media-slider">
-                <div class="slide-navigation previous" ng-click="previousSlide()"></div>
+                <div class="slide-navigation previous" ng-click="previousSlide()">
+                    <div class="overlay"></div>
+                    <div class="arrow left"></div>
+                </div>
 
                 <div class="slides">
                     <ul>
@@ -17,7 +20,10 @@ export default function MediaSlider($timeout, $interval) {
                     </ul>
                 </div>
 
-                <div class="slide-navigation next" ng-click="nextSlide()"></div>
+                <div class="slide-navigation next" ng-click="nextSlide()">
+                    <div class="overlay"></div>
+                    <div class="arrow right"></div>
+                </div>
             </section>
         `,
         link: (scope, element, attrs) => {
