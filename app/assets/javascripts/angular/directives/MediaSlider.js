@@ -1,4 +1,4 @@
-export default function MediaSlider() {
+export default function MediaSlider($timeout, $interval) {
     return {
         restrict: 'E',
         replace: true,
@@ -6,9 +6,88 @@ export default function MediaSlider() {
             data: '='
         },
         template: `
-            <section class="media-slider">
-                
+            <section id="media-slider">
+                <div class="slide-navigation previous" ng-click="previousSlide()"></div>
+
+                <div class="slides">
+                    <ul>
+                        <li ng-repeat="slide in data">
+                            <img ng-src="{{ slide.src }}">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="slide-navigation next" ng-click="nextSlide()"></div>
             </section>
-        `
+        `,
+        link: (scope, element, attrs) => {
+            $timeout(() => {
+                let sliderElement = angular.element(element[0].querySelector('ul'));
+                let slideList = sliderElement.find('li');
+                let _slideCount = slideList.length;
+                let _currentSlide = 0;
+                let _slideDelay = 5000;
+
+                /**
+                 * Move slide position
+                 *
+                 * @param {int} nextSlide
+                 */
+                let moveSlidePosition = (nextSlide = 0) => {
+                    let slideWidth = $('#media-slider ul li').first().width();
+
+                    sliderElement.animate({
+                        left: `-${slideWidth * nextSlide}px`
+                    }, 400);
+                };
+
+                /**
+                 * Set next slide count
+                 */
+                let setNextSlide = () => {
+                    if(_currentSlide + 1 >= _slideCount) {
+                        _currentSlide = 0;
+                    } else {
+                        _currentSlide++; // increment current slide
+                    }
+                };
+
+                /**
+                 * Previous slide
+                 */
+                scope.previousSlide = () => {
+                    $interval.cancel(slideTimer); // Cancel timer
+
+                    if(_currentSlide < 0) {
+                        _currentSlide = 0;
+                        return moveSlidePosition();
+                    }
+
+                    if(_currentSlide === 0) {
+                        _currentSlide = (_slideCount - 1);
+                        return moveSlidePosition(_currentSlide);
+                    }
+
+                    _currentSlide--; // reverse increment current slide
+                    moveSlidePosition(_currentSlide);
+                };
+
+                /**
+                 * Next slide
+                 */
+                scope.nextSlide = () => {
+                    setNextSlide();
+
+                    $interval.cancel(slideTimer); // Cancel timer
+
+                    moveSlidePosition(_currentSlide);
+                };
+
+                let slideTimer = $interval(() => {
+                    setNextSlide();
+                    moveSlidePosition(_currentSlide);
+                }, _slideDelay);
+            }, 0);
+        }
     };
 }
