@@ -20,6 +20,37 @@ $retina-suffix: '@2x';
     }
 }
 
+// Responsive
+@mixin responsive-phone-retina() {
+    @media only screen and (min-width : 320px) and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin responsive-phones() {
+    @media only screen and (min-width : 480px) and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin responsive-tablets() {
+    @media only screen and (min-width : 768px) and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin responsive-desktops() {
+    @media only screen and (min-width : 992px) and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin responsive-wide() {
+    @media only screen and (min-width : 1200px) {
+        @content;
+    }
+}
+
 // Mobile
 @mixin mobile-apple-mini-ipad() {
     @media only screen

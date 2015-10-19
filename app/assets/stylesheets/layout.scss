@@ -131,6 +131,7 @@ header {
             padding: 10px 0 10px 20px;
             font-weight: 300;
             text-transform: uppercase;
+            text-align: center;
             letter-spacing: 14px;
             margin-left: -180px;
         }
@@ -375,7 +376,7 @@ footer {
         text-transform: uppercase;
 
         .app-container {
-            padding: 20px 0 30px 0;
+            padding: 20px 20px 30px 20px;
         }
 
         .app-container > div {
@@ -406,6 +407,7 @@ footer {
 
             ul {
                 margin: 0;
+                padding-left: 20px;
                 vertical-align: top;
                 display: inline-block;
 

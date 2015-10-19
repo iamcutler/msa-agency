@@ -1,0 +1,181 @@
+@import 'mixins';
+
+@include responsive-phone-retina() {
+    // Main header
+    header.main {
+        h1.logo {
+            display: none;
+        }
+
+        h2 {
+            display: none;
+        }
+    }
+
+    // MSA news
+    section#msa-news {
+        margin: auto 20px !important;
+
+        div.articles {
+            article {
+                width: 100%;
+            }
+
+            div.newsletter-widget {
+                width: 100% !important;
+
+                form {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    // Home social section
+    section#get-social {
+        .social-feeds {
+            flex-direction: column;
+
+            .social-feed {
+                max-width: 100%;
+                margin: 0 !important;
+
+                &:nth-child(1) {
+                    margin-bottom: 10px !important;
+                }
+            }
+        }
+    }
+
+    // Main footer
+    footer.main {
+        .app-container {
+            padding-bottom: 0;
+
+            div.addresses {
+                width: 100%;
+            }
+
+            div.navigation {
+                display: none;
+            }
+        }
+
+        .credit-bar {
+            text-align: center;
+
+            span {
+                float: none;
+                display: block;
+
+                &:nth-child(1) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+@include responsive-phones() {
+    // Main header
+    header.main {
+        h2 {
+            display: none;
+        }
+    }
+
+    // MSA news
+    section#msa-news {
+        margin: auto 20px !important;
+
+        div.articles {
+            article {
+                width: 100%;
+            }
+
+            div.newsletter-widget {
+                width: 100% !important;
+
+                form {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    // Home social section
+    section#get-social {
+        .social-feeds {
+            flex-direction: column;
+
+            .social-feed {
+                max-width: 100%;
+                margin: 0 !important;
+
+                &:nth-child(1) {
+                    margin-bottom: 10px !important;
+                }
+            }
+        }
+    }
+
+    // Main footer
+    footer.main {
+        .app-container {
+            padding-bottom: 0;
+
+            div.addresses {
+                width: 100%;
+            }
+
+            div.navigation {
+                display: none;
+            }
+        }
+    }
+}
+
+@include responsive-tablets() {
+    // Main header
+    header.main {
+        h2 {
+            top: 26px;
+            width: 200px;
+            margin-left: -90px;
+            display: block;
+        }
+    }
+
+    // Main footer
+    footer.main {
+        .app-container {
+            padding: 20px;
+
+            div.addresses {
+                font-size: 14px;
+            }
+
+            div.navigation {
+                ul {
+                    li {
+                        a {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive-desktops() {
+    // Main header
+    header.main {
+        h2 {
+            top: 38px;
+            width: 360px;
+            margin-left: -180px;
+            display: block;
+        }
+    }
+}

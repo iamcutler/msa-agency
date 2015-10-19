@@ -1,7 +1,7 @@
 @import 'variables';
 
 section#msa-news {
-    width: $media-desktop-width;
+    max-width: $media-desktop-width;
     margin: auto;
 
     div.articles {
