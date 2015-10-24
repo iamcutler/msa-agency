@@ -53,7 +53,7 @@ export default function Navigation() {
                             </ul>
                         </li>
                         <li><a href="">News</a></li>
-                        <li><a href="">Contact Us</a></li>
+                        <li><a ui-sref="app.contact">Contact Us</a></li>
                         <li><a href="">Submissions</a></li>
                     <ul>
                 </div>

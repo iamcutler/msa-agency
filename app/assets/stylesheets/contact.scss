@@ -1,0 +1,36 @@
+@import 'variables';
+
+// Office locations
+section#office-locations {
+    background: #f47820 url('/assets/office-locations-bg.jpg') no-repeat;
+    background-size: cover;
+    color: #FFF;
+    text-align: center;
+    white-space: nowrap;
+    padding: 20px 40px 40px;
+
+    header.section-header {
+        &:before {
+            border-top-color: $contact-office-locations-font-secondary-color;
+        }
+
+        &:after {
+            border-top-color: $contact-office-locations-font-secondary-color;
+        }
+    }
+
+    div.address {
+        width: 50%;
+        display: inline-block;
+        margin-bottom: 20px;
+
+        h3 {
+            color: $contact-office-locations-font-secondary-color;
+            font-size: 20px;
+        }
+
+        span.name {
+
+        }
+    }
+}

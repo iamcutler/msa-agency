@@ -23,7 +23,7 @@ angular.module('MSAAgency.directives')
                         <ul>
                             <li><a ui-sref="splash">Home</a></li>
                             <li><a ui-sref="">News</a></li>
-                            <li><a ui-sref="">Contact Us</a></li>
+                            <li><a ui-sref="app.contact">Contact Us</a></li>
                         </ul>
                         <ul>
                             <li><a ui-sref="">About Us</a></li>

@@ -19,6 +19,7 @@ require('./angular/routes');
 // Controllers
 import AboutController from './angular/controllers/About';
 import AppController from './angular/controllers/App';
+import ContactController from './angular/controllers/Contact';
 import SplashController from './angular/controllers/Splash';
 import HomeController from './angular/controllers/Home';
 import NavigationController from './angular/controllers/Navigation';
@@ -30,6 +31,7 @@ import TalentCategoryController from './angular/controllers/TalentCategory';
 angular.module('MSAAgency.controllers', [])
     .controller('AboutController', AboutController)
     .controller('AppController', AppController)
+    .controller('ContactController', ContactController)
     .controller('SplashController', SplashController)
     .controller('HomeController', HomeController)
     .controller('NavigationController', NavigationController)
@@ -58,6 +60,7 @@ import ToggleNavigation from './angular/directives/ToggleNavigation';
 // Components
 import InstagramFeed from './angular/components/InstagramFeed';
 import Navigation from './angular/components/Navigation';
+import OfficeLocations from './angular/components/OfficeLocations';
 import RosterSlider from './angular/components/RosterSlider';
 import SocialSection from './angular/components/SocialSection';
 import TalentHeader from './angular/components/TalentHeader';
@@ -76,6 +79,7 @@ angular.module('MSAAgency.directives', [])
     .directive('newsArticle', NewsArticle)
     .directive('newsletterWidget', NewsletterWidget)
     .directive('navigation', Navigation)
+    .directive('officeLocations', OfficeLocations)
     .directive('resizeElement', ResizeElement)
     .directive('rosterSlider', RosterSlider)
     .directive('socialSection', SocialSection)
