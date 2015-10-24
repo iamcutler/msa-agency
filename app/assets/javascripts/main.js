@@ -50,6 +50,7 @@ angular.module('MSAAgency.services', [])
 
 // Directives
 import ChooseCity from './angular/directives/ChooseCity';
+import AnimatedInput from './angular/directives/AnimatedInput';
 import LatestNews from './angular/directives/LatestNews';
 import MediaSlider from './angular/directives/MediaSlider';
 import NewsArticle from './angular/directives/NewsArticle';
@@ -58,6 +59,7 @@ import ResizeElement from './angular/directives/ResizeElement';
 import ToggleNavigation from './angular/directives/ToggleNavigation';
 
 // Components
+import ContactForm from './angular/components/ContactForm';
 import InstagramFeed from './angular/components/InstagramFeed';
 import Navigation from './angular/components/Navigation';
 import OfficeLocations from './angular/components/OfficeLocations';
@@ -73,6 +75,8 @@ import TwitterFeed from './angular/components/TwitterFeed';
 
 angular.module('MSAAgency.directives', [])
     .directive('chooseCity', ChooseCity)
+    .directive('contactForm', ContactForm)
+    .directive('animatedInput', AnimatedInput)
     .directive('instagramFeed', InstagramFeed)
     .directive('latestNews', LatestNews)
     .directive('mediaSlider', MediaSlider)

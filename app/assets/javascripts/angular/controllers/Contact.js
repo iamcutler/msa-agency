@@ -1,3 +1,11 @@
 export default class ContactController {
-    constructor() {}
+    constructor() {
+        this.contact_form = {
+            regarding: '',
+            name: '',
+            email: '',
+            phone: '',
+            message: ''
+        };
+    }
 }

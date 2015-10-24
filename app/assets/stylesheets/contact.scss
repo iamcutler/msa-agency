@@ -1,5 +1,40 @@
 @import 'variables';
 
+// Contact forms
+section#contact-us {
+    max-width: 440px;
+    padding: 0 20px 40px 20px;
+    margin: auto;
+
+    input {
+        margin-bottom: 10px;
+    }
+
+    #contact-form {
+        span.contact-form-notice {
+            color: #727272;
+            font-size: 14px;
+            text-transform: uppercase;
+            text-align: center;
+            display: block;
+            padding-bottom: 10px;
+        }
+
+        form {
+            button {
+                background: $secondary-grey;
+                color: #FFF;
+                width: 100%;
+                font-size: 14px;
+                text-transform: uppercase;
+                border: none;
+                cursor: pointer;
+                padding: 14px 0;
+            }
+        }
+    }
+}
+
 // Office locations
 section#office-locations {
     background: #f47820 url('/assets/office-locations-bg.jpg') no-repeat;
