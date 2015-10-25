@@ -42,10 +42,12 @@ angular.module('MSAAgency.controllers', [])
 
 // Services
 import CommonService from './angular/services/Common';
+import ContactService from './angular/services/Contact';
 import SocialService from './angular/services/Social';
 
 angular.module('MSAAgency.services', [])
     .service('CommonService', CommonService)
+    .service('ContactService', ContactService)
     .service('SocialService', SocialService);
 
 // Directives
