@@ -208,106 +208,157 @@ section.twilight {
     }
 
     .roster {
+        position: relative;
         background: #2d2d2d;
 
-        ul {
-            max-height: $roster-slider-height;
-            margin: 0;
-            padding: 0;
-            white-space: nowrap;
+        .navigation {
+            position: absolute;
+            background: rgba(0,0,0,0.7);
+            top: 0;
+            width: 50px;
+            height: 100%;
+            cursor: pointer;
+            z-index: 2;
 
-            li {
-                width: (100% / 6);
-                text-align: center;
-                display: inline-block;
-                vertical-align: top;
-                list-style: none;
-                transform-style: preserve-3d;
-                transition: all 0.4s ease-in-out;
-
-                .thumbnail {
-                    position: relative;
-                    background: #000;
-                    width: 100%;
-                    height: $roster-slider-height;
-                    overflow: hidden;
-                    text-decoration: none;
-                    display: block;
-
-                    img {
-                        position: absolute;
-                        left: 0;
-                        width: 100%;
-                        min-height: $roster-slider-height;
-                    }
-
-                    .overlay {
-                        position: relative;
-                        white-space: normal;
-                        display: none;
-
-                        .arrow {
-                            @include background-image('enter-arrow');
-                            background-repeat: no-repeat;
-                            background-position: 11px 11px;
-                            width: 18px;
-                            height: 18px;
-                            padding: 10px;
-                            border: 2px #FFF solid;
-                            border-radius: 100px;
-                            margin: 20px auto 8px auto;
-                            display: block;
-                        }
-
-                        .overlay-name {
-                            color: #FFF;
-                            font-size: 14px;
-                            text-transform: uppercase;
-                            display: block;
-                        }
-
-                        .overlay-position {
-                            color: #a4a4a4;
-                            font-size: 14px;
-                            padding: 0 10px;
-                        }
-
-                        .overlay-name, .overlay-position {
-                            text-shadow: 0 0 6px #000;
-                        }
-                    }
+            &:hover {
+                .arrow {
+                    transform: scale(1.2);
                 }
+            }
 
-                .name {
-                    position: absolute;
-                    width: 100%;
-                    color: #FFF;
-                    font-size: 14px;
-                    text-transform: uppercase;
-                    display: block;
-                    margin-top: 10px;
+            .arrow {
+                @include background-image('roster-slider-arrows');
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                width: 16px;
+                height: 28px;
+                margin: 48px auto auto;
+                display: block;
+                overflow: hidden;
+                transition: all $transition-duration $transition-easing;
+            }
+
+            &.left {
+                left: 0;
+            }
+
+            &.right {
+                right: 0;
+
+                .arrow {
+                    background-position: right;
                 }
+            }
+        }
 
-                // Hover state
-                &:hover {
-                    width: $roster-spotlight-calc;
-                    margin-left: -20px;
+        .thumbs {
+            position: relative;
+            height: 120px;
+            margin: 0 50px;
+
+            ul {
+                position: absolute;
+                top: 0;
+                left:0;
+                width: 100%;
+                max-height: $roster-slider-height;
+                margin: 0;
+                padding: 0;
+                white-space: nowrap;
+
+                li {
+                    width: (100% / 6);
+                    text-align: center;
+                    display: inline-block;
+                    vertical-align: top;
+                    list-style: none;
+                    transform-style: preserve-3d;
+                    transition: all 0.4s ease-in-out;
 
                     .thumbnail {
                         position: relative;
-                        height: 140px;
+                        background: #000;
+                        width: 100%;
+                        height: $roster-slider-height;
+                        overflow: hidden;
+                        text-decoration: none;
+                        display: block;
 
                         img {
-                            @include opacity(0.5);
+                            position: absolute;
+                            left: 0;
+                            width: 100%;
+                            min-height: $roster-slider-height;
+                        }
+
+                        .overlay {
+                            position: relative;
+                            white-space: normal;
+                            display: none;
+
+                            .arrow {
+                                @include background-image('enter-arrow');
+                                background-repeat: no-repeat;
+                                background-position: 11px 11px;
+                                width: 18px;
+                                height: 18px;
+                                padding: 10px;
+                                border: 2px #FFF solid;
+                                border-radius: 100px;
+                                margin: 20px auto 8px auto;
+                                display: block;
+                            }
+
+                            .overlay-name {
+                                color: #FFF;
+                                font-size: 14px;
+                                text-transform: uppercase;
+                                display: block;
+                            }
+
+                            .overlay-position {
+                                color: #a4a4a4;
+                                font-size: 14px;
+                                padding: 0 10px;
+                            }
+
+                            .overlay-name, .overlay-position {
+                                text-shadow: 0 0 6px #000;
+                            }
                         }
                     }
 
-                    .thumbnail .overlay {
+                    .name {
+                        position: absolute;
+                        width: 100%;
+                        color: #FFF;
+                        font-size: 14px;
+                        text-transform: uppercase;
                         display: block;
+                        margin-top: 10px;
                     }
 
-                    .name {
-                        visibility: hidden;
+                    // Hover state
+                    &:hover {
+                        width: $roster-spotlight-calc;
+                        margin-left: -20px;
+
+                        .thumbnail {
+                            position: relative;
+                            height: 140px;
+
+                            img {
+                                @include opacity(0.5);
+                            }
+                        }
+
+                        .thumbnail .overlay {
+                            display: block;
+                        }
+
+                        .name {
+                            visibility: hidden;
+                        }
                     }
                 }
             }
