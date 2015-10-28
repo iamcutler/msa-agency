@@ -1,7 +1,7 @@
 class StaffsController < ApplicationController
     # GET /staff
     def index
-        @staff = Staff.all()
+        @staff = Staff.all().order(:order)
     end
 
     # GET /staff/slug
