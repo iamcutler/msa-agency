@@ -2,7 +2,7 @@ describe('Directive: TwitterFeed', function() {
     var $rootScope, $scope, $compile, element, mocks;
 
     beforeEach(function() {
-        module('MSAAgency', 'MSAAgency.directives');
+        angular.mock.module('MSAAgency', 'MSAAgency.directives');
 
         inject(function($injector) {
             $rootScope = $injector.get('$rootScope');

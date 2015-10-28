@@ -3,7 +3,7 @@ describe('Component: newsArticle', function() {
     var mocks;
 
     beforeEach(function() {
-        module('MSAAgency', 'MSAAgency.directives');
+        angular.mock.module('MSAAgency', 'MSAAgency.directives');
 
         inject(function($injector) {
             $rootScope = $injector.get('$rootScope');

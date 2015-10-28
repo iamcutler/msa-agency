@@ -3,7 +3,7 @@ describe('Controller: Contact', () => {
     var ContactCtrl;
 
     beforeEach(() => {
-        module('MSAAgency.controllers');
+        angular.mock.module('MSAAgency.controllers');
 
         inject($injector => {
             $rootScope = $injector.get('$rootScope');

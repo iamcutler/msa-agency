@@ -2,7 +2,7 @@ describe('filter: getTwitterLinks', function() {
     var $filter, twitterLinkFilter;
 
     beforeEach(function() {
-        module('MSAAgency.filters');
+        angular.mock.module('MSAAgency.filters');
 
         inject(function($injector) {
             $filter = $injector.get('$filter');

@@ -2,7 +2,7 @@ describe('Controller: Splash', function() {
     var $rootScope, $scope, $controller, SplashCtrl;
 
     beforeEach(function() {
-        module('MSAAgency', 'MSAAgency.controllers');
+        angular.mock.module('MSAAgency', 'MSAAgency.controllers');
 
         inject(function($injector) {
             $rootScope = $injector.get('$rootScope');

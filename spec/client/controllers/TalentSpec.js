@@ -3,7 +3,7 @@ describe('Controller: Talent', function() {
     var TalentCtrl;
 
     beforeEach(function() {
-        module('MSAAgency.controllers');
+        angular.mock.module('MSAAgency.controllers');
 
         inject(function($injector) {
             $rootScope = $injector.get('$rootScope');

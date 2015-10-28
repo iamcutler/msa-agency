@@ -2,7 +2,7 @@ describe('Service: Contact', () => {
     var $httpBackend, ContactService;
 
     beforeEach(() => {
-        module('MSAAgency.services');
+        angular.mock.module('MSAAgency.services');
 
         inject($injector => {
             $httpBackend = $injector.get('$httpBackend');

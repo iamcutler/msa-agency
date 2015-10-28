@@ -2,7 +2,7 @@ describe('Controller: Navigation', function() {
     var $rootScope, $scope, $controller, $state, NavCtrl;
 
     beforeEach(function() {
-        module('MSAAgency', 'MSAAgency.controllers');
+        angular.mock.module('MSAAgency', 'MSAAgency.controllers');
 
         inject(function($injector) {
             $rootScope = $injector.get('$rootScope');

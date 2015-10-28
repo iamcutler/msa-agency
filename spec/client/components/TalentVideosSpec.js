@@ -2,7 +2,7 @@ describe('Component: TalentVideos', function() {
     var $rootScope, $scope, $compile, element;
 
     beforeEach(function() {
-        module('MSAAgency.directives');
+        angular.mock.module('MSAAgency.directives');
 
         inject(function($injector) {
             $rootScope = $injector.get('$rootScope');

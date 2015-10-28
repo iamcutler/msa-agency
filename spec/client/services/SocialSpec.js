@@ -3,7 +3,7 @@ describe('Service: Social', function() {
     var responses;
 
     beforeEach(function() {
-        module('MSAAgency', 'MSAAgency.services');
+        angular.mock.module('MSAAgency', 'MSAAgency.services');
 
         inject(function($injector) {
             $rootScope = $injector.get('$rootScope');

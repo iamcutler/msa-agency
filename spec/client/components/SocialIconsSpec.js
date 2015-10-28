@@ -2,7 +2,7 @@ describe('Component: SocialIcons', () => {
     var $rootScope, $scope, $compile, element, social;
 
     beforeEach(() => {
-        module('MSAAgency.directives');
+        angular.mock.module('MSAAgency.directives');
 
         inject($injector => {
             $rootScope = $injector.get('$rootScope');

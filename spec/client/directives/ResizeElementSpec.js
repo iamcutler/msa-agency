@@ -3,7 +3,7 @@ describe('Directive: ResizeElement', function() {
     var elementWithOffSetBottom, elementWithOffsetTop, elementWithOffSetTop;
 
     beforeEach(function() {
-        module('MSAAgency', 'MSAAgency.directives');
+        angular.mock.module('MSAAgency', 'MSAAgency.directives');
 
         inject(function($injector) {
             $rootScope = $injector.get('$rootScope');
