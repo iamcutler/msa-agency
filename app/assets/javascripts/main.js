@@ -2,6 +2,7 @@
 
 require('angular/angular.min');
 require('angular-ui-router/build/angular-ui-router.min');
+require('angular-sanitize/angular-sanitize.min');
 
 // AngularJS
 angular.module('MSAAgency', [
@@ -9,7 +10,8 @@ angular.module('MSAAgency', [
   'MSAAgency.services',
   'MSAAgency.directives',
   'MSAAgency.filters',
-  'ui.router'
+  'ui.router',
+  'ngSanitize',
 ]);
 
 // Configuration
