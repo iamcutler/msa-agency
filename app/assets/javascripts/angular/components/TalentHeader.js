@@ -2,7 +2,11 @@ export default function TalentHeader() {
     return {
         restrict: 'E',
         replace: true,
-        scope: {},
+        scope: {
+            name: '@',
+            title: '@',
+            social: '='
+        },
         template: `
             <header class="talent">
                 <div class="background">
@@ -14,15 +18,15 @@ export default function TalentHeader() {
                         <img src="http://msaagency.com/images/clients/21132325101013.jpeg">
                     </a>
 
-                    <h1>Napoleon and Tabitha Dumo</h1>
-                    <h3>Creative Directors/Choreographers</h3>
+                    <h1>{{ name }}</h1>
+                    <h3>{{ title }}</h3>
 
                     <social-icons
-                        website="http://shop.nappytabs.com/"
-                        facebook="http://msaagency.com/nappytabs"
-                        twitter="http://msaagency.com/nappytabs"
-                        instagram="https://instagram.com/nappytabs/"
-                        youtube="http://www.youtube.com/user/Nappytabs"></social-icons>
+                        website="{{ ::social.website }}"
+                        facebook="{{ ::social.facebook }}"
+                        twitter="{{ ::social.twitter }}"
+                        instagram="{{ ::social.instagram }}"
+                        youtube="{{ ::social.youtube }}"></social-icons>
 
                     <div class="button-group">
                         <a href="" class="book-btn">Book</a>

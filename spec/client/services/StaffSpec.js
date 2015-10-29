@@ -15,12 +15,17 @@ describe('Service: Staff', () => {
         });
     });
 
+    afterEach(() => {
+        $httpBackend.verifyNoOutstandingExpectation();
+        $httpBackend.verifyNoOutstandingRequest();
+    });
+
     it('is defined', () => {
         expect(StaffService).toBeDefined();
     });
 
     describe('method: all', () => {
-        it('should return collection of staff members', (done) => {
+        it('should return collection of staff members', () => {
             $httpBackend.expectGET('api/v1/staff').respond([
                 staff1(), staff1(), staff1()
             ]);
@@ -28,14 +33,13 @@ describe('Service: Staff', () => {
             StaffService.all()
                 .then(response => {
                     expect(response[0].member).toEqual(jasmine.objectContaining({ first_name: 'Tony' }));
-                })
-                .finally(done);
+                });
 
             $httpBackend.flush();
         });
     });
 
-    describe('method: getBySlug', (done) => {
+    describe('method: getBySlug', () => {
         let slug = 'tonyselznick';
 
         it('should return staff member by slug', () => {
@@ -44,8 +48,7 @@ describe('Service: Staff', () => {
             StaffService.getBySlug(slug)
                 .then(response => {
                     expect(response.member).toEqual(jasmine.objectContaining({ first_name: 'Tony' }));
-                })
-                .finally(done);
+                });
 
             $httpBackend.flush();
         });

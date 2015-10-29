@@ -6,3 +6,11 @@ json.title @client.title
 json.biography @client.biography
 json.slug @client.slug
 json.location @client.location
+
+json.social do
+    json.website @client.website_link
+    json.facebook @client.facebook_link
+    json.twitter @client.twitter_link
+    json.instagram @client.instagram_link
+    json.youtube @client.youtube_link
+end

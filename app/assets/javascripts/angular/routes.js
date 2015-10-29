@@ -57,7 +57,7 @@ angular.module('MSAAgency')
             })
             .state('app.talent.page', {
                 url: '/:slug',
-                controller: 'TalentController as TalentCtrl',
+                controller: 'ClientController as ClientCtrl',
                 templateUrl: 'templates/talent.html'
             })
         // Contact

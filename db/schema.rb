@@ -11,19 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151029030208) do
+ActiveRecord::Schema.define(version: 20151029052053) do
 
   create_table "clients", force: :cascade do |t|
-    t.string   "first_name", limit: 255,                           null: false
-    t.string   "last_name",  limit: 255
-    t.string   "title",      limit: 255
-    t.string   "email",      limit: 255
-    t.string   "phone",      limit: 18
-    t.text     "biography",  limit: 65535
-    t.string   "slug",       limit: 255,                           null: false
-    t.string   "location",   limit: 255,   default: "Los Angeles", null: false
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
+    t.string   "first_name",     limit: 255,                           null: false
+    t.string   "last_name",      limit: 255
+    t.string   "title",          limit: 255
+    t.string   "email",          limit: 255
+    t.string   "phone",          limit: 18
+    t.text     "biography",      limit: 65535
+    t.string   "website_link",   limit: 255
+    t.string   "facebook_link",  limit: 255
+    t.string   "twitter_link",   limit: 255
+    t.string   "instagram_link", limit: 255
+    t.string   "youtube_link",   limit: 255
+    t.string   "slug",           limit: 255,                           null: false
+    t.string   "location",       limit: 255,   default: "Los Angeles", null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
   end
 
   create_table "staffs", force: :cascade do |t|
