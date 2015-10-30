@@ -1,4 +1,5 @@
 export default class ClientController {
+    // @ngInject
     constructor($stateParams, ClientService) {
         this.$stateParams = $stateParams;
         this.clientService = ClientService;
@@ -8,7 +9,7 @@ export default class ClientController {
     /**
      * Get client by slug
      */
-    getClientBySlug() {
+    getBySlug() {
         this.clientService.getBySlug(this.$stateParams.slug)
             .then(response => {
                 this.client = response;
