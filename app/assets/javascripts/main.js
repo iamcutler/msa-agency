@@ -21,36 +21,40 @@ require('./angular/routes');
 // Controllers
 import AboutController from './angular/controllers/About';
 import AppController from './angular/controllers/App';
+import ClientController from './angular/controllers/Client';
 import ContactController from './angular/controllers/Contact';
 import SplashController from './angular/controllers/Splash';
 import HomeController from './angular/controllers/Home';
 import NavigationController from './angular/controllers/Navigation';
 import NewsletterController from './angular/controllers/Newsletter';
 import SearchController from './angular/controllers/Search';
-import TalentController from './angular/controllers/Talent';
 import TalentCategoryController from './angular/controllers/TalentCategory';
 
 angular.module('MSAAgency.controllers', [])
     .controller('AboutController', AboutController)
     .controller('AppController', AppController)
+    .controller('ClientController', ClientController)
     .controller('ContactController', ContactController)
     .controller('SplashController', SplashController)
     .controller('HomeController', HomeController)
     .controller('NavigationController', NavigationController)
     .controller('NewsletterController', NewsletterController)
     .controller('SearchController', SearchController)
-    .controller('TalentController', TalentController)
     .controller('TalentCategoryController', TalentCategoryController);
 
 // Services
+import ClientService from './angular/services/Client';
 import CommonService from './angular/services/Common';
 import ContactService from './angular/services/Contact';
 import SocialService from './angular/services/Social';
+import StaffService from './angular/services/Staff';
 
 angular.module('MSAAgency.services', [])
+    .service('ClientService', ClientService)
     .service('CommonService', CommonService)
     .service('ContactService', ContactService)
-    .service('SocialService', SocialService);
+    .service('SocialService', SocialService)
+    .service('StaffService', StaffService);
 
 // Directives
 import ChooseCity from './angular/directives/ChooseCity';
