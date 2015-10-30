@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030040548) do
+ActiveRecord::Schema.define(version: 20151030044856) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -46,6 +46,18 @@ ActiveRecord::Schema.define(version: 20151030040548) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "client_resumes", force: :cascade do |t|
+    t.integer  "client_id",  limit: 4
+    t.string   "project",    limit: 255, null: false
+    t.string   "credit",     limit: 255
+    t.string   "company",    limit: 255
+    t.string   "job_type",   limit: 255, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "client_resumes", ["client_id"], name: "index_client_resumes_on_client_id", using: :btree
+
   create_table "clients", force: :cascade do |t|
     t.string   "first_name",     limit: 255,                           null: false
     t.string   "last_name",      limit: 255
@@ -79,4 +91,5 @@ ActiveRecord::Schema.define(version: 20151030040548) do
     t.datetime "updated_at",                                       null: false
   end
 
+  add_foreign_key "client_resumes", "clients"
 end

@@ -14,3 +14,41 @@ json.social do
     json.instagram @client.instagram_link
     json.youtube @client.youtube_link
 end
+
+json.resume do
+    json.commercials do
+        json.array! @client.resume.where(job_type: 'commerical'), :id, :company, :credit, :project
+    end
+
+    json.events do
+        json.array! @client.resume.where(job_type: 'event'), :id, :company, :credit, :project
+    end
+
+    json.music_videos do
+        json.array! @client.resume.where(job_type: 'music video'), :id, :company, :credit, :project
+    end
+
+    json.television do
+        json.array! @client.resume.where(job_type: 'television'), :id, :company, :credit, :project
+    end
+
+    json.award_shows do
+        json.array! @client.resume.where(job_type: 'award show'), :id, :company, :credit, :project
+    end
+
+    json.film do
+        json.array! @client.resume.where(job_type: 'film'), :id, :company, :credit, :project
+    end
+
+    json.corporate do
+        json.array! @client.resume.where(job_type: 'corporate'), :id, :company, :credit, :project
+    end
+
+    json.miscellaneous do
+        json.array! @client.resume.where(job_type: 'misc'), :id, :company, :credit, :project
+    end
+
+    json.awards do
+        json.array! @client.resume.where(job_type: 'award'), :id, :company, :credit, :project
+    end
+end

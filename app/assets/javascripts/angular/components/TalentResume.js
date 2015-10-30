@@ -1,52 +1,24 @@
-export default function TalentResume() {
+// @ngInject
+export default function TalentResume($timeout, $filter) {
     return {
         restrict: 'E',
         replace: true,
-        scope: {},
+        scope: {
+            title: '@',
+            resume: '=data'
+        },
         template: `
-            <section id="talent-resume">
-                <div class="app-container">
-                    <div class="resume-list">
-                        <span class="resume-category">Concerts / Tours / Events:</span>
+            <div class="app-container" ng-show="resume.length">
+                <div class="resume-list">
+                    <span class="resume-category">{{ title }}:</span>
 
-                        <div class="resume-row">
-                            <div>Move Live on Tour</div>
-                            <div>Move Live on Tour</div>
-                            <div>2014 / Gypsy Life (Directors/Choreographers)</div>
-                        </div>
-                        <div class="resume-row">
-                            <div>Move Live on Tour</div>
-                            <div>Move Live on Tour</div>
-                            <div>2014 / Gypsy Life (Directors/Choreographers)</div>
-                        </div>
-                        <div class="resume-row">
-                            <div>Move Live on Tour</div>
-                            <div>Move Live on Tour</div>
-                            <div>2014 / Gypsy Life (Directors/Choreographers)</div>
-                        </div>
-                    </div>
-
-                    <div class="resume-list">
-                        <span class="resume-category">Concerts / Tours / Events:</span>
-
-                        <div class="resume-row">
-                            <div>Move Live on Tour</div>
-                            <div>Move Live on Tour</div>
-                            <div>2014 / Gypsy Life (Directors/Choreographers)</div>
-                        </div>
-                        <div class="resume-row">
-                            <div>Move Live on Tour</div>
-                            <div>Move Live on Tour</div>
-                            <div>2014 / Gypsy Life (Directors/Choreographers)</div>
-                        </div>
-                        <div class="resume-row">
-                            <div>Move Live on Tour</div>
-                            <div>Move Live on Tour</div>
-                            <div>2014 / Gypsy Life (Directors/Choreographers)</div>
-                        </div>
+                    <div class="resume-row" ng-repeat="res in resume track by $index">
+                        <div>{{ res.project }}</div>
+                        <div>{{ res.company }}</div>
+                        <div>{{ res.credit }}</div>
                     </div>
                 </div>
-            </section>
+            </div>
         `
     };
 }

@@ -159,6 +159,10 @@ section[id^='talent-'] {
 // Resume
 // ----------------------------------------
 section#talent-resume {
+    .app-container {
+        margin: 30px auto;
+    }
+
     .resume-list {
         margin-top: 20px;
 
