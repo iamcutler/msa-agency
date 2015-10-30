@@ -27,9 +27,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Social
 gem 'twitter', '5.15.0'
+gem 'instagram', '~> 1.1', '>= 1.1.6'
+
+# Admin control panel
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

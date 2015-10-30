@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+    devise_for :admin_users, ActiveAdmin::Devise.config
+    ActiveAdmin.routes(self)
 
     scope '/api/v1', module: 'apiv1', as: 'apiv1', defaults: { format: 'json' } do
         resources :staffs, path: 'staff', only: ['index', 'show']
