@@ -48,8 +48,9 @@ angular.module('MSAAgency.directives')
                             <li class="sub"><a ui-sref="">New York</a></li>
                         </ul>
                     </div>
-                    <div class="clearfix"></div>
                 </div>
+
+                <div class="clearfix"></div>
 
                 <div class="credit-bar">
                     <span>Copyright ${year} McDonald/Selznick Associates</span>

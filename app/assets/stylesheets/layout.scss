@@ -27,6 +27,10 @@ input, textarea, button {
     outline: none;
 }
 
+.clearfix {
+    clear: both;
+}
+
 // Application container
 .app-container {
     max-width: $media-desktop-width;
