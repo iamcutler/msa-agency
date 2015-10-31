@@ -8,7 +8,14 @@ export default function NewsletterWidget() {
                 <h5>Sign up for our newsletter</h5>
                 <h6>to stay up to date with all things MSA</h6>
 
-                <form name="NewsletterCtrl.newsletterForm" ng-submit="NewsletterCtrl.submit()" novalidate>
+                <div class="thank-you-message" ng-class="{ show: NewsletterCtrl.successfulSubmission }">
+                    Thank you for signing up!
+                </div>
+
+                <form name="NewsletterCtrl.newsletterForm"
+                        ng-if="!NewsletterCtrl.successfulSubmission"
+                        ng-submit="NewsletterCtrl.submit()"
+                        novalidate>
                     <input type="email" ng-model="NewsletterCtrl.email" placeholder="Email address:" required>
                     <button type="submit">Submit</button>
                 </form>

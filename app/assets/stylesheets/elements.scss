@@ -109,6 +109,20 @@ div.newsletter-widget {
         font-size: 14px;
     }
 
+    div.thank-you-message {
+        text-align: center;
+        margin: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity $transition-duration $transition-easing;
+
+        &.show {
+            margin: 110px auto 0 auto;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
     form {
         margin: 16px 0 0 0;
         padding: 0;

@@ -1,6 +1,9 @@
 export default class NewsletterController {
-    constructor() {
+    // @ngInject
+    constructor(ContactService) {
+        this.contactService = ContactService;
         this.email = ''; // User email
+        this.successfulSubmission = false;
     }
 
     /**
@@ -8,6 +11,11 @@ export default class NewsletterController {
      */
     submit()
     {
-        if(this.email) console.log(this.email);
+        if(this.email) {
+            this.contactService.newsletterSignup(this.email)
+                .then(response => {
+                    this.successfulSubmission = true;
+                });
+        }
     }
 }

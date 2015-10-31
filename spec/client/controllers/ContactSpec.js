@@ -45,4 +45,8 @@ describe('Controller: Contact', () => {
             });
         });
     });
+
+    describe('method: submitContactForm', () => {
+
+    });
 });

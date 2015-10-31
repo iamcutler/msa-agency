@@ -6,7 +6,9 @@ Rails.application.routes.draw do
         resources :staffs, path: 'staff', only: ['index', 'show']
         resources :clients, only: ['index', 'show']
         resources :news, only: ['index', 'show']
+
         get 'featured-news', to: 'news#featured'
+        post 'newsletter', to: 'newsletter#create'
 
         scope '/social' do
             get 'twitter', to: 'social#getTwitterFeed'

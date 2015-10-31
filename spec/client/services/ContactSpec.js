@@ -23,16 +23,30 @@ describe('Service: Contact', () => {
             message: 'This is a bug/feedback'
         };
 
-        it('should call backend to submit form', (done) => {
-            $httpBackend.whenPOST('api/v1/contact').respond({
+        it('should call backend to submit form', () => {
+            $httpBackend.expectPOST('api/v1/contact').respond({
                 success: true
             });
 
             ContactService.submitForm(contact_fields)
                 .then(data => {
                     expect(data.success).toBe(true);
-                })
-                .finally(done);
+                });
+
+            $httpBackend.flush();
+        });
+    });
+
+    describe('method: newsletterSignup', () => {
+        it('should call api for newsletter submission', () => {
+            $httpBackend.expectPOST('api/v1/newsletter').respond({
+                success: true
+            });
+
+            ContactService.newsletterSignup('test@msaagency.com')
+                .then(response => {
+                    expect(response.success).toBe(true);
+                });
 
             $httpBackend.flush();
         });
