@@ -1,7 +1,7 @@
 import { client1 } from '../fixtures/clients';
 
 describe('Service: Talent', () => {
-    var $rootScope, $scope, $httpBackend;
+    var $rootScope, $scope, $q, $httpBackend;
     var ClientService;
 
     beforeEach(() => {
@@ -10,8 +10,14 @@ describe('Service: Talent', () => {
         inject($injector => {
             $rootScope = $injector.get('$rootScope');
             $scope = $rootScope.$new();
+            $q = $injector.get('$q');
             $httpBackend = $injector.get('$httpBackend');
             ClientService = $injector.get('ClientService');
+
+            /**
+             * Spies
+             */
+             spyOn($q, 'reject');
         });
     });
 
@@ -36,6 +42,25 @@ describe('Service: Talent', () => {
                 });
 
             $httpBackend.flush();
+        });
+    });
+
+    describe('method: getByCatrgory', () => {
+        it('should return client list', () => {
+            $httpBackend.expectGET('api/v1/clients-by-category?categories=choregraphy,educator').respond([client1(), client1()]);
+
+            ClientService.getByCategory(['choregraphy', 'educator'])
+                .then(response => {
+                    expect(response).toEqual([client1(), client1()]);
+                });
+
+            $httpBackend.flush();
+        });
+
+        it('should return rejected promise if arg is not a array', () => {
+            ClientService.getByCategory('choregraphy', 'educator');
+
+            expect($q.reject).toHaveBeenCalled();
         });
     });
 });

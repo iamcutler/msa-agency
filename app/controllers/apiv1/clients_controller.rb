@@ -9,5 +9,16 @@ module Apiv1
         def show
             @client = Client.find_by_slug(params[:id])
         end
+
+        # GET /clients-by-category
+        def find_by_categories
+            begin
+                categories = params[:categories]
+
+                @clients = ClientCategory.findClients(categories)
+            rescue
+                @clients = []
+            end
+        end
     end
 end

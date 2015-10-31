@@ -1,5 +1,5 @@
-describe('Controller: TalentCategory', function() {
-    var $rootScope, $scope, $controller, TalentCategoryCtrl;
+describe('Controller: ClientCategory', function() {
+    var $rootScope, $scope, $controller, ClientCategoryCtrl;
 
     beforeEach(function() {
         angular.mock.module('MSAAgency.controllers');
@@ -12,7 +12,7 @@ describe('Controller: TalentCategory', function() {
             /**
              * Controller
              **/
-            TalentCategoryCtrl = $controller('TalentCategoryController as TalentCategoryCtrl', {
+            ClientCategoryCtrl = $controller('ClientCategoryController as ClientCategoryCtrl', {
                 $scope: $scope,
                 $stateParams: {
                     category: 'creative'
@@ -22,10 +22,10 @@ describe('Controller: TalentCategory', function() {
     });
 
     it('is defined', function() {
-        expect(TalentCategoryCtrl).toBeDefined();
+        expect(ClientCategoryCtrl).toBeDefined();
     });
 
     it('should assign talent category on instance', function() {
-        expect(TalentCategoryCtrl.talentCategory).toBe('creative');
+        expect(ClientCategoryCtrl.clientCategory).toBe('creative');
     });
 });

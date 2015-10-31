@@ -21,6 +21,7 @@ require('./angular/routes');
 // Controllers
 import AboutController from './angular/controllers/About';
 import AppController from './angular/controllers/App';
+import ClientCategoryController from './angular/controllers/ClientCategory';
 import ClientController from './angular/controllers/Client';
 import ContactController from './angular/controllers/Contact';
 import SplashController from './angular/controllers/Splash';
@@ -29,11 +30,11 @@ import NavigationController from './angular/controllers/Navigation';
 import NewsController from './angular/controllers/News';
 import NewsletterController from './angular/controllers/Newsletter';
 import SearchController from './angular/controllers/Search';
-import TalentCategoryController from './angular/controllers/TalentCategory';
 
 angular.module('MSAAgency.controllers', [])
     .controller('AboutController', AboutController)
     .controller('AppController', AppController)
+    .controller('ClientCategoryController', ClientCategoryController)
     .controller('ClientController', ClientController)
     .controller('ContactController', ContactController)
     .controller('SplashController', SplashController)
@@ -41,8 +42,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('NavigationController', NavigationController)
     .controller('NewsController', NewsController)
     .controller('NewsletterController', NewsletterController)
-    .controller('SearchController', SearchController)
-    .controller('TalentCategoryController', TalentCategoryController);
+    .controller('SearchController', SearchController);
 
 // Services
 import ClientService from './angular/services/Client';

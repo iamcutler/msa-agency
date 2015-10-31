@@ -225,6 +225,12 @@ section.twilight {
         position: relative;
         background: #2d2d2d;
 
+        &:hover {
+            .navigation .arrow {
+                opacity: 1;
+            }
+        }
+
         .navigation {
             position: absolute;
             background: rgba(0,0,0,0.7);
@@ -236,7 +242,7 @@ section.twilight {
 
             &:hover {
                 .arrow {
-                    transform: scale(1.2);
+                    transform: scale(1.4);
                 }
             }
 
@@ -248,6 +254,7 @@ section.twilight {
                 height: 28px;
                 margin: 48px auto auto;
                 display: block;
+                opacity: 0;
                 overflow: hidden;
                 transition: all $transition-duration $transition-easing;
             }

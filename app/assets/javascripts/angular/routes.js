@@ -52,7 +52,7 @@ angular.module('MSAAgency')
         })
             .state('app.talent.category', {
                 url: '/category/:category',
-                controller: 'TalentCategoryController as TalentCategoryCtrl',
+                controller: 'ClientCategoryController as ClientCategoryCtrl',
                 templateUrl: 'templates/talent-category.html'
             })
             .state('app.talent.page', {
