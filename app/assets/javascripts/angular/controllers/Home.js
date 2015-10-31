@@ -46,7 +46,7 @@ export default class HomeController {
      * @param {Number} config.limit
      */
     getLatestNews(config = { limit: 6 }) {
-        this.newsService.all(config)
+        this.newsService.getFeaturedArticles(config)
             .then(response => {
                 this.latestNews = response;
             });

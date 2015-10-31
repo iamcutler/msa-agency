@@ -21,25 +21,49 @@ describe('Service: News', () => {
         expect(NewsService).toBeDefined();
     });
 
-    describe('method: get', () => {
+    describe('method: all', () => {
         it('should call api for news articles', () => {
-            $httpBackend.expectGET('api/v1/news').respond(MockPromise($q, article1()));
+            $httpBackend.expectGET('api/v1/news').respond(MockPromise($q, [article1()]));
 
             NewsService.all().then(response => {
-                expect(response).toEqual(article1());
+                expect(response[0]).toEqual(article1());
             });
 
             $httpBackend.flush();
         });
 
         it('should call api for news articles with pagination', () => {
-            $httpBackend.expectGET('api/v1/news?limit=10&offset=20').respond(MockPromise($q, article1()));
+            $httpBackend.expectGET('api/v1/news?limit=10&offset=20').respond(MockPromise($q, [article1()]));
 
             NewsService.all({
                 limit: 10,
                 offset: 20
             }).then(response => {
-                expect(response).toEqual(article1());
+                expect(response[0]).toEqual(article1());
+            });
+
+            $httpBackend.flush();
+        });
+    });
+
+    describe('method: getFeaturedArticles', () => {
+        it('should call api for news articles', () => {
+            $httpBackend.expectGET('api/v1/featured-news').respond(MockPromise($q, [article1()]));
+
+            NewsService.getFeaturedArticles().then(response => {
+                expect(response[0]).toEqual(article1());
+            });
+
+            $httpBackend.flush();
+        });
+
+        it('should call api for news articles with pagination', () => {
+            $httpBackend.expectGET('api/v1/featured-news?limit=6').respond(MockPromise($q, [article1()]));
+
+            NewsService.getFeaturedArticles({
+                limit: 6
+            }).then(response => {
+                expect(response[0]).toEqual(article1());
             });
 
             $httpBackend.flush();

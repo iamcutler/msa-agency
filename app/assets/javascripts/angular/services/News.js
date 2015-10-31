@@ -18,4 +18,18 @@ export default class NewsService {
             params: params
         }).then(this.commonService.handleHttpResponse('Error getting news articles'));
     }
+
+    /**
+     * Get featured news articles
+     *
+     * @param {Object} params
+     * @param {Number} params.limit
+     * @param {Number} params.offset
+     * @returns {Promise}
+     */
+    getFeaturedArticles(params = {}) {
+        return this.$http.get('api/v1/featured-news', {
+            params: params
+        }).then(this.commonService.handleHttpResponse('Error getting featured news articles'));
+    }
 }

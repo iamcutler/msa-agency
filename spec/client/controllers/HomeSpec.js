@@ -19,7 +19,7 @@ describe('Controller: Home', function() {
             /**
              * Spies
              */
-            NewsSpy = spyOn(NewsService, 'all');
+            NewsSpy = spyOn(NewsService, 'getFeaturedArticles');
             TwitterSpy = spyOn(SocialService, 'getTwitterFeed');
 
             /**
@@ -58,13 +58,13 @@ describe('Controller: Home', function() {
     });
 
     describe('method: getLatestNews', () => {
-        it('should call NewsService all method', () => {
+        it('should call NewsService getFeaturedArticles method', () => {
             NewsSpy.and.callFake(MockPromise($q, [article1(), article1()]));
 
             HomeCtrl.getLatestNews();
             $scope.$digest();
 
-            expect(NewsService.all).toHaveBeenCalledWith({ limit: 6 });
+            expect(NewsService.getFeaturedArticles).toHaveBeenCalledWith({ limit: 6 });
         });
 
         describe('on successful service call', () => {
