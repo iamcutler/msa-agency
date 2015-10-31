@@ -60,6 +60,12 @@ angular.module('MSAAgency')
                 controller: 'ClientController as ClientCtrl',
                 templateUrl: 'templates/talent.html'
             })
+        // News
+        .state('app.news', {
+            url: 'news',
+            controller: 'NewsController as NewsCtrl',
+            templateUrl: 'templates/news.html'
+        })
         // Contact
         .state('app.contact', {
             url: 'contact',

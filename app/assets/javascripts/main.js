@@ -26,6 +26,7 @@ import ContactController from './angular/controllers/Contact';
 import SplashController from './angular/controllers/Splash';
 import HomeController from './angular/controllers/Home';
 import NavigationController from './angular/controllers/Navigation';
+import NewsController from './angular/controllers/News';
 import NewsletterController from './angular/controllers/Newsletter';
 import SearchController from './angular/controllers/Search';
 import TalentCategoryController from './angular/controllers/TalentCategory';
@@ -38,6 +39,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('SplashController', SplashController)
     .controller('HomeController', HomeController)
     .controller('NavigationController', NavigationController)
+    .controller('NewsController', NewsController)
     .controller('NewsletterController', NewsletterController)
     .controller('SearchController', SearchController)
     .controller('TalentCategoryController', TalentCategoryController);

@@ -52,7 +52,7 @@ export default function Navigation() {
                                 <li><a ui-sref="app.talent.category({ category: 'educators' })" toggle-navigation>Educators</a></li>
                             </ul>
                         </li>
-                        <li><a href="">News</a></li>
+                        <li><a ui-sref="app.news" toggle-navigation>News</a></li>
                         <li><a ui-sref="app.contact" toggle-navigation>Contact Us</a></li>
                         <li><a href="">Submissions</a></li>
                     <ul>
