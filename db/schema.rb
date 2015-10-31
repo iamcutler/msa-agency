@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030044856) do
+ActiveRecord::Schema.define(version: 20151031052214) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -74,6 +74,17 @@ ActiveRecord::Schema.define(version: 20151030044856) do
     t.string   "location",       limit: 255,   default: "Los Angeles", null: false
     t.datetime "created_at",                                           null: false
     t.datetime "updated_at",                                           null: false
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string   "subject",    limit: 512,                  null: false
+    t.text     "body",       limit: 65535,                null: false
+    t.string   "location",   limit: 255
+    t.boolean  "featured",                 default: true, null: false
+    t.string   "slug",       limit: 255,                  null: false
+    t.boolean  "published",                default: true, null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
   end
 
   create_table "staffs", force: :cascade do |t|

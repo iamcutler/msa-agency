@@ -10,18 +10,18 @@ export default function NewsArticle() {
             <article class="news-article" ng-class="{ 'spotlight': spotlight === 'true' }">
                 <figure>
                     <a href="">
-                        <img ng-src="{{ data.image }}" alt="{{ data.title }}" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg" alt="{{ data.subject }}" />
                     </a>
                 </figure>
 
                 <header>
-                    <h1>{{ data.title }}</h1>
+                    <h1>{{ data.subject }}</h1>
                 </header>
 
-                <p>{{ data.description }}</p>
+                <p>{{ data.body }}</p>
 
                 <footer>
-                    <time>{{ data.date | date: 'M/dd' }}</time>
+                    <time>{{ data.created_at | date: 'M/dd' }}</time>
                     <a href="" class="view-more">View More</a>
                 </footer>
             </article>

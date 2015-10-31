@@ -1,17 +1,11 @@
 export default class HomeController {
-    constructor($state, SocialService) {
+    // @ngInject
+    constructor($state, SocialService, NewsService) {
         this.$state = $state;
-        this.SocialService = SocialService;
-        this.latestNews = [
-            {title: 'Decendants', date: '2015-10-07', image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
-            {title: 'ABCD', date: '2015-10-07', image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
-            {title: 'Amy Tinkham', date: '2015-10-07', image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
-            {title: 'Amy Tinkham', date: '2015-10-07', image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
-            {title: 'Amy Tinkham', date: '2015-10-07', image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
-            {title: 'Amy Tinkham', date: '2015-10-07', image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
-            {title: 'Amy Tinkham', date: '2015-10-07', image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
-            {title: 'Amy Tinkham', date: '2015-10-07', image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
-        ];
+        this.socialService = SocialService;
+        this.newsService = NewsService;
+
+        this.latestNews = [];
         this.slides = [
             { type: 'image', src: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' },
             { type: 'image', src: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' },
@@ -21,18 +15,40 @@ export default class HomeController {
             twitter: [],
             instagram: []
         };
-
-        this.initialize();
     }
 
+    /**
+     * Initialize method
+     */
     initialize() {
-        this.SocialService.getTwitterFeed()
+        this.getTwitterFeed();
+        this.getLatestNews();
+    }
+
+    /**
+     * Get twitter feed
+     */
+    getTwitterFeed() {
+        this.socialService.getTwitterFeed()
             .then(feed => {
                 this.socialFeeds.twitter = feed;
             })
             .catch(err => {
                 console.log('ERROR');
                 console.log(err);
+            });
+    }
+
+    /**
+     * Get latest news
+     *
+     * @param {Object} config
+     * @param {Number} config.limit
+     */
+    getLatestNews(config = { limit: 6 }) {
+        this.newsService.all(config)
+            .then(response => {
+                this.latestNews = response;
             });
     }
 }

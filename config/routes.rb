@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     scope '/api/v1', module: 'apiv1', as: 'apiv1', defaults: { format: 'json' } do
         resources :staffs, path: 'staff', only: ['index', 'show']
         resources :clients, only: ['index', 'show']
+        resources :news, only: ['index', 'show']
 
         scope '/social' do
             get 'twitter', to: 'social#getTwitterFeed'

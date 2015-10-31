@@ -46,6 +46,7 @@ angular.module('MSAAgency.controllers', [])
 import ClientService from './angular/services/Client';
 import CommonService from './angular/services/Common';
 import ContactService from './angular/services/Contact';
+import NewsService from './angular/services/News';
 import SocialService from './angular/services/Social';
 import StaffService from './angular/services/Staff';
 
@@ -53,6 +54,7 @@ angular.module('MSAAgency.services', [])
     .service('ClientService', ClientService)
     .service('CommonService', CommonService)
     .service('ContactService', ContactService)
+    .service('NewsService', NewsService)
     .service('SocialService', SocialService)
     .service('StaffService', StaffService);
 
