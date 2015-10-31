@@ -5,7 +5,7 @@ module Apiv1
             offset = params[:offset] || 0
             limit = params[:limit] || 20
 
-            @articles = News.all().limit(limit).offset(offset)
+            @articles = News.where(published: true).limit(limit).offset(offset)
         end
 
         # GET/news/:slug
