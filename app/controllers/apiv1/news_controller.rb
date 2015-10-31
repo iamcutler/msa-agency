@@ -4,8 +4,9 @@ module Apiv1
         def index
             offset = params[:offset] || 0
             limit = params[:limit] || 20
+            location = params[:location] || nil
 
-            @articles = News.findPublishedArticles(offset, limit)
+            @articles = News.findPublishedArticles(location, offset, limit)
         end
 
         # GET /news/:slug
@@ -17,8 +18,9 @@ module Apiv1
         def featured
             offset = params[:offset] || 0
             limit = params[:limit] || 20
+            location = params[:location] || nil
 
-            @articles = News.findFeaturedArticles(offset, limit)
+            @articles = News.findFeaturedArticles(location, offset, limit)
         end
     end
 end
