@@ -158,6 +158,17 @@ section[id^='talent-'] {
 // ----------------------------------------
 // Resume
 // ----------------------------------------
+section#talent-bio {
+    .app-container.no-bio {
+        padding: 100px 0;
+        font-size: 22px;
+        text-align: center;
+    }
+}
+
+// ----------------------------------------
+// Resume
+// ----------------------------------------
 section#talent-resume {
     .app-container {
         margin: 30px auto;
