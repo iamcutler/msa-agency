@@ -36,4 +36,40 @@ export default class ClientService {
             })
             .then(this.commonService.handleHttpResponse(ERR_MSG));
     }
+
+    /**
+     * Filter data by category
+     *
+     * @param {Array} data
+     * @param {String} category
+     * @returns {Array}
+     */
+    filterByCategory(data = [], category) {
+        try {
+            return data.filter(cur => {
+                return cur.categories.indexOf(category) !== -1;
+            });
+        } catch(err) {
+            return [];
+        }
+    }
+
+    /**
+     * Get categories based on parameter
+     */
+    getCategoriesFromParam(category = '') {
+        switch(category) {
+            case 'dance':
+                return ['on_camera', 'dancer', 'kids_teen', 'speciality_act'];
+                break;
+            case 'creative':
+                return ['stage_director', 'creative_director', 'choreographer', 'production'];
+                break;
+            case 'educators':
+                return ['speaker', 'master_instructor', 'sytycd'];
+                break;
+            default:
+                return [];
+        }
+    }
 }

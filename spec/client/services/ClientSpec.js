@@ -1,4 +1,4 @@
-import { client1 } from '../fixtures/clients';
+import { client1, ClientCollectionWithCategories1 } from '../fixtures/clients';
 
 describe('Service: Talent', () => {
     var $rootScope, $scope, $q, $httpBackend;
@@ -61,6 +61,40 @@ describe('Service: Talent', () => {
             ClientService.getByCategory('choregraphy', 'educator');
 
             expect($q.reject).toHaveBeenCalled();
+        });
+    });
+
+    describe('method: filterByCategory', () => {
+        it('should return choregraphy category from collection', () => {
+            var data = ClientService.filterByCategory(ClientCollectionWithCategories1(), 'choreography');
+
+            expect(data.length).toEqual(1);
+        });
+
+        it('should return educator category from collection', () => {
+            var data = ClientService.filterByCategory(ClientCollectionWithCategories1(), 'educator');
+
+            expect(data.length).toEqual(3);
+        });
+    });
+
+    describe('method: getCategoriesFromParam', () => {
+        it('should return dance categories', () => {
+            var categories = ClientService.getCategoriesFromParam('dance');
+
+            expect(categories).toEqual(['on_camera', 'dancer', 'kids_teen', 'speciality_act']);
+        });
+
+        it('should return creative categories', () => {
+            var categories = ClientService.getCategoriesFromParam('creative');
+
+            expect(categories).toEqual(['stage_director', 'creative_director', 'choreographer', 'production']);
+        });
+
+        it('should return educators categories', () => {
+            var categories = ClientService.getCategoriesFromParam('educators');
+
+            expect(categories).toEqual(['speaker', 'master_instructor', 'sytycd']);
         });
     });
 });

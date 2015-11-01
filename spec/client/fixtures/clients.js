@@ -17,3 +17,17 @@ export function client1() {
         }
     };
 }
+
+/**
+ * Client collection with categories
+ */
+export function ClientCollectionWithCategories1() {
+    return [
+        {id: 1, first_name: "John", last_name: "Doe", full_name: "John Doe", title: "N/A", biography: "TEST", slug: "johndoe", location: "Los Angeles", categories: ["educator"] },
+        {id: 2, first_name: "John", last_name: "Doe", full_name: "John Doe", title: "N/A", biography: "TEST", slug: "johndoe", location: "Los Angeles", categories: ["choreography", "educator"] },
+        {id: 3, first_name: "John", last_name: "Doe", full_name: "John Doe", title: "N/A", biography: "TEST", slug: "johndoe", location: "Los Angeles", categories: ["live_production"] },
+        {id: 4, first_name: "John", last_name: "Doe", full_name: "John Doe", title: "N/A", biography: "TEST", slug: "johndoe", location: "Los Angeles", categories: ["stage_director"] },
+        {id: 5, first_name: "John", last_name: "Doe", full_name: "John Doe", title: "N/A", biography: "TEST", slug: "johndoe", location: "Los Angeles", categories: ["creative_director"] },
+        {id: 6, first_name: "John", last_name: "Doe", full_name: "John Doe", title: "N/A", biography: "TEST", slug: "johndoe", location: "Los Angeles", categories: ["educator"] },
+    ];
+}

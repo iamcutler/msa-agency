@@ -1,18 +1,46 @@
 export default class ClientCategoryController {
     // @ngInject
-    constructor($stateParams) {
+    constructor($stateParams, ClientService) {
+        // Dependencies
+        this.$stateParams = $stateParams;
+        this.clientService = ClientService;
+
         this.clientCategory = $stateParams.category;
-        this.clients = [
-                { name: 'Julie McDonald', title: 'Founder/Sr. Agent', img: 'http://www.msaagency.com/images/staff/74858411100511.jpg' },
-                { name: 'Tony Selznick', title: 'Founder/Sr. Agent', img: 'http://dancemogul.com/news/wp-content/uploads/2013/02/tony.jpg' },
-                { name: 'JC Gutierrez', title: 'Los Angeles and New York Director/Sr. Agent', img: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' },
-                { name: 'Jenn Procter', title: 'Agent', img: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' },
-                { name: 'Shelli Marghertis', title: 'Agent, Education Department/Choreography', img: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' },
-                { name: 'Daniel Shirk', title: 'Talent Payment Processor', img: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' },
-                { name: 'Brandon Louis', title: 'Agent', img: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' },
-                { name: 'Chelsea Blake', title: 'Agent, Kids and Teens', img: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' },
-                { name: 'Megan Hunt', title: 'Jr. Agent, Education Department', img: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' },
-                { name: 'Mara Boyce', title: 'Executive Assistant', img: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' }
-            ];
+        this.categories = [];
+        
+        // Client data
+        this.onCameraClients = [];
+        this.dancersClients = [];
+        this.kidsAndTeensClients = [];
+        this.specialityClients = [];
+        this.stageDirectorsClients = [];
+        this.creativeDirectorsClients = [];
+        this.choreographyClients = [];
+        this.productionClients = [];
+        this.speakerClients = [];
+        this.masterInstructorClients = [];
+        this.instructorClients = [];
+        this.sytycdClients = [];
+    }
+
+    initialize() {
+        this.categories = this.clientService.getCategoriesFromParam(this.$stateParams.category);
+
+        this.clientService.getByCategory(this.categories)
+            .then(response => {
+                // Filter data based on category
+                this.onCameraClients = this.clientService.filterByCategory(response, 'on_camera');
+                this.dancersClients = this.clientService.filterByCategory(response, 'dancer');
+                this.kidsAndTeensClients = this.clientService.filterByCategory(response, 'kids_teen');
+                this.specialityClients = this.clientService.filterByCategory(response, 'speciality_act');
+                this.stageDirectorsClients = this.clientService.filterByCategory(response, 'stage_director');
+                this.creativeDirectorsClients = this.clientService.filterByCategory(response, 'creative_director');
+                this.choreographyClients = this.clientService.filterByCategory(response, 'choreographer');
+                this.productionClients = this.clientService.filterByCategory(response, 'production');
+                this.speakerClients = this.clientService.filterByCategory(response, 'speaker');
+                this.masterInstructorClients = this.clientService.filterByCategory(response, 'master_instructor');
+                this.instructorClients = this.clientService.filterByCategory(response, 'instructor');
+                this.sytycdClients = this.clientService.filterByCategory(response, 'sytycd');
+            });
     }
 }
