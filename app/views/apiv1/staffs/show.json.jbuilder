@@ -1,9 +1,9 @@
 json.member do
     json.first_name @staff.first_name
     json.last_name @staff.last_name
-    json.name @staff.first_name + ' ' + @staff.last_name
+    json.full_name @staff.first_name + ' ' + @staff.last_name
     json.email @staff.email
-    json.position @staff.position
+    json.title @staff.position
     json.biography @staff.biography
     json.location @staff.location
     json.department @staff.department

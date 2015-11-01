@@ -8,7 +8,8 @@ export default class AboutController {
     initialize() {
         this.staffService.all()
             .then(response => {
-                this.staff = response;
+                this.LAStaff = this.staffService.filterByLocation(response, 'Los Angeles');
+                this.NYStaff = this.staffService.filterByLocation(response, 'New York');
             })
             .catch(err => console.log(err));
     }

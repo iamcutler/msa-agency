@@ -1,4 +1,4 @@
-import { staff1 } from './../fixtures/staff';
+import { staff1, staffMembers1 } from './../fixtures/staff';
 
 describe('Service: Staff', () => {
     var $rootScope, $scope, $httpBackend;
@@ -51,6 +51,26 @@ describe('Service: Staff', () => {
                 });
 
             $httpBackend.flush();
+        });
+    });
+
+    describe('method: filterByLocation', () => {
+        it('should return only Los Angeles based staff members', () => {
+            let clients = StaffService.filterByLocation(staffMembers1(), 'Los Angeles');
+
+            expect(clients.length).toEqual(2);
+        });
+
+        it('should return only New York based staff members', () => {
+            let clients = StaffService.filterByLocation(staffMembers1(), 'New York');
+
+            expect(clients.length).toEqual(1);
+        });
+
+        it('should return empty array if location not found', () => {
+            let clients = StaffService.filterByLocation(staffMembers1(), 'LA');
+
+            expect(clients.length).toEqual(0);
         });
     });
 });

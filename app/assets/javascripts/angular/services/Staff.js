@@ -25,4 +25,25 @@ export default class StaffService {
         return this.$http.get(`api/v1/staff/${slug}`)
             .then(this.commonService.handleHttpResponse('Error getting staff member'));
     }
+
+    /**
+     * Filter staff by location
+     *
+     * @param {Array} clients
+     * @param {String} location
+     * @returns {Array}
+     */
+    filterByLocation(clients = [], location = 'Los Angeles') {
+        try {
+            return clients.filter(client => {
+                client.location.split(',').forEach(loc => {
+                    loc = loc.trim();
+                });
+
+                return client.location.indexOf(location) !== -1;
+            });
+        } catch(err) {
+            return [];
+        }
+    }
 }
