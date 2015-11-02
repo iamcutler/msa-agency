@@ -22,6 +22,7 @@ export default class HomeController {
      */
     initialize() {
         this.getTwitterFeed();
+        this.getInstagramFeed();
         this.getLatestNews({
             location: this.$state.current.name === 'app.home.los-angeles' ? 'Los Angeles' : 'New York',
             limit: 6
@@ -35,6 +36,20 @@ export default class HomeController {
         this.socialService.getTwitterFeed()
             .then(feed => {
                 this.socialFeeds.twitter = feed;
+            })
+            .catch(err => {
+                console.log('ERROR');
+                console.log(err);
+            });
+    }
+
+    /**
+     * Get instagram feed
+     */
+    getInstagramFeed() {
+        this.socialService.getInstagramFeed(6)
+            .then(feed => {
+                this.socialFeeds.instagram = feed;
             })
             .catch(err => {
                 console.log('ERROR');

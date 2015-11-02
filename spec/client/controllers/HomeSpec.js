@@ -3,7 +3,7 @@ import { article1 } from '../fixtures/news';
 
 describe('Controller: Home', function() {
     var $rootScope, $scope, $q, $controller;
-    var HomeCtrl, NewsService, NewsSpy, SocialService, TwitterSpy;
+    var HomeCtrl, NewsService, NewsSpy, SocialService, TwitterSpy, InstagramSpy;
 
     beforeEach(function() {
         angular.mock.module('MSAAgency', 'MSAAgency.controllers');
@@ -21,6 +21,7 @@ describe('Controller: Home', function() {
              */
             NewsSpy = spyOn(NewsService, 'getFeaturedArticles');
             TwitterSpy = spyOn(SocialService, 'getTwitterFeed');
+            InstagramSpy = spyOn(SocialService, 'getInstagramFeed');
 
             /**
              * Controller
@@ -53,6 +54,28 @@ describe('Controller: Home', function() {
                 $scope.$digest();
 
                 expect(HomeCtrl.socialFeeds.twitter).toEqual(['test']);
+            });
+        });
+    });
+
+    describe('method: getInstagramFeed', () => {
+        it('should call social service for feed', () => {
+            InstagramSpy.and.callFake(MockPromise($q, []));
+
+            HomeCtrl.getInstagramFeed();
+            $scope.$digest();
+
+            expect(SocialService.getInstagramFeed).toHaveBeenCalled();
+        });
+
+        describe('on success', () => {
+            it('should assign feed to scope', () => {
+                InstagramSpy.and.callFake(MockPromise($q, ['test']));
+
+                HomeCtrl.getInstagramFeed();
+                $scope.$digest();
+
+                expect(HomeCtrl.socialFeeds.instagram).toEqual(['test']);
             });
         });
     });

@@ -1,6 +1,7 @@
+import { twitterFeed1, instagramFeed1 } from '../fixtures/social';
+
 describe('Service: Social', function() {
     var $rootScope, $scope, $httpBackend, $q, SocialService;
-    var responses;
 
     beforeEach(function() {
         angular.mock.module('MSAAgency', 'MSAAgency.services');
@@ -12,13 +13,10 @@ describe('Service: Social', function() {
             $q = $injector.get('$q');
             SocialService = $injector.get('SocialService');
 
-            // Spies
-            spyOn($q, 'reject').and.callThrough();
-
-            responses = {};
-            responses.twitterFeed = [
-                {"created_at":"Mon Sep 14 17:27:22 +0000 2015","id":643476145170550784,"id_str":"643476145170550784","text":"RT @fbOpenSource: The countdown is over! We're super excited to launch @reactjs native for Android. https://t.co/dWeMC0JYbV #androiddev","source":"\u003ca href=\"http://twitter.com/download/iphone\" rel=\"nofollow\"\u003eTwitter for iPhone\u003c/a\u003e","truncated":false,"in_reply_to_status_id":null,"in_reply_to_status_id_str":null}
-            ];
+            /**
+             * Spies
+             */
+            spyOn($q, 'reject').and.callThrough();;
         });
     });
 
@@ -32,31 +30,48 @@ describe('Service: Social', function() {
     });
 
     describe('method: getTwitterFeed', function() {
-        var response;
-
         it('should call api and return data', function() {
-            $httpBackend.expectGET('/api/v1/social/twitter?count=4').respond(200, responses.twitterFeed);
+            $httpBackend.expectGET('api/v1/social/twitter?count=4').respond(200, twitterFeed1());
 
             SocialService.getTwitterFeed()
                 .then(function(feed) {
-                    response = feed;
+                    expect(feed).toContain(twitterFeed1()[0]);
+                    expect(feed.length).toEqual(twitterFeed1().length);
                 });
 
             $httpBackend.flush();
-
-            expect(response).toContain(responses.twitterFeed[0]);
-            expect(response.length).toEqual(responses.twitterFeed.length);
         });
 
         it('should return rejected promise if api fails', function() {
-            $httpBackend.expectGET('/api/v1/social/twitter?count=4').respond(500, '');
+            $httpBackend.expectGET('api/v1/social/twitter?count=4').respond(500);
 
-            SocialService.getTwitterFeed().catch(function(err) {
-                response = err;
-            });
+            SocialService.getTwitterFeed();
             $httpBackend.flush();
 
-            expect(response.status).toBe(500);
+            expect($q.reject).toHaveBeenCalled();
+        });
+    });
+
+    describe('method: getInstagramFeed', function() {
+        it('should call api and return data', function() {
+            $httpBackend.expectGET('api/v1/social/instagram?count=4').respond(200, instagramFeed1());
+
+            SocialService.getInstagramFeed()
+                .then(function(feed) {
+                    expect(feed).toContain(instagramFeed1()[0]);
+                    expect(feed.length).toEqual(instagramFeed1().length);
+                });
+
+            $httpBackend.flush();
+        });
+
+        it('should return rejected promise if api fails', function() {
+            $httpBackend.expectGET('api/v1/social/instagram?count=4').respond(500);
+
+            SocialService.getInstagramFeed();
+            $httpBackend.flush();
+
+            expect($q.reject).toHaveBeenCalled();
         });
     });
 });

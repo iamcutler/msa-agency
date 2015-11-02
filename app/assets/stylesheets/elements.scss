@@ -206,6 +206,27 @@ div.newsletter-widget {
             }
         }
     }
+
+    .instagram-feed {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
+
+        figure {
+            background: #000;
+            width: 180px;
+            height: 120px;
+            border: #fff 6px solid;
+            overflow: hidden;
+            margin: 0 0 20px 0;
+
+            img {
+                width: 100%;
+                min-height: 100%;
+            }
+        }
+    }
 }
 
 // Dark section

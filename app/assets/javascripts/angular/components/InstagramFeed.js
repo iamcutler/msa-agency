@@ -11,6 +11,12 @@ export default function InstagramFeed() {
                     <span class="username">msaagency</span>
                     <a href="https://instagram.com/msaagency" target="_blank" class="follow-us">Follow</a>
                 </div>
+
+                <div class="instagram-feed">
+                    <figure ng-repeat="media in data">
+                        <img ng-src="{{ media.images.low_resolution.url }}">
+                    </figure>
+                </div>
             </div>
         `,
         link: (scope) => {
