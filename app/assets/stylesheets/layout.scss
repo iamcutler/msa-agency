@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 /*
 - Client: MSA Agency
@@ -121,6 +122,16 @@ header {
                 overflow: hidden;
                 display: block;
                 text-indent: -9999px;
+            }
+        }
+
+        @include responsive-phone-retina() {
+            h1.logo {
+                display: none;
+            }
+
+            h2 {
+                display: none;
             }
         }
 
@@ -448,6 +459,33 @@ footer {
             a {
                 color: $msa-orange;
                 text-decoration: none;
+            }
+        }
+
+        @include responsive-phone-retina() {
+            .app-container {
+                padding-bottom: 0;
+
+                div.addresses {
+                    width: 100%;
+                }
+
+                div.navigation {
+                    display: none;
+                }
+            }
+
+            .credit-bar {
+                text-align: center;
+
+                span {
+                    float: none;
+                    display: block;
+
+                    &:nth-child(1) {
+                        margin-bottom: 10px;
+                    }
+                }
             }
         }
     }

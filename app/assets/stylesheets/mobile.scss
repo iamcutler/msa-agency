@@ -1,17 +1,6 @@
 @import 'mixins';
 
 @include responsive-phone-retina() {
-    // Main header
-    header.main {
-        h1.logo {
-            display: none;
-        }
-
-        h2 {
-            display: none;
-        }
-    }
-
     // MSA news
     section#msa-news {
         margin: auto 20px !important;
@@ -55,34 +44,6 @@
             & > div {
                 width: 100%;
                 box-sizing: border-box;
-            }
-        }
-    }
-
-    // Main footer
-    footer.main {
-        .app-container {
-            padding-bottom: 0;
-
-            div.addresses {
-                width: 100%;
-            }
-
-            div.navigation {
-                display: none;
-            }
-        }
-
-        .credit-bar {
-            text-align: center;
-
-            span {
-                float: none;
-                display: block;
-
-                &:nth-child(1) {
-                    margin-bottom: 10px;
-                }
             }
         }
     }
