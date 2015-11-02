@@ -33,6 +33,9 @@ gem 'instagram', '~> 1.1', '>= 1.1.6'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
+# Upload management
+gem 'paperclip', '~> 4.3', '>= 4.3.1'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
