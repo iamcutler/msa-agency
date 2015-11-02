@@ -30,6 +30,7 @@ import NavigationController from './angular/controllers/Navigation';
 import NewsController from './angular/controllers/News';
 import NewsletterController from './angular/controllers/Newsletter';
 import SearchController from './angular/controllers/Search';
+import StaffController from './angular/controllers/Staff';
 
 angular.module('MSAAgency.controllers', [])
     .controller('AboutController', AboutController)
@@ -42,7 +43,8 @@ angular.module('MSAAgency.controllers', [])
     .controller('NavigationController', NavigationController)
     .controller('NewsController', NewsController)
     .controller('NewsletterController', NewsletterController)
-    .controller('SearchController', SearchController);
+    .controller('SearchController', SearchController)
+    .controller('StaffController', StaffController);
 
 // Services
 import ClientService from './angular/services/Client';

@@ -106,7 +106,7 @@ export default function RosterSlider($timeout, $state) {
                             return $state.href('app.talent.page', params);
                             break;
                         case 'staff':
-                            return ''; // Integration once staff page is done
+                            return $state.href('app.staff-page', params);
                             break;
                         default:
                             return '';
