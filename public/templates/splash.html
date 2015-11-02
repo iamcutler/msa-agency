@@ -1,235 +1,56 @@
-<!-- Splash!!!! <a ui-sref="app.home.los-angeles">Go</a> -->
-<section id="splash-header" resize-element offset-bottom="100">
-    <video id="splash-video" autoplay loop muted>
-        <source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" type="video/mp4">
-        Your browser does not support the video.
-    </video>
-    <div id="splash-header-content">
-        <h1>
-            <object data="/assets/brand.svg" type="image/svg+xml" width="220">
-                <img src="/assets/brand.png" />
-            </object>
-        </h1>
+<div ng-init="SplashCtrl.initialize()">
+    <section id="splash-header" resize-element offset-bottom="100">
+        <video id="splash-video" autoplay loop muted>
+            <source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" type="video/mp4">
+            Your browser does not support the video.
+        </video>
+        <div id="splash-header-content">
+            <h1>
+                <object data="/assets/brand.svg" type="image/svg+xml" width="220">
+                    <img src="/assets/brand.png" />
+                </object>
+            </h1>
 
-        <div class="choose-city-container los-angeles">
-            <choose-city city-name="Los Angeles" state="app.home.los-angeles"></choose-city>
+            <div class="choose-city-container los-angeles">
+                <choose-city city-name="Los Angeles" state="app.home.los-angeles"></choose-city>
+            </div>
+            <div class="choose-city-container new-york">
+                <choose-city city-name="New York" state="app.home.new-york"></choose-city>
+            </div>
         </div>
-        <div class="choose-city-container new-york">
-            <choose-city city-name="New York" state="app.home.new-york"></choose-city>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="splash-connect">
-    <span>Connect with</span>
-    <h3>#MSAFAM</h3>
+    <section id="splash-connect">
+        <span>Connect with</span>
+        <h3>#MSAFAM</h3>
 
-    <social-icons
-        facebook="https://www.facebook.com/MSAagency"
-        twitter="https://twitter.com/MSAAGENCY"
-        instagram="https://instagram.com/msaagency"
-        youtube="https://www.youtube.com/user/MSAGlobalLeader"></social-icons>
-</section>
+        <social-icons
+            facebook="https://www.facebook.com/MSAagency"
+            twitter="https://twitter.com/MSAAGENCY"
+            instagram="https://instagram.com/msaagency"
+            youtube="https://www.youtube.com/user/MSAGlobalLeader"></social-icons>
+    </section>
 
-<section id="splash-feed">
-    <figure>
-        <img src="https://41.media.tumblr.com/9d54e0cf604c947a0bca9391f3967c2b/tumblr_nncxneJbWa1rbrxfjo1_500.jpg">
-        <div class="body">
-            <div class="author">
-                <div class="thumb">
-                    <img src="https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/10852794_1441621296058391_1235109213_a.jpg">
+    <section id="splash-feed">
+        <figure ng-repeat="media in SplashCtrl.socialFeeds.instagram track by media.id">
+            <img ng-src="{{ media.images.standard_resolution.url }}">
+            <div class="body">
+                <div class="author">
+                    <div class="thumb">
+                        <img ng-src="{{ media.user.profile_picture }}">
+                    </div>
+                    <span class="name">{{ media.user.username }}</span>
                 </div>
-                <span class="name">msajc7</span>
-            </div>
 
-            <figcaption>
-                msaagency#MSAfam Aaron Felske joins the Broadway cast of An American in Paris tonight! Congrats, Aaron! We are SO excited for you! #proudagents
-            </figcaption>
+                <figcaption>
+                    {{ media.caption.text }}
+                </figcaption>
 
-            <div class="statistics">
-                <span class="likes">47 likes</span>
-                <span class="posted">1d</span>
-            </div>
-        </div>
-    </figure>
-    <figure>
-        <img src="https://41.media.tumblr.com/9d54e0cf604c947a0bca9391f3967c2b/tumblr_nncxneJbWa1rbrxfjo1_500.jpg">
-        <div class="body">
-            <div class="author">
-                <div class="thumb">
-                    <img src="https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/10852794_1441621296058391_1235109213_a.jpg">
+                <div class="statistics">
+                    <span class="likes">{{ media.likes.count }} likes</span>
+                    <!-- <span class="posted">{{ media.created_time | date: 'shortTime' }}</span> -->
                 </div>
-                <span class="name">msajc7</span>
             </div>
-
-            <figcaption>
-                msaagency#MSAfam Aaron Felske joins the Broadway cast of An American in Paris tonight! Congrats, Aaron! We are SO excited for you! #proudagents
-            </figcaption>
-
-            <div class="statistics">
-                <span class="likes">47 likes</span>
-                <span class="posted">1d</span>
-            </div>
-        </div>
-    </figure>
-    <figure>
-        <img src="https://41.media.tumblr.com/9d54e0cf604c947a0bca9391f3967c2b/tumblr_nncxneJbWa1rbrxfjo1_500.jpg">
-        <div class="body">
-            <div class="author">
-                <div class="thumb">
-                    <img src="https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/10852794_1441621296058391_1235109213_a.jpg">
-                </div>
-                <span class="name">msajc7</span>
-            </div>
-
-            <figcaption>
-                msaagency#MSAfam Aaron Felske joins the Broadway cast of An American in Paris tonight! Congrats, Aaron! We are SO excited for you! #proudagents
-            </figcaption>
-
-            <div class="statistics">
-                <span class="likes">47 likes</span>
-                <span class="posted">1d</span>
-            </div>
-        </div>
-    </figure>
-    <figure>
-        <img src="https://41.media.tumblr.com/9d54e0cf604c947a0bca9391f3967c2b/tumblr_nncxneJbWa1rbrxfjo1_500.jpg">
-        <div class="body">
-            <div class="author">
-                <div class="thumb">
-                    <img src="https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/10852794_1441621296058391_1235109213_a.jpg">
-                </div>
-                <span class="name">msajc7</span>
-            </div>
-
-            <figcaption>
-                msaagency#MSAfam Aaron Felske joins the Broadway cast of An American in Paris tonight! Congrats, Aaron! We are SO excited for you! #proudagents
-            </figcaption>
-
-            <div class="statistics">
-                <span class="likes">47 likes</span>
-                <span class="posted">1d</span>
-            </div>
-        </div>
-    </figure>
-    <figure>
-        <img src="https://41.media.tumblr.com/9d54e0cf604c947a0bca9391f3967c2b/tumblr_nncxneJbWa1rbrxfjo1_500.jpg">
-        <div class="body">
-            <div class="author">
-                <div class="thumb">
-                    <img src="https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/10852794_1441621296058391_1235109213_a.jpg">
-                </div>
-                <span class="name">msajc7</span>
-            </div>
-
-            <figcaption>
-                msaagency#MSAfam Aaron Felske joins the Broadway cast of An American in Paris tonight! Congrats, Aaron! We are SO excited for you! #proudagents
-            </figcaption>
-
-            <div class="statistics">
-                <span class="likes">47 likes</span>
-                <span class="posted">1d</span>
-            </div>
-        </div>
-    </figure>
-    <figure>
-        <img src="https://41.media.tumblr.com/9d54e0cf604c947a0bca9391f3967c2b/tumblr_nncxneJbWa1rbrxfjo1_500.jpg">
-        <div class="body">
-            <div class="author">
-                <div class="thumb">
-                    <img src="https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/10852794_1441621296058391_1235109213_a.jpg">
-                </div>
-                <span class="name">msajc7</span>
-            </div>
-
-            <figcaption>
-                msaagency#MSAfam Aaron Felske joins the Broadway cast of An American in Paris tonight! Congrats, Aaron! We are SO excited for you! #proudagents
-            </figcaption>
-
-            <div class="statistics">
-                <span class="likes">47 likes</span>
-                <span class="posted">1d</span>
-            </div>
-        </div>
-    </figure>
-    <figure>
-        <img src="https://41.media.tumblr.com/9d54e0cf604c947a0bca9391f3967c2b/tumblr_nncxneJbWa1rbrxfjo1_500.jpg">
-        <div class="body">
-            <div class="author">
-                <div class="thumb">
-                    <img src="https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/10852794_1441621296058391_1235109213_a.jpg">
-                </div>
-                <span class="name">msajc7</span>
-            </div>
-
-            <figcaption>
-                msaagency#MSAfam Aaron Felske joins the Broadway cast of An American in Paris tonight! Congrats, Aaron! We are SO excited for you! #proudagents
-            </figcaption>
-
-            <div class="statistics">
-                <span class="likes">47 likes</span>
-                <span class="posted">1d</span>
-            </div>
-        </div>
-    </figure>
-    <figure>
-        <img src="https://41.media.tumblr.com/9d54e0cf604c947a0bca9391f3967c2b/tumblr_nncxneJbWa1rbrxfjo1_500.jpg">
-        <div class="body">
-            <div class="author">
-                <div class="thumb">
-                    <img src="https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/10852794_1441621296058391_1235109213_a.jpg">
-                </div>
-                <span class="name">msajc7</span>
-            </div>
-
-            <figcaption>
-                msaagency#MSAfam Aaron Felske joins the Broadway cast of An American in Paris tonight! Congrats, Aaron! We are SO excited for you! #proudagents
-            </figcaption>
-
-            <div class="statistics">
-                <span class="likes">47 likes</span>
-                <span class="posted">1d</span>
-            </div>
-        </div>
-    </figure>
-    <figure>
-        <img src="https://41.media.tumblr.com/9d54e0cf604c947a0bca9391f3967c2b/tumblr_nncxneJbWa1rbrxfjo1_500.jpg">
-        <div class="body">
-            <div class="author">
-                <div class="thumb">
-                    <img src="https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/10852794_1441621296058391_1235109213_a.jpg">
-                </div>
-                <span class="name">msajc7</span>
-            </div>
-
-            <figcaption>
-                msaagency#MSAfam Aaron Felske joins the Broadway cast of An American in Paris tonight! Congrats, Aaron! We are SO excited for you! #proudagents
-            </figcaption>
-
-            <div class="statistics">
-                <span class="likes">47 likes</span>
-                <span class="posted">1d</span>
-            </div>
-        </div>
-    </figure>
-    <figure>
-        <img src="https://41.media.tumblr.com/9d54e0cf604c947a0bca9391f3967c2b/tumblr_nncxneJbWa1rbrxfjo1_500.jpg">
-        <div class="body">
-            <div class="author">
-                <div class="thumb">
-                    <img src="https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/10852794_1441621296058391_1235109213_a.jpg">
-                </div>
-                <span class="name">msajc7</span>
-            </div>
-
-            <figcaption>
-                msaagency#MSAfam Aaron Felske joins the Broadway cast of An American in Paris tonight! Congrats, Aaron! We are SO excited for you! #proudagents
-            </figcaption>
-
-            <div class="statistics">
-                <span class="likes">47 likes</span>
-                <span class="posted">1d</span>
-            </div>
-        </div>
-    </figure>
-</section>
+        </figure>
+    </section>
+</div>
