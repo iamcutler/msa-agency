@@ -26,12 +26,12 @@ angular.module('MSAAgency.directives')
                             <li><a ui-sref="app.contact">Contact Us</a></li>
                         </ul>
                         <ul>
-                            <li><a ui-sref="">About Us</a></li>
-                            <li class="sub"><a ui-sref="">Our staff</a></li>
-                            <li class="sub"><a ui-sref="">Affliations</a></li>
-                            <li class="sub"><a ui-sref="">Legacy</a></li>
-                            <li class="sub"><a ui-sref="">Archives</a></li>
-                            <li class="sub"><a ui-sref="">FAQ</a></li>
+                            <li><a ui-sref="app.about">About Us</a></li>
+                            <li class="sub"><a ui-sref="app.about.staff">Our staff</a></li>
+                            <li class="sub"><a ui-sref="app.home.los-angeles">Affliations</a></li>
+                            <li class="sub"><a ui-sref="app.home.los-angeles">Legacy</a></li>
+                            <li class="sub"><a ui-sref="app.home.los-angeles">Archives</a></li>
+                            <li class="sub"><a ui-sref="app.home.los-angeles">FAQ</a></li>
                         </ul>
                         <ul>
                             <li><a ui-sref="app.home.los-angeles">Talent</a></li>
@@ -40,13 +40,13 @@ angular.module('MSAAgency.directives')
                             <li class="sub"><a ui-sref="app.talent.category({ category: 'educators' })">Educators</a></li>
                         </ul>
                         <ul>
-                            <li><a ui-sref="">Submissions</a></li>
-                            <li class="sub"><a ui-sref="">Choreography</a></li>
-                            <li class="sub"><a ui-sref="">LA Dance</a></li>
-                            <li class="sub"><a ui-sref="">NY Dance</a></li>
-                            <li class="sub"><a ui-sref="">LA Commerical</a></li>
-                            <li class="sub"><a ui-sref="">LA Print</a></li>
-                            <li class="sub"><a ui-sref="">New York</a></li>
+                            <li><a ui-sref="app.home.los-angeles">Submissions</a></li>
+                            <li class="sub"><a ui-sref="app.home.los-angeles">Choreography</a></li>
+                            <li class="sub"><a ui-sref="app.home.los-angeles">LA Dance</a></li>
+                            <li class="sub"><a ui-sref="app.home.los-angeles">NY Dance</a></li>
+                            <li class="sub"><a ui-sref="app.home.los-angeles">LA Commerical</a></li>
+                            <li class="sub"><a ui-sref="app.home.los-angeles">LA Print</a></li>
+                            <li class="sub"><a ui-sref="app.home.los-angeles">New York</a></li>
                         </ul>
                     </div>
                 </div>
