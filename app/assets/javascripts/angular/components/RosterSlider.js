@@ -48,10 +48,16 @@ export default function RosterSlider($timeout, $state) {
 
                 // Current visible slide
                 scope.currentSlide = 0;
-                // roster count
-                scope.rosterListCount = rosterList.find('li').length;
-                // Max available slides
-                scope.maxSlides = scope.rosterListCount > countPerSlide ? Math.ceil(scope.rosterListCount / countPerSlide) - 1 : 0;
+
+                scope.$watch('roster', (newVal) => {
+                    if(newVal) {
+                        // roster count
+                        scope.rosterListCount = newVal.length;
+
+                        // Max available slides
+                        scope.maxSlides = scope.rosterListCount > countPerSlide ? Math.ceil(scope.rosterListCount / countPerSlide) - 1 : 0;
+                    }
+                }, true);
 
                 /**
                  * Navigate slider location
@@ -100,13 +106,13 @@ export default function RosterSlider($timeout, $state) {
                             return $state.href('app.talent.page', params);
                             break;
                         case 'staff':
-                            return ''; // Integration since staff page is done
+                            return ''; // Integration once staff page is done
                             break;
                         default:
                             return '';
                     }
                 };
-            }, 0);
+            }, 0, true);
         }
     };
 }
