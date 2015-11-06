@@ -15,7 +15,7 @@ angular.module('MSAAgency.directives')
                         </div>
                         <div class="address">
                             <span class="location">New York</span><br>
-                            1375 Broadway Suite 1000 New York NY 10018
+                            1115 Broadway, Suite 1056, New York, NY 10010
                         </div>
                     </div>
 

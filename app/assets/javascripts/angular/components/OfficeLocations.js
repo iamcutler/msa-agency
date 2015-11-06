@@ -18,7 +18,7 @@ export default function OfficeLocations() {
 
                 <div class="address">
                     <h3>New York</h3>
-                    <strong>1375 Broadway, Suite 1000 New York NY 10018</strong><br>
+                    <strong>1115 Broadway, Suite 1056, New York, NY 10010</strong><br>
                     Phone: (646) 237-6928 | Fax: (646) 253-1258
                 </div>
             </section>
