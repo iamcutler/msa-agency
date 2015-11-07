@@ -1,5 +1,5 @@
 ActiveAdmin.register News do
-    menu priority: 3
+    menu priority: 4
 
     index do
         id_column
