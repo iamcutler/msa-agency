@@ -5,7 +5,9 @@ export default function TalentHeader() {
         scope: {
             name: '@',
             title: '@',
-            social: '='
+            social: '=',
+            hideBookBtn: '=',
+            hideSocialIcons: '='
         },
         template: `
             <header class="talent">
@@ -22,6 +24,7 @@ export default function TalentHeader() {
                     <h3>{{ title }}</h3>
 
                     <social-icons
+                        ng-hide="hideSocialIcons === true"
                         website="{{ ::social.website }}"
                         facebook="{{ ::social.facebook }}"
                         twitter="{{ ::social.twitter }}"
@@ -29,7 +32,7 @@ export default function TalentHeader() {
                         youtube="{{ ::social.youtube }}"></social-icons>
 
                     <div class="button-group">
-                        <a href="" class="book-btn">Book</a>
+                        <a href="" class="book-btn" ng-hide="hideBookBtn === true">Book</a>
                         <a href="" class="share-btn">Share</a>
                     </div>
                 </div>
