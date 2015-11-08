@@ -7,6 +7,9 @@ export default class StaffController {
         this.member = {};
     }
 
+    /**
+     * Get by slug
+     */
     getBySlug() {
         this.staffService.getBySlug(this.$stateParams.slug)
             .then(response => {

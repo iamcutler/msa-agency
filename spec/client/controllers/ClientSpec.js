@@ -1,12 +1,12 @@
 import { MockPromise } from '../spec_helper';
 import { client1 } from '../fixtures/clients';
 
-xdescribe('Controller: Client', () => {
+describe('Controller: Client', () => {
     var $rootScope, $scope, $controller, $q;
-    var ClientCtrl, ClientService, clientSpy;
+    var ClientCtrl, ClientService, clientSpy, getBySlugSpy;
 
     beforeEach(() => {
-        angular.mock.module('MSAAgency.controllers');
+        angular.mock.module('MSAAgency');
 
         inject($injector => {
             $rootScope = $injector.get('$rootScope');
@@ -18,7 +18,7 @@ xdescribe('Controller: Client', () => {
             /**
              * Spies
              */
-            spyOn(ClientService, 'getBySlug').and.callFake(MockPromise($q, client1(), true));
+            getBySlugSpy = spyOn(ClientService, 'getBySlug');
 
             ClientCtrl = $controller('ClientController as ClientCtrl', {
                 $scope: $scope,
@@ -38,13 +38,25 @@ xdescribe('Controller: Client', () => {
 
     describe('method: getBySlug', () => {
         it('should call client service getBySlug', () => {
+            getBySlugSpy.and.callFake(MockPromise($q, client1()));
+
             ClientCtrl.getBySlug();
             $scope.$digest();
 
-            expect(ClientService.getBySlug).toHaveBeenCalledWith('');
+            expect(ClientService.getBySlug).toHaveBeenCalledWith('nappytabs');
         });
 
         describe('on success', () => {
+            beforeEach(() => {
+                getBySlugSpy.and.callFake(MockPromise($q, client1()))
+            });
+
+            it('should assign client to client scope', () => {
+                ClientCtrl.getBySlug();
+                $scope.$digest();
+
+                expect(ClientCtrl.client).toEqual(client1());
+            });
         });
     });
 });
