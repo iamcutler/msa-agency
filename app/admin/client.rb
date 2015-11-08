@@ -48,13 +48,24 @@ ActiveAdmin.register Client do
         end
 
         f.inputs 'Photos' do
-            f.has_many :photos do |p|
-                p.input :_destroy, :as => :boolean
-                p.input :image, as: :file, hint: p.object.image.present? ? image_tag(p.object.image.url(:thumb)) : content_tag(:span, "no image uploaded yet")
-                p.input :caption
-                p.input :order, placeholder: '0'
+            f.has_many :photos do |ph|
+                ph.input :_destroy, :as => :boolean
+                ph.input :image, as: :file, hint: ph.object.image.present? ? image_tag(ph.object.image.url(:thumb)) : content_tag(:span, "no image uploaded yet")
+                ph.input :caption
+                ph.input :order, placeholder: '0'
 
-                p.actions
+                ph.actions
+            end
+        end
+
+        f.inputs 'Press' do
+            f.has_many :press do |pr|
+                pr.input :_destroy, :as => :boolean
+                pr.input :image, as: :file, hint: pr.object.image.present? ? image_tag(pr.object.image.url(:thumb)) : content_tag(:span, "no image uploaded yet")
+                pr.input :caption
+                pr.input :order, placeholder: '0'
+
+                pr.actions
             end
         end
 
@@ -64,5 +75,6 @@ ActiveAdmin.register Client do
     # Assign params that can be editable (Mass Assignment)
     permit_params :first_name, :last_name, :title, :email, :phone, :biography, :website_link, :facebook_link,
                   :twitter_link, :instagram_link, :youtube_link, :slug, :location,
-                  photos_attributes: [:id, :image, :caption, :order, :_destroy]
+                  photos_attributes: [:id, :image, :caption, :order, :_destroy],
+                  press_attributes: [:id, :image, :caption, :order, :_destroy]
 end

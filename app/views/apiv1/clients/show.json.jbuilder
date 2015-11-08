@@ -64,3 +64,15 @@ json.images do
         end
     end
 end
+
+json.press do
+    json.array! @client.press.order(:order) do |press|
+        json.id press.id
+        json.caption press.caption
+        json.sizes do
+            json.thumb press.image.url(:thumb)
+            json.medium press.image.url(:medium)
+            json.large press.image.url(:large)
+        end
+    end
+end

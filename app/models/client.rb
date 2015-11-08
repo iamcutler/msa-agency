@@ -5,6 +5,7 @@ class Client < ActiveRecord::Base
     has_many :press, class_name: 'ClientPress', dependent: :destroy
 
     accepts_nested_attributes_for :photos, allow_destroy: true
+    accepts_nested_attributes_for :press, allow_destroy: true
 
     def name
         self.first_name + ' ' + self.last_name
