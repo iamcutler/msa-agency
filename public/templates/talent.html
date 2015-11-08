@@ -34,15 +34,28 @@
 
     <!-- Photos -->
     <talent-section-header title="Photos"></talent-section-header>
-    <talent-photos data="ClientCtrl.client.images"></talent-photos>
+    <section id="talent-photos">
+        <div class="app-container">
+            <client-image img="img.sizes" ng-repeat="img in ClientCtrl.client.images"></client-image>
+        </div>
+    </section>
     <!-- End Photos -->
 
     <!-- Videos -->
     <talent-section-header title="Videos"></talent-section-header>
-    <talent-videos></talent-videos>
+    <section id="talent-videos">
+        <div class="app-container">
+            <talent-video></talent-video>
+        </div>
+    </section>
     <!-- End Videos -->
 
     <!-- Press -->
     <talent-section-header title="Press"></talent-section-header>
+    <section id="talent-videos">
+        <div class="app-container">
+            <client-image caption="{{ ::press.caption }}" img="press.sizes" ng-repeat="press in ClientCtrl.client.press"></client-image>
+        </div>
+    </section>
     <!-- End Press -->
 </div>

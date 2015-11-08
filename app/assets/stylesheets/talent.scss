@@ -216,15 +216,23 @@ section#talent-photos {
         cursor: pointer;
         display: inline-block;
 
-        img {
+        .thumb {
+            background: #000;
             width: 100%;
-            min-height: 100%;
-            transition: all $transition-duration $transition-easing;
-        }
+            height: 176px;
+            overflow: hidden;
+            display: block;
 
-        &:hover {
             img {
-                opacity: 0.6;
+                width: 100%;
+                min-height: 100%;
+                transition: all $transition-duration $transition-easing;
+            }
+
+            &:hover {
+                img {
+                    opacity: 0.6;
+                }
             }
         }
     }
@@ -233,7 +241,7 @@ section#talent-photos {
 // ----------------------------------------
 // Photos
 // ----------------------------------------
-section#talent-videos {
+section#talent-videos, section#talent-press {
     background: $secondary-grey;
     font-size: 0;
 

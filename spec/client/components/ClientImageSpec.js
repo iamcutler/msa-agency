@@ -1,6 +1,6 @@
 import { Photo1 } from '../fixtures/client_photos';
 
-describe('Component: TalentPhotos', function() {
+describe('Component: ClientImage', function() {
     var $rootScope, $scope, $compile, element;
 
     beforeEach(function() {
@@ -18,7 +18,7 @@ describe('Component: TalentPhotos', function() {
             /**
              * Elements
              **/
-            element = angular.element('<talent-photos data="client.images"></talent-photos>');
+            element = angular.element('<client-image caption="{{ ::client.images[0].caption }}" img="client.images[0].sizes"></client-image>');
         });
     });
 
@@ -33,8 +33,12 @@ describe('Component: TalentPhotos', function() {
             element = $compile(element)($scope);
         });
 
-        it('should pass in image data', () => {
-            expect(element.isolateScope().data[0]).toEqual(Photo1());
+        it('should pass in caption', () => {
+            expect(element.isolateScope().caption).toEqual($scope.client.images[0].caption);
+        });
+
+        it('should pass in image sizes', () => {
+            expect(element.isolateScope().img).toEqual($scope.client.images[0].sizes);
         });
     });
 });

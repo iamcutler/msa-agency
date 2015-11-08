@@ -73,6 +73,7 @@ import ResizeElement from './angular/directives/ResizeElement';
 import ToggleNavigation from './angular/directives/ToggleNavigation';
 
 // Components
+import ClientImage from './angular/components/ClientImage';
 import ContactForm from './angular/components/ContactForm';
 import InstagramFeed from './angular/components/InstagramFeed';
 import Navigation from './angular/components/Navigation';
@@ -80,17 +81,17 @@ import OfficeLocations from './angular/components/OfficeLocations';
 import RosterSlider from './angular/components/RosterSlider';
 import SocialSection from './angular/components/SocialSection';
 import TalentHeader from './angular/components/TalentHeader';
-import TalentPhotos from './angular/components/TalentPhotos';
 import TalentNavigation from './angular/components/TalentNavigation';
 import TalentResume from './angular/components/TalentResume';
-import TalentVideos from './angular/components/TalentVideos';
+import TalentVideo from './angular/components/TalentVideo';
 import TalentSectionHeader from './angular/components/TalentSectionHeader';
 import TwitterFeed from './angular/components/TwitterFeed';
 
 angular.module('MSAAgency.directives', [])
-    .directive('chooseCity', ChooseCity)
-    .directive('contactForm', ContactForm)
     .directive('animatedInput', AnimatedInput)
+    .directive('chooseCity', ChooseCity)
+    .directive('clientImage', ClientImage)
+    .directive('contactForm', ContactForm)
     .directive('instagramFeed', InstagramFeed)
     .directive('latestNews', LatestNews)
     .directive('mediaSlider', MediaSlider)
@@ -103,10 +104,9 @@ angular.module('MSAAgency.directives', [])
     .directive('socialSection', SocialSection)
     .directive('talentHeader', TalentHeader)
     .directive('talentNavigation', TalentNavigation)
-    .directive('talentPhotos', TalentPhotos)
     .directive('talentResume', TalentResume)
     .directive('talentSectionHeader', TalentSectionHeader)
-    .directive('talentVideos', TalentVideos)
+    .directive('talentVideo', TalentVideo)
     .directive('toggleNavigation', ToggleNavigation)
     .directive('twitterFeed', TwitterFeed);
 
