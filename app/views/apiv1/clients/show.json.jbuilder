@@ -54,7 +54,7 @@ json.resume do
 end
 
 json.images do
-    json.array! @client.photos do |img|
+    json.array! @client.photos.order(:order) do |img|
         json.id img.id
         json.caption img.caption
         json.sizes do

@@ -52,6 +52,7 @@ ActiveAdmin.register Client do
                 p.input :_destroy, :as => :boolean
                 p.input :image, as: :file, hint: p.object.image.present? ? image_tag(p.object.image.url(:thumb)) : content_tag(:span, "no image uploaded yet")
                 p.input :caption
+                p.input :order, placeholder: '0'
 
                 p.actions
             end
@@ -63,5 +64,5 @@ ActiveAdmin.register Client do
     # Assign params that can be editable (Mass Assignment)
     permit_params :first_name, :last_name, :title, :email, :phone, :biography, :website_link, :facebook_link,
                   :twitter_link, :instagram_link, :youtube_link, :slug, :location,
-                  photos_attributes: [:image, :caption]
+                  photos_attributes: [:id, :image, :caption, :order, :_destroy]
 end
