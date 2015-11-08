@@ -9,9 +9,8 @@
     <!-- Biography -->
     <talent-section-header title="Biography"></talent-section-header>
     <section id="talent-bio">
-        <div class="app-container" ng-if="ClientCtrl.client.biography">
-            {{ ::ClientCtrl.client.biography }}
-        </div>
+        <div class="app-container" ng-if="ClientCtrl.client.biography" ng-bind-html="ClientCtrl.client.biography"></div>
+
         <div class="app-container no-bio" ng-if="!ClientCtrl.client.biography">
             No current biography
         </div>
