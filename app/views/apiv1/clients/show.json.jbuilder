@@ -52,3 +52,15 @@ json.resume do
         json.array! @client.resume.where(job_type: 'award'), :id, :company, :credit, :project
     end
 end
+
+json.images do
+    json.array! @client.photos do |img|
+        json.id img.id
+        json.caption img.caption
+        json.sizes do
+            json.thumb img.image.url(:thumb)
+            json.medium img.image.url(:medium)
+            json.large img.image.url(:large)
+        end
+    end
+end

@@ -47,9 +47,21 @@ ActiveAdmin.register Client do
             input :location, as: :select, collection: ['Los Angeles', 'New York'], include_blank: false
         end
 
-        actions
+        f.inputs 'Photos' do
+            f.has_many :photos do |p|
+                p.input :_destroy, :as => :boolean
+                p.input :image, as: :file, hint: p.object.image.present? ? image_tag(p.object.image.url(:thumb)) : content_tag(:span, "no image uploaded yet")
+                p.input :caption
+
+                p.actions
+            end
+        end
+
+        f.actions
     end
 
     # Assign params that can be editable (Mass Assignment)
-    permit_params :first_name, :last_name, :title, :email, :phone, :biography, :website_link, :facebook_link, :twitter_link, :instagram_link, :youtube_link, :slug, :location
+    permit_params :first_name, :last_name, :title, :email, :phone, :biography, :website_link, :facebook_link,
+                  :twitter_link, :instagram_link, :youtube_link, :slug, :location,
+                  photos_attributes: [:image, :caption]
 end
