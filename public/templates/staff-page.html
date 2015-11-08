@@ -1,1 +1,30 @@
-Staff page!!!!
+<div ng-init="StaffCtrl.getBySlug()">
+    <talent-header
+        name="{{ ::StaffCtrl.member.full_name }}"
+        title="{{ ::StaffCtrl.member.title }}"
+        social="ClientCtrl.member.social">
+    </talent-header>
+    <talent-navigation></talent-navigation>
+
+    <!-- Biography -->
+    <talent-section-header title="Biography"></talent-section-header>
+    <section id="talent-bio">
+        <div class="app-container" ng-if="StaffCtrl.member.biography">
+            {{ ::StaffCtrl.member.biography }}
+        </div>
+        <div class="app-container no-bio" ng-if="!StaffCtrl.member.biography">
+            No current biography
+        </div>
+    </section>
+    <!-- End Biography -->
+
+    <!-- Photos -->
+    <talent-section-header title="Photos"></talent-section-header>
+    <talent-photos data="ClientCtrl.client.images"></talent-photos>
+    <!-- End Photos -->
+
+    <!-- Videos -->
+    <talent-section-header title="Videos"></talent-section-header>
+    <talent-videos></talent-videos>
+    <!-- End Videos -->
+</div>

@@ -21,7 +21,7 @@ export default function RosterSlider($timeout, $state) {
                         <ul>
                             <li ng-repeat="member in roster">
                                 <a ng-href="{{ getStateName({ slug: member.slug }) }}" class="thumbnail" title="">
-                                    <img ng-src="{{ member.images.sizes.thumb }}" alt="{{ member.full_name }}">
+                                    <img ng-src="{{ member.default_image.sizes.thumb }}" alt="{{ member.full_name }}">
                                     <div class="overlay">
                                         <span class="arrow"></span>
                                         <span class="overlay-name">{{ member.full_name }}</span>

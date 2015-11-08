@@ -47,7 +47,7 @@ angular.module('MSAAgency')
         .state('app.staff-page', {
             url: 'staff/:slug',
             controller: 'StaffController as StaffCtrl',
-            template: 'templates/staff-page.html'
+            templateUrl: 'templates/staff-page.html'
         })
         // Talent
         .state('app.talent', {
