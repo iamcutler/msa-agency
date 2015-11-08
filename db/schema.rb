@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151108004607) do
+ActiveRecord::Schema.define(version: 20151108055515) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -117,18 +117,22 @@ ActiveRecord::Schema.define(version: 20151108004607) do
   end
 
   create_table "staffs", force: :cascade do |t|
-    t.string   "first_name", limit: 255,                           null: false
-    t.string   "last_name",  limit: 255
-    t.string   "email",      limit: 255,                           null: false
-    t.string   "position",   limit: 255,                           null: false
-    t.text     "biography",  limit: 65535
-    t.string   "location",   limit: 255,   default: "Los Angeles", null: false
-    t.string   "department", limit: 255
-    t.string   "gender",     limit: 255,   default: "male",        null: false
-    t.string   "slug",       limit: 255,                           null: false
-    t.integer  "order",      limit: 4,     default: 0,             null: false
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
+    t.string   "first_name",         limit: 255,                           null: false
+    t.string   "last_name",          limit: 255
+    t.string   "email",              limit: 255,                           null: false
+    t.string   "position",           limit: 255,                           null: false
+    t.text     "biography",          limit: 65535
+    t.string   "location",           limit: 255,   default: "Los Angeles", null: false
+    t.string   "department",         limit: 255
+    t.datetime "image_updated_at"
+    t.integer  "image_file_size",    limit: 4
+    t.string   "image_content_type", limit: 255
+    t.string   "image_file_name",    limit: 255
+    t.string   "gender",             limit: 255,   default: "male",        null: false
+    t.string   "slug",               limit: 255,                           null: false
+    t.integer  "order",              limit: 4,     default: 0,             null: false
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
   end
 
   add_foreign_key "client_categories", "clients"

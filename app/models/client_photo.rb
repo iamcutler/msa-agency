@@ -7,7 +7,7 @@ class ClientPhoto < ActiveRecord::Base
     medium: '600x600>',
     large: '800x800>'
   },
-  default_url: "/images/:style/missing.png"
+  default_url: '/assets/images/img-placeholder.jpg'
 
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_presence :image

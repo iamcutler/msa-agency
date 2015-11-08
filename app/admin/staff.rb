@@ -34,6 +34,7 @@ ActiveAdmin.register Staff do
             input :position
             input :biography
             input :location, as: :select, collection: ['Los Angeles', 'New York', ['Los Angeles and New York', 'Los Angeles, New York']], include_blank: false
+            input :image, as: :file, hint: f.object.image.present? ? image_tag(f.object.image.url(:thumb)) : content_tag(:span, "no image uploaded yet")
             input :department
             input :slug
             input :order
@@ -43,5 +44,5 @@ ActiveAdmin.register Staff do
     end
 
     # Assign params that can be editable (Mass Assignment)
-    permit_params :first_name, :last_name, :email, :position, :biography, :location, :department, :slug, :order
+    permit_params :first_name, :last_name, :email, :position, :biography, :location, :department, :image, :slug, :order
 end

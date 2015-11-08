@@ -7,6 +7,13 @@ json.array! @staff do |staff|
     json.biography staff.biography
     json.location staff.location
     json.department staff.department
+    json.images do
+        json.sizes do
+            json.thumb staff.image.url(:thumb)
+            json.medium staff.image.url(:medium)
+            json.large staff.image.url(:large)
+        end
+    end
     json.gender staff.gender
     json.slug staff.slug
     json.order staff.order
