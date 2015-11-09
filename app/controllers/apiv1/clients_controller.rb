@@ -8,6 +8,17 @@ module Apiv1
         # GET /clients/slug
         def show
             @client = Client.find_by_slug(params[:id])
+
+            if @client
+                clientService = ClientService.new({ client: @client })
+
+                @clientPhotos = @client.photos.order(:order)
+                @clientPress = @client.press.order(:order)
+                @clientDefaultPhoto = clientService.getDefaultPhoto || Hash.new
+                @clientCoverPhoto = clientService.getCoverPhoto || Hash.new
+            else
+                render json: { error: 'Client not found' }, status: 404
+            end
         end
 
         # GET /clients-by-category

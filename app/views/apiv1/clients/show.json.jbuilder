@@ -53,8 +53,38 @@ json.resume do
     end
 end
 
+# Cover client image
+if @clientCoverPhoto.as_json.length > 0
+    json.cover_image do
+        json.id @clientCoverPhoto.id
+        json.caption @clientCoverPhoto.caption
+        json.sizes do
+            json.thumb @clientCoverPhoto.image.url(:thumb)
+            json.medium @clientCoverPhoto.image.url(:medium)
+            json.large @clientCoverPhoto.image.url(:large)
+        end
+    end
+else
+    json.cover_image @clientCoverPhoto
+end
+
+# Default client image
+if @clientDefaultPhoto.as_json.length > 0
+    json.default_image do
+        json.id @clientDefaultPhoto.id
+        json.caption @clientDefaultPhoto.caption
+        json.sizes do
+            json.thumb @clientDefaultPhoto.image.url(:thumb)
+            json.medium @clientDefaultPhoto.image.url(:medium)
+            json.large @clientDefaultPhoto.image.url(:large)
+        end
+    end
+else
+    json.default_image @clientCoverPhoto
+end
+
 json.images do
-    json.array! @client.photos.order(:order) do |img|
+    json.array! @clientPhotos do |img|
         json.id img.id
         json.caption img.caption
         json.sizes do
@@ -66,7 +96,7 @@ json.images do
 end
 
 json.press do
-    json.array! @client.press.order(:order) do |press|
+    json.array! @clientPress do |press|
         json.id press.id
         json.caption press.caption
         json.sizes do

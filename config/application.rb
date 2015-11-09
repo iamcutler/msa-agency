@@ -26,5 +26,7 @@ module MsaAgency
     # Make public assets requireable in manifest files
     config.assets.paths << Rails.root.join("public", "assets", "stylesheets")
     config.assets.paths << Rails.root.join("public", "assets", "javascripts")
+
+    config.autoload_paths += %W(#{config.root}/app/services)
   end
 end
