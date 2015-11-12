@@ -8,6 +8,8 @@ export default class ContactController {
             phone: '',
             message: ''
         };
+        this.showContactForm = true;
+        this.showRepresentationForm = false;
     }
 
     /**
@@ -18,5 +20,13 @@ export default class ContactController {
         if(this.contactForm.$valid) {
             alert('submitted');
         }
+    }
+
+    /**
+     * Toggle between contact forms
+     */
+    toggleContactForms() {
+        this.showContactForm = this.showContactForm ? false : true;
+        this.showRepresentationForm = this.showRepresentationForm ? false : true;
     }
 }

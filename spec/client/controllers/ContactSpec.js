@@ -49,4 +49,38 @@ describe('Controller: Contact', () => {
     describe('method: submitContactForm', () => {
 
     });
+
+    describe('method toggleContactForms', () => {
+        it('should set showContactForm to false if true', () => {
+            ContactCtrl.showContactForm = true;
+
+            ContactCtrl.toggleContactForms();
+
+            expect(ContactCtrl.showContactForm).toBe(false);
+        });
+
+        it('should set showContactForm to true if false', () => {
+            ContactCtrl.showContactForm = false;
+
+            ContactCtrl.toggleContactForms();
+
+            expect(ContactCtrl.showContactForm).toBe(true);
+        });
+
+        it('should set showRepresentationForm to false if true', () => {
+            ContactCtrl.showRepresentationForm = true;
+
+            ContactCtrl.toggleContactForms();
+
+            expect(ContactCtrl.showRepresentationForm).toBe(false);
+        });
+
+        it('should set showRepresentationForm to true if false', () => {
+            ContactCtrl.showRepresentationForm = false;
+
+            ContactCtrl.toggleContactForms();
+
+            expect(ContactCtrl.showRepresentationForm).toBe(true);
+        });
+    });
 });

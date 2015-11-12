@@ -2,15 +2,12 @@ export default function ContactForm() {
     return {
         restrict: 'E',
         replace: true,
+        scope: false,
         template: `
             <section id="contact-form">
-                <header class="section-header">
-                    Get in touch with us
-                </header>
-
                 <span class="contact-form-notice">FILL OUT OUR CONTACT FORM AND WE’LL GET BACK WITH YOU</span>
 
-                <form name="contactForm" novalidate>
+                <form name="ContactCtrl.contactForm" ng-submit="ContactCtrl.submitContactForm()" novalidate>
                     <animated-input type="text" placeholder="Regarding:" ng-model="ContactCtrl.contact_form.regarding" required></animated-input>
                     <animated-input type="text" placeholder="Name:" ng-model="ContactCtrl.contact_form.name" required></animated-input>
                     <animated-input type="text" placeholder="Phone:" ng-model="ContactCtrl.contact_form.phone" required></animated-input>
