@@ -6,18 +6,20 @@ export default function TalentHeader() {
             name: '@',
             title: '@',
             social: '=',
+            coverImage: '=',
+            defaultImage: '=',
             hideBookBtn: '=',
             hideSocialIcons: '='
         },
         template: `
             <header class="talent">
                 <div class="background">
-                    <img src="http://msaagency.com/images/clients/528356101013.jpeg">
+                    <img ng-src="{{ coverImage.sizes.large }}">
                 </div>
 
                 <div class="talent">
                     <a href="" class="talent-thumb">
-                        <img src="http://msaagency.com/images/clients/21132325101013.jpeg">
+                        <img ng-src="{{ defaultImage.sizes.square }}">
                     </a>
 
                     <h1>{{ name }}</h1>
