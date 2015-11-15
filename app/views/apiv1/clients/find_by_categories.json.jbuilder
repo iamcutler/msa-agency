@@ -8,4 +8,28 @@ json.array! @clients do |client|
     json.slug client.slug
     json.location client.location
     json.categories CSV.parse(client.categories)[0].map { |a| a.squish }
+
+    json.default_image do
+        # Default client image
+        @clientDefault = ClientPhoto.where(client_id: client.id, default: 1).first
+
+        if @clientDefault
+            json.id @clientDefault.id
+            json.caption @clientDefault.caption
+            json.sizes do
+                json.thumb @clientDefault.image.url(:thumb)
+                json.square @clientDefault.image.url(:square)
+                json.medium @clientDefault.image.url(:medium)
+                json.large @clientDefault.image.url(:large)
+            end
+        else
+            json.caption ''
+            json.sizes do
+                json.thumb '/assets/images/img-placeholder.jpg'
+                json.square '/assets/images/img-placeholder.jpg'
+                json.medium '/assets/images/img-placeholder.jpg'
+                json.large '/assets/images/img-placeholder.jpg'
+            end
+        end
+    end
 end

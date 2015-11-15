@@ -2,7 +2,7 @@ module Apiv1
     class ClientsController < ApplicationController
         # GET /clients
         def index
-            @clients = Client.all()
+            @clients = Client.all
         end
 
         # GET /clients/slug
