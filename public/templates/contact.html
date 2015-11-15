@@ -11,7 +11,15 @@
                               ng-click="ContactCtrl.toggleContactForms()">Representation</button>
     </div>
 
-    <contact-form ng-show="ContactCtrl.showContactForm"></contact-form>
+    <div id="contact-loader" ng-show="ContactCtrl.isSubmitting">
+        <div class="loader"></div>
+    </div>
+
+    <div id="contact-message" ng-if="ContactCtrl.showSubmissionMessage && !ContactCtrl.isSubmitting">
+        {{ ContactCtrl.submissionMessage }}
+    </div>
+
+    <contact-form ng-show="ContactCtrl.showContactForm && !ContactCtrl.isSubmitting && !ContactCtrl.showSubmissionMessage"></contact-form>
 </section>
 
 <office-locations></office-locations>

@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
         post 'newsletter', to: 'newsletter#create'
 
+        scope '/contact' do
+            post 'form', to: 'contact#submit'
+        end
+
         scope '/social' do
             get 'twitter', to: 'social#getTwitterFeed'
             get 'instagram', to: 'social#getInstagramFeed'

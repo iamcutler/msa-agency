@@ -24,7 +24,7 @@ describe('Service: Contact', () => {
         };
 
         it('should call backend to submit form', () => {
-            $httpBackend.expectPOST('api/v1/contact').respond({
+            $httpBackend.expectPOST('api/v1/contact/form').respond({
                 success: true
             });
 

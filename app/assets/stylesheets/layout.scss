@@ -98,6 +98,16 @@ ul.social-icons {
     }
 }
 
+// Loader
+.loader {
+    background: url('/assets/loader-1-64x64.gif') no-repeat;
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+}
+
 /* 2.0 Header */
 header {
     position: relative;

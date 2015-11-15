@@ -5,8 +5,18 @@ export default class ContactService {
         this.commonService = CommonService;
     }
 
-    submitForm(form_fields) {
-        return this.$http.post('api/v1/contact')
+    /**
+     * Submit contact form
+     *
+     * @param {Object} fields
+     * @param {String} fields.regarding
+     * @param {String} fields.name
+     * @param {String} fields.email
+     * @param {String} fields.phone
+     * @param {String} fields.message
+     */
+    submitForm(fields) {
+        return this.$http.post('api/v1/contact/form', fields)
             .then(this.commonService.handleHttpResponse('Error while submitting contact form'));
     }
 
