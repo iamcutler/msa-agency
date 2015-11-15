@@ -38,7 +38,7 @@
     <talent-section-header title="Photos"></talent-section-header>
     <section id="talent-photos">
         <div class="app-container">
-            <client-image img="img.sizes" ng-repeat="img in ClientCtrl.client.images"></client-image>
+            <client-image img="img.sizes" group="clientphotos" ng-repeat="img in ClientCtrl.client.images"></client-image>
         </div>
     </section>
     <!-- End Photos -->
@@ -56,7 +56,7 @@
     <talent-section-header title="Press"></talent-section-header>
     <section id="talent-videos">
         <div class="app-container">
-            <client-image caption="{{ ::press.caption }}" img="press.sizes" ng-repeat="press in ClientCtrl.client.press"></client-image>
+            <client-image caption="{{ ::press.caption }}" img="press.sizes" group="clientpress" ng-repeat="press in ClientCtrl.client.press"></client-image>
         </div>
     </section>
     <!-- End Press -->

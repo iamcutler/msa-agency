@@ -18,7 +18,11 @@ describe('Component: ClientImage', function() {
             /**
              * Elements
              **/
-            element = angular.element('<client-image caption="{{ ::client.images[0].caption }}" img="client.images[0].sizes"></client-image>');
+            element = angular.element(`
+                <client-image caption="{{ ::client.images[0].caption }}"
+                              group="clientphotos"
+                              img="client.images[0].sizes"></client-image>
+            `);
         });
     });
 
@@ -39,6 +43,10 @@ describe('Component: ClientImage', function() {
 
         it('should pass in image sizes', () => {
             expect(element.isolateScope().img).toEqual($scope.client.images[0].sizes);
+        });
+
+        it('should pass in group name', () => {
+            expect(element.isolateScope().group).toEqual('clientphotos');
         });
     });
 });

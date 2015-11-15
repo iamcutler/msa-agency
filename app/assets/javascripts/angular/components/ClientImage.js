@@ -4,12 +4,15 @@ export default function ClientImage() {
         replace: true,
         scope: {
             caption: '@',
-            img: '='
+            img: '=',
+            group: '@'
         },
         template: `
             <figure>
                 <div class="thumb">
-                    <img ng-src="{{ img.thumb }}">
+                    <a ng-href="{{ img.large }}" data-lightbox="{{ group || '' }}" data-title="{{ caption }}">
+                        <img ng-src="{{ img.thumb }}">
+                    </a>
                 </div>
                 <figcaption ng-if="caption">
                     <span class="title">

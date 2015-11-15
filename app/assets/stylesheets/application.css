@@ -11,5 +11,6 @@
  * file per style scope.
  *
 //= require build
+//= require lightbox
  *= require_self
  */
