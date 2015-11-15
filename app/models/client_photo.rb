@@ -7,6 +7,7 @@ class ClientPhoto < ActiveRecord::Base
     # This method associates the attribute ":image" with a file attachment
     has_attached_file :image, styles: {
         thumb: '300x300>',
+        square: '400x400#',
         medium: '600x600>',
         large: '800x800>'
     },

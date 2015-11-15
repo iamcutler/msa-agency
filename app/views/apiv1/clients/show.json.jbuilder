@@ -60,6 +60,7 @@ if @clientCoverPhoto.as_json.length > 0
         json.caption @clientCoverPhoto.caption
         json.sizes do
             json.thumb @clientCoverPhoto.image.url(:thumb)
+            json.square @clientCoverPhoto.image.url(:square)
             json.medium @clientCoverPhoto.image.url(:medium)
             json.large @clientCoverPhoto.image.url(:large)
         end
@@ -75,6 +76,7 @@ if @clientDefaultPhoto.as_json.length > 0
         json.caption @clientDefaultPhoto.caption
         json.sizes do
             json.thumb @clientDefaultPhoto.image.url(:thumb)
+            json.square @clientDefaultPhoto.image.url(:square)
             json.medium @clientDefaultPhoto.image.url(:medium)
             json.large @clientDefaultPhoto.image.url(:large)
         end
@@ -89,6 +91,7 @@ json.images do
         json.caption img.caption
         json.sizes do
             json.thumb img.image.url(:thumb)
+            json.square img.image.url(:square)
             json.medium img.image.url(:medium)
             json.large img.image.url(:large)
         end
