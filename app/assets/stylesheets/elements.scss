@@ -251,9 +251,6 @@ section.twilight {
     }
 
     .roster {
-        position: relative;
-        background: #2d2d2d;
-
         .thumbs {
             position: relative;
 
@@ -269,6 +266,7 @@ section.twilight {
                     list-style: none;
                     transform-style: preserve-3d;
                     transition: all 0.4s ease-in-out;
+                    margin-bottom: 60px;
 
                     .thumbnail {
                         position: relative;
@@ -363,6 +361,9 @@ section.twilight {
         }
 
         .roster {
+            position: relative;
+            background: #2d2d2d;
+            
             &:hover {
                 .navigation .arrow {
                     opacity: 1;
@@ -425,6 +426,8 @@ section.twilight {
                     white-space: nowrap;
 
                     li {
+                        margin-bottom: 0;
+
                         // Hover state
                         &:hover {
                             width: $roster-spotlight-calc;
