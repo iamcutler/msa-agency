@@ -20,8 +20,12 @@
     <!-- End Biography -->
 
     <!-- Photos -->
-    <talent-section-header title="Photos"></talent-section-header>
-    <talent-photos data="ClientCtrl.client.images"></talent-photos>
+    <talent-section-header title="Photos" ng-if="StaffCtrl.member.images.length"></talent-section-header>
+    <section id="talent-photos" ng-if="StaffCtrl.member.images.length">
+        <div class="app-container">
+            <client-image img="img.sizes" ng-repeat="img in StaffCtrl.member.images"></client-image>
+        </div>
+    </section>
     <!-- End Photos -->
 
     <!-- Videos -->
