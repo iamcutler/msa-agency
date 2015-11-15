@@ -1,15 +1,16 @@
 // @ngInject
-export default function RosterSlider($timeout, $state) {
+export default function ClientRoster($timeout, $state) {
     return {
         restrict: 'E',
         replace: true,
         scope: {
             title: '@',
             type: '@',
-            roster: '='
+            roster: '=',
+            slider: '@'
         },
         template: `
-            <div class="roster-slider">
+            <div class="client-roster" ng-class="{slider: slider}">
                 <span class="title">{{ title }}</span>
 
                 <div class="roster">

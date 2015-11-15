@@ -78,7 +78,7 @@ import ContactForm from './angular/components/ContactForm';
 import InstagramFeed from './angular/components/InstagramFeed';
 import Navigation from './angular/components/Navigation';
 import OfficeLocations from './angular/components/OfficeLocations';
-import RosterSlider from './angular/components/RosterSlider';
+import ClientRoster from './angular/components/ClientRoster';
 import SocialSection from './angular/components/SocialSection';
 import TalentHeader from './angular/components/TalentHeader';
 import TalentNavigation from './angular/components/TalentNavigation';
@@ -91,6 +91,7 @@ angular.module('MSAAgency.directives', [])
     .directive('animatedInput', AnimatedInput)
     .directive('chooseCity', ChooseCity)
     .directive('clientImage', ClientImage)
+    .directive('clientRoster', ClientRoster)
     .directive('contactForm', ContactForm)
     .directive('instagramFeed', InstagramFeed)
     .directive('latestNews', LatestNews)
@@ -100,7 +101,6 @@ angular.module('MSAAgency.directives', [])
     .directive('navigation', Navigation)
     .directive('officeLocations', OfficeLocations)
     .directive('resizeElement', ResizeElement)
-    .directive('rosterSlider', RosterSlider)
     .directive('socialSection', SocialSection)
     .directive('talentHeader', TalentHeader)
     .directive('talentNavigation', TalentNavigation)

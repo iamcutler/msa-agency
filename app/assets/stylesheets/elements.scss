@@ -239,13 +239,13 @@ section.twilight {
 // ----------------------------------------------------
 // Roster slider
 // ----------------------------------------------------
-.roster-slider {
+.client-roster {
     margin-bottom: 50px;
 
     span.title {
         color: $msa-orange;
         font-size: 20px;
-        margin: 20px 60px;
+        margin: 20px 0;
         text-transform: capitalize;
         display: block;
     }
@@ -254,67 +254,12 @@ section.twilight {
         position: relative;
         background: #2d2d2d;
 
-        &:hover {
-            .navigation .arrow {
-                opacity: 1;
-            }
-        }
-
-        .navigation {
-            position: absolute;
-            background: rgba(0,0,0,0.7);
-            top: 0;
-            width: 50px;
-            height: 100%;
-            cursor: pointer;
-            z-index: 2;
-
-            &:hover {
-                .arrow {
-                    transform: scale(1.4);
-                }
-            }
-
-            .arrow {
-                @include background-image('roster-slider-arrows');
-                background-repeat: no-repeat;
-                background-position: 0 0;
-                width: 16px;
-                height: 28px;
-                margin: 48px auto auto;
-                display: block;
-                opacity: 0;
-                overflow: hidden;
-                transition: all $transition-duration $transition-easing;
-            }
-
-            &.left {
-                left: 0;
-            }
-
-            &.right {
-                right: 0;
-
-                .arrow {
-                    background-position: right;
-                }
-            }
-        }
-
         .thumbs {
             position: relative;
-            height: 120px;
-            margin: 0 50px;
 
             ul {
-                position: absolute;
-                top: 0;
-                left:0;
-                width: 100%;
-                max-height: $roster-slider-height;
                 margin: 0;
                 padding: 0;
-                white-space: nowrap;
 
                 li {
                     width: (100% / 6);
@@ -390,12 +335,8 @@ section.twilight {
 
                     // Hover state
                     &:hover {
-                        width: $roster-spotlight-calc;
-                        margin-left: -20px;
-
                         .thumbnail {
                             position: relative;
-                            height: 140px;
 
                             img {
                                 @include opacity(0.5);
@@ -414,4 +355,102 @@ section.twilight {
             }
         }
     }
+
+    // Slider styling
+    &.slider {
+        span.title {
+            margin: 20px 60px;
+        }
+
+        .roster {
+            &:hover {
+                .navigation .arrow {
+                    opacity: 1;
+                }
+            }
+
+            .navigation {
+                position: absolute;
+                background: rgba(0,0,0,0.7);
+                top: 0;
+                width: 50px;
+                height: 100%;
+                cursor: pointer;
+                z-index: 2;
+
+                &:hover {
+                    .arrow {
+                        transform: scale(1.4);
+                    }
+                }
+
+                .arrow {
+                    @include background-image('roster-slider-arrows');
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                    width: 16px;
+                    height: 28px;
+                    margin: 48px auto auto;
+                    display: block;
+                    opacity: 0;
+                    overflow: hidden;
+                    transition: all $transition-duration $transition-easing;
+                }
+
+                &.left {
+                    left: 0;
+                }
+
+                &.right {
+                    right: 0;
+
+                    .arrow {
+                        background-position: right;
+                    }
+                }
+            }
+
+            .thumbs {
+                height: 120px;
+                margin: 0 50px;
+
+                ul {
+                    position: absolute;
+                    top: 0;
+                    left:0;
+                    width: 100%;
+                    max-height: $roster-slider-height;
+                    margin: 0;
+                    padding: 0;
+                    white-space: nowrap;
+
+                    li {
+                        // Hover state
+                        &:hover {
+                            width: $roster-spotlight-calc;
+                            margin-left: -20px;
+
+                            .thumbnail {
+                                position: relative;
+                                height: 140px;
+
+                                img {
+                                    @include opacity(0.5);
+                                }
+                            }
+
+                            .thumbnail .overlay {
+                                display: block;
+                            }
+
+                            .name {
+                                visibility: hidden;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // End slider styles
 }
