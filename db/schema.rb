@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109055549) do
+ActiveRecord::Schema.define(version: 20151115215032) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -98,21 +98,23 @@ ActiveRecord::Schema.define(version: 20151109055549) do
   add_index "client_resumes", ["client_id"], name: "index_client_resumes_on_client_id", using: :btree
 
   create_table "clients", force: :cascade do |t|
-    t.string   "first_name",     limit: 255,                           null: false
-    t.string   "last_name",      limit: 255
-    t.string   "title",          limit: 255
-    t.string   "email",          limit: 255
-    t.string   "phone",          limit: 18
-    t.text     "biography",      limit: 65535
-    t.string   "website_link",   limit: 255
-    t.string   "facebook_link",  limit: 255
-    t.string   "twitter_link",   limit: 255
-    t.string   "instagram_link", limit: 255
-    t.string   "youtube_link",   limit: 255
-    t.string   "slug",           limit: 255,                           null: false
-    t.string   "location",       limit: 255,   default: "Los Angeles", null: false
-    t.datetime "created_at",                                           null: false
-    t.datetime "updated_at",                                           null: false
+    t.string   "first_name",       limit: 255,                           null: false
+    t.string   "last_name",        limit: 255
+    t.string   "title",            limit: 255
+    t.string   "email",            limit: 255
+    t.string   "phone",            limit: 18
+    t.text     "biography",        limit: 65535
+    t.string   "website_link",     limit: 255
+    t.string   "facebook_link",    limit: 255
+    t.string   "twitter_link",     limit: 255
+    t.string   "instagram_link",   limit: 255
+    t.string   "youtube_link",     limit: 255
+    t.integer  "default_image_id", limit: 4
+    t.integer  "cover_image_id",   limit: 4
+    t.string   "slug",             limit: 255,                           null: false
+    t.string   "location",         limit: 255,   default: "Los Angeles", null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
   end
 
   create_table "news", force: :cascade do |t|

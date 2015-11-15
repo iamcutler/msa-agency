@@ -9,20 +9,14 @@ json.array! @clients do |client|
     json.location client.location
 
     # Default client image
-    @clientDefault = client.photos.where(default: 1).first
-
-    if @clientDefault
-        json.default_image do
-            json.id @clientDefault.id
-            json.caption @clientDefault.caption
-            json.sizes do
-                json.thumb @clientDefault.image.url(:thumb)
-                json.square @clientDefault.image.url(:square)
-                json.medium @clientDefault.image.url(:medium)
-                json.large @clientDefault.image.url(:large)
-            end
+    json.default_image do
+        json.id client.default_photo ? client.default_photo.id : 0
+        json.caption client.default_photo ? client.default_photo.caption : ''
+        json.sizes do
+            json.thumb client.default_photo ? client.default_photo.image.url(:thumb) : '/assets/images/img-placeholder.jpg'
+            json.square client.default_photo ? client.default_photo.image.url(:square) : '/assets/images/img-placeholder.jpg'
+            json.medium client.default_photo ? client.default_photo.image.url(:medium) : '/assets/images/img-placeholder.jpg'
+            json.large client.default_photo ? client.default_photo.image.url(:large) : '/assets/images/img-placeholder.jpg'
         end
-    else
-        json.default_image Hash.new
     end
 end
