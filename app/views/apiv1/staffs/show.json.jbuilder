@@ -9,6 +9,7 @@ json.department @staff.department
 json.default_image do
     json.sizes do
         json.thumb @staff.image.url(:thumb)
+        json.square @staff.image.url(:square)
         json.medium @staff.image.url(:medium)
         json.large @staff.image.url(:large)
     end
