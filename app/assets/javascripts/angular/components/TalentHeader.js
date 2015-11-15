@@ -18,7 +18,7 @@ export default function TalentHeader() {
                 </div>
 
                 <div class="talent">
-                    <a href="" class="talent-thumb">
+                    <a ng-href="{{ defaultImage.sizes.large }}" data-lightbox="clientDefaultImg" class="talent-thumb">
                         <img ng-src="{{ defaultImage.sizes.square }}">
                     </a>
 
