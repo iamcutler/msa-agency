@@ -31,6 +31,19 @@ json.cover_image do
     end
 end
 
+json.images do
+    json.array! @staff.photos.order(:order) do |img|
+        json.id img.id
+        json.caption img.caption
+        json.sizes do
+            json.thumb img.image.url(:thumb)
+            json.square img.image.url(:square)
+            json.medium img.image.url(:medium)
+            json.large img.image.url(:large)
+        end
+    end
+end
+
 json.gender @staff.gender
 json.slug @staff.slug
 json.order @staff.order
