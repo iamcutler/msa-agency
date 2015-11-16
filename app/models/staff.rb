@@ -1,15 +1,7 @@
 class Staff < ActiveRecord::Base
-    # This method associates the attribute ":image" with a file attachment
-    has_attached_file :image, styles: {
-      thumb: '300x300>',
-      square: '400x400#',
-      medium: '600x600>',
-      large: '800x800>'
-    },
-    default_url: "/assets/images/img-placeholder.jpg"
+    has_many :photos, class_name: 'StaffPhoto'
+    has_one :default_photo, class_name: 'StaffPhoto', primary_key: 'default_image_id', foreign_key: "id"
+    has_one :cover_photo, class_name: 'StaffPhoto', primary_key: 'cover_image_id', foreign_key: "id"
 
-    # Validate the attached image is image/jpg, image/png, etc
-    validates_attachment_presence :image
-    validates_attachment_size :image, :less_than => 3.megabytes
-    validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+    accepts_nested_attributes_for :photos, allow_destroy: true
 end

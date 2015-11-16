@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151115215032) do
+ActiveRecord::Schema.define(version: 20151116042505) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -134,27 +134,40 @@ ActiveRecord::Schema.define(version: 20151115215032) do
     t.datetime "updated_at",                null: false
   end
 
-  create_table "staffs", force: :cascade do |t|
-    t.string   "first_name",         limit: 255,                           null: false
-    t.string   "last_name",          limit: 255
-    t.string   "email",              limit: 255,                           null: false
-    t.string   "position",           limit: 255,                           null: false
-    t.text     "biography",          limit: 65535
-    t.string   "location",           limit: 255,   default: "Los Angeles", null: false
-    t.string   "department",         limit: 255
-    t.datetime "image_updated_at"
-    t.integer  "image_file_size",    limit: 4
-    t.string   "image_content_type", limit: 255
+  create_table "staff_photos", force: :cascade do |t|
+    t.integer  "staff_id",           limit: 4
     t.string   "image_file_name",    limit: 255
-    t.string   "gender",             limit: 255,   default: "male",        null: false
-    t.string   "slug",               limit: 255,                           null: false
-    t.integer  "order",              limit: 4,     default: 0,             null: false
-    t.datetime "created_at",                                               null: false
-    t.datetime "updated_at",                                               null: false
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+    t.string   "caption",            limit: 255
+    t.integer  "order",              limit: 4,   default: 0, null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+  end
+
+  add_index "staff_photos", ["staff_id"], name: "index_staff_photos_on_staff_id", using: :btree
+
+  create_table "staffs", force: :cascade do |t|
+    t.string   "first_name",       limit: 255,                           null: false
+    t.string   "last_name",        limit: 255
+    t.string   "email",            limit: 255,                           null: false
+    t.string   "position",         limit: 255,                           null: false
+    t.text     "biography",        limit: 65535
+    t.string   "location",         limit: 255,   default: "Los Angeles", null: false
+    t.string   "department",       limit: 255
+    t.integer  "default_image_id", limit: 4
+    t.integer  "cover_image_id",   limit: 4
+    t.string   "gender",           limit: 255,   default: "male",        null: false
+    t.string   "slug",             limit: 255,                           null: false
+    t.integer  "order",            limit: 4,     default: 0,             null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
   end
 
   add_foreign_key "client_categories", "clients"
   add_foreign_key "client_photos", "clients"
   add_foreign_key "client_presses", "clients"
   add_foreign_key "client_resumes", "clients"
+  add_foreign_key "staff_photos", "staffs"
 end

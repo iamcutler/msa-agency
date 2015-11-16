@@ -40,9 +40,21 @@ ActiveAdmin.register Staff do
             input :order
         end
 
+        f.inputs 'Photos' do
+            f.has_many :photos do |ph|
+                ph.input :_destroy, :as => :boolean
+                ph.input :image, as: :file, hint: ph.object.image.present? ? image_tag(ph.object.image.url(:thumb)) : content_tag(:span, "no image uploaded yet")
+                ph.input :caption
+                ph.input :order, placeholder: '0'
+
+                ph.actions
+            end
+        end
+
         actions
     end
 
     # Assign params that can be editable (Mass Assignment)
-    permit_params :first_name, :last_name, :email, :position, :biography, :location, :department, :image, :slug, :order
+    permit_params :first_name, :last_name, :email, :position, :biography, :location, :department, :image, :slug, :order,
+                  photos_attributes: [:id, :image, :caption, :cover, :default, :order, :_destroy]
 end
