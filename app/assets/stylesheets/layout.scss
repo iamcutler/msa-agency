@@ -32,6 +32,26 @@ input, textarea, button {
     clear: both;
 }
 
+// Page loader
+.page-loader {
+    background: url('/assets/loader-1-64x64.gif') center no-repeat;
+    width: 64px;
+    height: 0;
+    display: block;
+    margin: auto;
+    padding: 0;
+    transition: all 0.5s ease-in-out;
+
+    &.white {
+        background-image: url('/assets/loader-1-64x64-white.gif');
+    }
+
+    &.loading {
+        height: 64px;
+        padding: 120px 0;
+    }
+}
+
 // Application container
 .app-container {
     max-width: $media-desktop-width;
