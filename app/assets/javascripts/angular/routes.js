@@ -60,6 +60,11 @@ angular.module('MSAAgency')
                 controller: 'ClientCategoryController as ClientCategoryCtrl',
                 templateUrl: 'templates/talent-category.html'
             })
+            .state('app.talent.legacy', {
+                url: '/legacy',
+                controller: 'LegacyController as LegacyCtrl',
+                templateUrl: 'templates/talent-legacy.html'
+            })
             .state('app.talent.page', {
                 url: '/:slug',
                 controller: 'ClientController as ClientCtrl',

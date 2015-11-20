@@ -26,6 +26,7 @@ import ClientController from './angular/controllers/Client';
 import ContactController from './angular/controllers/Contact';
 import SplashController from './angular/controllers/Splash';
 import HomeController from './angular/controllers/Home';
+import LegacyController from './angular/Controllers/Legacy';
 import NavigationController from './angular/controllers/Navigation';
 import NewsController from './angular/controllers/News';
 import NewsletterController from './angular/controllers/Newsletter';
@@ -40,6 +41,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('ContactController', ContactController)
     .controller('SplashController', SplashController)
     .controller('HomeController', HomeController)
+    .controller('LegacyController', LegacyController)
     .controller('NavigationController', NavigationController)
     .controller('NewsController', NewsController)
     .controller('NewsletterController', NewsletterController)
