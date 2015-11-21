@@ -41,7 +41,7 @@ export default function Navigation() {
                                 <li><a ui-sref="app.affiliates" toggle-navigation>Affiliations</a></li>
                                 <li><a ui-sref="app.talent.legacy" toggle-navigation>Legacy</a></li>
                                 <li><a ui-sref="app.home.new-york" toggle-navigation>Archives</a></li>
-                                <li><a ui-sref="app.home.new-york" toggle-navigation>FAQ</a></li>
+                                <li><a ui-sref="app.faq" toggle-navigation>FAQ</a></li>
                             </ul>
                         </li>
                         <li>

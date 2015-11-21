@@ -82,6 +82,12 @@ angular.module('MSAAgency')
             controller: 'NewsController as NewsCtrl',
             templateUrl: 'templates/news.html'
         })
+        // Frequent Asked questions
+        .state('app.faq', {
+            url: 'faq',
+            controller: 'FAQController as FAQCtrl',
+            templateUrl: 'templates/faq.html'
+        })
         // Contact
         .state('app.contact', {
             url: 'contact',

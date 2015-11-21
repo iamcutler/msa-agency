@@ -1,9 +1,9 @@
 import { MockPromise } from '../spec_helper';
-import { Affiliate1 } from '../fixtures/affiliates';
+import { FAQ1 } from '../fixtures/faq';
 
-describe('Controller: Affiliates', () => {
+describe('Controller: FAQ', () => {
     let $rootScope, $scope, $controller, $q;
-    let AffiliatesCtrl, AffiliateService, affiliateSpy;
+    let FAQCtrl, FAQService, faqSpy;
 
     beforeEach(() => {
         angular.mock.module('MSAAgency');
@@ -13,34 +13,34 @@ describe('Controller: Affiliates', () => {
             $scope = $rootScope.$new();
             $controller = $injector.get('$controller');
             $q = $injector.get('$q');
-            AffiliateService = $injector.get('AffiliateService');
+            FAQService = $injector.get('FAQService');
 
-            AffiliatesCtrl = $controller('AffiliatesController as AffiliatesCtrl', {
+            FAQCtrl = $controller('FAQController as FAQCtrl', {
                 $scope: $scope
             });
 
             /**
              * Spies
              */
-            affiliateSpy = spyOn(AffiliateService, 'get');
+             faqSpy = spyOn(FAQService, 'get');
         });
     });
 
     it('is defined', () => {
-        expect(AffiliatesCtrl).toBeDefined();
+        expect(FAQCtrl).toBeDefined();
     });
 
-    describe('method: getAffiliates', () => {
+    describe('method: getQuestions', () => {
         describe('on success', () => {
             beforeEach(() => {
-                affiliateSpy.and.callFake(MockPromise($q, [Affiliate1]));
+                faqSpy.and.callFake(MockPromise($q, [FAQ1]));
             });
 
-            it('should call affiliates service', () => {
-                AffiliatesCtrl.getAffiliates();
+            it('should call faq service', () => {
+                FAQCtrl.getQuestions();
                 $scope.$digest();
 
-                expect(AffiliateService.get).toHaveBeenCalled();
+                expect(FAQService.get).toHaveBeenCalled();
             });
         });
     });

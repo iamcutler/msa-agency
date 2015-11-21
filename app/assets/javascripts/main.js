@@ -25,6 +25,7 @@ import AppController from './angular/controllers/App';
 import ClientCategoryController from './angular/controllers/ClientCategory';
 import ClientController from './angular/controllers/Client';
 import ContactController from './angular/controllers/Contact';
+import FAQController from './angular/controllers/FAQ';
 import SplashController from './angular/controllers/Splash';
 import HomeController from './angular/controllers/Home';
 import LegacyController from './angular/Controllers/Legacy';
@@ -41,6 +42,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('ClientCategoryController', ClientCategoryController)
     .controller('ClientController', ClientController)
     .controller('ContactController', ContactController)
+    .controller('FAQController', FAQController)
     .controller('SplashController', SplashController)
     .controller('HomeController', HomeController)
     .controller('LegacyController', LegacyController)
@@ -54,6 +56,7 @@ angular.module('MSAAgency.controllers', [])
 import ClientService from './angular/services/Client';
 import CommonService from './angular/services/Common';
 import ContactService from './angular/services/Contact';
+import FAQService from './angular/services/FAQ';
 import NewsService from './angular/services/News';
 import SocialService from './angular/services/Social';
 import StaffService from './angular/services/Staff';
@@ -62,6 +65,7 @@ angular.module('MSAAgency.services', [])
     .service('ClientService', ClientService)
     .service('CommonService', CommonService)
     .service('ContactService', ContactService)
+    .service('FAQService', FAQService)
     .service('NewsService', NewsService)
     .service('SocialService', SocialService)
     .service('StaffService', StaffService);
