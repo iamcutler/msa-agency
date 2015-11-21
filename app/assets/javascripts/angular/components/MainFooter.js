@@ -39,15 +39,6 @@ angular.module('MSAAgency.directives')
                             <li class="sub"><a ui-sref="app.talent.category({ category: 'creative' })">Creative</a></li>
                             <li class="sub"><a ui-sref="app.talent.category({ category: 'educators' })">Educators</a></li>
                         </ul>
-                        <ul>
-                            <li><a ui-sref="app.home.los-angeles">Submissions</a></li>
-                            <li class="sub"><a ui-sref="app.home.los-angeles">Choreography</a></li>
-                            <li class="sub"><a ui-sref="app.home.los-angeles">LA Dance</a></li>
-                            <li class="sub"><a ui-sref="app.home.los-angeles">NY Dance</a></li>
-                            <li class="sub"><a ui-sref="app.home.los-angeles">LA Commerical</a></li>
-                            <li class="sub"><a ui-sref="app.home.los-angeles">LA Print</a></li>
-                            <li class="sub"><a ui-sref="app.home.los-angeles">New York</a></li>
-                        </ul>
                     </div>
                 </div>
 
