@@ -1,9 +1,10 @@
 @import 'variables';
 
 #contact-options {
+    max-width: 440px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin: 0 auto 30px auto;
 
     button {
         background: #000;
@@ -35,6 +36,10 @@ section#contact-us {
     padding: 0 20px 40px 20px;
     margin: auto;
 
+    &.representation {
+        max-width: 600px;
+    }
+
     input {
         margin-bottom: 10px;
     }
@@ -49,17 +54,59 @@ section#contact-us {
         margin: 100px 0;
     }
 
-    #contact-form {
-        span.contact-form-notice {
-            color: #727272;
-            font-size: 14px;
-            text-transform: uppercase;
-            text-align: center;
-            display: block;
-            padding-bottom: 10px;
-        }
+    span.contact-form-notice {
+        color: #727272;
+        font-size: 14px;
+        text-transform: uppercase;
+        text-align: center;
+        display: block;
+        padding-bottom: 10px;
+        clear: both;
 
+        &.section-title {
+            padding: 20px 0;
+        }
+    }
+
+    .contact-form {
         form {
+            select {
+                background: none;
+                width: 100%;
+                color: #252525;
+                font-size: 16px;
+                border: none;
+                border-bottom: 2px #d7d7d7 solid;
+                padding: 10px 6px;
+                box-sizing: border-box;
+                appearance: none;
+                outline: none;
+                border-radius: 0;
+            }
+
+            .split-column {
+                &> input[type='file'], .animated-input {
+                    width: 48%;
+
+                    &:nth-child(odd) {
+                        float: left;
+                    }
+
+                    &:nth-child(even) {
+                        float: right;
+                    }
+                }
+            }
+
+            .representation-option {
+                float: left;
+                width: 50%;
+
+                input[type='checkbox'] {
+                    margin-right: 6px;
+                }
+            }
+
             button {
                 background: $secondary-grey;
                 color: #FFF;

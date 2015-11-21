@@ -4,7 +4,7 @@ export default function ContactForm() {
         replace: true,
         scope: false,
         template: `
-            <section id="contact-form">
+            <section id="contact" class="contact-form">
                 <span class="contact-form-notice">FILL OUT OUR CONTACT FORM AND WE’LL GET BACK WITH YOU</span>
 
                 <form name="ContactCtrl.contactForm" ng-submit="ContactCtrl.submitContactForm()" novalidate>

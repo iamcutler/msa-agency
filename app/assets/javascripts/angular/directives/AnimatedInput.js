@@ -30,7 +30,7 @@ export default function AnimatedInput() {
 
             // Event listener for input blur
             input.on('blur', () => {
-                if(ngModel.$modelValue === "") {
+                if(!ngModel.$modelValue) {
                     element.removeClass('active');
                 }
             });

@@ -32,6 +32,7 @@ import LegacyController from './angular/Controllers/Legacy';
 import NavigationController from './angular/controllers/Navigation';
 import NewsController from './angular/controllers/News';
 import NewsletterController from './angular/controllers/Newsletter';
+import { RepresentationFormController } from './angular/components/RepresentationForm';
 import SearchController from './angular/controllers/Search';
 import StaffController from './angular/controllers/Staff';
 
@@ -49,6 +50,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('NavigationController', NavigationController)
     .controller('NewsController', NewsController)
     .controller('NewsletterController', NewsletterController)
+    .controller('RepresentationFormController', RepresentationFormController)
     .controller('SearchController', SearchController)
     .controller('StaffController', StaffController);
 
@@ -87,6 +89,7 @@ import InstagramFeed from './angular/components/InstagramFeed';
 import Navigation from './angular/components/Navigation';
 import OfficeLocations from './angular/components/OfficeLocations';
 import ClientRoster from './angular/components/ClientRoster';
+import { RepresentationForm } from './angular/components/RepresentationForm';
 import SocialSection from './angular/components/SocialSection';
 import TalentHeader from './angular/components/TalentHeader';
 import TalentNavigation from './angular/components/TalentNavigation';
@@ -109,6 +112,7 @@ angular.module('MSAAgency.directives', [])
     .directive('navigation', Navigation)
     .directive('officeLocations', OfficeLocations)
     .directive('resizeElement', ResizeElement)
+    .directive('representationForm', RepresentationForm)
     .directive('socialSection', SocialSection)
     .directive('talentHeader', TalentHeader)
     .directive('talentNavigation', TalentNavigation)

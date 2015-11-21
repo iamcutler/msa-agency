@@ -1,4 +1,4 @@
-<section id="contact-us">
+<section id="contact-us" class="representation">
     <header class="section-header">
         Get in touch with us
     </header>
@@ -20,6 +20,7 @@
     </div>
 
     <contact-form ng-show="ContactCtrl.showContactForm && !ContactCtrl.isSubmitting"></contact-form>
+    <representation-form ng-show="!ContactCtrl.showContactForm && !ContactCtrl.isSubmitting"></representation-form>
 </section>
 
 <office-locations></office-locations>
