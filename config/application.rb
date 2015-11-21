@@ -30,5 +30,11 @@ module MsaAgency
     config.assets.paths << Rails.root.join("public", "assets", "javascripts")
 
     config.autoload_paths += %W(#{config.root}/app/services)
+
+    config.generators do |g|
+      g.assets = false
+      g.helper = false
+      g.view_specs = false
+    end
   end
 end
