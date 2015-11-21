@@ -20,6 +20,7 @@ require('./angular/routes');
 
 // Controllers
 import AboutController from './angular/controllers/About';
+import AffiliatesController from './angular/controllers/Affiliates';
 import AppController from './angular/controllers/App';
 import ClientCategoryController from './angular/controllers/ClientCategory';
 import ClientController from './angular/controllers/Client';
@@ -35,6 +36,7 @@ import StaffController from './angular/controllers/Staff';
 
 angular.module('MSAAgency.controllers', [])
     .controller('AboutController', AboutController)
+    .controller('AffiliatesController', AffiliatesController)
     .controller('AppController', AppController)
     .controller('ClientCategoryController', ClientCategoryController)
     .controller('ClientController', ClientController)

@@ -1,5 +1,5 @@
 ActiveAdmin.register Newsletter , as: 'Mailing List' do
-    menu priority: 5, label: 'Mailing List'
+    menu priority: 7, label: 'Mailing List'
     actions :all, except: [:edit]
 
     index title: 'Mailing List' do

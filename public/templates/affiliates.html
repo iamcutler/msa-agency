@@ -1,0 +1,35 @@
+<div ng-init="AffiliatesCtrl.initialize()">
+    <section class="twilight">
+        <header class="section-header twilight">
+            Affiliates
+        </header>
+
+        <div class="section-placeholder-text" ng-if="!AffiliatesCtrl.affiliates.length && !isLoadingPage">
+            No current affiliates
+        </div>
+
+        <div class="app-container">
+            <div class="client-roster">
+                <span class="title">Affiliates</span>
+
+                <div class="roster">
+                    <div class="thumbs">
+                        <ul>
+                            <li ng-repeat="affiliate in AffiliatesCtrl.affiliates">
+                                <a ng-href="{{ affiliate.url }}" class="thumbnail" target="_blank">
+                                    <img ng-src="{{ affiliate.image.sizes.thumb }}" alt="{{ affiliate.name }}">
+                                    <div class="overlay">
+                                        <span class="arrow"></span>
+                                        <span class="overlay-name">{{ affiliate.name }}</span>
+                                    </div>
+                                </a>
+
+                                <span class="name">{{ affiliate.name }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

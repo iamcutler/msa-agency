@@ -8,6 +8,8 @@ Rails.application.routes.draw do
         resources :clients, only: ['index', 'show']
         get 'clients-by-category', to: 'clients#find_by_categories'
 
+        resources :affiliate, only: ['index', 'show'], path: 'affiliates'
+
         resources :news, only: ['index', 'show']
         get 'featured-news', to: 'news#featured'
 
