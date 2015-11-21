@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
         resources :affiliate, only: ['index', 'show'], path: 'affiliates'
 
+        resources :faq, only: ['index', 'show'], path: 'faq'
+
         resources :news, only: ['index', 'show']
         get 'featured-news', to: 'news#featured'
 
