@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
         post 'newsletter', to: 'newsletter#create'
 
+        get 'search', to: 'search#get_results'
+
         scope '/contact' do
             post 'form', to: 'contact#submit'
         end
