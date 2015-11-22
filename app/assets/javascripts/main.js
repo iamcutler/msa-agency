@@ -61,6 +61,7 @@ import CommonService from './angular/services/Common';
 import ContactService from './angular/services/Contact';
 import FAQService from './angular/services/FAQ';
 import NewsService from './angular/services/News';
+import SearchService from './angular/services/Search';
 import SocialService from './angular/services/Social';
 import StaffService from './angular/services/Staff';
 
@@ -71,6 +72,7 @@ angular.module('MSAAgency.services', [])
     .service('ContactService', ContactService)
     .service('FAQService', FAQService)
     .service('NewsService', NewsService)
+    .service('SearchService', SearchService)
     .service('SocialService', SocialService)
     .service('StaffService', StaffService);
 
