@@ -11,6 +11,7 @@ module Apiv1
 
             if @client
                 @clientPhotos = @client.photos.order(:order)
+                @clientVideos = @client.videos.order(:order)
                 @clientPress = @client.press.order(:order)
             else
                 render json: { error: 'Client not found' }, status: 404

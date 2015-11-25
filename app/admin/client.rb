@@ -60,6 +60,17 @@ ActiveAdmin.register Client do
             end
         end
 
+        f.inputs 'Videos' do
+            f.has_many :videos do |pv|
+                pv.input :_destroy, :as => :boolean
+                pv.input :video_id, placeholder: 'v?=uc-CzXQJg8Y'
+                pv.input :video_type, as: :select, collection: [['YouTube', 'youtube'], ['Vimeo', 'vimeo']], include_blank: false
+                pv.input :order, placeholder: '0'
+
+                pv.actions
+            end
+        end
+
         f.inputs 'Press' do
             f.has_many :press do |pr|
                 pr.input :_destroy, :as => :boolean
@@ -78,5 +89,6 @@ ActiveAdmin.register Client do
     permit_params :first_name, :last_name, :title, :email, :phone, :biography, :website_link, :facebook_link,
                   :twitter_link, :instagram_link, :youtube_link, :slug, :location,
                   photos_attributes: [:id, :image, :caption, :cover, :default, :order, :_destroy],
+                  videos_attributes: [:id, :video_id, :video_type, :order, :_destroy],
                   press_attributes: [:id, :image, :caption, :order, :_destroy]
 end

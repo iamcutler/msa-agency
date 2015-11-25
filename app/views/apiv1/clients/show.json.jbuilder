@@ -90,6 +90,15 @@ json.images do
     end
 end
 
+json.videos do
+    json.array! @clientVideos do |video|
+        json.id video.id
+        json.video_id video.video_id
+        json.video_type video.video_type
+        json.order video.order
+    end
+end
+
 json.press do
     json.array! @clientPress do |press|
         json.id press.id
