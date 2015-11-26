@@ -1,4 +1,4 @@
-export default function NewsArticle() {
+export default function FeaturedNewsArticle() {
     return {
         restrict: 'E',
         replace: true,
