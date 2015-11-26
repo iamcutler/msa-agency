@@ -81,7 +81,6 @@ import ChooseCity from './angular/directives/ChooseCity';
 import AnimatedInput from './angular/directives/AnimatedInput';
 import LatestNews from './angular/directives/LatestNews';
 import MediaSlider from './angular/directives/MediaSlider';
-import NewsArticle from './angular/directives/NewsArticle';
 import NewsletterWidget from './angular/directives/NewsletterWidget';
 import ResizeElement from './angular/directives/ResizeElement';
 import ToggleNavigation from './angular/directives/ToggleNavigation';
@@ -89,6 +88,7 @@ import ToggleNavigation from './angular/directives/ToggleNavigation';
 // Components
 import ClientImage from './angular/components/ClientImage';
 import ContactForm from './angular/components/ContactForm';
+import FeaturedNewsArticle from './angular/components/FeaturedNewsArticle';
 import InstagramFeed from './angular/components/InstagramFeed';
 import Navigation from './angular/components/Navigation';
 import OfficeLocations from './angular/components/OfficeLocations';
@@ -112,7 +112,7 @@ angular.module('MSAAgency.directives', [])
     .directive('instagramFeed', InstagramFeed)
     .directive('latestNews', LatestNews)
     .directive('mediaSlider', MediaSlider)
-    .directive('newsArticle', NewsArticle)
+    .directive('featuredNewsArticle', FeaturedNewsArticle)
     .directive('newsletterWidget', NewsletterWidget)
     .directive('newsSearchResult', NewsSearchResult)
     .directive('navigation', Navigation)

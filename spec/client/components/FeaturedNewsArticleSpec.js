@@ -1,4 +1,4 @@
-describe('Component: newsArticle', function() {
+describe('Component: featuredNewsArticle', function() {
     var $rootScope, $scope, $compile, element, elementWithSpotlight;
     var mocks;
 
@@ -21,8 +21,8 @@ describe('Component: newsArticle', function() {
             // $scope
             $scope.article = mocks.articles[0];
 
-            element = angular.element('<news-article data="article"></news-article>');
-            elementWithSpotlight = angular.element('<news-article data="article" spotlight="true"></news-article>');
+            element = angular.element('<featured-news-article data="article"></featured-news-article>');
+            elementWithSpotlight = angular.element('<featured-news-article data="article" spotlight="true"></featured-news-article>');
         });
     });
 
