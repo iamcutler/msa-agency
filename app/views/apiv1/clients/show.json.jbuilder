@@ -94,6 +94,7 @@ json.videos do
     json.array! @clientVideos do |video|
         json.id video.id
         json.video_id video.video_id
+        json.title video.title
         json.video_type video.video_type
         json.order video.order
     end

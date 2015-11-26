@@ -1,4 +1,6 @@
-describe('Component: TalentVideos', function() {
+import { ClientVideo1 } from '../fixtures/client_videos';
+
+describe('Component: ClientVideo', function() {
     var $rootScope, $scope, $compile, element;
 
     beforeEach(function() {
@@ -10,9 +12,14 @@ describe('Component: TalentVideos', function() {
             $compile = $injector.get('$compile');
 
             /**
+             * Scope
+             */
+            $scope.video_data = ClientVideo1;
+
+            /**
              * Elements
              **/
-            element = angular.element('<talent-videos></talent-videos>');
+            element = angular.element('<client-video data="video_data"></client-video>');
         });
     });
 
@@ -20,5 +27,11 @@ describe('Component: TalentVideos', function() {
         element = $compile(element)($scope);
 
         expect(element).toBeDefined();
+    });
+
+    it('should pass data in isolate scope', () => {
+        element = $compile(element)($scope);
+
+        expect(element.isolateScope().data).toEqual(ClientVideo1);
     });
 });
