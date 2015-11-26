@@ -7,6 +7,8 @@ module Apiv1
             location = params[:location] || nil
 
             @articles = News.findPublishedArticles(location, offset, limit)
+            @articleCount = News.count
+            @articlePageCount = (@articleCount / limit.to_i).round + 1
         end
 
         # GET /news/:slug
