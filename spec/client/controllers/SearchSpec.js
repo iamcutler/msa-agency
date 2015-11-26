@@ -30,6 +30,7 @@ describe('Controller: Search', () => {
              * Spies
              */
             searchResultsSpy = spyOn(SearchService, 'getResults');
+            spyOn(SearchService, 'getResultsCount').and.callThrough();
         })
     });
 
@@ -38,22 +39,26 @@ describe('Controller: Search', () => {
     });
 
     describe('method: getResults', () => {
-        it('should call search service', () => {
-            searchResultsSpy.and.callFake(MockPromise($q, SearchResultsTypeAll));
+        describe('on success', () => {
+            beforeEach(() => {
+                searchResultsSpy.and.callFake(MockPromise($q, SearchResultsTypeAll));
 
-            SearchCtrl.getResults();
-            $scope.$digest();
+                SearchCtrl.getResults();
+                $scope.$digest();
+            });
 
-            expect(SearchService.getResults).toHaveBeenCalled();
-        });
+            it('should call search service', () => {
+                expect(SearchService.getResults).toHaveBeenCalled();
+            });
 
-        it('should assign results to instance variable', () => {
-            searchResultsSpy.and.callFake(MockPromise($q, SearchResultsTypeAll));
+            it('should assign results to instance variable', () => {
+                expect(SearchCtrl.results.clients).toEqual(SearchResultsTypeAll.clients);
+                expect(SearchCtrl.results.news).toEqual(SearchResultsTypeAll.news);
+            });
 
-            SearchCtrl.getResults();
-            $scope.$digest();
-
-            expect(SearchCtrl.results).toEqual(SearchResultsTypeAll);
+            it('should call getResultsCount method to calculate from response', () => {
+                expect(SearchService.getResultsCount).toHaveBeenCalledWith(SearchResultsTypeAll);
+            });
         });
     });
 });

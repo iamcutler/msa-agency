@@ -11,7 +11,7 @@
     <talent-navigation></talent-navigation>
 
     <!-- Biography -->
-    <talent-section-header title="Biography"></talent-section-header>
+    <sub-section-header title="Biography"></sub-section-header>
     <section id="talent-bio">
         <div class="app-container" ng-if="StaffCtrl.member.biography" ng-bind-html="StaffCtrl.member.biography"></div>
 
@@ -22,7 +22,7 @@
     <!-- End Biography -->
 
     <!-- Photos -->
-    <talent-section-header title="Photos" ng-if="StaffCtrl.member.images.length"></talent-section-header>
+    <sub-section-header title="Photos" ng-if="StaffCtrl.member.images.length"></sub-section-header>
     <section id="talent-photos" ng-if="StaffCtrl.member.images.length">
         <div class="app-container">
             <client-image img="img.sizes" group="staffphotos" ng-repeat="img in StaffCtrl.member.images"></client-image>
@@ -31,7 +31,7 @@
     <!-- End Photos -->
 
     <!-- Videos -->
-    <talent-section-header title="Videos"></talent-section-header>
+    <sub-section-header title="Videos"></sub-section-header>
     <talent-videos></talent-videos>
     <!-- End Videos -->
 </div>

@@ -1,4 +1,4 @@
-describe('Component: TalentSectionHeader', function() {
+describe('Component: SubSectionHeader', function() {
     var $rootScope, $scope, $compile, element;
 
     beforeEach(function() {
@@ -12,7 +12,7 @@ describe('Component: TalentSectionHeader', function() {
             /**
              * Elements
              **/
-            element = angular.element('<talent-section-header title="Photos"></talent-section-header>');
+            element = angular.element('<sub-section-header title="Photos"></sub-section-header>');
             element = $compile(element)($scope);
         });
     });

@@ -78,4 +78,14 @@ describe('Service: Search', () => {
             $httpBackend.flush();
         });
     });
+
+    describe('method: getResultsCount', () => {
+        it('should return count from results colection', () => {
+            expect(SearchService.getResultsCount(SearchResultsTypeAll)).toBe(3);
+        });
+
+        it('should return count from results array', () => {
+            expect(SearchService.getResultsCount(SearchResultsClients)).toBe(1);
+        });
+    });
 });

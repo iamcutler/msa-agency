@@ -8,7 +8,11 @@ export default class SearchController {
 
         this.currentPage = 1;
         this.pageSize = 20;
-        this.results = [];
+        this.results = {
+            count: 0,
+            clients: [],
+            news: []
+        };
     }
 
     initialize() {
@@ -31,7 +35,20 @@ export default class SearchController {
 
         return this.searchService.getResults(params)
             .then(response => {
-                this.results = response;
+                try {
+                    if(response.hasOwnProperty('clients')) {
+                        this.results.clients = response.clients;
+                    }
+
+                    if(response.hasOwnProperty('news')) {
+                        this.results.news = response.news;
+                    }
+
+                    // Calculate results total
+                    this.results.count = this.searchService.getResultsCount(response);
+                } catch(exception) {
+                    console.log(exception.message);
+                }
             })
             .finally(() => this.$rootScope.isLoadingPage = false);
     }

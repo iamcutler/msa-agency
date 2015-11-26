@@ -1,4 +1,4 @@
-export default function TalentSectionHeader() {
+export default function SubSectionHeader() {
     return {
         restrict: 'E',
         replace: true,

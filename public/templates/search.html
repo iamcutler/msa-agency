@@ -1,3 +1,22 @@
 <div ng-init="SearchCtrl.initialize()">
-    {{ SearchCtrl.query }}
+    <header class="section-header">
+        Search Results
+    </header>
+
+    <section id="search-results">
+        <div class="app-container">
+            <span id="result-count">{{ SearchCtrl.results.count }} total search results</span>
+
+            <div id="no-results" ng-if="!SearchCtrl.results.clients.length && !SearchCtrl.results.news.length">
+                Oh No!!! No Results<br>
+                Check if that your spelling is correct.
+            </div>
+
+            <client-search-result data="client" ng-repeat="client in SearchCtrl.results.clients"
+                                  ng-if="SearchCtrl.results.clients.length"></client-search-result>
+
+            <news-search-result data="article" ng-repeat="article in SearchCtrl.results.news"
+                                ng-if="SearchCtrl.results.news.length"></news-search-result>
+        </div>
+    </section>
 </div>
