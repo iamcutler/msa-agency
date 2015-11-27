@@ -49,6 +49,5 @@ test:
 #
 production:
   <<: *default
-  database: msa-agency_production
-  username: msa-agency
-  password: <%= ENV['MSA-AGENCY_DATABASE_PASSWORD'] %>
+  database: msa_agency_production
+  socket: /var/run/mysqld/mysqld.sock
