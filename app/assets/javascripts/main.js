@@ -87,19 +87,21 @@ import ToggleNavigation from './angular/directives/ToggleNavigation';
 
 // Components
 import ClientImage from './angular/components/ClientImage';
+import ClientRoster from './angular/components/ClientRoster';
+import ClientSearchResult from './angular/components/ClientSearchResult';
+import ClientVideo from './angular/components/ClientVideo';
 import ContactForm from './angular/components/ContactForm';
 import FeaturedNewsArticle from './angular/components/FeaturedNewsArticle';
 import InstagramFeed from './angular/components/InstagramFeed';
 import Navigation from './angular/components/Navigation';
+import NewsSearchResult from './angular/components/NewsSearchResult';
 import OfficeLocations from './angular/components/OfficeLocations';
-import ClientRoster from './angular/components/ClientRoster';
 import { RepresentationForm } from './angular/components/RepresentationForm';
 import SocialSection from './angular/components/SocialSection';
+import SubSectionHeader from './angular/components/SubSectionHeader';
 import TalentHeader from './angular/components/TalentHeader';
 import TalentNavigation from './angular/components/TalentNavigation';
 import TalentResume from './angular/components/TalentResume';
-import TalentVideo from './angular/components/TalentVideo';
-import TalentSectionHeader from './angular/components/TalentSectionHeader';
 import TwitterFeed from './angular/components/TwitterFeed';
 
 angular.module('MSAAgency.directives', [])
@@ -108,6 +110,7 @@ angular.module('MSAAgency.directives', [])
     .directive('clientImage', ClientImage)
     .directive('clientRoster', ClientRoster)
     .directive('clientSearchResult', ClientSearchResult)
+    .directive('clientVideo', ClientVideo)
     .directive('contactForm', ContactForm)
     .directive('instagramFeed', InstagramFeed)
     .directive('latestNews', LatestNews)
@@ -124,7 +127,6 @@ angular.module('MSAAgency.directives', [])
     .directive('talentHeader', TalentHeader)
     .directive('talentNavigation', TalentNavigation)
     .directive('talentResume', TalentResume)
-    .directive('talentVideo', TalentVideo)
     .directive('toggleNavigation', ToggleNavigation)
     .directive('twitterFeed', TwitterFeed);
 
