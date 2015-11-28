@@ -27,7 +27,8 @@ set :linked_files, fetch(:linked_files, []).push(
     'config/database.yml',
     'config/secrets.yml',
     'config/social.yml',
-    'config/initializers/instagram.rb'
+    'config/initializers/instagram.rb',
+    'config/initializers/devise.rb'
 )
 
 # Default value for linked_dirs is []
