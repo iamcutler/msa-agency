@@ -39,8 +39,9 @@ set :linked_files, fetch(:linked_files, []).push(
 # Default value for keep_releases is 5
 set :keep_releases, 3
 
+before 'deploy:assets:precompile', 'setup:build_client_app'
+
 namespace :deploy do
-  after :deploy, 'setup:build_client_app'
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
