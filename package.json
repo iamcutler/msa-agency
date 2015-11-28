@@ -30,6 +30,7 @@
     "angular-sanitize": "^1.4.7",
     "angular-ui-router": "^0.2.15",
     "babelify": "^6.3.0",
+    "browser-sync": "~2.4.0",
     "browserify": "^8.0.2",
     "bulk-require": "^0.2.1",
     "coffeeify": "~0.7.0",
@@ -61,7 +62,6 @@
     "watchify": "^2.2.1"
   },
   "devDependencies": {
-    "browser-sync": "~2.4.0",
     "gulp-watch": "^4.1.1",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.9",
