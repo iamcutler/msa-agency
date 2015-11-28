@@ -40,6 +40,8 @@ set :linked_files, fetch(:linked_files, []).push(
 # Default value for keep_releases is 5
 set :keep_releases, 3
 
+set :npm_flags, '--silent --no-spin' # default
+
 before 'deploy:assets:precompile', 'setup:build_client_app'
 
 namespace :deploy do
