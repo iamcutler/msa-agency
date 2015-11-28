@@ -1,4 +1,3 @@
-// @ngInject
 export default function ClientRoster($timeout, $state) {
     return {
         restrict: 'E',
@@ -117,3 +116,5 @@ export default function ClientRoster($timeout, $state) {
         }
     };
 }
+
+ClientRoster.$inject = ['$timeout', '$state'];

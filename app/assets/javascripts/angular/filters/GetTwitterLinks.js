@@ -1,4 +1,3 @@
-// @ngInject
 export default function GetTwitterLinks($sce)
 {
     return (input) => {
@@ -16,3 +15,5 @@ export default function GetTwitterLinks($sce)
         return $sce.trustAsHtml(input);
     }
 }
+
+GetTwitterLinks.$inject = ['$sce'];

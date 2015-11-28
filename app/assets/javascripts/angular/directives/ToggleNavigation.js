@@ -1,4 +1,3 @@
-// @ngInject
 export default function ToggleNavigation($document) {
     return {
         restrict: 'EA',
@@ -15,3 +14,5 @@ export default function ToggleNavigation($document) {
         }
     };
 }
+
+ToggleNavigation.$inject = ['$document'];

@@ -1,4 +1,3 @@
-// @ngInject
 export default function TalentResume($timeout, $filter) {
     return {
         restrict: 'E',
@@ -22,3 +21,5 @@ export default function TalentResume($timeout, $filter) {
         `
     };
 }
+
+TalentResume.$inject = ['$timeout', '$filter'];

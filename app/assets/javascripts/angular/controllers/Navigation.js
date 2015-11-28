@@ -1,5 +1,5 @@
-// @ngInject
 export default class NavigationController {
+    // @ngInject
     constructor($state) {
         this.$state = $state;
         this.q = ''; // Search string

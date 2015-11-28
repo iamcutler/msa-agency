@@ -97,3 +97,5 @@ export default function MediaSlider($timeout, $interval) {
         }
     };
 }
+
+MediaSlider.$inject = ['$timeout', '$interval'];

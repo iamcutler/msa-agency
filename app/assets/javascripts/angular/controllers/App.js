@@ -1,4 +1,5 @@
 export default class AppController {
+    // @ngInject
     constructor($rootScope) {
         this.$rootScope = $rootScope;
 

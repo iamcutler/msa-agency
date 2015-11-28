@@ -1,4 +1,3 @@
-// @ngInject
 export default function ResizeElement($window) {
     return {
         restrict: 'A',
@@ -30,3 +29,5 @@ export default function ResizeElement($window) {
         }
     }
 }
+
+ResizeElement.$inject = ['$window'];

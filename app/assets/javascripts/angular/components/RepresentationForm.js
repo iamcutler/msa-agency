@@ -148,7 +148,10 @@ export function RepresentationForm() {
 }
 
 export class RepresentationFormController {
-    constructor() {
+    // @ngInject
+    constructor($http) {
+        this.$http = $http;
+
         this.form = {}; // Representation form
     }
 
