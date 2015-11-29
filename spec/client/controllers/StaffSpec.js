@@ -2,7 +2,7 @@ import { MockPromise } from '../spec_helper';
 import { staff1 } from '../fixtures/staff';
 
 describe('Controller: Staff', () => {
-    var $rootScope, $scope, $controller, $q;
+    var $rootScope, $scope, $controller, $q, $location;
     var StaffCtrl, StaffService, getBySlugSpy;
 
     beforeEach(() => {
@@ -13,12 +13,14 @@ describe('Controller: Staff', () => {
             $scope = $rootScope.$new();
             $q = $injector.get('$q');
             $controller = $injector.get('$controller');
+            $location = $injector.get('$location');
             StaffService = $injector.get('StaffService');
 
             /**
              * Spies
              */
             getBySlugSpy = spyOn(StaffService, 'getBySlug');
+            spyOn($location, 'hash');
 
             /**
              * Controller
@@ -56,6 +58,20 @@ describe('Controller: Staff', () => {
 
                 expect(StaffCtrl.member).toEqual(staff1());
             });
+        });
+    });
+
+    describe('method: setCurrentNavDestination', () => {
+        beforeEach(() => {
+            StaffCtrl.setCurrentNavDestination('staff-press');
+        });
+
+        it('should set destination for currentNavDestination', () => {
+            expect(StaffCtrl.currentNavDestination).toBe('staff-press');
+        });
+
+        it('should set location hash', () => {
+            expect($location.hash).toHaveBeenCalledWith('section-staff-press');
         });
     });
 });

@@ -8,11 +8,27 @@
         hide-social-icons="true"
         hide-book-btn="true">
     </talent-header>
-    <talent-navigation></talent-navigation>
+
+    <!-- Staff Navigation -->
+    <nav class="talent-navigation">
+        <div class="app-container">
+            <a href="#" ng-class="{active: StaffCtrl.currentNavDestination === 'staff-bio'}"
+                       ng-click="StaffCtrl.setCurrentNavDestination('staff-bio')">Biography</a>
+
+            <a href="#" ng-class="{active: StaffCtrl.currentNavDestination === 'staff-photos'}"
+                       ng-click="StaffCtrl.setCurrentNavDestination('staff-photos')">Photos</a>
+
+            <a href="#" ng-class="{active: StaffCtrl.currentNavDestination === 'staff-videos'}"
+                       ng-click="StaffCtrl.setCurrentNavDestination('staff-videos')">Videos</a>
+        </div>
+    </nav>
+    <!-- END Staff Navigation -->
 
     <!-- Biography -->
+    <a name="section-staff-bio"></a>
     <sub-section-header title="Biography"></sub-section-header>
-    <section id="talent-bio">
+
+    <section id="staff-bio">
         <div class="app-container" ng-if="StaffCtrl.member.biography" ng-bind-html="StaffCtrl.member.biography"></div>
 
         <div class="app-container no-bio" ng-if="!StaffCtrl.member.biography">
@@ -22,8 +38,10 @@
     <!-- End Biography -->
 
     <!-- Photos -->
+    <a name="section-staff-photos"></a>
     <sub-section-header title="Photos" ng-if="StaffCtrl.member.images.length"></sub-section-header>
-    <section id="talent-photos" ng-if="StaffCtrl.member.images.length">
+
+    <section id="staff-photos" clas="twlight" ng-if="StaffCtrl.member.images.length">
         <div class="app-container">
             <client-image img="img.sizes" group="staffphotos" ng-repeat="img in StaffCtrl.member.images"></client-image>
         </div>
@@ -31,7 +49,7 @@
     <!-- End Photos -->
 
     <!-- Videos -->
-    <sub-section-header title="Videos"></sub-section-header>
-    <talent-videos></talent-videos>
+    <a name="section-staff-videos"></a>
+    <sub-section-header title="Videos" ng-if="StaffCtrl.member.videos.length"></sub-section-header>
     <!-- End Videos -->
 </div>

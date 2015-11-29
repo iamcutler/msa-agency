@@ -1,9 +1,12 @@
 export default class StaffController {
     // @ngInject
-    constructor($stateParams, StaffService) {
+    constructor($stateParams, $location, $anchorScroll, StaffService) {
         this.$stateParams = $stateParams;
+        this.$location = $location;
+        this.$anchorScroll = $anchorScroll;
         this.staffService = StaffService;
 
+        this.currentNavDestination = 'staff-bio';
         this.member = {};
     }
 
@@ -15,5 +18,18 @@ export default class StaffController {
             .then(response => {
                 this.member = response;
             });
+    }
+
+    /**
+     * Set current navigation destination
+     *
+     * @param {String} destination
+     * @returns void
+     */
+    setCurrentNavDestination(destination = 'staff-bio') {
+        this.currentNavDestination = destination;
+
+        this.$location.hash(`section-${destination}`);
+        this.$anchorScroll();
     }
 }

@@ -158,14 +158,16 @@ nav.talent-navigation {
 // ----------------------------------------
 // Sections
 // ----------------------------------------
-section[id^='talent-'] {
+section[id^='talent-'], section[id^='staff-'] {
+    position: relative;
     padding: 40px 0;
+    display: block;
 }
 
 // ----------------------------------------
 // Resume
 // ----------------------------------------
-section#talent-bio {
+section#talent-bio, section#staff-bio {
     .app-container.no-bio {
         padding: 100px 0;
         font-size: 22px;
@@ -209,7 +211,7 @@ section#talent-resume {
 // ----------------------------------------
 // Photos
 // ----------------------------------------
-section#talent-photos {
+section#talent-photos, section#staff-photos {
     background: $secondary-grey;
     font-size: 0;
 
@@ -248,7 +250,7 @@ section#talent-photos {
 // ----------------------------------------
 // Photos
 // ----------------------------------------
-section#talent-videos, section#talent-press {
+section#talent-videos, section#talent-press, section#staff-videos, section#staff-press {
     background: $secondary-grey;
     font-size: 0;
 

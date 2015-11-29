@@ -100,7 +100,6 @@ import { RepresentationForm } from './angular/components/RepresentationForm';
 import SocialSection from './angular/components/SocialSection';
 import SubSectionHeader from './angular/components/SubSectionHeader';
 import TalentHeader from './angular/components/TalentHeader';
-import TalentNavigation from './angular/components/TalentNavigation';
 import TalentResume from './angular/components/TalentResume';
 import TwitterFeed from './angular/components/TwitterFeed';
 
@@ -125,7 +124,6 @@ angular.module('MSAAgency.directives', [])
     .directive('socialSection', SocialSection)
     .directive('subSectionHeader', SubSectionHeader)
     .directive('talentHeader', TalentHeader)
-    .directive('talentNavigation', TalentNavigation)
     .directive('talentResume', TalentResume)
     .directive('toggleNavigation', ToggleNavigation)
     .directive('twitterFeed', TwitterFeed);
