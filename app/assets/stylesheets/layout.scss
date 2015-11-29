@@ -34,7 +34,7 @@ input, textarea, button {
 
 // Page loader
 .page-loader {
-    background: url('/assets/loader-1-64x64.gif') center no-repeat;
+    background: image-url('loader-1-64x64.gif') center no-repeat;
     width: 64px;
     height: 0;
     display: block;
@@ -43,7 +43,7 @@ input, textarea, button {
     transition: all 0.5s ease-in-out;
 
     &.white {
-        background-image: url('/assets/loader-1-64x64-white.gif');
+        background-image: image-url('loader-1-64x64-white.gif');
     }
 
     &.loading {
@@ -73,8 +73,8 @@ ul.social-icons {
         display: inline-block;
 
         a {
-            background: url('/assets/social-icons.png') no-repeat;
-            background: url('/assets/social-icons.svg') no-repeat;
+            background: image-url('social-icons.png') no-repeat;
+            background: image-url('social-icons.svg') no-repeat;
             width: 38px;
             height: 38px;
             border: 2px $msa-orange solid;
@@ -120,7 +120,7 @@ ul.social-icons {
 
 // Loader
 .loader {
-    background: url('/assets/loader-1-64x64.gif') no-repeat;
+    background: image-url('loader-1-64x64.gif') no-repeat;
     width: 64px;
     height: 64px;
     overflow: hidden;
@@ -145,8 +145,8 @@ header {
             left: 144px;
 
             a {
-                background: url('/assets/brand.png') no-repeat;
-                background: url('/assets/brand.svg') no-repeat;
+                background: image-url('brand.png') no-repeat;
+                background: image-url('brand.svg') no-repeat;
                 width: 130px;
                 height: 68px;
                 overflow: hidden;
@@ -276,8 +276,8 @@ nav#sidebar-nav {
                 position: relative;
                 top: 20px;
                 left: 40px;
-                background: url('/assets/brand.png') no-repeat;
-                background: url('/assets/brand.svg') no-repeat;
+                background: image-url('brand.png') no-repeat;
+                background: image-url('brand.svg') no-repeat;
                 width: 130px;
                 height: 68px;
                 overflow: hidden;
@@ -291,8 +291,8 @@ nav#sidebar-nav {
             margin: 24px 16px 16px;
 
             input[type="search"] {
-                background: $secondary-grey url('/assets/search-icon.png') 12px 8px no-repeat;
-                background: $secondary-grey url('/assets/search-icon.svg') 12px 8px no-repeat;
+                background: $secondary-grey image-url('search-icon.png') 12px 8px no-repeat;
+                background: $secondary-grey image-url('search-icon.svg') 12px 8px no-repeat;
                 color: #FFF;
                 width: 186px;
                 border: 2px #252525 solid;
