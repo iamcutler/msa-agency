@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require lightbox.min
+//= require fancybox/jquery.fancybox
+//= require fancybox/jquery.fancybox.pack
+//= require fancybox/jquery.fancybox-media
 //= require build

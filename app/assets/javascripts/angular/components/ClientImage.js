@@ -10,7 +10,7 @@ export default function ClientImage() {
         template: `
             <figure>
                 <div class="thumb">
-                    <a ng-href="{{ img.large }}" data-lightbox="{{ group || '' }}" data-title="{{ caption }}">
+                    <a ng-href="{{ img.large }}" class="fancybox" data-fancybox-group="{{ group || '' }}" title="{{ caption }}">
                         <img ng-src="{{ img.thumb }}">
                     </a>
                 </div>

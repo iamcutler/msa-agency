@@ -7,7 +7,8 @@ export default class HomeController {
 
         this.latestNews = [];
         this.slides = [
-            { type: 'image', src: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' },
+            { type: 'video', src: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg', caption: 'Testing caption' },
+            { type: 'image', src: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg', caption: 'Testing caption' },
             { type: 'image', src: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' },
             { type: 'image', src: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' }
         ];

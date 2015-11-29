@@ -12,5 +12,6 @@
  *
 //= require build
 //= require lightbox
+//= require fancybox/jquery.fancybox
  *= require_self
  */

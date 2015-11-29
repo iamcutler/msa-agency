@@ -77,6 +77,12 @@
                 list-style: none;
                 display: inline-block;
 
+                &:hover {
+                    .play-btn {
+                        opacity: 1.0;
+                    }
+                }
+
                 &:nth-child(1) {
                     margin-left: 10%;
                 }
@@ -84,6 +90,20 @@
                 img {
                     width: 100%;
                     min-height: 100%;
+                }
+
+                .play-btn {
+                    position: absolute;
+                    background: image-url('reel-play-btn.png') no-repeat;
+                    top: 160px;
+                    left: 50%;
+                    width: 164px;
+                    height: 164px;
+                    margin-left: -82px;
+                    overflow: hidden;
+                    display: block;
+                    opacity: 0.2;
+                    transition: opacity $transition-duration $transition-easing;
                 }
             }
         }
@@ -363,7 +383,7 @@ section.twilight {
         .roster {
             position: relative;
             background: #2d2d2d;
-            
+
             &:hover {
                 .navigation .arrow {
                     opacity: 1;

@@ -19,7 +19,19 @@
     <div ui-view>
         <%= yield %>
     </div>
-    
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script>
+        $(document).ready(() => {
+            $(".fancybox").fancybox({
+                helpers : {
+                    media: true
+                },
+                youtube : {
+                    autoplay: 1
+                }
+            });
+        });
+    </script>
 </body>
 </html>

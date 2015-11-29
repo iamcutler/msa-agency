@@ -34,6 +34,11 @@ export default function MediaSlider($timeout, $interval) {
                 let _currentSlide = 0;
                 let _slideDelay = 5000;
 
+                // Cancel timer when clicked on slides
+                sliderElement.bind('click', () => {
+                    $interval.cancel(slideTimer); // Cancel timer'
+                });
+
                 /**
                  * Move slide position
                  *
