@@ -6,10 +6,13 @@
         cover-image="ClientCtrl.client.cover_image"
         default-image="ClientCtrl.client.default_image">
     </talent-header>
+
     <talent-navigation></talent-navigation>
 
     <!-- Biography -->
+    <a name="section-talent-bio"></a>
     <sub-section-header title="Biography"></sub-section-header>
+
     <section id="talent-bio">
         <div class="app-container" ng-if="ClientCtrl.client.biography" ng-bind-html="ClientCtrl.client.biography"></div>
 
@@ -20,7 +23,9 @@
     <!-- End Biography -->
 
     <!-- Resume -->
+    <a name="section-talent-resume"></a>
     <sub-section-header title="Resume"></sub-section-header>
+
     <section id="talent-resume">
         <talent-resume title="Concerts/Tours/Events" data="ClientCtrl.client.resume.events"></talent-resume>
         <talent-resume title="Television" data="ClientCtrl.client.resume.television"></talent-resume>
@@ -35,7 +40,9 @@
     <!-- End Resume -->
 
     <!-- Photos -->
+    <a name="section-talent-photos"></a>
     <sub-section-header title="Photos"></sub-section-header>
+
     <section id="talent-photos">
         <div class="app-container">
             <client-image img="img.sizes" group="clientphotos" ng-repeat="img in ClientCtrl.client.images"></client-image>
@@ -44,7 +51,9 @@
     <!-- End Photos -->
 
     <!-- Videos -->
+    <a name="section-talent-videos"></a>
     <sub-section-header title="Videos"></sub-section-header>
+
     <section id="talent-videos">
         <div class="app-container">
             <client-video data="video" ng-repeat="video in ClientCtrl.client.videos"></client-video>
@@ -53,7 +62,9 @@
     <!-- End Videos -->
 
     <!-- Press -->
+    <a name="section-talent-press"></a>
     <sub-section-header title="Press"></sub-section-header>
+
     <section id="talent-press">
         <div class="app-container">
             <client-image caption="{{ ::press.caption }}" img="press.sizes" group="clientpress" ng-repeat="press in ClientCtrl.client.press"></client-image>
