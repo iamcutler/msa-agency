@@ -44,6 +44,16 @@ json.images do
     end
 end
 
+json.videos do
+    json.array! @staff.videos.order(:order) do |video|
+        json.id video.id
+        json.video_id video.video_id
+        json.title video.title
+        json.video_type video.video_type
+        json.order video.order
+    end
+end
+
 json.gender @staff.gender
 json.slug @staff.slug
 json.order @staff.order

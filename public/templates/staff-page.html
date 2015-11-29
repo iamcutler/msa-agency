@@ -51,5 +51,11 @@
     <!-- Videos -->
     <a name="section-staff-videos"></a>
     <sub-section-header title="Videos" ng-if="StaffCtrl.member.videos.length"></sub-section-header>
+
+    <section id="staff-videos">
+        <div class="app-container">
+            <client-video data="video" ng-repeat="video in StaffCtrl.member.videos"></client-video>
+        </div>
+    </section>
     <!-- End Videos -->
 </div>

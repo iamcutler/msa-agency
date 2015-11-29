@@ -34,7 +34,6 @@ ActiveAdmin.register Staff do
             input :position
             input :biography
             input :location, as: :select, collection: ['Los Angeles', 'New York', ['Los Angeles and New York', 'Los Angeles, New York']], include_blank: false
-            input :image, as: :file, hint: f.object.image.present? ? image_tag(f.object.image.url(:thumb)) : content_tag(:span, "no image uploaded yet")
             input :department
             input :slug
             input :order
@@ -51,10 +50,22 @@ ActiveAdmin.register Staff do
             end
         end
 
+        f.inputs 'Videos' do
+            f.has_many :videos do |pv|
+                pv.input :_destroy, :as => :boolean
+                pv.input :video_id, placeholder: 'v?=uc-CzXQJg8Y'
+                pv.input :video_type, as: :select, collection: [['YouTube', 'youtube'], ['Vimeo', 'vimeo']], include_blank: false
+                pv.input :order, placeholder: '0'
+
+                pv.actions
+            end
+        end
+
         actions
     end
 
     # Assign params that can be editable (Mass Assignment)
     permit_params :first_name, :last_name, :email, :position, :biography, :location, :department, :image, :slug, :order,
-                  photos_attributes: [:id, :image, :caption, :cover, :default, :order, :_destroy]
+                  photos_attributes: [:id, :image, :caption, :cover, :default, :order, :_destroy],
+                  videos_attributes: [:id, :video_id, :video_type, :order, :_destroy]
 end
