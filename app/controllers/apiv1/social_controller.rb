@@ -16,7 +16,14 @@ module Apiv1
         end
 
         def getInstagramFeed
-            @feed = Instagram.user_recent_media({ count: params[:count] })
+            instagram_config = SOCIAL_CONFIG['instagram']
+
+            @feed = Instagram.user_recent_media({
+                client_id: instagram_config['client_id'],
+                client_secret: instagram_config['client_secret'],
+                access_token: instagram_config['access_token'],
+                count: params[:count]
+            })
 
             render json: @feed
         end

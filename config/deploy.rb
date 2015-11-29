@@ -28,7 +28,6 @@ set :linked_files, fetch(:linked_files, []).push(
     'config/secrets.yml',
     'config/social.yml',
     'config/initializers/config.rb',
-    'config/initializers/instagram.rb',
     'config/initializers/devise.rb'
 )
 
