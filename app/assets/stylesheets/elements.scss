@@ -73,7 +73,9 @@
             white-space: nowrap;
 
             li {
+                position: relative;
                 width: 80%;
+                height: 480px;
                 list-style: none;
                 display: inline-block;
 
@@ -90,6 +92,18 @@
                 img {
                     width: 100%;
                     min-height: 100%;
+                }
+
+                .caption {
+                    position: absolute;
+                    background: rgba(0,0,0,0.6);
+                    bottom: 0;
+                    width: 100%;
+                    color: #FFF;
+                    font-size: 14px;
+                    text-align: center;
+                    text-shadow: 0 0 4px #000;
+                    padding: 20px 0;
                 }
 
                 .play-btn {
