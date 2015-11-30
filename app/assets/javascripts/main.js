@@ -22,6 +22,7 @@ require('./angular/routes');
 import AboutController from './angular/controllers/About';
 import AffiliatesController from './angular/controllers/Affiliates';
 import AppController from './angular/controllers/App';
+import ArchivesController from './angular/controllers/Archives';
 import ClientCategoryController from './angular/controllers/ClientCategory';
 import ClientController from './angular/controllers/Client';
 import ContactController from './angular/controllers/Contact';
@@ -40,6 +41,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('AboutController', AboutController)
     .controller('AffiliatesController', AffiliatesController)
     .controller('AppController', AppController)
+    .controller('ArchivesController', ArchivesController)
     .controller('ClientCategoryController', ClientCategoryController)
     .controller('ClientController', ClientController)
     .controller('ContactController', ContactController)

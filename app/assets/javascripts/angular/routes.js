@@ -70,6 +70,12 @@ angular.module('MSAAgency')
                 controller: 'ClientController as ClientCtrl',
                 templateUrl: 'templates/talent.html'
             })
+        // Archives
+        .state('app.archives', {
+            url: 'archives',
+            controller: 'ArchivesController as ArchivesCtrl',
+            templateUrl: 'templates/archives.html'
+        })
         // Affiliate
         .state('app.affiliates', {
             url: 'affiliates',

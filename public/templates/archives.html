@@ -1,0 +1,18 @@
+<div ng-init="ArchivesCtrl.initialize()">
+    <section class="twilight">
+        <header class="section-header twilight">
+            Archives
+        </header>
+
+        <div class="section-placeholder-text" ng-if="!ArchivesCtrl.clients.length && !isLoadingPage">
+            No current archives
+        </div>
+
+        <div class="app-container">
+            <client-roster title="Archives"
+                           type="talent"
+                           roster="LegacyCtrl.clients"
+                           ng-if="LegacyCtrl.clients.length"></client-roster>
+        </div>
+    </section>
+</div>
