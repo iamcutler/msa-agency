@@ -7,7 +7,7 @@ export default function MediaSlider($timeout, $interval) {
         },
         template: `
             <section id="media-slider">
-                <div class="slide-navigation previous" ng-click="previousSlide()">
+                <div class="slide-navigation previous" ng-click="previousSlide()" ng-if="data.length > 1">
                     <div class="overlay"></div>
                     <div class="arrow left"></div>
                 </div>
@@ -15,9 +15,9 @@ export default function MediaSlider($timeout, $interval) {
                 <div class="slides">
                     <ul>
                         <li ng-repeat="slide in data">
-                            <img ng-src="{{ slide.src }}">
+                            <img ng-src="{{ slide.sizes.large }}">
 
-                            <a href="https://www.youtube.com/embed/URietd6mGJY" class="play-btn fancybox" ng-if="slide.type === 'video'"></a>
+                            <a href="https://www.youtube.com/embed/{{ slide.media_source }}" class="play-btn fancybox" ng-if="slide.type === 'video'"></a>
 
                             <div class="caption" ng-if="slide.caption">
                                 {{ slide.caption }}
@@ -26,7 +26,7 @@ export default function MediaSlider($timeout, $interval) {
                     </ul>
                 </div>
 
-                <div class="slide-navigation next" ng-click="nextSlide()">
+                <div class="slide-navigation next" ng-click="nextSlide()" ng-if="data.length > 1">
                     <div class="overlay"></div>
                     <div class="arrow right"></div>
                 </div>

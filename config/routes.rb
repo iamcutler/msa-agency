@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
         get 'search', to: 'search#get_results'
 
+        get 'page-slides', to: 'page_slide#index'
+
         scope '/contact' do
             post 'form', to: 'contact#submit'
         end

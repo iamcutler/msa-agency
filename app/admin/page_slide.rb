@@ -13,8 +13,8 @@ ActiveAdmin.register PageSlide do
     form do |f|
         inputs 'Details' do
             input :image, as: :file
-            input :slide_type, as: :select, collection: [ ['Image', 0], ['Video', 1] ], include_blank: false
-            input :media_type, as: :select, collection: [ ['YouTube', 0], ['Vimeo', 1] ]
+            input :slide_type, as: :select, collection: [ :image, :video ], include_blank: false
+            input :media_type, as: :select, collection: [ :youtube, :vimeo ]
             input :media_source, placeholder: 'v?=uc-CzXQJg8Y'
             input :caption
             input :section, as: :select, collection: [ 'home' ], include_blank: false

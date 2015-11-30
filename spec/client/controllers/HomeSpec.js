@@ -1,9 +1,11 @@
 import { MockPromise } from '../spec_helper';
 import { article1 } from '../fixtures/news';
+import { PageSlide1 } from '../fixtures/page_slides';
 
 describe('Controller: Home', function() {
     var $rootScope, $scope, $q, $controller;
-    var HomeCtrl, NewsService, NewsSpy, SocialService, TwitterSpy, InstagramSpy;
+    var HomeCtrl, NewsService, NewsSpy, SocialService, TwitterSpy, InstagramSpy, SlidesSpy;
+    var PageSlideService;
 
     beforeEach(function() {
         angular.mock.module('MSAAgency', 'MSAAgency.controllers');
@@ -15,6 +17,7 @@ describe('Controller: Home', function() {
             $q = $injector.get('$q');
             NewsService = $injector.get('NewsService');
             SocialService = $injector.get('SocialService');
+            PageSlideService = $injector.get('PageSlideService');
 
             /**
              * Spies
@@ -22,6 +25,7 @@ describe('Controller: Home', function() {
             NewsSpy = spyOn(NewsService, 'getFeaturedArticles');
             TwitterSpy = spyOn(SocialService, 'getTwitterFeed');
             InstagramSpy = spyOn(SocialService, 'getInstagramFeed');
+            SlidesSpy = spyOn(PageSlideService, 'getByPage');
 
             /**
              * Controller
@@ -101,6 +105,26 @@ describe('Controller: Home', function() {
 
                 expect(HomeCtrl.latestNews).toEqual([article1(), article1()]);
             });
+        });
+    });
+
+    describe('method: getPageSlides', () => {
+        let response;
+
+        beforeEach(() => {
+            response = [PageSlide1];
+            SlidesSpy.and.callFake(MockPromise($q, response));
+
+            HomeCtrl.getPageSlides('home');
+            $scope.$digest();
+        });
+
+        it('should call page slide service', () => {
+            expect(PageSlideService.getByPage).toHaveBeenCalledWith('home');
+        });
+
+        it('should set slides instance variable with results', () => {
+            expect(HomeCtrl.slides).toEqual(response);
         });
     });
 });

@@ -1,17 +1,13 @@
 export default class HomeController {
     // @ngInject
-    constructor($state, SocialService, NewsService) {
+    constructor($state, SocialService, NewsService, PageSlideService) {
         this.$state = $state;
         this.socialService = SocialService;
         this.newsService = NewsService;
+        this.pageSlideService = PageSlideService;
 
         this.latestNews = [];
-        this.slides = [
-            { type: 'video', src: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg', caption: 'Testing caption' },
-            { type: 'image', src: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg', caption: 'Testing caption' },
-            { type: 'image', src: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' },
-            { type: 'image', src: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg' }
-        ];
+        this.slides = [];
         this.socialFeeds = {
             twitter: [],
             instagram: []
@@ -28,6 +24,9 @@ export default class HomeController {
             location: this.$state.current.name === 'app.home.los-angeles' ? 'Los Angeles' : 'New York',
             limit: 6
         });
+
+        // Fetch page slides
+        this.getPageSlides('home');
     }
 
     /**
@@ -68,6 +67,18 @@ export default class HomeController {
         this.newsService.getFeaturedArticles(config)
             .then(response => {
                 this.latestNews = response;
+            });
+    }
+
+    /**
+     * Get page slides
+     *
+     * @param {String} page
+     */
+    getPageSlides(page = 'home') {
+        return this.pageSlideService.getByPage(page)
+            .then(response => {
+                this.slides = response;
             });
     }
 }
