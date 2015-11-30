@@ -11,22 +11,26 @@
     <nav class="talent-navigation">
         <div class="app-container">
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-bio'}"
-                       ng-click="ClientCtrl.setCurrentNavDestination('talent-bio')">Biography</a>
+                        ng-click="ClientCtrl.setCurrentNavDestination('talent-bio')">Biography</a>
 
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'reel'}"
                        ng-click="ClientCtrl.setCurrentNavDestination('reel')">Reel</a>
 
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-resume'}"
-                       ng-click="ClientCtrl.setCurrentNavDestination('talent-resume')">Resume</a>
+                        ng-click="ClientCtrl.setCurrentNavDestination('talent-resume')"
+                        ng-if="ClientCtrl.client.resume.length">Resume</a>
 
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-photos'}"
-                       ng-click="ClientCtrl.setCurrentNavDestination('talent-photos')">Photos</a>
+                        ng-click="ClientCtrl.setCurrentNavDestination('talent-photos')"
+                        ng-if="ClientCtrl.client.images.length">Photos</a>
 
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-videos'}"
-                       ng-click="ClientCtrl.setCurrentNavDestination('talent-videos')">Videos</a>
+                        ng-click="ClientCtrl.setCurrentNavDestination('talent-videos')"
+                        ng-if="ClientCtrl.client.videos.length">Videos</a>
 
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-press'}"
-                       ng-click="ClientCtrl.setCurrentNavDestination('talent-press')">Press</a>
+                        ng-click="ClientCtrl.setCurrentNavDestination('talent-press')"
+                        ng-if="ClientCtrl.client.press.length">Press</a>
         </div>
     </nav>
     <!-- END Talent Navigation -->

@@ -16,10 +16,12 @@
                        ng-click="StaffCtrl.setCurrentNavDestination('staff-bio')">Biography</a>
 
             <a href="#" ng-class="{active: StaffCtrl.currentNavDestination === 'staff-photos'}"
-                       ng-click="StaffCtrl.setCurrentNavDestination('staff-photos')">Photos</a>
+                        ng-click="StaffCtrl.setCurrentNavDestination('staff-photos')"
+                        ng-if="StaffCtrl.member.photos.length">Photos</a>
 
             <a href="#" ng-class="{active: StaffCtrl.currentNavDestination === 'staff-videos'}"
-                       ng-click="StaffCtrl.setCurrentNavDestination('staff-videos')">Videos</a>
+                        ng-click="StaffCtrl.setCurrentNavDestination('staff-videos')"
+                        ng-if="StaffCtrl.member.videos.length">Videos</a>
         </div>
     </nav>
     <!-- END Staff Navigation -->
