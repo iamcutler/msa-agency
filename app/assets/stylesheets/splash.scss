@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 #splash-header {
     position: relative;
@@ -14,10 +15,18 @@
     #splash-header-content {
         h1 {
             position: absolute;
+            @include background-image('brand');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
             left: 50%;
             top: 50%;
+            width: 220px;
+            height: 175px;
             margin-left: -120px;
             margin-top: -54px;
+            text-indent: -9999px;
+            overflow: hidden;
         }
 
         .choose-city-container {
