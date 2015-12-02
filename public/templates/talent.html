@@ -14,11 +14,20 @@
                         ng-click="ClientCtrl.setCurrentNavDestination('talent-bio')">Biography</a>
 
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'reel'}"
-                       ng-click="ClientCtrl.setCurrentNavDestination('reel')">Reel</a>
+                        ng-click="ClientCtrl.setCurrentNavDestination('reel')">Reel</a>
 
-            <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-resume'}"
-                        ng-click="ClientCtrl.setCurrentNavDestination('talent-resume')"
-                        ng-if="ClientCtrl.client.resume.length">Resume</a>
+            <!-- LA Casting Resume -->
+            <a ng-href="{{ ClientCtrl.client.la_casting_url }}"
+               target="_blank"
+               ng-if="ClientCtrl.client.la_casting">Resume</a>
+            <!-- End LA Casting Resume -->
+
+            <!-- Internal Resume -->
+            <a href="#"
+               ng-class="{active: ClientCtrl.currentNavDestination === 'talent-resume'}"
+               ng-click="ClientCtrl.setCurrentNavDestination('talent-resume')"
+               ng-if="!ClientCtrl.client.la_casting && ClientCtrl.client.resume.length">Resume</a>
+            <!-- End Internal Resume -->
 
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-photos'}"
                         ng-click="ClientCtrl.setCurrentNavDestination('talent-photos')"
@@ -50,9 +59,9 @@
 
     <!-- Resume -->
     <a name="section-talent-resume"></a>
-    <sub-section-header title="Resume"></sub-section-header>
+    <sub-section-header title="Resume" ng-if="::ClientCtrl.client.resume.length"></sub-section-header>
 
-    <section id="talent-resume">
+    <section id="talent-resume" ng-if="::ClientCtrl.client.resume.length">
         <talent-resume title="Concerts/Tours/Events" data="ClientCtrl.client.resume.events"></talent-resume>
         <talent-resume title="Television" data="ClientCtrl.client.resume.television"></talent-resume>
         <talent-resume title="Award Shows" data="ClientCtrl.client.resume.award_shows"></talent-resume>
@@ -67,9 +76,9 @@
 
     <!-- Photos -->
     <a name="section-talent-photos"></a>
-    <sub-section-header title="Photos"></sub-section-header>
+    <sub-section-header title="Photos" ng-if="::ClientCtrl.client.images.length"></sub-section-header>
 
-    <section id="talent-photos">
+    <section id="talent-photos" ng-if="::ClientCtrl.client.images.length">
         <div class="app-container">
             <client-image img="img.sizes" group="clientphotos" ng-repeat="img in ClientCtrl.client.images"></client-image>
         </div>
@@ -78,9 +87,9 @@
 
     <!-- Videos -->
     <a name="section-talent-videos"></a>
-    <sub-section-header title="Videos"></sub-section-header>
+    <sub-section-header title="Videos" ng-if="::ClientCtrl.client.videos.length"></sub-section-header>
 
-    <section id="talent-videos">
+    <section id="talent-videos" ng-if="::ClientCtrl.client.videos.length">
         <div class="app-container">
             <client-video data="video" ng-repeat="video in ClientCtrl.client.videos"></client-video>
         </div>
@@ -89,9 +98,9 @@
 
     <!-- Press -->
     <a name="section-talent-press"></a>
-    <sub-section-header title="Press"></sub-section-header>
+    <sub-section-header title="Press" ng-if="::ClientCtrl.client.press.length"></sub-section-header>
 
-    <section id="talent-press">
+    <section id="talent-press" ng-if="::ClientCtrl.client.press.length">
         <div class="app-container">
             <client-image caption="{{ ::press.caption }}" img="press.sizes" group="clientpress" ng-repeat="press in ClientCtrl.client.press"></client-image>
         </div>

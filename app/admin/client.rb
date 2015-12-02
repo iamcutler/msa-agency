@@ -25,6 +25,8 @@ ActiveAdmin.register Client do
             row :twitter_link
             row :instagram_link
             row :youtube_link
+            row :la_casting
+            row :la_casting_url
             row :slug
             row :location
         end
@@ -43,6 +45,8 @@ ActiveAdmin.register Client do
             input :twitter_link, placeholder: 'http://www.twitter.com'
             input :instagram_link, placeholder: 'http://www.instagram.com'
             input :youtube_link, placeholder: 'http://www.youtube.com'
+            input :la_casting, label: 'Show LA Casting Resume'
+            input :la_casting_url
             input :slug
             input :location, as: :select, collection: ['Los Angeles', 'New York'], include_blank: false
         end
@@ -87,7 +91,7 @@ ActiveAdmin.register Client do
 
     # Assign params that can be editable (Mass Assignment)
     permit_params :first_name, :last_name, :title, :email, :phone, :biography, :website_link, :facebook_link,
-                  :twitter_link, :instagram_link, :youtube_link, :slug, :location,
+                  :twitter_link, :instagram_link, :youtube_link, :la_casting, :la_casting_url, :slug, :location,
                   photos_attributes: [:id, :image, :caption, :cover, :default, :order, :_destroy],
                   videos_attributes: [:id, :video_id, :video_type, :order, :_destroy],
                   press_attributes: [:id, :image, :caption, :order, :_destroy]
