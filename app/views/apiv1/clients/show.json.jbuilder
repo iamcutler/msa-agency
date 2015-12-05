@@ -92,6 +92,15 @@ json.images do
     end
 end
 
+json.reel do
+    if @clientReel
+        json.id @clientReel.id
+        json.video_id @clientReel.video_id
+        json.title @clientReel.title
+        json.video_type @clientReel.video_type
+    end
+end
+
 json.videos do
     json.array! @clientVideos do |video|
         json.id video.id

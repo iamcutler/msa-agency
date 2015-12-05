@@ -13,8 +13,9 @@
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-bio'}"
                         ng-click="ClientCtrl.setCurrentNavDestination('talent-bio')">Biography</a>
 
-            <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'reel'}"
-                        ng-click="ClientCtrl.setCurrentNavDestination('reel')">Reel</a>
+            <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-reel'}"
+                        ng-click="ClientCtrl.setCurrentNavDestination('talent-reel')"
+                        ng-if="ClientCtrl.reelPresent">Reel</a>
 
             <!-- LA Casting Resume -->
             <a ng-href="{{ ClientCtrl.client.la_casting_url }}"
@@ -56,6 +57,17 @@
         </div>
     </section>
     <!-- End Biography -->
+
+    <!-- Reel -->
+    <a name="section-talent-reel"></a>
+    <sub-section-header title="Reel" ng-if="ClientCtrl.reelPresent"></sub-section-header>
+
+    <section id="talent-reel" ng-if="ClientCtrl.reelPresent">
+        <div class="app-container">
+            <client-reel src="{{ ::ClientCtrl.client.reel.video_id }}" type="{{ ::ClientCtrl.client.reel.video_type }}"></client-reel>
+        </div>
+    </section>
+    <!-- End Reel -->
 
     <!-- Resume -->
     <a name="section-talent-resume"></a>

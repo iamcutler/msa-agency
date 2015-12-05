@@ -11,6 +11,7 @@ module Apiv1
 
             if @client
                 @clientPhotos = @client.photos.order(:order)
+                @clientReel = @client.reel
                 @clientVideos = @client.videos.order(:order)
                 @clientPress = @client.press.order(:order)
             else

@@ -6,6 +6,7 @@ export default class ClientController {
         this.$location = $location;
         this.clientService = ClientService;
         this.client = {};
+        this.reelPresent = false;
         this.currentNavDestination = 'talent-bio';
     }
 
@@ -16,6 +17,11 @@ export default class ClientController {
         this.clientService.getBySlug(this.$stateParams.slug)
             .then(response => {
                 this.client = response;
+
+                // Check if client has a current reel
+                if(response.hasOwnProperty('reel')) {
+                    this.reelPresent = true;
+                }
             })
             .catch(err => console.log(err));
     }

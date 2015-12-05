@@ -64,10 +64,20 @@ ActiveAdmin.register Client do
             end
         end
 
+        f.inputs 'Reel', for: [:reel, f.object.reel || ClientReel.new] do |reel|
+            reel.input :_destroy, :as => :boolean
+            reel.input :video_id, placeholder: 'v?=uc-CzXQJg8Y'
+            reel.input :title
+            reel.input :video_type, as: :select, collection: [['YouTube', 'youtube'], ['Vimeo', 'vimeo']], include_blank: false
+
+            reel.actions
+        end
+
         f.inputs 'Videos' do
             f.has_many :videos do |pv|
                 pv.input :_destroy, :as => :boolean
                 pv.input :video_id, placeholder: 'v?=uc-CzXQJg8Y'
+                pv.input :title
                 pv.input :video_type, as: :select, collection: [['YouTube', 'youtube'], ['Vimeo', 'vimeo']], include_blank: false
                 pv.input :order, placeholder: '0'
 
@@ -93,6 +103,7 @@ ActiveAdmin.register Client do
     permit_params :first_name, :last_name, :title, :email, :phone, :biography, :website_link, :facebook_link,
                   :twitter_link, :instagram_link, :youtube_link, :la_casting, :la_casting_url, :slug, :location,
                   photos_attributes: [:id, :image, :caption, :cover, :default, :order, :_destroy],
-                  videos_attributes: [:id, :video_id, :video_type, :order, :_destroy],
+                  reel_attributes: [:id, :video_id, :title, :video_type, :_destroy],
+                  videos_attributes: [:id, :video_id, :title, :video_type, :order, :_destroy],
                   press_attributes: [:id, :image, :caption, :order, :_destroy]
 end

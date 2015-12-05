@@ -164,6 +164,13 @@ section[id^='talent-'], section[id^='staff-'] {
     display: block;
 }
 
+section#talent-reel {
+    iframe {
+        margin: auto;
+        display: block;
+    }
+}
+
 // ----------------------------------------
 // Resume
 // ----------------------------------------

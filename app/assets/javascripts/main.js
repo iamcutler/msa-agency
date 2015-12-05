@@ -91,6 +91,7 @@ import ToggleNavigation from './angular/directives/ToggleNavigation';
 
 // Components
 import ClientImage from './angular/components/ClientImage';
+import ClientReel from './angular/components/ClientReel';
 import ClientRoster from './angular/components/ClientRoster';
 import ClientSearchResult from './angular/components/ClientSearchResult';
 import ClientVideo from './angular/components/ClientVideo';
@@ -111,6 +112,7 @@ angular.module('MSAAgency.directives', [])
     .directive('animatedInput', AnimatedInput)
     .directive('chooseCity', ChooseCity)
     .directive('clientImage', ClientImage)
+    .directive('clientReel', ClientReel)
     .directive('clientRoster', ClientRoster)
     .directive('clientSearchResult', ClientSearchResult)
     .directive('clientVideo', ClientVideo)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202064905) do
+ActiveRecord::Schema.define(version: 20151205062940) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -97,6 +97,17 @@ ActiveRecord::Schema.define(version: 20151202064905) do
   end
 
   add_index "client_presses", ["client_id"], name: "index_client_presses_on_client_id", using: :btree
+
+  create_table "client_reels", force: :cascade do |t|
+    t.integer  "client_id",  limit: 4
+    t.string   "video_id",   limit: 255,             null: false
+    t.string   "title",      limit: 255
+    t.integer  "video_type", limit: 4,   default: 0, null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "client_reels", ["client_id"], name: "index_client_reels_on_client_id", using: :btree
 
   create_table "client_resumes", force: :cascade do |t|
     t.integer  "client_id",  limit: 4
@@ -230,6 +241,7 @@ ActiveRecord::Schema.define(version: 20151202064905) do
   add_foreign_key "client_categories", "clients"
   add_foreign_key "client_photos", "clients"
   add_foreign_key "client_presses", "clients"
+  add_foreign_key "client_reels", "clients"
   add_foreign_key "client_resumes", "clients"
   add_foreign_key "client_videos", "clients"
   add_foreign_key "staff_photos", "staffs"
