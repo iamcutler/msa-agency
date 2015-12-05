@@ -99,6 +99,7 @@ import ContactForm from './angular/components/ContactForm';
 import FeaturedNewsArticle from './angular/components/FeaturedNewsArticle';
 import InstagramFeed from './angular/components/InstagramFeed';
 import Navigation from './angular/components/Navigation';
+import NewsArticle from './angular/components/NewsArticle';
 import NewsSearchResult from './angular/components/NewsSearchResult';
 import OfficeLocations from './angular/components/OfficeLocations';
 import { RepresentationForm } from './angular/components/RepresentationForm';
@@ -121,6 +122,7 @@ angular.module('MSAAgency.directives', [])
     .directive('latestNews', LatestNews)
     .directive('mediaSlider', MediaSlider)
     .directive('featuredNewsArticle', FeaturedNewsArticle)
+    .directive('newsArticle', NewsArticle)
     .directive('newsletterWidget', NewsletterWidget)
     .directive('newsSearchResult', NewsSearchResult)
     .directive('navigation', Navigation)

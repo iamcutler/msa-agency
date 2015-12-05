@@ -1,1 +1,9 @@
-News!!!
+<section id="news-articles" ng-init="NewsCtrl.initialize()">
+    <div class="app-container">
+        <header class="section-header">
+            MSA News
+        </header>
+
+        <news-article data="article" ng-repeat="article in NewsCtrl.news.data"></news-article>
+    </div>
+</div>

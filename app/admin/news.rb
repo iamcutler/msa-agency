@@ -30,6 +30,7 @@ ActiveAdmin.register News do
             input :body
             input :location, as: :select, collection: ['Los Angeles', 'New York', ['Los Angeles and New York', '']], include_blank: false
             input :featured
+            input :image, as: :file, hint: f.object.image.present? ? image_tag(f.object.image.url(:thumb)) : content_tag(:span, "no image uploaded yet")
             input :slug
             input :published
         end
@@ -37,5 +38,5 @@ ActiveAdmin.register News do
         actions
     end
 
-    permit_params :subject, :body, :location, :featured, :slug, :published
+    permit_params :subject, :body, :location, :featured, :image, :slug, :published
 end
