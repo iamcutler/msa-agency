@@ -7,6 +7,8 @@ angular.module('MSAAgency.directives')
         replace: true,
         template: `
             <footer class="main">
+                <go-to-top-button></go-to-top-button>
+
                 <div class="app-container">
                     <div class="addresses">
                         <div class="address">

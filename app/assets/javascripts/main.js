@@ -3,6 +3,7 @@
 require('angular/angular.min');
 require('angular-ui-router/build/angular-ui-router.min');
 require('angular-sanitize/angular-sanitize.min');
+require('ng-smooth-scroll/dist/angular-smooth-scroll.min');
 
 // AngularJS
 angular.module('MSAAgency', [
@@ -12,6 +13,7 @@ angular.module('MSAAgency', [
   'MSAAgency.filters',
   'ui.router',
   'ngSanitize',
+  'smoothScroll'
 ]);
 
 // Configuration
@@ -85,6 +87,7 @@ angular.module('MSAAgency.services', [])
 // Directives
 import ChooseCity from './angular/directives/ChooseCity';
 import AnimatedInput from './angular/directives/AnimatedInput';
+import GoToTopButton from './angular/directives/GoToTopButton';
 import LatestNews from './angular/directives/LatestNews';
 import MediaSlider from './angular/directives/MediaSlider';
 import NewsletterWidget from './angular/directives/NewsletterWidget';
@@ -120,6 +123,7 @@ angular.module('MSAAgency.directives', [])
     .directive('clientSearchResult', ClientSearchResult)
     .directive('clientVideo', ClientVideo)
     .directive('contactForm', ContactForm)
+    .directive('goToTopButton', GoToTopButton)
     .directive('instagramFeed', InstagramFeed)
     .directive('latestNews', LatestNews)
     .directive('mediaSlider', MediaSlider)
