@@ -1,0 +1,15 @@
+@import 'variables';
+
+section[id^='error-'] {
+    padding: 200px 0;
+
+    h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    h1 {
+        color: $msa-orange;
+        font-size: 60px;
+    }
+}

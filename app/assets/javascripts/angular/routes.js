@@ -2,7 +2,7 @@
 
 angular.module('MSAAgency')
 .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/error/404");
 
     $stateProvider
         .state('splash', {
@@ -104,5 +104,10 @@ angular.module('MSAAgency')
             url: 'contact',
             controller: 'ContactController as ContactCtrl',
             templateUrl: 'templates/contact.html'
+        })
+        // Error pages
+        .state('app.error-404', {
+            url: 'error/404',
+            templateUrl: 'templates/404.html'
         });
 });
