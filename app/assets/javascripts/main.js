@@ -32,6 +32,7 @@ import HomeController from './angular/controllers/Home';
 import LegacyController from './angular/controllers/Legacy';
 import NavigationController from './angular/controllers/Navigation';
 import NewsController from './angular/controllers/News';
+import NewsPageController from './angular/controllers/NewsPage';
 import NewsletterController from './angular/controllers/Newsletter';
 import { RepresentationFormController } from './angular/components/RepresentationForm';
 import SearchController from './angular/controllers/Search';
@@ -51,6 +52,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('LegacyController', LegacyController)
     .controller('NavigationController', NavigationController)
     .controller('NewsController', NewsController)
+    .controller('NewsPageController', NewsPageController)
     .controller('NewsletterController', NewsletterController)
     .controller('RepresentationFormController', RepresentationFormController)
     .controller('SearchController', SearchController)

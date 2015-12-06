@@ -20,6 +20,17 @@ export default class NewsService {
     }
 
     /**
+     * Find by news slug
+     *
+     * @param {String} slug
+     * @returns {Promise}
+     */
+    getBySlug(slug = '') {
+        return this.$http.get(`api/v1/news/${slug}`)
+            .then(this.commonService.handleHttpResponse('Error getting news articles by slug'));
+    }
+
+    /**
      * Get featured news articles
      *
      * @param {Object} params

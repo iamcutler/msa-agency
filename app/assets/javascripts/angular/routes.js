@@ -88,6 +88,11 @@ angular.module('MSAAgency')
             controller: 'NewsController as NewsCtrl',
             templateUrl: 'templates/news.html'
         })
+        .state('app.news-page', {
+            url: 'news/:slug',
+            controller: 'NewsPageController as NewsPageCtrl',
+            templateUrl: 'templates/news-page.html'
+        })
         // Frequent Asked questions
         .state('app.faq', {
             url: 'faq',

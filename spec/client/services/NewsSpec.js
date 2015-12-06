@@ -46,6 +46,19 @@ describe('Service: News', () => {
         });
     });
 
+    describe('method: getBySlug', () => {
+        it('should call backend and return news article', () => {
+            let slug = 'testing-article';
+            $httpBackend.expectGET(`api/v1/news/${slug}`).respond(MockPromise($q, article1()));
+
+            NewsService.getBySlug(slug)
+                .then(response => {
+                    expect(response).toEqual(article1());
+                });
+            $httpBackend.flush();
+        });
+    });
+
     describe('method: getFeaturedArticles', () => {
         it('should call api for news articles', () => {
             $httpBackend.expectGET('api/v1/featured-news').respond(MockPromise($q, [article1()]));
