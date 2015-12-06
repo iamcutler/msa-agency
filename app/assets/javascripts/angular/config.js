@@ -8,4 +8,10 @@ angular.module('MSAAgency')
         enabled: true,
         requireBase: false
     });
+})
+.run(($rootScope, smoothScroll) => {
+    // Scroll to top on route change
+    $rootScope.$on('$stateChangeSuccess', () => {
+        smoothScroll('body');
+    });
 });
