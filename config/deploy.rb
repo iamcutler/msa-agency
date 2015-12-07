@@ -27,6 +27,7 @@ set :linked_files, fetch(:linked_files, []).push(
     'config/database.yml',
     'config/secrets.yml',
     'config/social.yml',
+    'config/s3.yml',
     'config/initializers/config.rb',
     'config/initializers/devise.rb'
 )
