@@ -3,7 +3,7 @@
         Get in touch with us
     </header>
 
-    <div id="contact-options">
+    <div id="contact-options" ng-if="!ContactCtrl.showSubmissionMessage">
         <button type="button" ng-class="{active: ContactCtrl.showContactForm}"
                               ng-click="ContactCtrl.toggleContactForms()">Send a message</button>
 
@@ -19,8 +19,8 @@
         {{ ContactCtrl.submissionMessage }}
     </div>
 
-    <contact-form ng-show="ContactCtrl.showContactForm && !ContactCtrl.isSubmitting"></contact-form>
-    <representation-form ng-show="!ContactCtrl.showContactForm && !ContactCtrl.isSubmitting"></representation-form>
+    <contact-form ng-show="ContactCtrl.showContactForm && !ContactCtrl.isSubmitting && !ContactCtrl.showSubmissionMessage"></contact-form>
+    <representation-form ng-show="!ContactCtrl.showContactForm && !ContactCtrl.isSubmitting && !ContactCtrl.showSubmissionMessage"></representation-form>
 </section>
 
 <office-locations></office-locations>
