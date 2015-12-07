@@ -60,10 +60,10 @@ json.cover_image do
     json.id @client.cover_photo ? @client.cover_photo.id : ''
     json.caption @client.cover_photo ? @client.cover_photo.caption : ''
     json.sizes do
-        json.thumb @client.cover_photo ? @client.cover_photo.image.url(:thumb) : '/assets/images/img-placeholder.jpg'
-        json.square @client.cover_photo ? @client.cover_photo.image.url(:square) : '/assets/images/img-placeholder.jpg'
-        json.medium @client.cover_photo ? @client.cover_photo.image.url(:medium) : '/assets/images/img-placeholder.jpg'
-        json.large @client.cover_photo ? @client.cover_photo.image.url(:large) : '/assets/images/img-placeholder.jpg'
+        json.thumb @client.cover_photo ? @client.cover_photo.image.url(:thumb) : '/assets/images/msa-placeholder.jpg'
+        json.square @client.cover_photo ? @client.cover_photo.image.url(:square) : '/assets/images/msa-placeholder.jpg'
+        json.medium @client.cover_photo ? @client.cover_photo.image.url(:medium) : '/assets/images/msa-placeholder.jpg'
+        json.large @client.cover_photo ? @client.cover_photo.image.url(:large) : '/assets/images/msa-placeholder.jpg'
     end
 end
 
@@ -72,10 +72,10 @@ json.default_image do
     json.id @client.default_photo ? @client.default_photo.id : ''
     json.caption @client.default_photo ? @client.default_photo.caption : ''
     json.sizes do
-        json.thumb @client.default_photo ? @client.default_photo.image.url(:thumb) : '/assets/images/img-placeholder.jpg'
-        json.square @client.default_photo ? @client.default_photo.image.url(:square) : '/assets/images/img-placeholder.jpg'
-        json.medium @client.default_photo ? @client.default_photo.image.url(:medium) : '/assets/images/img-placeholder.jpg'
-        json.large @client.default_photo ? @client.default_photo.image.url(:large) : '/assets/images/img-placeholder.jpg'
+        json.thumb @client.default_photo ? @client.default_photo.image.url(:thumb) : '/assets/images/msa-placeholder.jpg'
+        json.square @client.default_photo ? @client.default_photo.image.url(:square) : '/assets/images/msa-placeholder.jpg'
+        json.medium @client.default_photo ? @client.default_photo.image.url(:medium) : '/assets/images/msa-placeholder.jpg'
+        json.large @client.default_photo ? @client.default_photo.image.url(:large) : '/assets/images/msa-placeholder.jpg'
     end
 end
 

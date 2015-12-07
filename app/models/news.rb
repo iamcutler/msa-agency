@@ -6,7 +6,7 @@ class News < ActiveRecord::Base
         medium: '600x600>',
         large: '800x800>'
     },
-    default_url: '/assets/images/img-placeholder.jpg'
+    default_url: '/assets/images/msa-placeholder.jpg'
 
     # Validate the attached image is image/jpg, image/png, etc
     validates_attachment_presence :image
