@@ -39,7 +39,7 @@
                 </div>
 
                 <figcaption>
-                    {{ media.caption.text }}
+                    {{ media.caption.text | limitTo: 230 }}
                 </figcaption>
 
                 <div class="statistics">
