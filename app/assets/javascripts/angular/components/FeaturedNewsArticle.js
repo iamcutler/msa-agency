@@ -10,7 +10,7 @@ export default function FeaturedNewsArticle() {
             <article class="news-article" ng-class="{ 'spotlight': spotlight === 'true' }">
                 <figure>
                     <a href="">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Two_dancers.jpg" alt="{{ data.subject }}" />
+                        <img src="{{ data.image.medium }}" alt="{{ data.subject }}" />
                     </a>
                 </figure>
 
@@ -22,7 +22,7 @@ export default function FeaturedNewsArticle() {
 
                 <footer>
                     <time>{{ data.created_at | date: 'M/dd' }}</time>
-                    <a href="" class="view-more">View More</a>
+                    <a ui-sref="app.news-page({ slug: data.slug })" class="view-more">View More</a>
                 </footer>
             </article>
         `
