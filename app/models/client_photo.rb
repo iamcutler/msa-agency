@@ -22,6 +22,8 @@ class ClientPhoto < ActiveRecord::Base
     def set_cover_photo
         if self.cover?
             ClientPhoto.where(client_id: self.client_id).update_all(cover: false)
+            # Update client record
+            Client.update(self.client_id, default_image_id: self.id)
         end
     end
 
@@ -29,6 +31,8 @@ class ClientPhoto < ActiveRecord::Base
     def set_default_photo
         if self.default?
             ClientPhoto.where(client_id: self.client_id).update_all(default: false)
+            # Update client record
+            Client.update(self.client_id, cover_image_id: self.id)
         end
     end
 end
