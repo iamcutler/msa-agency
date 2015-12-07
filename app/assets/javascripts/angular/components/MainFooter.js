@@ -32,7 +32,7 @@ angular.module('MSAAgency.directives')
                             <li class="sub"><a ui-sref="app.about.staff">Our staff</a></li>
                             <li class="sub"><a ui-sref="app.affiliates">Affliations</a></li>
                             <li class="sub"><a ui-sref="app.talent.legacy">Legacy</a></li>
-                            <li class="sub"><a ui-sref="app.home.los-angeles">Archives</a></li>
+                            <li class="sub"><a ui-sref="app.archives">Archives</a></li>
                             <li class="sub"><a ui-sref="app.faq">FAQ</a></li>
                         </ul>
                         <ul>
