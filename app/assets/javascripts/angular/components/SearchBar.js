@@ -6,7 +6,7 @@ export function SearchBar() {
         controller: 'SearchBarController as SearchBarCtrl',
         template: `
             <form name="SearchBarCtrl.searchForm" id="search-bar" ng-submit="SearchBarCtrl.search(SearchBarCtrl.searchForm.$valid)" novalidate>
-                <input type="search" ng-model="SearchBarCtrl.q" placeholder="Search" required>
+                <input type="search" ng-model="SearchBarCtrl.q" placeholder="Search and press enter..." required>
             </form>
         `
     };
