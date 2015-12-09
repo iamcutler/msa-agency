@@ -32,12 +32,12 @@ import FAQController from './angular/controllers/FAQ';
 import SplashController from './angular/controllers/Splash';
 import HomeController from './angular/controllers/Home';
 import LegacyController from './angular/controllers/Legacy';
-import NavigationController from './angular/controllers/Navigation';
 import NewsController from './angular/controllers/News';
 import NewsPageController from './angular/controllers/NewsPage';
 import NewsletterController from './angular/controllers/Newsletter';
 import { RepresentationFormController } from './angular/components/RepresentationForm';
 import SearchController from './angular/controllers/Search';
+import { SearchBarController } from './angular/components/SearchBar';
 import StaffController from './angular/controllers/Staff';
 
 angular.module('MSAAgency.controllers', [])
@@ -52,12 +52,12 @@ angular.module('MSAAgency.controllers', [])
     .controller('SplashController', SplashController)
     .controller('HomeController', HomeController)
     .controller('LegacyController', LegacyController)
-    .controller('NavigationController', NavigationController)
     .controller('NewsController', NewsController)
     .controller('NewsPageController', NewsPageController)
     .controller('NewsletterController', NewsletterController)
     .controller('RepresentationFormController', RepresentationFormController)
     .controller('SearchController', SearchController)
+    .controller('SearchBarController', SearchBarController)
     .controller('StaffController', StaffController);
 
 // Services
@@ -108,6 +108,7 @@ import NewsArticle from './angular/components/NewsArticle';
 import NewsSearchResult from './angular/components/NewsSearchResult';
 import OfficeLocations from './angular/components/OfficeLocations';
 import { RepresentationForm } from './angular/components/RepresentationForm';
+import { SearchBar } from './angular/components/SearchBar';
 import SocialSection from './angular/components/SocialSection';
 import SubSectionHeader from './angular/components/SubSectionHeader';
 import TalentHeader from './angular/components/TalentHeader';
@@ -135,6 +136,7 @@ angular.module('MSAAgency.directives', [])
     .directive('officeLocations', OfficeLocations)
     .directive('resizeElement', ResizeElement)
     .directive('representationForm', RepresentationForm)
+    .directive('searchBar', SearchBar)
     .directive('socialSection', SocialSection)
     .directive('subSectionHeader', SubSectionHeader)
     .directive('talentHeader', TalentHeader)

@@ -3,7 +3,7 @@ export default function Navigation() {
         restrict: 'E',
         replace: true,
         template: `
-            <nav role="navigation" id="sidebar-nav" ng-controller="NavigationController as NavCtrl">
+            <nav role="navigation" id="sidebar-nav">
                 <a href="" class="nav-btn" toggle-navigation>
                     <div class="btn">
                         <div class="nav-lines">
@@ -21,10 +21,8 @@ export default function Navigation() {
                     </div>
 
                     <!-- Search -->
-                    <form name="NavCtrl.SidebarSearch" id="sidebar-search" ng-submit="NavCtrl.search(NavCtrl.SidebarSearch.$valid)" novalidate>
-                        <input type="search" ng-model="NavCtrl.q" placeholder="Search" required>
-                    </form>
-                    <!-- End Search -->
+                    <search-bar></search-bar>
+                    <!-- END Search -->
 
                     <ul class="main-links">
                         <li>

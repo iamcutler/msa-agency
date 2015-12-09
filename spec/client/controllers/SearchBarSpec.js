@@ -1,5 +1,5 @@
-describe('Controller: Navigation', function() {
-    var $rootScope, $scope, $controller, $state, NavCtrl;
+describe('Controller: SearchBar', function() {
+    var $rootScope, $scope, $controller, $state, SearchBarCtrl;
 
     beforeEach(function() {
         angular.mock.module('MSAAgency', 'MSAAgency.controllers');
@@ -14,24 +14,24 @@ describe('Controller: Navigation', function() {
             spyOn($state, 'go');
 
             // Controller
-            NavCtrl = $controller('NavigationController as NavCtrl', {
+            SearchBarCtrl = $controller('SearchBarController as SearchBarCtrl', {
                 $scope: $scope
             });
         });
     });
 
     it('should be defined', function() {
-        expect(NavCtrl).toBeDefined();
+        expect(SearchBarCtrl).toBeDefined();
     });
 
     describe('method: search', function() {
         beforeEach(function() {
-            NavCtrl.q = "MSA Agency";
+            SearchBarCtrl.q = "MSA Agency";
         });
 
         describe('on valid search', function() {
             beforeEach(function() {
-                NavCtrl.search(true);
+                SearchBarCtrl.search(true);
                 $scope.$digest();
             });
 
@@ -40,13 +40,13 @@ describe('Controller: Navigation', function() {
             });
 
             it('should clear search string after redirect', function() {
-                expect(NavCtrl.q).toBe('');
+                expect(SearchBarCtrl.q).toBe('');
             });
         });
 
         describe('on invalid search', function() {
             beforeEach(function() {
-                NavCtrl.search(false);
+                SearchBarCtrl.search(false);
                 $scope.$digest();
             });
 
