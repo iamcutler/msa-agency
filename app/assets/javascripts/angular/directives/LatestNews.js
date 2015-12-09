@@ -12,8 +12,7 @@ export default function LatestNews() {
                 </header>
 
                 <div class="articles">
-                    <featured-news-article data="article" spotlight="{{ $index === 0 }}" ng-repeat-start="article in data | limitTo: 6"></featured-news-article>
-                    <newsletter-widget ng-repeat-end ng-if="$index === 0"></newsletter-widget>
+                    <featured-news-article data="article" ng-repeat="article in data | limitTo: 8"></featured-news-article>
                 </div>
             </section>
         `

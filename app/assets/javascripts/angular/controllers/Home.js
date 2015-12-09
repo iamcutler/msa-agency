@@ -22,7 +22,7 @@ export default class HomeController {
         this.getInstagramFeed();
         this.getLatestNews({
             location: this.$state.current.name === 'app.home.los-angeles' ? 'Los Angeles' : 'New York',
-            limit: 6
+            limit: 8
         });
 
         // Fetch page slides

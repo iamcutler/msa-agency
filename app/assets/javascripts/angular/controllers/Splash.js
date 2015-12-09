@@ -16,7 +16,7 @@ export default class SplashController {
      * Get instagram feed
      */
     getInstagramFeed() {
-        this.socialService.getInstagramFeed(10)
+        this.socialService.getInstagramFeed(30)
             .then(feed => {
                 this.socialFeeds.instagram = feed;
             })
