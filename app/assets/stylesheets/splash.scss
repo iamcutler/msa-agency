@@ -110,6 +110,7 @@ a.choose-city {
 }
 
 #splash-connect {
+    background: #000;
     border-top: 6px #FFF solid;
     border-bottom: 6px #FFF solid;
     padding: 26px 0 20px 0;
@@ -122,18 +123,18 @@ a.choose-city {
     }
 
     span {
-        color: #898989;
+        color: #FFF;
     }
 
     ul.social-icons {
         li {
             a {
-                background-image: image-url('social-icons-grey.png');
-                background-image: image-url('social-icons-grey.svg');
+                background-image: image-url('social-icons-white.png');
+                background-image: image-url('social-icons-white.svg');
                 border: none;
 
                 &:hover {
-                    background-color: #FFF;
+                    background-color: $msa-orange;
                 }
             }
         }
@@ -165,6 +166,10 @@ a.choose-city {
             .body {
                 top: 0;
             }
+        }
+
+        a {
+            text-decoration: none;
         }
 
         .body {

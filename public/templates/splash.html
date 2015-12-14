@@ -33,24 +33,26 @@
 
     <section id="splash-feed">
         <figure ng-repeat="media in SplashCtrl.socialFeeds.instagram track by media.id">
-            <img ng-src="{{ media.images.standard_resolution.url }}">
-            <div class="body">
-                <div class="author">
-                    <div class="thumb">
-                        <img ng-src="{{ media.user.profile_picture }}">
+            <a ng-href="{{ media.link }}" target="_blank">
+                <img ng-src="{{ media.images.standard_resolution.url }}">
+                <div class="body">
+                    <div class="author">
+                        <div class="thumb">
+                            <img ng-src="{{ media.user.profile_picture }}">
+                        </div>
+                        <span class="name">{{ media.user.username }}</span>
                     </div>
-                    <span class="name">{{ media.user.username }}</span>
-                </div>
 
-                <figcaption>
-                    {{ media.caption.text | limitTo: 230 }}
-                </figcaption>
+                    <figcaption>
+                        {{ media.caption.text | limitTo: 230 }}
+                    </figcaption>
 
-                <div class="statistics">
-                    <span class="likes">{{ media.likes.count }} likes</span>
-                    <!-- <span class="posted">{{ media.created_time | date: 'shortTime' }}</span> -->
+                    <div class="statistics">
+                        <span class="likes">{{ media.likes.count }} likes</span>
+                        <!-- <span class="posted">{{ media.created_time | date: 'shortTime' }}</span> -->
+                    </div>
                 </div>
-            </div>
+            </a>
         </figure>
     </section>
 </div>
