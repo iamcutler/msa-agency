@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
         scope '/contact' do
             post 'form', to: 'contact#submit'
+            post 'booking', to: 'contact#booking'
         end
 
         scope '/social' do

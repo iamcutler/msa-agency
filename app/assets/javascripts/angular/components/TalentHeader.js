@@ -34,7 +34,7 @@ export default function TalentHeader() {
                         youtube="{{ ::social.youtube }}"></social-icons>
 
                     <div class="button-group">
-                        <a href="" class="book-btn" ng-hide="hideBookBtn === true">Book</a>
+                        <a ui-sref="app.book-client({ client: name })" class="book-btn" ng-hide="hideBookBtn === true">Book</a>
                         <a href="" class="share-btn">Share</a>
                     </div>
                 </div>

@@ -6,4 +6,10 @@ class ContactMailer < ApplicationMailer
 
         mail(to: 'iamcutler@icloud.com', subject: 'MSA Agency Contact Form')
     end
+
+    def booking_form(form_params)
+        @params = form_params
+
+        mail(to: 'iamcutler@icloud.com', subject: 'I want to book a client')
+    end
 end

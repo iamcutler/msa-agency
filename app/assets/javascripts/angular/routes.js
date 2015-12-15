@@ -105,6 +105,11 @@ angular.module('MSAAgency')
             controller: 'ContactController as ContactCtrl',
             templateUrl: 'templates/contact.html'
         })
+        .state('app.book-client', {
+            url: 'contact/booking/:client',
+            controller: 'BookingController as BookingCtrl',
+            templateUrl: 'templates/booking.html'
+        })
         // Error pages
         .state('app.error-404', {
             url: 'error/404',

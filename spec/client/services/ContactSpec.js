@@ -51,4 +51,27 @@ describe('Service: Contact', () => {
             $httpBackend.flush();
         });
     });
+
+    describe('method: submitBooking', () => {
+        let contact_fields = {
+            client_name: 'Tony Ortega',
+            name: 'Tony Selznick',
+            email: 'tony@msaagency.com',
+            phone: '3101234567',
+            message: 'I want to book this client'
+        };
+
+        it('should call backend to submit form', () => {
+            $httpBackend.expectPOST('api/v1/contact/booking').respond({
+                success: true
+            });
+
+            ContactService.submitBooking(contact_fields)
+                .then(data => {
+                    expect(data.success).toBe(true);
+                });
+
+            $httpBackend.flush();
+        });
+    });
 });

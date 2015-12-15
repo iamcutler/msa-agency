@@ -25,6 +25,7 @@ import AboutController from './angular/controllers/About';
 import AffiliatesController from './angular/controllers/Affiliates';
 import AppController from './angular/controllers/App';
 import ArchivesController from './angular/controllers/Archives';
+import BookingController from './angular/controllers/Booking';
 import ClientCategoryController from './angular/controllers/ClientCategory';
 import ClientController from './angular/controllers/Client';
 import ContactController from './angular/controllers/Contact';
@@ -45,6 +46,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('AffiliatesController', AffiliatesController)
     .controller('AppController', AppController)
     .controller('ArchivesController', ArchivesController)
+    .controller('BookingController', BookingController)
     .controller('ClientCategoryController', ClientCategoryController)
     .controller('ClientController', ClientController)
     .controller('ContactController', ContactController)
@@ -95,6 +97,7 @@ import ResizeElement from './angular/directives/ResizeElement';
 import ToggleNavigation from './angular/directives/ToggleNavigation';
 
 // Components
+import BookingForm from './angular/components/BookingForm';
 import ClientImage from './angular/components/ClientImage';
 import ClientReel from './angular/components/ClientReel';
 import ClientRoster from './angular/components/ClientRoster';
@@ -117,6 +120,7 @@ import TwitterFeed from './angular/components/TwitterFeed';
 
 angular.module('MSAAgency.directives', [])
     .directive('animatedInput', AnimatedInput)
+    .directive('bookingForm', BookingForm)
     .directive('chooseCity', ChooseCity)
     .directive('clientImage', ClientImage)
     .directive('clientReel', ClientReel)

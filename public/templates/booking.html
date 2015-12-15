@@ -1,0 +1,17 @@
+<section id="contact-us" class="representation">
+    <header class="section-header">
+        Book a MSA Client
+    </header>
+
+    <div id="contact-loader" ng-show="BookingCtrl.isSubmitting">
+        <div class="loader"></div>
+    </div>
+
+    <div id="contact-message" ng-if="BookingCtrl.submitted && !BookingCtrl.isSubmitting">
+        {{ BookingCtrl.submissionMessage }}
+    </div>
+
+    <booking-form ng-show="!BookingCtrl.submitted && !BookingCtrl.showSubmissionMessage"></booking-form>
+</section>
+
+<office-locations></office-locations>

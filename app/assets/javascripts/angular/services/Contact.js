@@ -32,4 +32,19 @@ export default class ContactService {
             })
             .then(this.commonService.handleHttpResponse('Error while submitting contact form'));
     }
+
+    /**
+     * Submit booking form
+     *
+     * @param {Object} fields
+     * @param {String} fields.client_name
+     * @param {String} fields.name
+     * @param {String} fields.email
+     * @param {String} fields.phone
+     * @param {String} fields.message
+     */
+    submitBooking(fields) {
+        return this.$http.post('api/v1/contact/booking', fields)
+            .then(this.commonService.handleHttpResponse('Error while submitting booking form'));
+    }
 }
