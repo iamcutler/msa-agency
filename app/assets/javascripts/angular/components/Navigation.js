@@ -21,7 +21,7 @@ export default function Navigation() {
                     </div>
 
                     <!-- Search -->
-                    <search-bar></search-bar>
+                    <search-bar placeholder="Search:"></search-bar>
                     <!-- END Search -->
 
                     <ul class="main-links">

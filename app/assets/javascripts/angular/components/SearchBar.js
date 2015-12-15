@@ -2,11 +2,13 @@ export function SearchBar() {
     return {
         restrict: 'E',
         replace: true,
-        scope: false,
+        scope: {
+            placeholder: '@'
+        },
         controller: 'SearchBarController as SearchBarCtrl',
         template: `
             <form name="SearchBarCtrl.searchForm" id="search-bar" ng-submit="SearchBarCtrl.search(SearchBarCtrl.searchForm.$valid)" novalidate>
-                <input type="search" ng-model="SearchBarCtrl.q" placeholder="Search and press enter..." required>
+                <input type="search" ng-model="SearchBarCtrl.q" placeholder="{{ placeholder }}" required>
             </form>
         `
     };
