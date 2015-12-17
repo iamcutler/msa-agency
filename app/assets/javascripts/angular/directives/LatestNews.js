@@ -14,6 +14,8 @@ export default function LatestNews() {
                 <div class="articles">
                     <featured-news-article data="article" ng-repeat="article in data | limitTo: 8"></featured-news-article>
                 </div>
+
+                <a ui-sref="app.news" class="more-news">More News</a>
             </section>
         `
     };

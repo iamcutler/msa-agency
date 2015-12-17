@@ -97,3 +97,22 @@ section#get-social {
         }
     }
 }
+
+
+a.more-news {
+    background: $sub-heading-grey;
+    padding: 10px 12px;
+    border-radius: 6px;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 300;
+    margin: 20px auto 40px auto;
+    display: block;
+    transition: background $transition-duration $transition-easing;
+
+    &:hover {
+        background: #000;
+    }
+}
