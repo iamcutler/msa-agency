@@ -117,9 +117,16 @@ a.choose-city {
     text-transform: uppercase;
     text-align: center;
 
-    h3 {
-        color: $msa-orange;
-        font-size: 50px;
+    h3.MSAFAM-logo {
+        @include background-image('MSAFAM-logo');
+        max-width: 500px;
+        height: 69px;
+        margin: 10px auto;
+        overflow: hidden;
+        display: block;
+        text-indent: -9999px;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 
     span {
