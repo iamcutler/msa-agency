@@ -11,7 +11,7 @@ export default function SocialSection() {
                 <div class="app-container">
                     <header>
                         <i></i>
-                        Get social with MSA
+                        Social Media
                     </header>
 
                     <div class="social-feeds">
