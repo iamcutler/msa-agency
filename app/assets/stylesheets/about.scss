@@ -12,5 +12,9 @@ section {
             background: image-url('cities-bg.jpg') no-repeat;
             background-size: cover;
         }
+
+        header.section-header {
+            margin-top: 0;
+        }
     }
 }
