@@ -7,7 +7,7 @@
 #media-slider {
     position: relative;
     background: #000;
-    height: 480px;
+    height: 540px;
 
     .slide-navigation {
         position: absolute;
@@ -37,7 +37,7 @@
 
         .arrow {
             position: absolute;
-            top: 170px;
+            top: 50%;
             left: 50%;
             @include background-image('slider-arrows');
             background-position: 0 0;
@@ -46,6 +46,7 @@
             height: 120px;
             overflow: hidden;
             margin-left: -18px;
+            margin-top: -60px;
             display: block;
 
             &.left {
@@ -75,7 +76,7 @@
             li {
                 position: relative;
                 width: 80%;
-                height: 480px;
+                height: 540px;
                 list-style: none;
                 display: inline-block;
                 vertical-align: top;
