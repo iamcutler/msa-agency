@@ -13,6 +13,10 @@ section#msa-slogan {
     }
 }
 
+section#msa-news {
+    padding: 0 10px;
+}
+
 section#get-social {
     background: $primary-grey;
     color: #FFF;
@@ -102,7 +106,6 @@ section#get-social {
 a.more-news {
     background: $sub-heading-grey;
     padding: 10px 12px;
-    border-radius: 6px;
     color: #FFF;
     text-decoration: none;
     text-transform: uppercase;

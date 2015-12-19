@@ -40,8 +40,7 @@ section#msa-news {
 article.news-article {
     position: relative;
     background: #FFF;
-    width: 270px;
-    border-radius: 6px;
+    width: 290px;
     overflow-x: hidden;
 
     &:hover {
@@ -103,8 +102,6 @@ article.news-article {
             text-decoration: none;
             text-transform: uppercase;
             padding: 10px 16px;
-            border-top-left-radius: 6px;
-            border-bottom-right-radius: 6px;
             transition: background 0.4s ease-in-out;
 
             &:hover {
