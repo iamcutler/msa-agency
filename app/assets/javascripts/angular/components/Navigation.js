@@ -20,10 +20,6 @@ export default function Navigation() {
                         <a ui-sref="splash">McDonald/Selznick Associates</a>
                     </div>
 
-                    <!-- Search -->
-                    <search-bar placeholder="Search:"></search-bar>
-                    <!-- END Search -->
-
                     <ul class="main-links">
                         <li>
                             <a href="">Home</a>

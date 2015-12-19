@@ -145,7 +145,8 @@ header {
         h1 {
             position: absolute;
             top: 22px;
-            left: 144px;
+            left: 50%;
+            margin-left: -65px;
 
             a {
                 background: image-url('brand.png') no-repeat;
@@ -209,6 +210,34 @@ header {
 
             ul.social-icons {
                 margin-top: 10px;
+            }
+
+            // Search bar
+            form[id="search-bar"] {
+                margin: 30px 6px 16px;
+
+                input[type="search"] {
+                    background: $secondary-grey image-url('search-icon.png') 12px 8px no-repeat;
+                    background: $secondary-grey image-url('search-icon.svg') 12px 8px no-repeat;
+                    color: #FFF;
+                    width: 186px;
+                    border: 2px #252525 solid;
+                    font-size: 14px;
+                    padding: 6px 6px 6px 28px;
+                    font-weight: $font-primary-weight-thin;
+                    outline: none;
+                    transition: border .4s ease-in-out;
+                    appearance: none;
+
+                    &:focus {
+                        border-color: #595959;
+                    }
+
+                    &::-webkit-input-placeholder { color: #FFF; }
+                    &::-moz-placeholder { color: #FFF; }
+                    &:-ms-input-placeholder { color: #FFF; }
+                    &:-moz-placeholder { color: #FFF; }
+                }
             }
         }
     }
@@ -289,37 +318,9 @@ nav#sidebar-nav {
             }
         }
 
-        // Search bar
-        form[id="search-bar"] {
-            margin: 24px 16px 16px;
-
-            input[type="search"] {
-                background: $secondary-grey image-url('search-icon.png') 12px 8px no-repeat;
-                background: $secondary-grey image-url('search-icon.svg') 12px 8px no-repeat;
-                color: #FFF;
-                width: 186px;
-                border: 2px #252525 solid;
-                font-size: 14px;
-                padding: 6px 6px 6px 28px;
-                font-weight: $font-primary-weight-thin;
-                outline: none;
-                transition: border .4s ease-in-out;
-                appearance: none;
-
-                &:focus {
-                    border-color: #595959;
-                }
-
-                &::-webkit-input-placeholder { color: #FFF; }
-                &::-moz-placeholder { color: #FFF; }
-                &:-ms-input-placeholder { color: #FFF; }
-                &:-moz-placeholder { color: #FFF; }
-            }
-        }
-
         // Main navigation links
         ul.main-links {
-            margin: 0;
+            margin: 20px 0 0;
             padding: 0;
 
             li {
@@ -509,6 +510,25 @@ footer {
             }
         }
 
+        ul.social-icons {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -100px;
+        }
+
+        @include responsive-tablets() {
+            ul.social-icons {
+                display: none;
+            }
+        }
+
+        @include responsive-phones() {
+            ul.social-icons {
+                display: none;
+            }
+        }
+
         @include responsive-phone-retina() {
             .app-container {
                 padding-bottom: 0;
@@ -533,6 +553,10 @@ footer {
                         margin-bottom: 10px;
                     }
                 }
+            }
+
+            ul.social-icons {
+                display: none;
             }
         }
     }
