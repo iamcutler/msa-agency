@@ -12,7 +12,7 @@ export function RepresentationForm() {
                     <!-- Destination -->
                     <span class="contact-form-notice section-title">DESTINATION</span>
 
-                    <select ng-model="RepresentationFormCtrl.form.destination">
+                    <select ng-model="RepresentationFormCtrl.form.destination" required>
                         <option value="">Select:</option>
                         <option value="Los Angeles">Los Angeles</option>
                         <option value="New York">New York</option>
@@ -23,28 +23,54 @@ export function RepresentationForm() {
                     <span class="contact-form-notice section-title">REPRESENTATION</span>
 
                     <div class="representation-option">
-                        <input type="checkbox" name="" ng-model="RepresentationFormCtrl.form.repCategory.adult_commerical">
-                        Adult Commerical
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.on_camera"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.on_camera)">
+                        On Camera
                     </div>
                     <div class="representation-option">
-                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.print">
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.print"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.print)">
                         Print
                     </div>
                     <div class="representation-option">
-                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.young_people">
-                        Young People
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.kids_and_teens"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.kids_and_teens)">
+                        Kids & Teens
                     </div>
                     <div class="representation-option">
-                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.dance">
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.dance"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.dance)">
                         Dance
                     </div>
                     <div class="representation-option">
-                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.choreography">
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.choreography"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.choreography)">
                         Choreography
                     </div>
                     <div class="representation-option">
-                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.creative_development">
-                        Creative &amp; Development
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.creative_direction"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.creative_direction)">
+                        Creative Direction
+                    </div>
+                    <div class="representation-option">
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.music_direction"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.music_direction)">
+                        Music Direction
+                    </div>
+                    <div class="representation-option">
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.production_design"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.production_design)">
+                        Production Design
+                    </div>
+                    <div class="representation-option">
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.lighting_design"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.lighting_design)">
+                        Lighting Design
+                    </div>
+                    <div class="representation-option">
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.other"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.other)">
+                        Other
                     </div>
                     <!-- End Representation -->
 
@@ -61,26 +87,28 @@ export function RepresentationForm() {
                     <!-- End Contact information -->
 
                     <!-- Vital -->
-                    <span class="contact-form-notice section-title">VITAL</span>
+                    <div class="vitals" ng-show="RepresentationFormCtrl.showVitalsInForm">
+                        <span class="contact-form-notice section-title">VITAL</span>
 
-                    <div class="split-column">
-                        <animated-input type="text" placeholder="DOB: MM/DD/YYYY" ng-model="RepresentationFormCtrl.form.dob" required></animated-input>
-                        <animated-input type="text" placeholder="Height: (Bare Foot)" ng-model="RepresentationFormCtrl.form.height" required></animated-input>
-                        <animated-input type="text" placeholder="Weight:" ng-model="RepresentationFormCtrl.form.weight" required></animated-input>
-                        <animated-input type="text" placeholder="Eye Color:" ng-model="RepresentationFormCtrl.form.eye_color" required></animated-input>
-                        <animated-input type="text" placeholder="Hair Color:" ng-model="RepresentationFormCtrl.form.hair_color" required></animated-input>
-                        <animated-input type="text" placeholder="Hips:" ng-model="RepresentationFormCtrl.form.hips" required></animated-input>
-                        <animated-input type="text" placeholder="Bust: (Women)" ng-model="RepresentationFormCtrl.form.bust"></animated-input>
-                        <animated-input type="text" placeholder="Waist:" ng-model="RepresentationFormCtrl.form.waist" required></animated-input>
-                        <animated-input type="text" placeholder="Chest: (Men)" ng-model="RepresentationFormCtrl.form.chest"></animated-input>
-                        <animated-input type="text" placeholder="Inseam:" ng-model="RepresentationFormCtrl.form.inseam" required></animated-input>
+                        <div class="split-column">
+                            <animated-input type="text" placeholder="DOB: MM/DD/YYYY" ng-model="RepresentationFormCtrl.form.dob"></animated-input>
+                            <animated-input type="text" placeholder="Height: (Bare Foot)" ng-model="RepresentationFormCtrl.form.height"></animated-input>
+                            <animated-input type="text" placeholder="Weight:" ng-model="RepresentationFormCtrl.form.weight"></animated-input>
+                            <animated-input type="text" placeholder="Eye Color:" ng-model="RepresentationFormCtrl.form.eye_color"></animated-input>
+                            <animated-input type="text" placeholder="Hair Color:" ng-model="RepresentationFormCtrl.form.hair_color"></animated-input>
+                            <animated-input type="text" placeholder="Hips:" ng-model="RepresentationFormCtrl.form.hips"></animated-input>
+                            <animated-input type="text" placeholder="Bust: (Women)" ng-model="RepresentationFormCtrl.form.bust"></animated-input>
+                            <animated-input type="text" placeholder="Waist:" ng-model="RepresentationFormCtrl.form.waist"></animated-input>
+                            <animated-input type="text" placeholder="Chest: (Men)" ng-model="RepresentationFormCtrl.form.chest"></animated-input>
+                            <animated-input type="text" placeholder="Inseam:" ng-model="RepresentationFormCtrl.form.inseam"></animated-input>
+                        </div>
                     </div>
                     <!-- End Vital -->
 
                     <!-- History -->
                     <span class="contact-form-notice section-title">HISTORY</span>
 
-                    <animated-input type="text" placeholder="Current / Past Representation" ng-model="RepresentationFormCtrl.form.history" required></animated-input>
+                    <animated-input type="text" placeholder="Current / Past Representation" ng-model="RepresentationFormCtrl.form.history"></animated-input>
                     <!-- End History -->
 
                     <!-- Union -->
@@ -119,6 +147,10 @@ export function RepresentationForm() {
                         DGA
                     </div>
                     <div class="representation-option">
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.union.SDC">
+                        SDC
+                    </div>
+                    <div class="representation-option">
                         <input type="checkbox" ng-model="RepresentationFormCtrl.form.union.other">
                         Other
                     </div>
@@ -136,11 +168,11 @@ export function RepresentationForm() {
 
                     <!-- End Materials -->
 
-                    <animated-input type="textarea" placeholder="Special Skills / Notes:" ng-model="RepresentationFormCtrl.form.skills" required></animated-input>
+                    <animated-input type="textarea" placeholder="Special Skills / Notes:" ng-model="RepresentationFormCtrl.form.skills"></animated-input>
 
                     <animated-input type="textarea" placeholder="Message:" ng-model="RepresentationFormCtrl.form.message" required></animated-input>
 
-                    <button type="submit">Submit</button>
+                    <button type="submit" ng-disabled="RepresentationFormCtrl.representationForm.$invalid">Submit</button>
                 </form>
             </section>
         `
@@ -152,7 +184,23 @@ export class RepresentationFormController {
     constructor($http) {
         this.$http = $http;
 
+        this.showVitalsInForm = false;
         this.form = {}; // Representation form
+    }
+
+    /**
+     * Show vitals in form
+     *
+     * @param {Boolean} model
+     */
+    showVitals(model) {
+        // Overwrite if a required rep category is selected
+        if(model && this.form.repCategory.on_camera || this.form.repCategory.kids_and_teens || this.form.repCategory.dance) {
+            this.showVitalsInForm = true;
+            return;
+        }
+
+        this.showVitalsInForm = false;
     }
 
     /**
@@ -162,7 +210,7 @@ export class RepresentationFormController {
      */
     submitForm(form) {
         if(form.$valid) {
-
+            return this.$http.post('/api/v1/contact/representation', this.form);
         }
     }
 }
