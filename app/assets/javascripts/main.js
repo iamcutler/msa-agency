@@ -3,7 +3,7 @@
 require('angular/angular.min');
 require('angular-ui-router/build/angular-ui-router.min');
 require('angular-sanitize/angular-sanitize.min');
-require('ng-smooth-scroll/dist/angular-smooth-scroll.min');
+require('./angular-smooth-scroll.min');
 
 // AngularJS
 angular.module('MSAAgency', [
