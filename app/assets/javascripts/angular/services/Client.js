@@ -58,18 +58,20 @@ export default class ClientService {
      * Get categories based on parameter
      */
     getCategoriesFromParam(category = '') {
+        let categoryArray = [];
+
         switch(category) {
             case 'dance':
-                return ['on_camera', 'dancer', 'kids_teen', 'speciality_act'];
+                categoryArray = ['on_camera', 'dancer', 'kids_teen', 'speciality_act'];
                 break;
             case 'creative':
-                return ['stage_director', 'creative_director', 'choreographer', 'production'];
+                categoryArray = ['stage_director', 'creative_director', 'choreographer', 'production'];
                 break;
             case 'educators':
-                return ['speaker', 'master_instructor', 'sytycd'];
+                categoryArray = ['speaker', 'master_instructor', 'sytycd'];
                 break;
-            default:
-                return [];
         }
+
+        return categoryArray;
     }
 }

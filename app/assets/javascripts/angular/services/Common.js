@@ -13,8 +13,8 @@ export default class CommonService {
          return (response) => {
              if( !response ||
                  !response.data ||
-                 response.status.toString().slice(0, 1) == 4 ||
-                 response.status.toString().slice(0, 1) == 5
+                 response.status.toString().slice(0, 1) === 4 ||
+                 response.status.toString().slice(0, 1) === 5
              ) {
                  return this.$q.reject(error_message);
              }

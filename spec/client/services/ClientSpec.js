@@ -45,7 +45,7 @@ describe('Service: Talent', () => {
         });
     });
 
-    describe('method: getByCatrgory', () => {
+    describe('method: getByCategory', () => {
         it('should return client list', () => {
             $httpBackend.expectGET('api/v1/clients-by-category?categories=choregraphy,educator').respond([client1(), client1()]);
 

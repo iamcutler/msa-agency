@@ -20,7 +20,7 @@ export default function ResizeElement($window) {
                         'height',
                         `${newValue.height - (scope.offsetBottom ? Number(scope.offsetBottom) : 0) - (scope.offsetTop ? Number(scope.offsetTop) : 0)}px`
                     );
-                };
+                }
             }, true);
 
             angular.element($window).bind('resize', () => {
