@@ -149,6 +149,7 @@ a.choose-city {
 }
 
 #splash-feed {
+    background: #000;
     font-size: 0;
 
     figure {
@@ -182,7 +183,7 @@ a.choose-city {
         .body {
             position: relative;
             background: rgba(0, 0, 0, 0.6);
-            top: 150px;
+            top: 200px;
             height: 100%;
             color: #FFF;
             transition: all $transition-duration $transition-easing;
