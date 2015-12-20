@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     ActiveAdmin.routes(self)
 
     scope '/api/v1', module: 'apiv1', as: 'apiv1', defaults: { format: 'json' } do
+        get 'company', to: 'company#index'
+
         resources :staffs, path: 'staff', only: ['index', 'show']
 
         resources :clients, only: ['index', 'show']

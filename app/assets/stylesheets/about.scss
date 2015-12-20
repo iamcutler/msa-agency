@@ -18,3 +18,12 @@ section {
         }
     }
 }
+
+section#company-reel {
+    background: #000;
+
+    iframe {
+        margin: auto;
+        display: block;
+    }
+}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205081728) do
+ActiveRecord::Schema.define(version: 20151220023822) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -153,6 +153,13 @@ ActiveRecord::Schema.define(version: 20151205081728) do
     t.string   "location",         limit: 255,   default: "Los Angeles", null: false
     t.datetime "created_at",                                             null: false
     t.datetime "updated_at",                                             null: false
+  end
+
+  create_table "company", force: :cascade do |t|
+    t.string   "reel_id",    limit: 255
+    t.integer  "reel_type",  limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "faqs", force: :cascade do |t|
