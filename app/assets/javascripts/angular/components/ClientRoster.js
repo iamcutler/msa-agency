@@ -101,16 +101,18 @@ export default function ClientRoster($timeout, $state) {
                  * @param {String} params.slug
                  */
                 scope.getStateName = (params = {}) => {
+                    let stateName = '';
+
                     switch(scope.type) {
                         case 'talent':
-                            return $state.href('app.talent.page', params);
+                            stateName = $state.href('app.talent.page', params);
                             break;
                         case 'staff':
-                            return $state.href('app.staff-page', params);
+                            stateName = $state.href('app.staff-page', params);
                             break;
-                        default:
-                            return '';
                     }
+
+                    return stateName;
                 };
             }, 0, true);
         }

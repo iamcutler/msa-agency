@@ -52,7 +52,7 @@ var browserifyTask = function(callback, devMode) {
       if(bundleQueue) {
         bundleQueue--;
         if(bundleQueue === 0) {
-          callback();
+          return callback();
         }
       }
     };
