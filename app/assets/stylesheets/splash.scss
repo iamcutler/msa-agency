@@ -48,22 +48,34 @@
             position: absolute;
             bottom: 10%;
             left: 50%;
-            margin-left: -150px;
+            margin-left: -185px;
 
             input {
-                width: 300px;
-                height: 30px;
+                width: 320px;
+                height: 40px;
                 font-size: 16px;
                 padding: 6px;
                 border: none;
-                border-radius: 20px;
                 opacity: 0.6;
                 transition: opacity $transition-duration $transition-easing;
-                box-shadow: 0 0 6px #000;
 
                 &:focus {
                     opacity: 1.0;
                 }
+            }
+
+            button {
+                float: right;
+                background-color: $msa-orange;
+                @include background-image('search-icon');
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 50px;
+                height: 40px;
+                border: none;
+                overflow: hidden;
+                text-indent: -9999px;
+                cursor: pointer;
             }
         }
     }

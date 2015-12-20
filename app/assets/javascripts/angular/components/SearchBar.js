@@ -3,12 +3,14 @@ export function SearchBar() {
         restrict: 'E',
         replace: true,
         scope: {
-            placeholder: '@'
+            placeholder: '@',
+            showSubmitButton: '@'
         },
         controller: 'SearchBarController as SearchBarCtrl',
         template: `
             <form name="SearchBarCtrl.searchForm" id="search-bar" ng-submit="SearchBarCtrl.search(SearchBarCtrl.searchForm.$valid)" novalidate>
                 <input type="search" ng-model="SearchBarCtrl.q" placeholder="{{ placeholder }}" required>
+                <button type="submit" ng-if="showSubmitButton">Submit</button>
             </form>
         `
     };
