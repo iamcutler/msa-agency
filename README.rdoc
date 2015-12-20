@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/iamcutler/msa-agency.svg?branch=master)](https://travis-ci.org/iamcutler/msa-agency)
+{<img src="https://travis-ci.org/iamcutler/msa-agency.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/iamcutler/msa-agency]
 
 == README
 
