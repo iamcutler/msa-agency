@@ -13,7 +13,7 @@ export default function ContactForm() {
                     <animated-input type="text" placeholder="Phone:" ng-model="ContactCtrl.contact_form.phone" required></animated-input>
                     <animated-input type="text" placeholder="Email Address:" ng-model="ContactCtrl.contact_form.email" required></animated-input>
                     <animated-input type="text" placeholder="Message:" ng-model="ContactCtrl.contact_form.message" required></animated-input>
-                    <button type="submit">Submit</button>
+                    <button type="submit" ng-disabled="ContactCtrl.contactForm.$invalid">Submit</button>
                 </form>
             </section>
         `
