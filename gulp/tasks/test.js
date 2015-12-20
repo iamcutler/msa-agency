@@ -13,7 +13,7 @@ if(process.env.RAILS_ENV !== 'production') {
 
     gulp.task('tdd', function(done) {
         new Server({
-            configFile: path.resolve(__dirname, '../../karma.conf.js'),
+            configFile: path.resolve(__dirname, '../../karma.conf.js')
         }, done).start();
     });
 }
