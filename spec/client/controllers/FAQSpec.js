@@ -44,4 +44,24 @@ describe('Controller: FAQ', () => {
             });
         });
     });
+
+    describe('method: toggleQuestion', () => {
+        it('should add question index to array if closed', () => {
+            FAQCtrl.openedQuestions = [];
+
+            FAQCtrl.toggleQuestion(1);
+            $scope.$digest();
+
+            expect(FAQCtrl.openedQuestions).toContain(1);
+        });
+
+        it('should remove question index from array if open', () => {
+            FAQCtrl.openedQuestions = [1];
+
+            FAQCtrl.toggleQuestion(1);
+            $scope.$digest();
+
+            expect(FAQCtrl.openedQuestions).not.toContain(1);
+        });
+    });
 });
