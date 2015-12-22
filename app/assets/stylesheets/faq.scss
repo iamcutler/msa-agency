@@ -1,3 +1,4 @@
+@import 'mixins';
 @import 'variables';
 
 .asked-container {
@@ -46,6 +47,14 @@
         .answer {
             display: block;
         }
+    }
+
+    @include responsive-phones() {
+        width: 100%;
+    }
+
+    @include responsive-phone-retina() {
+        width: 100%;
     }
 }
 
