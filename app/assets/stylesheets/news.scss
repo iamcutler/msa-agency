@@ -1,8 +1,16 @@
 @import 'variables';
 
 section#msa-news {
-    max-width: $media-desktop-width;
-    margin: auto;
+    > div {
+        max-width: $media-desktop-width;
+        margin: auto;
+        padding:0 10px;
+    }
+
+    header.section-header {
+        color: #FFF;
+        margin-top: 0;
+    }
 
     div.articles {
         display: flex;

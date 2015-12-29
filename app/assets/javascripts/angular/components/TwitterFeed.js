@@ -6,8 +6,9 @@ export default function TwitterFeed() {
             data: '='
         },
         template: `
-            <div class="social-feed">
+            <div class="social-feed twitter">
                 <div class="connect-bar">
+                    <div class="social-logo"></div>
                     <span class="username">@MSAAgency</span>
                     <a href="https://twitter.com/MSAAGENCY" target="_blank" class="follow-us">Follow</a>
                 </div>

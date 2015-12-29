@@ -210,12 +210,39 @@ div.newsletter-widget {
 // Social feeds
 // ----------------------------------------------------
 .social-feed {
+    &.twitter {
+        .connect-bar {
+            .social-logo {
+                width: 96px;
+                height: 20px;
+            }
+        }
+    }
+
+    &.instagram {
+        .connect-bar {
+            .social-logo {
+                background-position: -108px 0;
+                width: 101px;
+                height: 29px;
+            }
+        }
+    }
+
     .connect-bar {
         position: relative;
         background: #202020;
         height: 34px;
         padding: 4px;
         text-align: center;
+
+        .social-logo {
+            position: absolute;
+            background: image-url('social-logo-names.png') 0 0 no-repeat;
+            margin: 6px 0 0 6px;
+            display: block;
+            overflow: hidden;
+        }
 
         .username {
             color: $sub-heading-grey;
@@ -253,8 +280,8 @@ div.newsletter-widget {
             background: #000;
             width: 180px;
             height: 120px;
-            border: #fff 6px solid;
             overflow: hidden;
+            box-shadow: 0 0 6px #000;
             margin: 0 0 20px 0;
 
             img {

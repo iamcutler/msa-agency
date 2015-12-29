@@ -7,15 +7,17 @@ export default function LatestNews() {
         },
         template: `
             <section id="msa-news">
-                <header class="section-header">
-                    Latest News
-                </header>
+                <div>
+                    <header class="section-header">
+                        Highlights
+                    </header>
 
-                <div class="articles">
-                    <featured-news-article data="article" ng-repeat="article in data | limitTo: 8"></featured-news-article>
+                    <div class="articles">
+                        <featured-news-article data="article" ng-repeat="article in data | limitTo: 8"></featured-news-article>
+                    </div>
+
+                    <a ui-sref="app.news" class="more-news">More News</a>
                 </div>
-
-                <a ui-sref="app.news" class="more-news">More News</a>
             </section>
         `
     };

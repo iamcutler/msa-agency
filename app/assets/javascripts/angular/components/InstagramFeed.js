@@ -6,8 +6,9 @@ export default function InstagramFeed() {
             data: '='
         },
         template: `
-            <div class="social-feed">
+            <div class="social-feed instagram">
                 <div class="connect-bar">
+                    <div class="social-logo"></div>
                     <span class="username">msaagency</span>
                     <a href="https://instagram.com/msaagency" target="_blank" class="follow-us">Follow</a>
                 </div>
