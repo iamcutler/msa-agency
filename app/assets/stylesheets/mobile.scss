@@ -48,8 +48,8 @@
         }
     }
 
-    // Media slider
-    .roster-slider {
+    // Roster slider
+    .client-roster {
         span.title {
             margin: 20px !important;
         }
@@ -62,13 +62,13 @@
             }
 
             .thumbs {
-                height: inherit;
-                margin: 0;
+                height: inherit !important;
+                margin: 0 !important;
 
                 ul {
-                    position: inherit;
-                    max-height: none;
-                    white-space: normal;
+                    position: inherit !important;
+                    max-height: none !important;
+                    white-space: normal !important;
 
                     li {
                         width: (100% / 2);
@@ -77,8 +77,8 @@
 
                         // Hover state
                         &:hover {
-                            width: (100% / 2);
-                            margin-left: inherit;
+                            width: (100% / 2) !important;
+                            margin-left: inherit !important;
 
                             .thumbnail {
                                 position: inherit;
@@ -144,6 +144,63 @@
 
                 &:nth-child(1) {
                     margin-bottom: 10px !important;
+                }
+            }
+        }
+    }
+
+    // Roster slider
+    .client-roster {
+        span.title {
+            margin: 20px !important;
+        }
+
+        .roster {
+            background: none;
+
+            .navigation {
+                display: none;
+            }
+
+            .thumbs {
+                height: inherit !important;
+                margin: 0;
+
+                ul {
+                    position: inherit !important;
+                    max-height: none !important;
+                    white-space: normal !important;
+
+                    li {
+                        width: (100% / 2);
+                        height: inherit;
+                        padding-bottom: 80px;
+
+                        // Hover state
+                        &:hover {
+                            width: (100% / 2) !important;
+                            margin-left: inherit !important;
+
+                            .thumbnail {
+                                position: inherit;
+                                height: 120px;
+                                max-height: 120px;
+                                overflow: hidden;
+
+                                img {
+                                    @include opacity(1);
+                                }
+                            }
+
+                            .thumbnail .overlay {
+                                display: none !important;
+                            }
+
+                            span.name {
+                                visibility: inherit;
+                            }
+                        }
+                    }
                 }
             }
         }

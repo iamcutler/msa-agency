@@ -257,7 +257,7 @@ nav#sidebar-nav {
         left: 0;
 
         // Allow sub menu only when open is active
-        ul.main-links li > ul {
+        .main-links ul li > ul {
             display: block !important;
         }
     }
@@ -299,6 +299,14 @@ nav#sidebar-nav {
         width: $sidebar-width;
         height: 100vh;
 
+        @include responsive-phone-retina() {
+            overflow-y: auto;
+        }
+
+        @include responsive-phones() {
+            overflow-y: auto;
+        }
+
         // Logo
         .brand {
             background: $msa-orange;
@@ -319,66 +327,97 @@ nav#sidebar-nav {
         }
 
         // Main navigation links
-        ul.main-links {
-            margin: 20px 0 0;
-            padding: 0;
+        .main-links {
+            ul {
+                margin: 20px 0 0;
+                padding: 0;
 
-            li {
-                list-style: none;
+                li {
+                    list-style: none;
 
-                a {
-                    color: #e2e2e2;
-                    padding: 8px 22px;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    display: block;
-                    white-space: nowrap;
-                    transition: background .5s;
+                    a {
+                        color: #e2e2e2;
+                        padding: 8px 22px;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        display: block;
+                        white-space: nowrap;
+                        transition: background .5s;
+
+                        &:hover {
+                            background: $secondary-grey;
+                        }
+                    }
 
                     &:hover {
-                        background: $secondary-grey;
+                        > a {
+                            background: $secondary-grey;
+                        }
                     }
-                }
 
-                &:hover {
-                    > a {
-                        background: $secondary-grey;
+                    &:hover {
+                        > ul {
+                            width: 160px;
+
+                            @include responsive-phone-retina() {
+                                width: inherit;
+                            }
+
+                            @include responsive-phones() {
+                                width: inherit;
+                            }
+                        }
                     }
-                }
 
-                &:hover {
                     > ul {
-                        width: 160px;
-                    }
-                }
+                        position: absolute;
+                        background: $secondary-grey;
+                        top: $header-height;
+                        left: 216px;
+                        width: 0;
+                        height: 100vh;
+                        margin: 0;
+                        padding-left: 0;
+                        overflow: hidden;
+                        display: none;
+                        transition: width 0.4s ease-in-out;
 
-                > ul {
-                    position: absolute;
-                    background: $secondary-grey;
-                    top: $header-height;
-                    left: 216px;
-                    width: 0;
-                    height: 100vh;
-                    padding-left: 0;
-                    overflow: hidden;
-                    display: none;
-                    transition: width 0.4s ease-in-out;
+                        li a:hover {
+                            background: $msa-orange;
+                        }
 
-                    li a:hover {
-                        background: $msa-orange;
-                    }
+                        // Menu spacing
+                        &.home {
+                            padding-top: 73px;
+                        }
 
-                    // Menu spacing
-                    &.home {
-                        padding-top: 73px;
-                    }
+                        &.about-us {
+                            padding-top: 108px;
+                        }
 
-                    &.about-us {
-                        padding-top: 108px;
-                    }
+                        &.talent {
+                            padding-top: 143px;
+                        }
 
-                    &.talent {
-                        padding-top: 143px;
+                        @include responsive-phone-retina() {
+                            position: inherit;
+                            top: inherit;
+                            left: inherit;
+                            width: inherit;
+                            height: inherit !important;
+                            display: block;
+                            padding: 6px 0 !important;
+                        }
+
+                        @include responsive-phones() {
+                            position: inherit;
+                            top: inherit;
+                            left: inherit;
+                            width: inherit;
+                            height: inherit !important;
+                            display: block;
+                            padding: 6px 0 !important;
+                        }
                     }
                 }
             }
