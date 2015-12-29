@@ -6,6 +6,14 @@
     background: #000;
     overflow: hidden;
 
+    @include responsive-phone-retina() {
+        height: 490px;
+    }
+
+    @include responsive-phones() {
+        height: 490px;
+    }
+
     video {
         min-width: 100%;
         min-height: 100%;
@@ -27,6 +35,16 @@
             margin-top: -54px;
             text-indent: -9999px;
             overflow: hidden;
+
+            @include responsive-phone-retina() {
+                top: 20px;
+                margin-top: 0;
+            }
+
+            @include responsive-phones() {
+                top: 20px;
+                margin-top: 0;
+            }
         }
 
         .choose-city-container {
@@ -37,10 +55,36 @@
 
             &.los-angeles {
                 margin-left: -530px;
+
+                @include responsive-phone-retina() {
+                    top: 200px;
+                }
+
+                @include responsive-phones() {
+                    top: 200px;
+                }
             }
 
             &.new-york {
                 margin-left: 280px;
+
+                @include responsive-phone-retina() {
+                    top: 300px;
+                }
+
+                @include responsive-phones() {
+                    top: 300px;
+                }
+            }
+
+            @include responsive-phone-retina() {
+                top: inherit;
+                margin: 0 0 0 -110px !important;
+            }
+
+            @include responsive-phones() {
+                top: inherit;
+                margin: 0 0 0 -110px !important;
             }
         }
 
@@ -58,6 +102,7 @@
                 border: none;
                 opacity: 0.6;
                 transition: opacity $transition-duration $transition-easing;
+                appearance: none;
 
                 &:focus {
                     opacity: 1.0;
@@ -76,6 +121,14 @@
                 overflow: hidden;
                 text-indent: -9999px;
                 cursor: pointer;
+            }
+
+            @include responsive-phone-retina() {
+                top: 400px;
+            }
+
+            @include responsive-phones() {
+                top: 400px;
             }
         }
     }
@@ -169,6 +222,7 @@ a.choose-city {
         height: 200px;
         display: inline-block;
         overflow: hidden;
+        vertical-align: top;
         margin: 0;
         padding: 0;
 

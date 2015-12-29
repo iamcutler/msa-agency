@@ -9,6 +9,14 @@
     background: #000;
     height: 540px;
 
+    @include responsive-phone-retina() {
+        display: none;
+    }
+
+    @include responsive-phones() {
+        display: none;
+    }
+
     .slide-navigation {
         position: absolute;
         top: 0;
