@@ -4,6 +4,12 @@
             News Article
         </header>
 
+        <div class="share-this">
+            <span class="st_twitter" displayText="Tweet" st_title="{{ NewsPageCtrl.article.subject }}" st_url="http://msaagency.com/news/{{ NewsCtrl.article.slug }}"></span>
+            <span class="st_facebook" displayText="Facebook" st_title="{{ NewsPageCtrl.article.subject }}" st_url="http://msaagency.com/news/{{ NewsCtrl.article.slug }}"></span>
+            <span class="st_email" displayText="Email" st_title="{{ NewsPageCtrl.article.subject }}" st_url="http://msaagency.com/news/{{ NewsCtrl.article.slug }}"></span>
+        </div>
+
         <news-article data="NewsPageCtrl.article" full="true"></news-article>
     </div>
 </div>

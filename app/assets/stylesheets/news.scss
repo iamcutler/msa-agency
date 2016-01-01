@@ -1,5 +1,10 @@
 @import 'variables';
 
+.share-this {
+    float: right;
+    padding: 10px;
+}
+
 section#msa-news {
     > div {
         max-width: $media-desktop-width;
