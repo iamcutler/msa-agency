@@ -1,3 +1,5 @@
+@import 'mixins';
+
 section {
     &.about-msa {
         display: flex;
@@ -9,8 +11,22 @@ section {
         }
 
         .msa-cities {
+            position: relative;
+            min-height: 220px;
             background: image-url('cities-bg.jpg') no-repeat;
             background-size: cover;
+
+            .brand {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                @include background-image('brand-large');
+                width: 240px;
+                height: 126px;
+                margin: -63px 0 0 -120px;
+                display: block;
+                overflow: hidden;
+            }
         }
 
         header.section-header {
