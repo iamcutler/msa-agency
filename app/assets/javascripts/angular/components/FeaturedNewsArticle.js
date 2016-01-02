@@ -18,7 +18,7 @@ export default function FeaturedNewsArticle() {
                     <h1>{{ data.subject }}</h1>
                 </header>
 
-                <p>{{ data.body }}</p>
+                <p>{{ data.body | stripHTML }}</p>
 
                 <footer>
                     <time>{{ data.created_at | date: 'M/dd' }}</time>
