@@ -15,13 +15,13 @@ class ClientPhoto < ActiveRecord::Base
 
     # Validate the attached image is image/jpg, image/png, etc
     validates_attachment_presence :image
-    validates_attachment_size :image, :less_than => 3.megabytes
+    validates_attachment_size :image, :less_than => 5.megabytes
     validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
     # Set cover boolean to false on all records
     def set_cover_photo
-        if self.cover?
-            ClientPhoto.where(client_id: self.client_id).update_all(cover: false)
+        if self.persisted? && self.cover?
+            ClientPhoto.where(client_id: self.client_id, cover: true).update_all(cover: false)
             # Update client record
             Client.update(self.client_id, default_image_id: self.id)
         end
@@ -29,8 +29,8 @@ class ClientPhoto < ActiveRecord::Base
 
     # Set default boolean to false on all records
     def set_default_photo
-        if self.default?
-            ClientPhoto.where(client_id: self.client_id).update_all(default: false)
+        if self.persisted? && self.default?
+            ClientPhoto.where(client_id: self.client_id, default: true).update_all(default: false)
             # Update client record
             Client.update(self.client_id, cover_image_id: self.id)
         end
