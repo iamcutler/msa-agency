@@ -13,6 +13,8 @@ class News < ActiveRecord::Base
     validates_attachment_size :image, :less_than => 3.megabytes
     validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
+    validates_uniqueness_of :slug
+
     def self.findPublishedArticles(location = nil, offset = 0, limit = 20)
         where(published: true).where(location: [nil, '', location]).limit(limit).offset(offset)
     end
