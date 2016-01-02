@@ -1,5 +1,4 @@
-export default function GetTwitterLinks($sce)
-{
+export default function GetTwitterLinks($sce) {
     return (input) => {
         let exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
 

@@ -9,7 +9,7 @@ export default function ClientSearchResult() {
             <article>
                 <figure>
                     <a ui-sref="app.talent.page({ slug: data.slug })">
-                        <img src="http://www.msaagency.com/images/staff/78643616031915.jpeg">
+                        <img ng-src="{{ data.default_image.sizes.medium }}">
                     </a>
                 </figure>
 

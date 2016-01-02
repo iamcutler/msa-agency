@@ -10,7 +10,7 @@ export default function FeaturedNewsArticle() {
             <article class="news-article" ng-class="{ 'spotlight': spotlight === 'true' }">
                 <figure>
                     <a ui-sref="app.news-page({ slug: data.slug })">
-                        <img src="{{ data.image.medium }}" alt="{{ data.subject }}" />
+                        <img ng-src="{{ data.image.medium }}" alt="{{ data.subject }}" />
                     </a>
                 </figure>
 

@@ -150,12 +150,14 @@ angular.module('MSAAgency.directives', [])
     .directive('toggleNavigation', ToggleNavigation)
     .directive('twitterFeed', TwitterFeed);
 
+// Filters
+import GetTwitterLinks from './angular/filters/GetTwitterLinks';
+import StripHTML from './angular/filters/StripHTML';
+
+angular.module('MSAAgency.filters', [])
+    .filter('getTwitterLinks', GetTwitterLinks)
+    .filter('stripHTML', StripHTML);
+
 require('./angular/components/MainHeader');
 require('./angular/components/MainFooter');
 require('./angular/components/SocialIcons');
-
-// Filters
-import GetTwitterLinks from './angular/filters/GetTwitterLinks';
-
-angular.module('MSAAgency.filters', [])
-    .filter('getTwitterLinks', GetTwitterLinks);

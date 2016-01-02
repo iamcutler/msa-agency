@@ -8,7 +8,9 @@ export default function NewsSearchResult() {
         template: `
             <article>
                 <figure>
-                    <img src="http://www.msaagency.com/images/staff/78643616031915.jpeg">
+                    <a ui-sref="app.talent.page({ slug: data.slug })">
+                        <img ng-src="{{ data.image.medium }}">
+                    </a>
                 </figure>
 
                 <header>
@@ -20,7 +22,7 @@ export default function NewsSearchResult() {
                 <span class="timestamp">{{ data.created_at | date:'MMMM d, yyyy hh:mm a' : 'UTC' }}</span>
 
                 <p>
-                    {{ data.body | limitTo: 400 }}
+                    {{ data.body | limitTo: 400 | stripHTML }}
                 </p>
             </article>
         `
