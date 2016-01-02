@@ -6,12 +6,13 @@ class Apiv1::SearchController < ApplicationController
         case params[:type]
             when "clients"
                 @results = searchService.query_clients
+                render file: "#{Rails.root}/app/views/apiv1/search/clients.json.jbuilder", formats: :json
             when "news"
                 @results = searchService.query_news
+                render file: "#{Rails.root}/app/views/apiv1/search/news.json.jbuilder", formats: :json
             else
                 @results = searchService.query
+                render file: "#{Rails.root}/app/views/apiv1/search/all.json.jbuilder", formats: :json
         end
-
-        render json: @results
     end
 end
