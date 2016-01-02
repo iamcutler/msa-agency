@@ -53,10 +53,14 @@ ActiveAdmin.register Client do
 
         f.inputs 'Photos' do
             f.has_many :photos do |ph|
-                ph.input :_destroy, :as => :boolean
+                if ph.object.persisted?
+                    ph.input :_destroy, :as => :boolean
+                end
                 ph.input :image, as: :file, hint: ph.object.image.present? ? image_tag(ph.object.image.url(:thumb)) : content_tag(:span, "no image uploaded yet")
-                ph.input :cover
-                ph.input :default
+                if ph.object.persisted?
+                    ph.input :cover
+                    ph.input :default
+                end
                 ph.input :caption
                 ph.input :order, placeholder: '0'
 
