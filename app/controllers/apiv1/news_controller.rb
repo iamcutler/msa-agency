@@ -6,7 +6,7 @@ module Apiv1
             limit = params[:limit] || 20
             location = params[:location] || nil
 
-            @articles = News.findPublishedArticles(location, offset, limit)
+            @articles = News.findPublishedArticles(location, offset, limit).order('created_at DESC')
             @articleCount = News.count
             @articlePageCount = (@articleCount / limit.to_i).round + 1
         end
@@ -22,7 +22,7 @@ module Apiv1
             limit = params[:limit] || 20
             location = params[:location] || nil
 
-            @articles = News.findFeaturedArticles(location, offset, limit)
+            @articles = News.findFeaturedArticles(location, offset, limit).order('created_at DESC')
         end
     end
 end
