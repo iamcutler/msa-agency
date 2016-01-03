@@ -51,6 +51,29 @@ ActiveAdmin.register Client do
             input :location, as: :select, collection: ['Los Angeles', 'New York'], include_blank: false
         end
 
+        f.inputs 'Categories' do
+            f.has_many :categories do |cat|
+                if cat.object.persisted?
+                    cat.input :_destroy, :as => :boolean
+                end
+                cat.input :category, as: :select, collection: [
+                    ['Choreographer', 'choreographer'],
+                    ['Stage Director', 'stage_director'],
+                    ['Creative Director', 'creative_director'],
+                    ['Production', 'production'],
+                    ['On Camera', 'on_camera'],
+                    ['Dancer', 'dancer'],
+                    ['Kids & Teens', 'kids_teen'],
+                    ['Speciality Act', 'speciality_act'],
+                    ['Speaker', 'speaker'],
+                    ['Master Instructor', 'master_instructor'],
+                    ['So You Think You Can Dance', 'sytycd']
+                ], include_blank: false
+
+                cat.actions
+            end
+        end
+
         f.inputs 'Photos' do
             f.has_many :photos do |ph|
                 if ph.object.persisted?
@@ -109,5 +132,6 @@ ActiveAdmin.register Client do
                   photos_attributes: [:id, :image, :caption, :cover, :default, :order, :_destroy],
                   reel_attributes: [:id, :video_id, :title, :video_type, :_destroy],
                   videos_attributes: [:id, :video_id, :title, :video_type, :order, :_destroy],
-                  press_attributes: [:id, :image, :caption, :order, :_destroy]
+                  press_attributes: [:id, :image, :caption, :order, :_destroy],
+                  categories_attributes: [:id, :category, :_destroy]
 end

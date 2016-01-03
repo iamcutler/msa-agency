@@ -12,6 +12,7 @@ class Client < ActiveRecord::Base
     accepts_nested_attributes_for :reel, allow_destroy: true
     accepts_nested_attributes_for :videos, allow_destroy: true
     accepts_nested_attributes_for :press, allow_destroy: true
+    accepts_nested_attributes_for :categories, allow_destroy: true
 
     def name
         self.first_name + ' ' + self.last_name
