@@ -18,6 +18,7 @@ class Client < ActiveRecord::Base
     end
 
     def self.search_by_name(name, page = 0, amount = 20)
+        page = page.to_i - 1
         query = "%#{name.downcase}%"
         first_name_match = arel_table[:first_name].matches(query)
         last_name_match = arel_table[:last_name].matches(query)
