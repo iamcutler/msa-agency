@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 #contact-options {
     max-width: 440px;
@@ -159,9 +160,21 @@ section#office-locations {
             color: $contact-office-locations-font-secondary-color;
             font-size: 20px;
         }
+    }
 
-        span.name {
+    @include responsive-phone-retina() {
+        white-space: normal;
 
+        div.address {
+            width: 100%;
+        }
+    }
+
+    @include responsive-phones() {
+        white-space: normal;
+
+        div.address {
+            width: 100%;
         }
     }
 }
