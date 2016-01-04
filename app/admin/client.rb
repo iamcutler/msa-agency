@@ -67,7 +67,8 @@ ActiveAdmin.register Client do
                     ['Speciality Act', 'speciality_act'],
                     ['Speaker', 'speaker'],
                     ['Master Instructor', 'master_instructor'],
-                    ['So You Think You Can Dance', 'sytycd']
+                    ['So You Think You Can Dance', 'sytycd'],
+                    ['Legacy', 'legacy']
                 ], include_blank: false
 
                 cat.actions
