@@ -20,18 +20,16 @@ class ClientPhoto < ActiveRecord::Base
 
     # Set cover boolean to false on all records
     def set_cover_photo
-        if self.persisted? && self.cover?
-            ClientPhoto.where(client_id: self.client_id, cover: true).update_all(cover: false)
-            # Update client record
+        # Update client record
+        if self.default?
             Client.update(self.client_id, default_image_id: self.id)
         end
     end
 
     # Set default boolean to false on all records
     def set_default_photo
-        if self.persisted? && self.default?
-            ClientPhoto.where(client_id: self.client_id, default: true).update_all(default: false)
-            # Update client record
+        # Update client record
+        if self.cover?
             Client.update(self.client_id, cover_image_id: self.id)
         end
     end
