@@ -27,7 +27,7 @@ export default function ClientSearchResult() {
                 <span class="timestamp"></span>
 
                 <p>
-                    {{ data.biography | limitTo: 400 }}
+                    {{ data.biography | limitTo: 400 | stripHTML }}
                 </p>
             </article>
         `

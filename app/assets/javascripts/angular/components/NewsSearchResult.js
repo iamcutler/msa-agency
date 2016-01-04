@@ -8,7 +8,7 @@ export default function NewsSearchResult() {
         template: `
             <article>
                 <figure>
-                    <a ui-sref="app.talent.page({ slug: data.slug })">
+                    <a ui-sref="app.news-page({ slug: data.slug })">
                         <img ng-src="{{ data.image.medium }}">
                     </a>
                 </figure>
