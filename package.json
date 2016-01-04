@@ -10,6 +10,10 @@
     "start": "gulp & rails s",
     "test": "gulp test"
   },
+  "engines": {
+    "npm": "3.5.2",
+    "node": "0.12.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://gitlab.com/iamcutler/msa-agency-2015.git"
