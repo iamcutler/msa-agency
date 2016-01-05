@@ -366,7 +366,7 @@ nav#sidebar-nav {
 
                     &:hover {
                         > ul {
-                            width: 160px;
+                            width: 208px;
 
                             @include responsive-phone-retina() {
                                 width: inherit;
@@ -523,6 +523,7 @@ footer {
                 display: inline-block;
 
                 li {
+                    color: #e2e2e2;
                     list-style: none;
 
                     a {

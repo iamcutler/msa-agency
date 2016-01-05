@@ -27,6 +27,7 @@ import AppController from './angular/controllers/App';
 import ArchivesController from './angular/controllers/Archives';
 import BookingController from './angular/controllers/Booking';
 import ClientCategoryController from './angular/controllers/ClientCategory';
+import ClientCategoriesController from './angular/controllers/ClientCategories';
 import ClientController from './angular/controllers/Client';
 import ContactController from './angular/controllers/Contact';
 import FAQController from './angular/controllers/FAQ';
@@ -48,6 +49,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('ArchivesController', ArchivesController)
     .controller('BookingController', BookingController)
     .controller('ClientCategoryController', ClientCategoryController)
+    .controller('ClientCategoriesController', ClientCategoriesController)
     .controller('ClientController', ClientController)
     .controller('ContactController', ContactController)
     .controller('FAQController', FAQController)

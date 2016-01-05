@@ -37,9 +37,9 @@ angular.module('MSAAgency.directives')
                         </ul>
                         <ul>
                             <li>Talent</li>
-                            <li class="sub"><a ui-sref="app.talent.category({ category: 'dance' })">Dance</a></li>
-                            <li class="sub"><a ui-sref="app.talent.category({ category: 'creative' })">Creative</a></li>
-                            <li class="sub"><a ui-sref="app.talent.category({ category: 'educators' })">Educators</a></li>
+                            <li class="sub"><a ui-sref="app.talent.categories({ category: 'dance' })">Dance</a></li>
+                            <li class="sub"><a ui-sref="app.talent.categories({ category: 'creative' })">Creative</a></li>
+                            <li class="sub"><a ui-sref="app.talent.categories({ category: 'educators' })">Educators</a></li>
                         </ul>
                     </div>
                 </div>

@@ -48,6 +48,11 @@ angular.module('MSAAgency')
             template: '<ui-view></ui-view>',
             abstract: true
         })
+            .state('app.talent.categories', {
+                url: '/categories/:category',
+                controller: 'ClientCategoriesController as ClientCategoriesCtrl',
+                templateUrl: 'templates/talent-categories.html'
+            })
             .state('app.talent.category', {
                 url: '/category/:category',
                 controller: 'ClientCategoryController as ClientCategoryCtrl',

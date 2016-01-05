@@ -28,7 +28,7 @@ describe('Controller: ClientCategory', function() {
             ClientCategoryCtrl = $controller('ClientCategoryController as ClientCategoryCtrl', {
                 $scope: $scope,
                 $stateParams: {
-                    category: 'creative'
+                    category: 'director'
                 },
                 ClientService: ClientService
             });
@@ -39,8 +39,8 @@ describe('Controller: ClientCategory', function() {
         expect(ClientCategoryCtrl).toBeDefined();
     });
 
-    it('should assign talent category on instance', function() {
-        expect(ClientCategoryCtrl.clientCategory).toBe('creative');
+    it('should assign talent category on instance', () => {
+        expect(ClientCategoryCtrl.category).toBe('director');
     });
 
     describe('method: initialize', () => {
@@ -52,6 +52,7 @@ describe('Controller: ClientCategory', function() {
 
             expect(ClientService.getByCategory).toHaveBeenCalled();
         });
+
         describe('instance variables', () => {
             let categoryClients;
 
@@ -61,88 +62,11 @@ describe('Controller: ClientCategory', function() {
                 filterByCategorySpy.and.returnValue(categoryClients);
             });
 
-            it('should assign onCameraClients', () => {
+            it('should assign clients', () => {
                 ClientCategoryCtrl.initialize();
                 $scope.$digest();
 
-                expect(ClientCategoryCtrl.onCameraClients).toEqual(categoryClients);
-            });
-
-            it('should assign onCameraClients', () => {
-                ClientCategoryCtrl.initialize();
-                $scope.$digest();
-
-                expect(ClientCategoryCtrl.dancersClients).toEqual(categoryClients);
-            });
-
-            it('should assign onCameraClients', () => {
-                ClientCategoryCtrl.initialize();
-                $scope.$digest();
-
-                expect(ClientCategoryCtrl.kidsAndTeensClients).toEqual(categoryClients);
-            });
-
-            it('should assign onCameraClients', () => {
-                ClientCategoryCtrl.initialize();
-                $scope.$digest();
-
-                expect(ClientCategoryCtrl.specialityClients).toEqual(categoryClients);
-            });
-
-            it('should assign onCameraClients', () => {
-                ClientCategoryCtrl.initialize();
-                $scope.$digest();
-
-                expect(ClientCategoryCtrl.stageDirectorsClients).toEqual(categoryClients);
-            });
-
-            it('should assign onCameraClients', () => {
-                ClientCategoryCtrl.initialize();
-                $scope.$digest();
-
-                expect(ClientCategoryCtrl.creativeDirectorsClients).toEqual(categoryClients);
-            });
-
-            it('should assign onCameraClients', () => {
-                ClientCategoryCtrl.initialize();
-                $scope.$digest();
-
-                expect(ClientCategoryCtrl.choreographyClients).toEqual(categoryClients);
-            });
-
-            it('should assign onCameraClients', () => {
-                ClientCategoryCtrl.initialize();
-                $scope.$digest();
-
-                expect(ClientCategoryCtrl.productionClients).toEqual(categoryClients);
-            });
-
-            it('should assign onCameraClients', () => {
-                ClientCategoryCtrl.initialize();
-                $scope.$digest();
-
-                expect(ClientCategoryCtrl.speakerClients).toEqual(categoryClients);
-            });
-
-            it('should assign onCameraClients', () => {
-                ClientCategoryCtrl.initialize();
-                $scope.$digest();
-
-                expect(ClientCategoryCtrl.masterInstructorClients).toEqual(categoryClients);
-            });
-
-            it('should assign onCameraClients', () => {
-                ClientCategoryCtrl.initialize();
-                $scope.$digest();
-
-                expect(ClientCategoryCtrl.instructorClients).toEqual(categoryClients);
-            });
-
-            it('should assign onCameraClients', () => {
-                ClientCategoryCtrl.initialize();
-                $scope.$digest();
-
-                expect(ClientCategoryCtrl.sytycdClients).toEqual(categoryClients);
+                expect(ClientCategoryCtrl.clients).toEqual(categoryClients);
             });
         });
     });

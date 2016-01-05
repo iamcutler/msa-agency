@@ -1,0 +1,79 @@
+<div ng-init="ClientCategoriesCtrl.initialize()">
+    <section class="twilight">
+        <header class="section-header twilight">
+            {{ ::ClientCategoriesCtrl.clientCategory }}
+        </header>
+
+        <client-roster title="On Camera"
+                        type="talent"
+                        roster="ClientCategoriesCtrl.onCameraClients"
+                        ng-if="ClientCategoriesCtrl.onCameraClients.length"
+                        slider="true"></client-roster>
+
+        <client-roster title="Dancers"
+                        type="talent"
+                        roster="ClientCategoriesCtrl.dancersClients"
+                        ng-if="ClientCategoriesCtrl.dancersClients.length"
+                        slider="true"></client-roster>
+
+        <client-roster title="Kids and Teens"
+                        type="talent"
+                        roster="ClientCategoriesCtrl.kidsAndTeensClients"
+                        ng-if="ClientCategoriesCtrl.kidsAndTeensClients.length"
+                        slider="true"></client-roster>
+
+        <client-roster title="Speciality Acts"
+                        type="talent"
+                        roster="ClientCategoriesCtrl.specialityClients"
+                        ng-if="ClientCategoriesCtrl.specialityClients.length"
+                        slider="true"></client-roster>
+
+        <client-roster title="Stage Directors"
+                        type="talent"
+                        roster="ClientCategoriesCtrl.stageDirectorsClients"
+                        ng-if="ClientCategoriesCtrl.stageDirectorsClients.length"
+                        slider="true"></client-roster>
+
+        <client-roster title="Creative Directors"
+                        type="talent"
+                        roster="ClientCategoriesCtrl.creativeDirectorsClients"
+                        ng-if="ClientCategoriesCtrl.creativeDirectorsClients.length"
+                        slider="true"></client-roster>
+
+        <client-roster title="Choreographers"
+                        type="talent"
+                        roster="ClientCategoriesCtrl.choreographyClients"
+                        ng-if="ClientCategoriesCtrl.choreographyClients.length"
+                        slider="true"></client-roster>
+
+        <client-roster title="Production"
+                        type="talent"
+                        roster="ClientCategoriesCtrl.productionClients"
+                        ng-if="ClientCategoriesCtrl.productionClients.length"
+                        slider="true"></client-roster>
+
+        <client-roster title="Speakers"
+                        type="talent"
+                        roster="ClientCategoriesCtrl.speakerClients"
+                        ng-if="ClientCategoriesCtrl.speakerClients.length"
+                        slider="true"></client-roster>
+
+        <client-roster title="Master Instructors"
+                        type="talent"
+                        roster="ClientCategoriesCtrl.masterInstructorClients"
+                        ng-if="ClientCategoriesCtrl.masterInstructorClients.length"
+                        slider="true"></client-roster>
+
+        <client-roster title="Instructors"
+                        type="talent"
+                        roster="ClientCategoriesCtrl.instructorClients"
+                        ng-if="ClientCategoriesCtrl.instructorClients.length"
+                        slider="true"></client-roster>
+
+        <client-roster title="SYTYCD"
+                        type="talent"
+                        roster="ClientCategoriesCtrl.sytycdClients"
+                        ng-if="ClientCategoriesCtrl.sytycdClients.length"
+                        slider="true"></client-roster>
+    </section>
+</div>

@@ -1,79 +1,15 @@
 <div ng-init="ClientCategoryCtrl.initialize()">
     <section class="twilight">
         <header class="section-header twilight">
-            {{ ::ClientCategoryCtrl.clientCategory }}
+            {{ ::ClientCategoryCtrl.category.replace('_', ' ') }}
         </header>
 
-        <client-roster title="On Camera"
-                        type="talent"
-                        roster="ClientCategoryCtrl.onCameraClients"
-                        ng-if="ClientCategoryCtrl.onCameraClients.length"
-                        slider="true"></client-roster>
+        <div class="section-placeholder-text" ng-if="!ClientCategoryCtrl.clients.length && !isLoadingPage">
+            No current clients
+        </div>
 
-        <client-roster title="Dancers"
-                        type="talent"
-                        roster="ClientCategoryCtrl.dancersClients"
-                        ng-if="ClientCategoryCtrl.dancersClients.length"
-                        slider="true"></client-roster>
-
-        <client-roster title="Kids and Teens"
-                        type="talent"
-                        roster="ClientCategoryCtrl.kidsAndTeensClients"
-                        ng-if="ClientCategoryCtrl.kidsAndTeensClients.length"
-                        slider="true"></client-roster>
-
-        <client-roster title="Speciality Acts"
-                        type="talent"
-                        roster="ClientCategoryCtrl.specialityClients"
-                        ng-if="ClientCategoryCtrl.specialityClients.length"
-                        slider="true"></client-roster>
-
-        <client-roster title="Stage Directors"
-                        type="talent"
-                        roster="ClientCategoryCtrl.stageDirectorsClients"
-                        ng-if="ClientCategoryCtrl.stageDirectorsClients.length"
-                        slider="true"></client-roster>
-
-        <client-roster title="Creative Directors"
-                        type="talent"
-                        roster="ClientCategoryCtrl.creativeDirectorsClients"
-                        ng-if="ClientCategoryCtrl.creativeDirectorsClients.length"
-                        slider="true"></client-roster>
-
-        <client-roster title="Choreographers"
-                        type="talent"
-                        roster="ClientCategoryCtrl.choreographyClients"
-                        ng-if="ClientCategoryCtrl.choreographyClients.length"
-                        slider="true"></client-roster>
-
-        <client-roster title="Production"
-                        type="talent"
-                        roster="ClientCategoryCtrl.productionClients"
-                        ng-if="ClientCategoryCtrl.productionClients.length"
-                        slider="true"></client-roster>
-
-        <client-roster title="Speakers"
-                        type="talent"
-                        roster="ClientCategoryCtrl.speakerClients"
-                        ng-if="ClientCategoryCtrl.speakerClients.length"
-                        slider="true"></client-roster>
-
-        <client-roster title="Master Instructors"
-                        type="talent"
-                        roster="ClientCategoryCtrl.masterInstructorClients"
-                        ng-if="ClientCategoryCtrl.masterInstructorClients.length"
-                        slider="true"></client-roster>
-
-        <client-roster title="Instructors"
-                        type="talent"
-                        roster="ClientCategoryCtrl.instructorClients"
-                        ng-if="ClientCategoryCtrl.instructorClients.length"
-                        slider="true"></client-roster>
-
-        <client-roster title="SYTYCD"
-                        type="talent"
-                        roster="ClientCategoryCtrl.sytycdClients"
-                        ng-if="ClientCategoryCtrl.sytycdClients.length"
-                        slider="true"></client-roster>
+        <client-roster type="talent"
+                       roster="ClientCategoryCtrl.clients"
+                       ng-if="ClientCategoryCtrl.clients.length && !isLoadingPage"></client-roster>
     </section>
 </div>

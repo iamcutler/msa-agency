@@ -36,13 +36,25 @@ export default function Navigation() {
                                 </ul>
                             </li>
                             <li>
-                                <a href="">Talent</a>
+                                <a ui-sref="app.talent.categories({ category: 'creative' })" toggle-navigation>Creative</a>
                                 <ul class="talent" resize-element resize-width="false" offset-top="112">
-                                    <li><a ui-sref="app.talent.category({ category: 'dance' })" toggle-navigation>Dance</a></li>
-                                    <li><a ui-sref="app.talent.category({ category: 'creative' })" toggle-navigation>Creative</a></li>
-                                    <li><a ui-sref="app.talent.category({ category: 'educators' })" toggle-navigation>Educators</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'stage_director' })" toggle-navigation>Stage Directors</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'choreographer' })" toggle-navigation>Choreographers</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'creative_director' })" toggle-navigation>Creative Directors</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'production' })" toggle-navigation>Producers</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'designer' })" toggle-navigation>Designers</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <a ui-sref="app.talent.categories({ category: 'creative' })" toggle-navigation>Educators</a>
+                                <ul class="talent" resize-element resize-width="false" offset-top="112">
+                                    <li><a ui-sref="app.talent.category({ category: 'speaker' })" toggle-navigation>Speakers</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'master_instructor' })" toggle-navigation>Masters</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'instructor' })" toggle-navigation>Instructors</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'sytycd' })" toggle-navigation>SYTYCD</a></li>
+                                </ul>
+                            </li>
+                            <li><a ui-sref="app.talent.category({ category: 'speciality_act' })" toggle-navigation>Speciality Acts</a></li>
                             <li><a ui-sref="app.news" toggle-navigation>News</a></li>
                             <li><a ui-sref="app.contact" toggle-navigation>Contact Us</a></li>
                         <ul>
