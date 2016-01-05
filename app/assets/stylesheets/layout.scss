@@ -55,6 +55,11 @@ input, textarea, button {
     }
 }
 
+// Main content
+html main, body main {
+    margin-top: $header-height;
+}
+
 // Application container
 .app-container {
     max-width: $media-desktop-width;
@@ -133,13 +138,17 @@ ul.social-icons {
 
 /* 2.0 Header */
 header {
-    position: relative;
     font-weight: $font-primary-weight-thin;
 
     &.main {
+        position: fixed;
         background: #1c1c1c;
+        top: 0;
+        left: 0;
         color: #FFF;
+        width: 100%;
         height: $header-height;
+        z-index: 10;
 
         // Logo
         h1 {
