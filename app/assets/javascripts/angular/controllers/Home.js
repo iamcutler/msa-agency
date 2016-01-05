@@ -21,7 +21,6 @@ export default class HomeController {
         this.getTwitterFeed();
         this.getInstagramFeed();
         this.getLatestNews({
-            location: this.$state.current.name === 'app.home.los-angeles' ? 'Los Angeles' : 'New York',
             limit: 8
         });
 

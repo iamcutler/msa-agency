@@ -36,7 +36,7 @@ angular.module('MSAAgency.directives')
                             <li class="sub"><a ui-sref="app.faq">FAQ</a></li>
                         </ul>
                         <ul>
-                            <li><a ui-sref="app.home.los-angeles">Talent</a></li>
+                            <li>Talent</li>
                             <li class="sub"><a ui-sref="app.talent.category({ category: 'dance' })">Dance</a></li>
                             <li class="sub"><a ui-sref="app.talent.category({ category: 'creative' })">Creative</a></li>
                             <li class="sub"><a ui-sref="app.talent.category({ category: 'educators' })">Educators</a></li>

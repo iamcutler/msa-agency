@@ -23,11 +23,7 @@ export default function Navigation() {
                     <div class="main-links">
                         <ul>
                             <li>
-                                <a href="">Home</a>
-                                <ul class="home" resize-element resize-width="false" offset-top="112">
-                                    <li><a ui-sref="app.home.los-angeles" toggle-navigation>Los Angeles</a></li>
-                                    <li><a ui-sref="app.home.new-york" toggle-navigation>New York</a></li>
-                                </ul>
+                                <a ui-sref="app.home">Home</a>
                             </li>
                             <li>
                                 <a ui-sref="app.about" toggle-navigation>About Us</a>

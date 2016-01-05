@@ -16,17 +16,10 @@ angular.module('MSAAgency')
         })
         // Home
         .state('app.home', {
+            url: 'home',
             templateUrl: 'templates/home.html',
-            controller: 'HomeController as HomeCtrl',
-            abstract: true
+            controller: 'HomeController as HomeCtrl'
         })
-            // Los Angeles
-            .state('app.home.los-angeles', {
-                url: 'los-angeles'
-            })
-            .state('app.home.new-york', {
-                url: 'new-york'
-            })
         // Search
         .state('app.search', {
             url: 'search/:q',

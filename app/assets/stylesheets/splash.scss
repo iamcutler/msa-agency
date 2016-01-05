@@ -32,7 +32,7 @@
             width: 254px;
             height: 175px;
             margin-left: -127px;
-            margin-top: -54px;
+            margin-top: -124px;
             text-indent: -9999px;
             overflow: hidden;
 
@@ -75,6 +75,11 @@
                 @include responsive-phones() {
                     top: 300px;
                 }
+            }
+
+            &.enter {
+                margin-top: 64px;
+                margin-left: -120px;
             }
 
             @include responsive-phone-retina() {
