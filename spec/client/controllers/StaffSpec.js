@@ -2,8 +2,8 @@ import { MockPromise } from '../spec_helper';
 import { staff1 } from '../fixtures/staff';
 
 describe('Controller: Staff', () => {
-    var $rootScope, $scope, $controller, $q, $location;
-    var StaffCtrl, StaffService, getBySlugSpy;
+    var $rootScope, $scope, $controller, $q;
+    var StaffCtrl, StaffService, getBySlugSpy, smoothScroll;
 
     beforeEach(() => {
         angular.mock.module('MSAAgency');
@@ -13,14 +13,12 @@ describe('Controller: Staff', () => {
             $scope = $rootScope.$new();
             $q = $injector.get('$q');
             $controller = $injector.get('$controller');
-            $location = $injector.get('$location');
             StaffService = $injector.get('StaffService');
 
             /**
              * Spies
              */
             getBySlugSpy = spyOn(StaffService, 'getBySlug');
-            spyOn($location, 'hash');
 
             /**
              * Controller
@@ -30,7 +28,8 @@ describe('Controller: Staff', () => {
                 $stateParams: {
                     slug: 'tonyselznick'
                 },
-                StaffService: StaffService
+                StaffService: StaffService,
+                smoothScroll: jasmine.createSpy('smoothScroll')
             });
         });
     });
@@ -70,8 +69,8 @@ describe('Controller: Staff', () => {
             expect(StaffCtrl.currentNavDestination).toBe('staff-press');
         });
 
-        it('should set location hash', () => {
-            expect($location.hash).toHaveBeenCalledWith('section-staff-press');
+        it('should call smooth scroll on destination', () => {
+            expect(StaffCtrl.smoothScroll).toHaveBeenCalledWith(null, { offset: 112 });
         });
     });
 });

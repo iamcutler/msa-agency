@@ -1,10 +1,11 @@
 export default class ClientController {
     // @ngInject
-    constructor($stateParams, $location, $anchorScroll, ClientService) {
-        this.$anchorScroll = $anchorScroll;
+    constructor($stateParams, $location, smoothScroll, ClientService) {
         this.$stateParams = $stateParams;
         this.$location = $location;
+        this.smoothScroll = smoothScroll;
         this.clientService = ClientService;
+
         this.client = {};
         this.reelPresent = false;
         this.currentNavDestination = 'talent-bio';
@@ -34,7 +35,9 @@ export default class ClientController {
     setCurrentNavDestination(destination = 'talent-bio') {
         this.currentNavDestination = destination;
 
-        this.$location.hash(`section-${destination}`);
-        this.$anchorScroll();
+        // todo: Refactor to directive
+        this.smoothScroll(document.getElementById(destination), {
+            offset: 112
+        });
     }
 }

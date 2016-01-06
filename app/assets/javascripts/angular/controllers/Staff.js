@@ -1,9 +1,9 @@
 export default class StaffController {
     // @ngInject
-    constructor($stateParams, $location, $anchorScroll, StaffService) {
+    constructor($stateParams, $location, smoothScroll, StaffService) {
         this.$stateParams = $stateParams;
         this.$location = $location;
-        this.$anchorScroll = $anchorScroll;
+        this.smoothScroll = smoothScroll;
         this.staffService = StaffService;
 
         this.currentNavDestination = 'staff-bio';
@@ -29,7 +29,9 @@ export default class StaffController {
     setCurrentNavDestination(destination = 'staff-bio') {
         this.currentNavDestination = destination;
 
-        this.$location.hash(`section-${destination}`);
-        this.$anchorScroll();
+        // todo: Refactor to directive
+        this.smoothScroll(document.getElementById(destination), {
+            offset: 112
+        });
     }
 }

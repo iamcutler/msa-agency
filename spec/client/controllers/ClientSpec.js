@@ -2,7 +2,7 @@ import { MockPromise } from '../spec_helper';
 import { client1 } from '../fixtures/clients';
 
 describe('Controller: Client', () => {
-    var $rootScope, $scope, $controller, $q, $location;
+    var $rootScope, $scope, $controller, $q;
     var ClientCtrl, ClientService, clientSpy, getBySlugSpy;
 
     beforeEach(() => {
@@ -13,21 +13,20 @@ describe('Controller: Client', () => {
             $scope = $rootScope.$new();
             $q = $injector.get('$q');
             $controller = $injector.get('$controller');
-            $location = $injector.get('$location');
             ClientService = $injector.get('ClientService');
 
             /**
              * Spies
              */
             getBySlugSpy = spyOn(ClientService, 'getBySlug');
-            spyOn($location, 'hash');
 
             ClientCtrl = $controller('ClientController as ClientCtrl', {
                 $scope: $scope,
                 $stateParams: {
                     slug: 'nappytabs'
                 },
-                ClientService: ClientService
+                ClientService: ClientService,
+                smoothScroll: jasmine.createSpy('smoothScroll')
             });
         });
     });
@@ -71,8 +70,8 @@ describe('Controller: Client', () => {
             expect(ClientCtrl.currentNavDestination).toBe('talent-press');
         });
 
-        it('should set location hash', () => {
-            expect($location.hash).toHaveBeenCalledWith('section-talent-press');
+        it('should call smooth scroll on destination', () => {
+            expect(ClientCtrl.smoothScroll).toHaveBeenCalledWith(null, { offset: 112 });
         });
     });
 });
