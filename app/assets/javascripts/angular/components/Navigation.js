@@ -46,7 +46,7 @@ export default function Navigation() {
                                 </ul>
                             </li>
                             <li>
-                                <a ui-sref="app.talent.categories({ category: 'creative' })" toggle-navigation>Educators</a>
+                                <a ui-sref="app.talent.categories({ category: 'educators' })" toggle-navigation>Educators</a>
                                 <ul class="talent" resize-element resize-width="false" offset-top="112">
                                     <li><a ui-sref="app.talent.category({ category: 'speaker' })" toggle-navigation>Speakers</a></li>
                                     <li><a ui-sref="app.talent.category({ category: 'master_instructor' })" toggle-navigation>Masters</a></li>
