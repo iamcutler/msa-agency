@@ -142,13 +142,19 @@ header {
 
     &.main {
         position: fixed;
-        background: #1c1c1c;
+        background: rgba(28,28,28,1);
         top: 0;
         left: 0;
         color: #FFF;
         width: 100%;
         height: $header-height;
         z-index: 10;
+        transition: background $transition-duration $transition-easing;
+
+        // Transparent BG secondary class
+        &.transparent {
+            background: rgba(28,28,28,0.8);
+        }
 
         // Logo
         h1 {

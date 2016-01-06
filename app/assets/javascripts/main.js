@@ -91,8 +91,9 @@ angular.module('MSAAgency.services', [])
     .service('StaffService', StaffService);
 
 // Directives
-import ChooseCity from './angular/directives/ChooseCity';
 import AnimatedInput from './angular/directives/AnimatedInput';
+import BGTransparentScroll from './angular/directives/bgTransparentScroll';
+import ChooseCity from './angular/directives/ChooseCity';
 import GoToTopButton from './angular/directives/GoToTopButton';
 import LatestNews from './angular/directives/LatestNews';
 import MediaSlider from './angular/directives/MediaSlider';
@@ -124,6 +125,7 @@ import TwitterFeed from './angular/components/TwitterFeed';
 
 angular.module('MSAAgency.directives', [])
     .directive('animatedInput', AnimatedInput)
+    .directive('bgTransparentScroll', BGTransparentScroll)
     .directive('bookingForm', BookingForm)
     .directive('chooseCity', ChooseCity)
     .directive('clientImage', ClientImage)
