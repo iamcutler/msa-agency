@@ -2,7 +2,7 @@ module Apiv1
     class ClientsController < ApplicationController
         # GET /clients
         def index
-            @clients = Client.all
+            @clients = Client.all.order(:first_name)
         end
 
         # GET /clients/slug
@@ -24,7 +24,7 @@ module Apiv1
             begin
                 categories = params[:categories]
 
-                @clients = ClientCategory.findClients(categories)
+                @clients = ClientCategory.findClients(categories).order("clients.first_name ASC")
             rescue
                 @clients = []
             end
