@@ -78,7 +78,7 @@
             }
 
             &.enter {
-                margin-top: 64px;
+                margin-top: 94px;
                 margin-left: -120px;
             }
 
@@ -113,11 +113,11 @@ a.choose-city {
 
     .border {
         position: absolute;
-        background: image-url('splash-location-border.png');
-        top: 10px;
+        background: image-url('splash-enter-border.png');
         left: -30px;
         width: 300px;
         height: 61px;
+        margin-top: -17px;
         overflow: hidden;
         display: block;
     }

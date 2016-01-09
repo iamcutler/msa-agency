@@ -9,7 +9,7 @@ export default function ChooseCity() {
         template: `
             <a ui-sref="{{ state }}" class="choose-city">
                 <div class="border"></div>
-                <span class="enter">Enter</span>
+                <!--<span class="enter">Enter</span>-->
                 <span class="city-name">{{ cityName }}</span>
             </a>
         `
