@@ -36,6 +36,9 @@ export default function Navigation() {
                                 </ul>
                             </li>
                             <li>
+                                <a ng-href="{{ AppCtrl.companyReelURL }}" class="fancybox" toggle-navigation>Reel</a>
+                            </li>
+                            <li>
                                 <a ui-sref="app.talent.categories({ category: 'creative' })" toggle-navigation>Creative</a>
                                 <ul class="talent" resize-element resize-width="false" offset-top="112">
                                     <li><a ui-sref="app.talent.category({ category: 'stage_director' })" toggle-navigation>Stage Directors</a></li>

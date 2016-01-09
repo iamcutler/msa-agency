@@ -15,7 +15,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
-<body ng-controller="AppController as AppCtrl" ng-strict-di>
+<body ng-controller="AppController as AppCtrl" ng-init="AppCtrl.initialize()" ng-strict-di>
 
     <div ui-view>
         <%= yield %>
@@ -23,7 +23,7 @@
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <script>
-        $(document).ready(() => {
+        $(document).ready(function() {
             $(".fancybox").fancybox({
                 helpers : { media: true },
                 youtube : { autoplay: 1 }
