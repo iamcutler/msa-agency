@@ -27,7 +27,7 @@ export default function Navigation() {
                             </li>
                             <li>
                                 <a ui-sref="app.about" toggle-navigation>About Us</a>
-                                <ul class="about-us" resize-element resize-width="false" offset-top="112">
+                                <ul class="about-us" resize-element resize-width="false" offset-top="80">
                                     <li><a ui-sref="app.staff" toggle-navigation>Staff</a></li>
                                     <li><a ui-sref="app.affiliates" toggle-navigation>Affiliations</a></li>
                                     <li><a ui-sref="app.talent.legacy" toggle-navigation>Legacy</a></li>
@@ -37,6 +37,16 @@ export default function Navigation() {
                             </li>
                             <li>
                                 <a ng-href="{{ AppCtrl.companyReelURL }}" class="fancybox" toggle-navigation>Reel</a>
+                            </li>
+                            <li>
+                                <a href="" toggle-navigation>Talent</a>
+                                <ul class="talent" resize-element resize-width="false" offset-top="112">
+                                    <li><a ui-sref="app.talent.category({ category: 'dance' })" toggle-navigation>Dance</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'commercial' })" toggle-navigation>Commercial</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'television_film' })" toggle-navigation>Television/Film</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'musical_theatre' })" toggle-navigation>Musical Theatre</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'kids_teen' })" toggle-navigation>Kids and Teens</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <a ui-sref="app.talent.categories({ category: 'creative' })" toggle-navigation>Creative</a>

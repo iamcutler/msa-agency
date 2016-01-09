@@ -57,17 +57,20 @@ ActiveAdmin.register Client do
                     cat.input :_destroy, :as => :boolean
                 end
                 cat.input :category, as: :select, collection: [
-                    ['Choreographer', 'choreographer'],
+                    ['Choreography', 'choreography'],
                     ['Stage Director', 'stage_director'],
                     ['Creative Director', 'creative_director'],
                     ['Production', 'production'],
                     ['On Camera', 'on_camera'],
-                    ['Dancer', 'dancer'],
-                    ['Kids & Teens', 'kids_teen'],
+                    ['Dancer', 'dance'],
+                    ['Kids & Teens', 'kids_teens'],
                     ['Speciality Act', 'speciality_act'],
                     ['Speaker', 'speaker'],
                     ['Master Instructor', 'master_instructor'],
                     ['So You Think You Can Dance', 'sytycd'],
+                    ['Commercial', 'commercial'],
+                    ['Musical Theatre', 'musical_theatre'],
+                    ['Television/Film', 'television_film'],
                     ['Legacy', 'legacy']
                 ], include_blank: false
 
