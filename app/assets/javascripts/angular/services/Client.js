@@ -62,10 +62,10 @@ export default class ClientService {
 
         switch(category) {
             case 'dance':
-                categoryArray = ['on_camera', 'dancer', 'kids_teen', 'speciality_act'];
+                categoryArray = ['on_camera', 'dance', 'kids_teen', 'speciality_act'];
                 break;
             case 'creative':
-                categoryArray = ['stage_director', 'creative_director', 'choreographer', 'production'];
+                categoryArray = ['choreography', 'director', 'production', 'designer'];
                 break;
             case 'educators':
                 categoryArray = ['speaker', 'master_instructor', 'sytycd'];

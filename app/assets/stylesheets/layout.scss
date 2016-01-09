@@ -402,16 +402,20 @@ nav#sidebar-nav {
                         }
 
                         // Menu spacing
-                        &.home {
-                            padding-top: 73px;
-                        }
-
                         &.about-us {
-                            padding-top: 108px;
+                            padding-top: 55px;
                         }
 
                         &.talent {
-                            padding-top: 143px;
+                            padding-top: 126px;
+                        }
+
+                        &.creative {
+                            padding-top: 160px;
+                        }
+
+                        &.educators {
+                            padding-top: 195px;
                         }
 
                         @include responsive-phone-retina() {
