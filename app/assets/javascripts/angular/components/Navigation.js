@@ -35,7 +35,7 @@ export default function Navigation() {
                                     <li><a ui-sref="app.faq" toggle-navigation>FAQ</a></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li ng-if="AppCtrl.companyReelURL">
                                 <a ng-href="{{ AppCtrl.companyReelURL }}" class="fancybox" toggle-navigation>Reel</a>
                             </li>
                             <li>
