@@ -52,7 +52,7 @@ export default function Navigation() {
                                 <a ui-sref="app.talent.categories({ category: 'creative' })" toggle-navigation>Creative</a>
                                 <ul class="talent" resize-element resize-width="false" offset-top="112">
                                     <li><a ui-sref="app.talent.category({ category: 'stage_director' })" toggle-navigation>Stage Directors</a></li>
-                                    <li><a ui-sref="app.talent.category({ category: 'choreographer' })" toggle-navigation>Choreographers</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'choreography' })" toggle-navigation>Choreographers</a></li>
                                     <li><a ui-sref="app.talent.category({ category: 'creative_director' })" toggle-navigation>Creative Directors</a></li>
                                     <li><a ui-sref="app.talent.category({ category: 'production' })" toggle-navigation>Producers</a></li>
                                     <li><a ui-sref="app.talent.category({ category: 'designer' })" toggle-navigation>Designers</a></li>
