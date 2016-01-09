@@ -13,6 +13,7 @@ class PageSlide < ActiveRecord::Base
 
     enum slide_type: [ :image, :video ]
     enum media_type: [ :youtube, :vimeo ]
+    enum link_target: [ :_self, :_blank ]
 
     # Find all slides by section
     def self.find_all_by_section(section = 'home')

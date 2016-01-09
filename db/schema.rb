@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160102063158) do
+ActiveRecord::Schema.define(version: 20160109075648) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -199,6 +199,8 @@ ActiveRecord::Schema.define(version: 20160102063158) do
     t.string   "media_source",       limit: 255
     t.integer  "media_type",         limit: 4
     t.string   "caption",            limit: 255
+    t.string   "link",               limit: 255
+    t.integer  "link_target",        limit: 4,   default: 0
     t.string   "section",            limit: 255, default: "home", null: false
     t.integer  "slide_type",         limit: 4,   default: 0,      null: false
     t.integer  "order",              limit: 4,   default: 1,      null: false

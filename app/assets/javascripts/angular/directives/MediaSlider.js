@@ -15,7 +15,10 @@ export default function MediaSlider($timeout, $interval) {
                 <div class="slides">
                     <ul>
                         <li ng-repeat="slide in data">
-                            <img ng-src="{{ slide.sizes.large }}">
+                            <a ng-href="{{ slide.link }}" target="{{ slide.link_target }}" ng-if="slide.link">
+                                <img ng-src="{{ slide.sizes.large }}">
+                            </a>
+                            <img ng-src="{{ slide.sizes.large }}" ng-if="!slide.link">
 
                             <a href="https://www.youtube.com/embed/{{ slide.media_source }}" class="play-btn fancybox" ng-if="slide.type === 'video'"></a>
 
