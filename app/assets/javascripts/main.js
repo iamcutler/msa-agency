@@ -4,6 +4,7 @@ require('angular/angular.min');
 require('angular-ui-router/build/angular-ui-router.min');
 require('angular-sanitize/angular-sanitize.min');
 require('./angular-smooth-scroll.min');
+require('ng-file-upload/dist/ng-file-upload-all.min');
 
 // AngularJS
 angular.module('MSAAgency', [
@@ -13,8 +14,12 @@ angular.module('MSAAgency', [
   'MSAAgency.filters',
   'ui.router',
   'ngSanitize',
-  'smoothScroll'
-]);
+  'smoothScroll',
+  'ngFileUpload'
+])
+.constant('ALLOWED_UPLOAD_TYPES', {
+    list: ['jpg', 'jpeg', 'png', 'gif', 'mov', 'mp4', 'wmv', 'pdf']
+});
 
 // Configuration
 require('./angular/config');
@@ -76,6 +81,7 @@ import PageSlideService from './angular/services/PageSlide';
 import SearchService from './angular/services/Search';
 import SocialService from './angular/services/Social';
 import StaffService from './angular/services/Staff';
+import UploadService from './angular/services/Upload';
 
 angular.module('MSAAgency.services', [])
     .service('AffiliateService', AffiliateService)
@@ -88,7 +94,8 @@ angular.module('MSAAgency.services', [])
     .service('PageSlideService', PageSlideService)
     .service('SearchService', SearchService)
     .service('SocialService', SocialService)
-    .service('StaffService', StaffService);
+    .service('StaffService', StaffService)
+    .service('UploadService', UploadService);
 
 // Directives
 import AnimatedInput from './angular/directives/AnimatedInput';

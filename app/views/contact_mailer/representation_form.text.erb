@@ -1,0 +1,75 @@
+MSA Agency Representation Form:
+-----------------------------------
+
+Location: <%= @params['destination'] %>
+
+-----------------------------------
+Representation Categories:
+-----------------------------------
+On Camera: <%= @params['repCategory']['on_camera'] %>
+Print: <%= @params['repCategory']['print'] %>
+Kids & Teens: <%= @params['repCategory']['kids_and_teens'] %>
+Dance: <%= @params['repCategory']['dance'] %>
+Choreography: <%= @params['repCategory']['choreography'] %>
+Creative Direction: <%= @params['repCategory']['creative_direction'] %>
+Music Direction: <%= @params['repCategory']['music_direction'] %>
+Production Design: <%= @params['repCategory']['production_design'] %>
+Lighting Design: <%= @params['repCategory']['lighting_design'] %>
+Other: <%= @params['repCategory']['other'] %>
+-----------------------------------
+
+Name: <%= @params['name'] %>
+Email: <%= @params['email'] %>
+Phone: <%= @params['phone'] %>
+Manager Name: <%= @params['manager_name'] %>
+Manager Phone: <%= @params['manager_phone'] %>
+
+-----------------------------------
+History
+-----------------------------------
+<%= @params['history'] %>
+
+-----------------------------------
+Union Affiliation
+-----------------------------------
+Non Union: <%= @params['union']['non'] %>
+SAG AFTRA: <%= @params['union']['SAG_AFTRA'] %>
+SAG AFTRA ELIGIBLE: <%= @params['union']['SAG_AFTRA_ELIGIBLE'] %>
+AEA: <%= @params['union']['AEA'] %>
+ACTRA: <%= @params['union']['ACTRA'] %>
+AGVA: <%= @params['union']['AGVA'] %>
+WGA: <%= @params['union']['WGA'] %>
+DGA: <%= @params['union']['DGA'] %>
+SDC: <%= @params['union']['SDC'] %>
+Other: <%= @params['union']['other'] %>
+
+-----------------------------------
+Vitals
+-----------------------------------
+Date of Birth: <%= @params['dob'] %>
+Height: <%= @params['height'] %>
+Weight: <%= @params['weight'] %>
+Eye Color: <%= @params['eye_color'] %>
+hair Color: <%= @params['hair_color'] %>
+Hips: <%= @params['hips'] %>
+Bust (Women): <%= @params['bust'] %>
+Waist: <%= @params['waist'] %>
+Chest (Men): <%= @params['chest'] %>
+Inseam: <%= @params['inseam'] %>
+
+-----------------------------------
+Materials
+-----------------------------------
+<%= @params['material1'] %>
+<%= @params['material2'] %>
+<%= @params['material3'] %>
+
+-----------------------------------
+Special Skills
+-----------------------------------
+<%= @params['skills'] %>
+
+-----------------------------------
+Message:
+-----------------------------------
+<%= @params['message'] %>

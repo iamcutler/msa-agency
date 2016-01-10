@@ -12,4 +12,10 @@ class ContactMailer < ApplicationMailer
 
         mail(to: 'iamcutler@icloud.com', subject: 'I want to book a client')
     end
+
+    def representation_form(form_params)
+        @params = form_params
+
+        mail(to: 'iamcutler@icloud.com', subject: 'I would like MSA to represent me!')
+    end
 end

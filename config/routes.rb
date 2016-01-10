@@ -23,8 +23,14 @@ Rails.application.routes.draw do
 
         get 'page-slides', to: 'page_slide#index'
 
+        # Uploads
+        scope 'storage' do
+            post 'upload', to: 'file_upload#upload_file_to_s3'
+        end
+
         scope '/contact' do
             post 'form', to: 'contact#submit'
+            post 'representation', to: 'contact#representation'
             post 'booking', to: 'contact#booking'
         end
 

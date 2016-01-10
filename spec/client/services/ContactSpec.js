@@ -74,4 +74,13 @@ describe('Service: Contact', () => {
             $httpBackend.flush();
         });
     });
+
+    describe('method: submitRepresentationForm', () => {
+        it('should call api for submission', () => {
+            $httpBackend.expectPOST('api/v1/contact/representation').respond(200);
+
+            ContactService.submitRepresentationForm({});
+            $httpBackend.flush();
+        });
+    });
 });

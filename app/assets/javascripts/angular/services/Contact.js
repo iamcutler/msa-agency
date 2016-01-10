@@ -42,9 +42,21 @@ export default class ContactService {
      * @param {String} fields.email
      * @param {String} fields.phone
      * @param {String} fields.message
+     * @returns {Promise}
      */
     submitBooking(fields) {
         return this.$http.post('api/v1/contact/booking', fields)
             .then(this.commonService.handleHttpResponse('Error while submitting booking form'));
+    }
+
+    /**
+     * Submit representation form
+     *
+     * @param {Object} form
+     * @returns {promise}
+     */
+    submitRepresentationForm(form) {
+        return this.$http.post('api/v1/contact/representation', form)
+            .then(this.commonService.handleHttpResponse('Error while submitting representation form', true));
     }
 }

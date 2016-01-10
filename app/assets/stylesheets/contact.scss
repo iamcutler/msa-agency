@@ -74,6 +74,22 @@ section#contact-us {
     }
 
     .contact-form {
+        .form-errors {
+            background: #D40;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 10px;
+
+            ul {
+                padding: 0 20px;
+                margin: 0;
+
+                li {
+                    color: #FFF;
+                }
+            }
+        }
+
         form {
             select {
                 background: none;
@@ -126,6 +142,13 @@ section#contact-us {
 
                 &:disabled {
                     opacity: 0.5;
+                }
+
+                &.submitting {
+                    color: lighten($secondary-grey, 50%);
+                    background: image-url('btn-loader.gif') center no-repeat;
+                    background-color: lighten($secondary-grey, 50%);
+                    text-align: center;
                 }
             }
         }

@@ -12,6 +12,16 @@ class Apiv1::ContactController < ApplicationController
         render json: { success: @success }
     end
 
+    def representation
+        @success = true
+
+        if !ContactMailer.representation_form(params).deliver_now
+            @success = false
+        end
+
+        render json: { success: @success }
+    end
+
     def booking
         @success = true;
 

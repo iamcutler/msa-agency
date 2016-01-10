@@ -8,7 +8,13 @@ export function RepresentationForm() {
             <section id="representation" class="contact-form">
                 <span class="contact-form-notice">FILL OUT OUR FORM TO REQUEST REPRESENTATION</span>
 
-                <form name="RepresentationFormCtrl.representationForm" ng-submit="RepresentationFormCtrl.submitForm(RepresentationFormCtrl.representationForm)" novalidate>
+                <div id="contact-message" ng-if="RepresentationFormCtrl.formSubmitted">
+                    Thank you for submitting for representation. We'll get back to you as soon as possible.
+                </div>
+
+                <form name="RepresentationFormCtrl.representationForm"
+                      ng-submit="RepresentationFormCtrl.submitForm(RepresentationFormCtrl.representationForm)"
+                      ng-if="!RepresentationFormCtrl.formSubmitted" novalidate>
                     <!-- Destination -->
                     <span class="contact-form-notice section-title">DESTINATION</span>
 
@@ -160,9 +166,9 @@ export function RepresentationForm() {
                     <span class="contact-form-notice section-title">MATERIALS (HEADSHOT, RESUME, REEL)</span>
 
                     <div class="split-column">
-                        <input type="file" ng-model="RepresentationFormCtrl.form.material1">
-                        <input type="file" ng-model="RepresentationFormCtrl.form.material2">
-                        <input type="file" ng-model="RepresentationFormCtrl.form.material3">
+                        <input type="file" ngf-select ng-model="RepresentationFormCtrl.files.material1" required>
+                        <input type="file" ngf-select ng-model="RepresentationFormCtrl.files.material2" required>
+                        <input type="file" ngf-select ng-model="RepresentationFormCtrl.files.material3" required>
                     </div>
                     <div class="clearfix"></div>
 
@@ -172,7 +178,18 @@ export function RepresentationForm() {
 
                     <animated-input type="textarea" placeholder="Message:" ng-model="RepresentationFormCtrl.form.message" required></animated-input>
 
-                    <button type="submit" ng-disabled="RepresentationFormCtrl.representationForm.$invalid">Submit</button>
+                    <div class="form-errors" ng-if="RepresentationFormCtrl.validationsErrors.length">
+                        <ul>
+                            <li ng-repeat="err in RepresentationFormCtrl.validationsErrors">
+                                {{ err }}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button type="submit" ng-class="{ submitting: RepresentationFormCtrl.isSubmitting }"
+                            ng-disabled="!RepresentationFormCtrl.representationForm.$valid || RepresentationFormCtrl.isSubmitting">
+                            Submit
+                    </button>
                 </form>
             </section>
         `
@@ -181,11 +198,21 @@ export function RepresentationForm() {
 
 export class RepresentationFormController {
     // @ngInject
-    constructor($http) {
-        this.$http = $http;
+    constructor(ContactService, UploadService, ALLOWED_UPLOAD_TYPES) {
+        this.contactService = ContactService;
+        this.uploadService = UploadService;
+        this.ALLOWED_UPLOAD_TYPES = ALLOWED_UPLOAD_TYPES.list;
 
         this.showVitalsInForm = false;
+        this.isSubmitting = false;
+        this.formSubmitted = false;
+        this.files = {
+            material1: {},
+            material2: {},
+            material3: {}
+        };
         this.form = {}; // Representation form
+        this.validationsErrors = []; // form validation error messages
     }
 
     /**
@@ -209,8 +236,66 @@ export class RepresentationFormController {
      * @param {object} form
      */
     submitForm(form) {
+        this.isSubmitting = true;
+
         if(form.$valid) {
-            return this.$http.post('/api/v1/contact/representation', this.form);
+            // Check file types
+            if(this.uploadService.checkFileTypeOnFileCollection(this.files)) {
+                console.log('Valid file types');
+                this.uploadService.uploadFiles([
+                        this.files.material1,
+                        this.files.material2,
+                        this.files.material3
+                    ])
+                    .then(response => {
+                        try {
+                            // Loop through files
+                            // Add material upload values to form submission
+                            response.forEach((file, index) => {
+                                this.form[`material${index + 1}`] = file.file_path;
+                            });
+
+                            this.contactService.submitRepresentationForm(this.form)
+                                .then(() => {
+                                    this.formSubmitted = true;
+                                })
+                                .catch(err => {
+                                    this.validationsErrors = RepresentationFormController.formatErrors(err.message);
+                                })
+                                .finally(() => this.isSubmitting = false);
+                        } catch(e) {
+                            this.isSubmitting = false;
+                            this.validationsErrors = RepresentationFormController.formatErrors(e.message);
+                        }
+                    })
+                    .catch(err => {
+                        this.validationsErrors = RepresentationFormController.formatErrors(err);
+                    })
+                    .finally(() => this.isSubmitting = false);
+            } else {
+                this.isSubmitting = false;
+                this.validationsErrors = RepresentationFormController.formatErrors(
+                    `Invalid file type present. Allowed file types: ${this.ALLOWED_UPLOAD_TYPES.join(', ')}`
+                );
+            }
+        } else {
+            this.validationsErrors = RepresentationFormController.formatErrors('Required fields missing.');
         }
+    }
+
+    /**
+     * Format form errors
+     *
+     * @param {String|Array} errors
+     * @returns {Array}
+     */
+    static formatErrors(errors) {
+        if(!Array.isArray(errors)) {
+            return [errors];
+        }
+
+        return errors.map(err => {
+            return err;
+        });
     }
 }
