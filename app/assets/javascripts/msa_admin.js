@@ -23,11 +23,48 @@
         window.addEventListener("DOMContentLoaded", function() {
             var news = new AdminNews();
             news.setSlugFromSubject();
-        })
+        });
     } else {
         window.attachEvent("onload", function() {
             var news = new AdminNews();
             news.setSlugFromSubject();
-        })
+        });
+    }
+})();
+
+(function() {
+    function AdminClients() {}
+    AdminClients.prototype.setSlugFromName = function() {
+        var self = this;
+        var firstName = document.getElementById('client_first_name');
+        var lastName = document.getElementById('client_last_name');
+
+        firstName.addEventListener('keyup', function() {
+            self.setSlugValue(firstName.value + (lastName.value ? ' ' : '') + lastName.value);
+        });
+
+        lastName.addEventListener('keyup', function() {
+            self.setSlugValue(firstName.value + (lastName.value ? ' ' : '') + lastName.value);
+        });
+    };
+
+    AdminClients.prototype.setSlugValue = function(subject) {
+        if(!subject) return;
+        var slug = document.getElementById('client_slug');
+
+        slug.value = subject.replace(/\s/g, '-').toLowerCase();
+    };
+
+    // Register when DOM is ready
+    if (!!(window.addEventListener)) {
+        window.addEventListener("DOMContentLoaded", function() {
+            var clients = new AdminClients();
+            clients.setSlugFromName();
+        });
+    } else {
+        window.attachEvent("onload", function() {
+            var clients = new AdminClients();
+            clients.setSlugFromName();
+        });
     }
 })();
