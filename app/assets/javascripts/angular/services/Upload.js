@@ -1,3 +1,5 @@
+const MAX_FILE_SIZE = 8388608; // 8MB
+
 export default class UploadService {
     // @ngInject
     constructor($q, Upload, CommonService, ALLOWED_UPLOAD_TYPES) {
@@ -46,14 +48,14 @@ export default class UploadService {
     /**
      * Check allowed file types
      *
-     * @param {Object} file
+     * @param {File} file
      * @param {string} file.name
      * @returns {boolean}
      */
     allowedFileType(file) {
         let fileExtension = file.name.toLowerCase().match(/\.[0-9a-z]+$/i);
 
-        if (!fileExtension.length) return false;
+        if (!fileExtension) return false;
 
         return this.ALLOWED_UPLOAD_TYPES.indexOf(fileExtension[0].replace('.', '')) !== -1;
     }
@@ -75,5 +77,32 @@ export default class UploadService {
         }
 
         return valid;
+    }
+
+    /**
+     * Validate file size
+     *
+     * @param {File} file
+     * @param {Number} file.size
+     * @returns {Boolean}
+     */
+    validateFileSize(file) {
+        return file.size <= MAX_FILE_SIZE;
+    }
+
+    /**
+     * Validate file size from collection
+     *
+     * @param {Object} files
+     * @returns {Boolean}
+     */
+    validateFileSizeOnFileCollection(files) {
+        for(let file in files) {
+            if(!this.validateFileSize(files[file])) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

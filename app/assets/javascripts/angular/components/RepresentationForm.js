@@ -241,37 +241,44 @@ export class RepresentationFormController {
         if(form.$valid) {
             // Check file types
             if(this.uploadService.checkFileTypeOnFileCollection(this.files)) {
-                console.log('Valid file types');
-                this.uploadService.uploadFiles([
-                        this.files.material1,
-                        this.files.material2,
-                        this.files.material3
-                    ])
-                    .then(response => {
-                        try {
-                            // Loop through files
-                            // Add material upload values to form submission
-                            response.forEach((file, index) => {
-                                this.form[`material${index + 1}`] = file.file_path;
-                            });
+                if(this.uploadService.validateFileSizeOnFileCollection(this.files)) {
+                    this.uploadService.uploadFiles([
+                            this.files.material1,
+                            this.files.material2,
+                            this.files.material3
+                        ])
+                        .then(response => {
+                            try {
+                                // Loop through files
+                                // Add material upload values to form submission
+                                response.forEach((file, index) => {
+                                    this.form[`material${index + 1}`] = file.file_path;
+                                });
 
-                            this.contactService.submitRepresentationForm(this.form)
-                                .then(() => {
-                                    this.formSubmitted = true;
-                                })
-                                .catch(err => {
-                                    this.validationsErrors = RepresentationFormController.formatErrors(err.message);
-                                })
-                                .finally(() => this.isSubmitting = false);
-                        } catch(e) {
-                            this.isSubmitting = false;
-                            this.validationsErrors = RepresentationFormController.formatErrors(e.message);
-                        }
-                    })
-                    .catch(err => {
-                        this.validationsErrors = RepresentationFormController.formatErrors(err);
-                    })
-                    .finally(() => this.isSubmitting = false);
+                                this.contactService.submitRepresentationForm(this.form)
+                                    .then(() => {
+                                        // Successful form submission
+                                        this.formSubmitted = true;
+                                    })
+                                    .catch(err => {
+                                        this.validationsErrors = RepresentationFormController.formatErrors(err.message);
+                                    })
+                                    .finally(() => this.isSubmitting = false);
+                            } catch(e) {
+                                this.isSubmitting = false;
+                                this.validationsErrors = RepresentationFormController.formatErrors(e.message);
+                            }
+                        })
+                        .catch(err => {
+                            this.validationsErrors = RepresentationFormController.formatErrors(err);
+                        })
+                        .finally(() => this.isSubmitting = false);
+                } else {
+                    this.isSubmitting = false;
+                    this.validationsErrors = RepresentationFormController.formatErrors(
+                        `One or more of your files are over the size limit. Allowed file size: 8MB per file`
+                    );
+                }
             } else {
                 this.isSubmitting = false;
                 this.validationsErrors = RepresentationFormController.formatErrors(
@@ -279,6 +286,7 @@ export class RepresentationFormController {
                 );
             }
         } else {
+            this.isSubmitting = false;
             this.validationsErrors = RepresentationFormController.formatErrors('Required fields missing.');
         }
     }
