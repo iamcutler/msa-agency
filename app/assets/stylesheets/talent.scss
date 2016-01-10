@@ -29,6 +29,16 @@ header.talent {
     flex-direction: column;
     overflow: hidden;
 
+    &.basic {
+        padding: 125px 0;
+
+        .background {
+            img {
+                filter: blur(0);
+            }
+        }
+    }
+
     .background {
         position: absolute;
         top: 0;

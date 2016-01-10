@@ -6,6 +6,7 @@ json.title @client.title
 json.biography @client.biography
 json.slug @client.slug
 json.location @client.location
+json.basic @client.basic
 json.la_casting @client.la_casting
 json.la_casting_url @client.la_casting_url
 

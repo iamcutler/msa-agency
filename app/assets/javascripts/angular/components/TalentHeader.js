@@ -5,6 +5,7 @@ export default function TalentHeader() {
         scope: {
             name: '@',
             title: '@',
+            basic: '=', // basic header
             social: '=',
             coverImage: '=',
             defaultImage: '=',
@@ -12,13 +13,13 @@ export default function TalentHeader() {
             hideSocialIcons: '='
         },
         template: `
-            <header class="talent">
+            <header class="talent" ng-class="{basic: basic}">
                 <div class="background">
                     <img ng-src="{{ coverImage.sizes.large }}">
                 </div>
 
                 <div class="talent">
-                    <a ng-href="{{ defaultImage.sizes.large }}" class="talent-thumb fancybox">
+                    <a ng-href="{{ defaultImage.sizes.large }}" ng-if="!basic" class="talent-thumb fancybox">
                         <img ng-src="{{ defaultImage.sizes.square }}">
                     </a>
 
@@ -34,7 +35,10 @@ export default function TalentHeader() {
                         youtube="{{ ::social.youtube }}"></social-icons>
 
                     <div class="button-group">
-                        <a ui-sref="app.book-client({ client: name })" class="book-btn" ng-hide="hideBookBtn === true">Book</a>
+                        <a ui-sref="app.book-client({ client: name })" class="book-btn" ng-hide="hideBookBtn === true">
+                            <span ng-if="basic">Contact</span>
+                            <span ng-if="!basic">Book</span>
+                        </a>
                         <a href="" class="share-btn">Share</a>
                     </div>
                 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160109075648) do
+ActiveRecord::Schema.define(version: 20160110101937) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -145,6 +145,7 @@ ActiveRecord::Schema.define(version: 20160109075648) do
     t.string   "twitter_link",     limit: 255
     t.string   "instagram_link",   limit: 255
     t.string   "youtube_link",     limit: 255
+    t.boolean  "basic",                          default: false,         null: false
     t.boolean  "la_casting",                     default: false,         null: false
     t.string   "la_casting_url",   limit: 255
     t.integer  "default_image_id", limit: 4

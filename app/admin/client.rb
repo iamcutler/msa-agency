@@ -45,6 +45,7 @@ ActiveAdmin.register Client do
             input :twitter_link, placeholder: 'http://www.twitter.com'
             input :instagram_link, placeholder: 'http://www.instagram.com'
             input :youtube_link, placeholder: 'http://www.youtube.com'
+            input :basic, hint: 'This is used for department pages'
             input :la_casting, label: 'Show LA Casting Resume'
             input :la_casting_url
             input :slug
@@ -134,7 +135,7 @@ ActiveAdmin.register Client do
 
     # Assign params that can be editable (Mass Assignment)
     permit_params :first_name, :last_name, :title, :email, :phone, :biography, :website_link, :facebook_link,
-                  :twitter_link, :instagram_link, :youtube_link, :la_casting, :la_casting_url, :slug, :location,
+                  :twitter_link, :instagram_link, :youtube_link, :basic, :la_casting, :la_casting_url, :slug, :location,
                   photos_attributes: [:id, :image, :caption, :cover, :default, :order, :_destroy],
                   reel_attributes: [:id, :video_id, :title, :video_type, :_destroy],
                   videos_attributes: [:id, :video_id, :title, :video_type, :order, :_destroy],
