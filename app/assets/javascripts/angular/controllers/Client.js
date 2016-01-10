@@ -1,6 +1,7 @@
 export default class ClientController {
     // @ngInject
-    constructor($stateParams, $location, smoothScroll, ClientService) {
+    constructor($state, $stateParams, $location, smoothScroll, ClientService) {
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.$location = $location;
         this.smoothScroll = smoothScroll;
@@ -24,7 +25,13 @@ export default class ClientController {
                     this.reelPresent = true;
                 }
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                if(err.hasOwnProperty('status') && err.status === 404) {
+                    this.$state.go('app.error-404');
+                } else {
+                    console.log(err);
+                }
+            });
     }
 
     /**
