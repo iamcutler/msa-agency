@@ -41,11 +41,11 @@ export default function Navigation() {
                             <li>
                                 <a href="" toggle-navigation>Talent</a>
                                 <ul class="talent" resize-element resize-width="false" offset-top="112">
-                                    <li><a ui-sref="app.talent.category({ category: 'dance' })" toggle-navigation>Dance</a></li>
-                                    <li><a ui-sref="app.talent.category({ category: 'commercial' })" toggle-navigation>Commercial</a></li>
-                                    <li><a ui-sref="app.talent.category({ category: 'television_film' })" toggle-navigation>Television/Film</a></li>
-                                    <li><a ui-sref="app.talent.category({ category: 'musical_theatre' })" toggle-navigation>Musical Theatre</a></li>
-                                    <li><a ui-sref="app.talent.category({ category: 'kids_teen' })" toggle-navigation>Kids and Teens</a></li>
+                                    <li><a ui-sref="app.talent.page({ slug: 'dance' })" toggle-navigation>Dance</a></li>
+                                    <li><a ui-sref="app.talent.page({ slug: 'commercial' })" toggle-navigation>Commercial</a></li>
+                                    <li><a ui-sref="app.talent.page({ slug: 'television-film' })" toggle-navigation>Television/Film</a></li>
+                                    <li><a ui-sref="app.talent.page({ slug: 'musical-theatre' })" toggle-navigation>Musical Theatre</a></li>
+                                    <li><a ui-sref="app.talent.page({ slug: 'kids-teen' })" toggle-navigation>Kids and Teens</a></li>
                                 </ul>
                             </li>
                             <li>
