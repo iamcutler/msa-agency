@@ -68,6 +68,12 @@ angular.module('MSAAgency')
                 controller: 'ClientController as ClientCtrl',
                 templateUrl: 'templates/talent.html'
             })
+        // Directors
+        .state('app.directors', {
+            url: 'directors',
+            controller: 'DirectorsController as DirectorsCtrl',
+            templateUrl: 'templates/directors.html'
+        })
         // Archives
         .state('app.archives', {
             url: 'archives',

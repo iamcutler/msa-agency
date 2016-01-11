@@ -61,6 +61,8 @@ ActiveAdmin.register Client do
                     ['Choreography', 'choreography'],
                     ['Stage Director', 'stage_director'],
                     ['Creative Director', 'creative_director'],
+                    ['Music Director', 'music_director'],
+                    ['Video Director', 'video_director'],
                     ['Director', 'director'],
                     ['Production', 'production'],
                     ['On Camera', 'on_camera'],

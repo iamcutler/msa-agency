@@ -35,6 +35,7 @@ import ClientCategoryController from './angular/controllers/ClientCategory';
 import ClientCategoriesController from './angular/controllers/ClientCategories';
 import ClientController from './angular/controllers/Client';
 import ContactController from './angular/controllers/Contact';
+import DirectorsController from './angular/controllers/Directors';
 import FAQController from './angular/controllers/FAQ';
 import SplashController from './angular/controllers/Splash';
 import HomeController from './angular/controllers/Home';
@@ -57,6 +58,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('ClientCategoriesController', ClientCategoriesController)
     .controller('ClientController', ClientController)
     .controller('ContactController', ContactController)
+    .controller('DirectorsController', DirectorsController)
     .controller('FAQController', FAQController)
     .controller('SplashController', SplashController)
     .controller('HomeController', HomeController)

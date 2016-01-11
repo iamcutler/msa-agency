@@ -1,0 +1,37 @@
+<div ng-init="DirectorsCtrl.get()">
+    <section class="twilight">
+        <header class="section-header twilight">
+            Directors
+        </header>
+
+        <div class="section-placeholder-text"
+             ng-if="!DirectorsCtrl.stageClients.length && !DirectorsCtrl.creativeClients.length &&
+                    !DirectorsCtrl.musicClients.length && !DirectorsCtrl.videoClients.length">
+            No current directors
+        </div>
+
+        <client-roster title="Stage"
+                       type="talent"
+                       roster="DirectorsCtrl.stageClients"
+                       ng-if="DirectorsCtrl.stageClients.length"
+                       slider="true"></client-roster>
+
+        <client-roster title="Creative"
+                       type="talent"
+                       roster="DirectorsCtrl.creativeClients"
+                       ng-if="DirectorsCtrl.creativeClients.length"
+                       slider="true"></client-roster>
+
+        <client-roster title="Music"
+                       type="talent"
+                       roster="DirectorsCtrl.musicClients"
+                       ng-if="DirectorsCtrl.musicClients.length"
+                       slider="true"></client-roster>
+
+        <client-roster title="Video"
+                       type="talent"
+                       roster="DirectorsCtrl.videoClients"
+                       ng-if="DirectorsCtrl.videoClients.length"
+                       slider="true"></client-roster>
+    </section>
+</div>
