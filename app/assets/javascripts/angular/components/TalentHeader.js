@@ -18,7 +18,7 @@ export default function TalentHeader() {
                     <img ng-src="{{ coverImage.sizes.large }}">
                 </div>
 
-                <div class="talent">
+                <div class="talent" ng-if="!basic">
                     <a ng-href="{{ defaultImage.sizes.large }}" ng-if="!basic" class="talent-thumb fancybox">
                         <img ng-src="{{ defaultImage.sizes.square }}">
                     </a>
@@ -36,8 +36,7 @@ export default function TalentHeader() {
 
                     <div class="button-group">
                         <a ui-sref="app.book-client({ client: name })" class="book-btn" ng-hide="hideBookBtn === true">
-                            <span ng-if="basic">Contact</span>
-                            <span ng-if="!basic">Book</span>
+                            <span>Book</span>
                         </a>
                         <a href="" class="share-btn">Share</a>
                     </div>

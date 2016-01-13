@@ -2,14 +2,14 @@
     <talent-header
         name="{{ ::ClientCtrl.client.full_name }}"
         title="{{ ::ClientCtrl.client.title }}"
-        basic="ClientCtrl.client.basic"
+        basic="::ClientCtrl.client.basic"
         social="ClientCtrl.client.social"
         cover-image="ClientCtrl.client.cover_image"
         default-image="ClientCtrl.client.default_image">
     </talent-header>
 
     <!-- Talent Navigation -->
-    <nav class="talent-navigation">
+    <nav class="talent-navigation" ng-if="!ClientCtrl.client.basic">
         <div class="app-container">
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-bio'}"
                         ng-click="ClientCtrl.setCurrentNavDestination('talent-bio')">Biography</a>
@@ -48,7 +48,7 @@
 
     <!-- Biography -->
     <a name="section-talent-bio"></a>
-    <sub-section-header title="Biography"></sub-section-header>
+    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Biography' : '' }}"></sub-section-header>
 
     <section id="talent-bio">
         <div class="app-container" ng-if="ClientCtrl.client.biography" ng-bind-html="ClientCtrl.client.biography"></div>
@@ -61,7 +61,7 @@
 
     <!-- Reel -->
     <a name="section-talent-reel"></a>
-    <sub-section-header title="Reel" ng-if="ClientCtrl.reelPresent"></sub-section-header>
+    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Reel' : '' }}" ng-if="ClientCtrl.reelPresent"></sub-section-header>
 
     <section id="talent-reel" ng-if="ClientCtrl.reelPresent">
         <div class="app-container">
@@ -72,7 +72,7 @@
 
     <!-- Resume -->
     <a name="section-talent-resume"></a>
-    <sub-section-header title="Resume" ng-if="::ClientCtrl.client.resume.length"></sub-section-header>
+    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Resume' : '' }}" ng-if="::ClientCtrl.client.resume.length"></sub-section-header>
 
     <section id="talent-resume" ng-if="::ClientCtrl.client.resume.length">
         <talent-resume title="Concerts/Tours/Events" data="ClientCtrl.client.resume.events"></talent-resume>
@@ -89,7 +89,7 @@
 
     <!-- Photos -->
     <a name="section-talent-photos"></a>
-    <sub-section-header title="Photos" ng-if="::ClientCtrl.client.images.length"></sub-section-header>
+    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Photos' : '' }}" ng-if="::ClientCtrl.client.images.length"></sub-section-header>
 
     <section id="talent-photos" ng-if="::ClientCtrl.client.images.length">
         <div class="app-container">
@@ -100,7 +100,7 @@
 
     <!-- Videos -->
     <a name="section-talent-videos"></a>
-    <sub-section-header title="Videos" ng-if="::ClientCtrl.client.videos.length"></sub-section-header>
+    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Videos' : '' }}" ng-if="::ClientCtrl.client.videos.length"></sub-section-header>
 
     <section id="talent-videos" ng-if="::ClientCtrl.client.videos.length">
         <div class="app-container">
@@ -111,7 +111,7 @@
 
     <!-- Press -->
     <a name="section-talent-press"></a>
-    <sub-section-header title="Press" ng-if="::ClientCtrl.client.press.length"></sub-section-header>
+    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Press' : '' }}" ng-if="::ClientCtrl.client.press.length"></sub-section-header>
 
     <section id="talent-press" ng-if="::ClientCtrl.client.press.length">
         <div class="app-container">
