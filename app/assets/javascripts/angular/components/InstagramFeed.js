@@ -15,7 +15,9 @@ export default function InstagramFeed() {
 
                 <div class="instagram-feed">
                     <figure ng-repeat="media in data">
-                        <img ng-src="{{ media.images.low_resolution.url }}">
+                        <a ng-href="{{ media.link }}" target="_blank">
+                            <img ng-src="{{ media.images.low_resolution.url }}">
+                        </a>
                     </figure>
                 </div>
             </div>
