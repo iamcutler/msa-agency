@@ -49,7 +49,7 @@ export default function Navigation() {
                                 </ul>
                             </li>
                             <li>
-                                <a ui-sref="app.talent.categories({ category: 'creative' })" toggle-navigation>Creative</a>
+                                <a href="">Creative</a>
                                 <ul class="creative" resize-element resize-width="false" offset-top="112">
                                 <li><a ui-sref="app.talent.category({ category: 'choreography' })" toggle-navigation>Choreographers</a></li>
                                     <li><a ui-sref="app.directors" toggle-navigation>Directors</a></li>
