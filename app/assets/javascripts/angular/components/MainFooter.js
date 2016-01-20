@@ -13,11 +13,11 @@ angular.module('MSAAgency.directives')
                     <div class="addresses">
                         <div class="address">
                             <span class="location">Los Angeles</span><br>
-                            953 Cole Ave Hollywood CA 90038
+                            323-957-6680 | 953 Cole Ave Hollywood CA 90038
                         </div>
                         <div class="address">
                             <span class="location">New York</span><br>
-                            1115 Broadway, Suite 1056, New York, NY 10010
+                            646-237-6928 | 1115 Broadway, Suite 1056, New York, NY 10010
                         </div>
                     </div>
 
