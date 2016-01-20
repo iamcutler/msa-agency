@@ -230,6 +230,7 @@ header {
             // Search bar
             form[id="search-bar"] {
                 margin: 30px 6px 16px;
+                display: block;
 
                 input[type="search"] {
                     background: $secondary-grey image-url('search-icon.png') 12px 8px no-repeat;
@@ -252,6 +253,14 @@ header {
                     &::-moz-placeholder { color: #FFF; }
                     &:-ms-input-placeholder { color: #FFF; }
                     &:-moz-placeholder { color: #FFF; }
+                }
+
+                @include responsive-phone-retina() {
+                    display: none;
+                }
+
+                @include responsive-phones() {
+                    display: none;
                 }
             }
         }
@@ -338,6 +347,43 @@ nav#sidebar-nav {
                 overflow: hidden;
                 display: block;
                 text-indent: -9999px;
+            }
+        }
+
+        // Search bar
+        form[id="search-bar"] {
+            margin: 26px 14px 16px;
+            display: none;
+
+            input[type="search"] {
+                background: $secondary-grey image-url('search-icon.png') 12px 8px no-repeat;
+                background: $secondary-grey image-url('search-icon.svg') 12px 8px no-repeat;
+                color: #FFF;
+                width: 186px;
+                border: 2px #252525 solid;
+                font-size: 14px;
+                padding: 6px 6px 6px 28px;
+                font-weight: $font-primary-weight-thin;
+                outline: none;
+                transition: border .4s ease-in-out;
+                appearance: none;
+
+                &:focus {
+                    border-color: #595959;
+                }
+
+                &::-webkit-input-placeholder { color: #FFF; }
+                &::-moz-placeholder { color: #FFF; }
+                &:-ms-input-placeholder { color: #FFF; }
+                &:-moz-placeholder { color: #FFF; }
+            }
+
+            @include responsive-phone-retina() {
+                display: block;
+            }
+
+            @include responsive-phones() {
+                display: block;
             }
         }
 
