@@ -12,7 +12,8 @@
     <nav class="talent-navigation" ng-if="!ClientCtrl.client.basic">
         <div class="app-container">
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-bio'}"
-                        ng-click="ClientCtrl.setCurrentNavDestination('talent-bio')">Biography</a>
+                        ng-click="ClientCtrl.setCurrentNavDestination('talent-bio')"
+                        ng-if="ClientCtrl.client.biography">Biography</a>
 
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-reel'}"
                         ng-click="ClientCtrl.setCurrentNavDestination('talent-reel')"
@@ -48,14 +49,10 @@
 
     <!-- Biography -->
     <a name="section-talent-bio"></a>
-    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Biography' : '' }}"></sub-section-header>
+    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Biography' : '' }}" ng-if="ClientCtrl.client.biography"></sub-section-header>
 
-    <section id="talent-bio">
-        <div class="app-container" ng-if="ClientCtrl.client.biography" ng-bind-html="ClientCtrl.client.biography"></div>
-
-        <div class="app-container no-bio" ng-if="!ClientCtrl.client.biography">
-            No current biography
-        </div>
+    <section id="talent-bio" ng-if="ClientCtrl.client.biography">
+        <div class="app-container" ng-bind-html="ClientCtrl.client.biography"></div>
     </section>
     <!-- End Biography -->
 
