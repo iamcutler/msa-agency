@@ -29,9 +29,19 @@ export function RepresentationForm() {
                     <span class="contact-form-notice section-title">REPRESENTATION</span>
 
                     <div class="representation-option">
-                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.on_camera"
-                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.on_camera)">
-                        On Camera
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.dance"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.dance)">
+                        Dance
+                    </div>
+                    <div class="representation-option">
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.commercials"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.commercials)">
+                        Commercials
+                    </div>
+                    <div class="representation-option">
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.tv_film"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.tv_film)">
+                        TV/FILM
                     </div>
                     <div class="representation-option">
                         <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.print"
@@ -39,40 +49,52 @@ export function RepresentationForm() {
                         Print
                     </div>
                     <div class="representation-option">
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.musical_theatre"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.musical_theatre)">
+                        Musical Theatre
+                    </div>
+                    <div class="representation-option">
                         <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.kids_and_teens"
                                ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.kids_and_teens)">
                         Kids & Teens
                     </div>
                     <div class="representation-option">
-                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.dance"
-                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.dance)">
-                        Dance
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.stunts"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.stunts)">
+                        Stunts
                     </div>
                     <div class="representation-option">
-                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.choreography"
-                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.choreography)">
-                        Choreography
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.specialty_act"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.specialty_act)">
+                        Specialty Act
+                    </div>
+
+                    <div class="representation-option">
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.Choreographer"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.Choreographer)">
+                        Choreographer
                     </div>
                     <div class="representation-option">
-                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.creative_direction"
-                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.creative_direction)">
-                        Creative Direction
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.director"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.director)">
+                        Director
                     </div>
                     <div class="representation-option">
-                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.music_direction"
-                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.music_direction)">
-                        Music Direction
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.production_designer"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.production_designer)">
+                        Production Designer
                     </div>
                     <div class="representation-option">
-                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.production_design"
-                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.production_design)">
-                        Production Design
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.lighting_designer"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.lighting_designer)">
+                        Lighting Designer
                     </div>
                     <div class="representation-option">
-                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.lighting_design"
-                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.lighting_design)">
-                        Lighting Design
+                        <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.music_director"
+                               ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.music_director)">
+                        Music Director
                     </div>
+
                     <div class="representation-option">
                         <input type="checkbox" ng-model="RepresentationFormCtrl.form.repCategory.other"
                                ng-change="RepresentationFormCtrl.showVitals(RepresentationFormCtrl.form.repCategory.other)">
@@ -222,7 +244,14 @@ export class RepresentationFormController {
      */
     showVitals(model) {
         // Overwrite if a required rep category is selected
-        if(model && this.form.repCategory.on_camera || this.form.repCategory.kids_and_teens || this.form.repCategory.dance) {
+        if(this.form.repCategory.dance ||
+           this.form.repCategory.commercials ||
+           this.form.repCategory.tv_film ||
+           this.form.repCategory.print ||
+           this.form.repCategory.musical_theatre ||
+           this.form.repCategory.kids_and_teens ||
+           this.form.repCategory.stunts && model
+        ) {
             this.showVitalsInForm = true;
             return;
         }

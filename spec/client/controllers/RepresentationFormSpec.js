@@ -16,9 +16,11 @@ describe('Controller: RepresentationForm', () => {
 
             RepresentationFormCtrl.form = {
                 repCategory: {
-                    on_camera: 0,
-                    kids_and_teens: 0,
-                    dance: 0
+                    dance: 0, commercials: 0, tv_film: 0, print: 0,
+                    musical_theatre: 0, kids_and_teens: 0,
+                    stunts: 0, speciality_act: 0, choreographer: 0,
+                    director: 0, production_designer: 0, lighting_designer: 0,
+                    music_director: 0, other: 0
                 }
             };
         });

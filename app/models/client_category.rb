@@ -1,6 +1,8 @@
 class ClientCategory < ActiveRecord::Base
   belongs_to :client
 
+  has_one :photos, through: :client
+
   def self.findClients(categories = '')
       select("clients.*, GROUP_CONCAT(client_categories.category SEPARATOR ', ') as categories")
       .joins(:client)
