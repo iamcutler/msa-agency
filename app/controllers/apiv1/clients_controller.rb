@@ -2,7 +2,7 @@ module Apiv1
     class ClientsController < ApplicationController
         # GET /clients
         def index
-            @clients = Client.all.where(basic: false).order(:first_name)
+            @clients = Client.all.is_basic(false).page_hidden(false).order(:first_name)
         end
 
         # GET /clients/slug

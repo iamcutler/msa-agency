@@ -49,6 +49,8 @@ ActiveAdmin.register Client do
             input :la_casting, label: 'Show LA Casting Resume'
             input :la_casting_url
             input :slug
+            input :page_hide, label: 'Hide from pages'
+            input :search_hide, label: 'Hide from search'
             input :location, as: :select, collection: ['Los Angeles', 'New York'], include_blank: false
         end
 

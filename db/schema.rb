@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160110101937) do
+ActiveRecord::Schema.define(version: 20160121025517) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -151,6 +151,8 @@ ActiveRecord::Schema.define(version: 20160110101937) do
     t.integer  "default_image_id", limit: 4
     t.integer  "cover_image_id",   limit: 4
     t.string   "slug",             limit: 255,                           null: false
+    t.boolean  "search_hide",                    default: false,         null: false
+    t.boolean  "page_hide",                      default: false,         null: false
     t.string   "location",         limit: 255,   default: "Los Angeles", null: false
     t.datetime "created_at",                                             null: false
     t.datetime "updated_at",                                             null: false

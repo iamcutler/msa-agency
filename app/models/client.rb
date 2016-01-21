@@ -1,4 +1,8 @@
 class Client < ActiveRecord::Base
+    scope :is_basic, -> (basic) { where basic: basic }
+    scope :page_hidden, -> (hidden) { where page_hide: hidden }
+    scope :search_hidden, -> (hidden) { where search_hide: hidden }
+
     has_many :resume, class_name: 'ClientResume', dependent: :destroy
     has_many :categories, class_name: 'ClientCategory', dependent: :destroy
     has_many :photos, class_name: 'ClientPhoto', dependent: :destroy
@@ -19,11 +23,13 @@ class Client < ActiveRecord::Base
     end
 
     def self.search_by_name(name, page = 0, amount = 20)
-        page = page.to_i - 1
+        page = page.to_i
+        page = if page > 0 then page - 1 else page end
+
         query = "%#{name.downcase}%"
         first_name_match = arel_table[:first_name].matches(query)
         last_name_match = arel_table[:last_name].matches(query)
 
-        where(first_name_match.or(last_name_match)).offset(page).limit(amount)
+        where(first_name_match.or(last_name_match)).search_hidden(false).offset(page).limit(amount)
     end
 end

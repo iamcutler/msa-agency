@@ -24,7 +24,9 @@ class News < ActiveRecord::Base
     end
 
     def self.search_by_name(name, page = 0, amount = 20)
-        page = page.to_i - 1
+        page = page.to_i
+        page = if page > 0 then page - 1 else page end
+
         query = "%#{name.downcase}%"
         subject_match = arel_table[:subject].matches(query)
         body_match = arel_table[:body].matches(query)
