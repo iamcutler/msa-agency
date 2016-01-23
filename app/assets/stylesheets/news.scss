@@ -59,7 +59,7 @@ article.news-article {
     &:hover {
         // Scale image on article hover
         figure img {
-            width: 120%;
+            transform: scale(1.2);
         }
     }
 
@@ -68,9 +68,16 @@ article.news-article {
         overflow: hidden;
         padding: 0;
         margin: 0;
+        display: flex;
+        align-items: center;
+
+        a {
+            width: 100%;
+        }
 
         img {
             width: 100%;
+            height: auto;
             min-height: 100%;
             transition: all 0.4s ease-in-out;
         }
@@ -184,10 +191,14 @@ section#news-articles {
             height: 155px;
             margin: 0 20px 20px 0;
             overflow: hidden;
+            display: flex;
+            align-items: center;
 
             img {
                 width: 100%;
+                height: auto;
                 min-height: 100%;
+                display: block;
             }
         }
 
