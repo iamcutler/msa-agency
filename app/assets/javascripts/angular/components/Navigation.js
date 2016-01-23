@@ -67,7 +67,7 @@ export default function Navigation() {
                                     <li><a ui-sref="app.talent.category({ category: 'speaker' })" toggle-navigation>Speakers</a></li>
                                     <li><a ui-sref="app.talent.category({ category: 'master_instructor' })" toggle-navigation>Masters</a></li>
                                     <li><a ui-sref="app.talent.category({ category: 'instructor' })" toggle-navigation>Instructors</a></li>
-                                    <li><a ui-sref="app.talent.category({ category: 'sytycd' })" toggle-navigation>SYTYCD</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'sytycd' })" toggle-navigation>SYTYCD/DWTS</a></li>
                                 </ul>
                             </li>
                             <li><a ui-sref="app.talent.category({ category: 'speciality_act' })" toggle-navigation>Speciality Acts</a></li>

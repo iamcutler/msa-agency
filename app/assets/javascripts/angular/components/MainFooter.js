@@ -24,6 +24,9 @@ angular.module('MSAAgency.directives')
                     <div class="navigation">
                         <ul>
                             <li><a ui-sref="splash">Home</a></li>
+                            <li ng-if="AppCtrl.companyReelURL">
+                                <a ng-href="{{ AppCtrl.companyReelURL }}" class="fancybox">Reel</a>
+                            </li>
                             <li><a ui-sref="app.news">News</a></li>
                             <li><a ui-sref="app.contact">Contact Us</a></li>
                         </ul>
@@ -37,9 +40,11 @@ angular.module('MSAAgency.directives')
                         </ul>
                         <ul>
                             <li>Talent</li>
-                            <li class="sub"><a ui-sref="app.talent.categories({ category: 'dance' })">Dance</a></li>
-                            <li class="sub"><a ui-sref="app.talent.categories({ category: 'creative' })">Creative</a></li>
-                            <li class="sub"><a ui-sref="app.talent.categories({ category: 'educators' })">Educators</a></li>
+                            <li class="sub"><a ui-sref="app.talent.page({ slug: 'dance' })">Dance</a></li>
+                            <li class="sub"><a ui-sref="app.talent.page({ slug: 'commercial' })">Commercials</a></li>
+                            <li class="sub"><a ui-sref="app.talent.page({ slug: 'television-film' })">Televison/Film</a></li>
+                            <li class="sub"><a ui-sref="app.talent.page({ slug: 'musical-theatre' })">Musical Theatre</a></li>
+                            <li class="sub"><a ui-sref="app.talent.page({ slug: 'kids-teen' })">Kids &amp; Teens</a></li>
                         </ul>
                     </div>
                 </div>
