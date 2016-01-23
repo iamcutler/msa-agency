@@ -43,6 +43,7 @@ import LegacyController from './angular/controllers/Legacy';
 import NewsController from './angular/controllers/News';
 import NewsPageController from './angular/controllers/NewsPage';
 import NewsletterController from './angular/controllers/Newsletter';
+import { PaginateController } from './angular/directives/Paginate';
 import { RepresentationFormController } from './angular/components/RepresentationForm';
 import SearchController from './angular/controllers/Search';
 import { SearchBarController } from './angular/components/SearchBar';
@@ -66,6 +67,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('NewsController', NewsController)
     .controller('NewsPageController', NewsPageController)
     .controller('NewsletterController', NewsletterController)
+    .controller('PaginateController', PaginateController)
     .controller('RepresentationFormController', RepresentationFormController)
     .controller('SearchController', SearchController)
     .controller('SearchBarController', SearchBarController)
@@ -107,6 +109,7 @@ import GoToTopButton from './angular/directives/GoToTopButton';
 import LatestNews from './angular/directives/LatestNews';
 import MediaSlider from './angular/directives/MediaSlider';
 import NewsletterWidget from './angular/directives/NewsletterWidget';
+import { Paginate } from './angular/directives/Paginate';
 import ResizeElement from './angular/directives/ResizeElement';
 import ToggleNavigation from './angular/directives/ToggleNavigation';
 
@@ -153,6 +156,7 @@ angular.module('MSAAgency.directives', [])
     .directive('newsSearchResult', NewsSearchResult)
     .directive('navigation', Navigation)
     .directive('officeLocations', OfficeLocations)
+    .directive('paginate', Paginate)
     .directive('resizeElement', ResizeElement)
     .directive('representationForm', RepresentationForm)
     .directive('searchBar', SearchBar)

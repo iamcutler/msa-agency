@@ -531,3 +531,31 @@ section.twilight {
     }
     // End slider styles
 }
+
+// ----------------------------------------------------
+// Pagination
+// ----------------------------------------------------
+.pagination {
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            background: #FFF;
+            padding: 8px;
+            list-style: none;
+            display: inline-block;
+            cursor: pointer;
+            border-bottom: 2px solid #CCC;
+            transition: border $transition-duration $transition-easing;
+
+            &:hover {
+                border-bottom: 2px solid $msa-orange;
+            }
+
+            &.active {
+                border-bottom: 2px solid $msa-orange;
+            }
+        }
+    }
+}

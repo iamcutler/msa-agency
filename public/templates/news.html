@@ -4,6 +4,14 @@
             News
         </header>
 
+        <div class="news-pagination" ng-if="NewsCtrl.news.pagination.pages > 1">
+            <paginate current-page="NewsCtrl.currentPage" page-count="NewsCtrl.news.pagination.pages" parent="NewsCtrl"></paginate>
+        </div>
+
         <news-article data="article" ng-repeat="article in NewsCtrl.news.data"></news-article>
+
+        <div class="news-pagination" ng-if="NewsCtrl.news.pagination.pages > 1">
+            <paginate current-page="NewsCtrl.currentPage" page-count="NewsCtrl.news.pagination.pages" parent="NewsCtrl"></paginate>
+        </div>
     </div>
 </div>
