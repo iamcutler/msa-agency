@@ -14,16 +14,32 @@
         height: 490px;
     }
 
-    video {
+    video, iframe {
         min-width: 100%;
         min-height: 100%;
         opacity: 0.6;
+
+        @include responsive-phone-retina() {
+            display: none;
+        }
+
+        @include responsive-phones() {
+            display: none;
+        }
+    }
+
+    iframe {
+        div#player {
+            .controls-wrapper, .target, .captions {
+                display: none !important;
+            }
+        }
     }
 
     #splash-header-content {
         h1 {
             position: absolute;
-            @include background-image('brand');
+            @include background-image('brand-enter');
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
@@ -44,6 +60,27 @@
             @include responsive-phones() {
                 top: 20px;
                 margin-top: 0;
+            }
+        }
+
+        h3 {
+            position: absolute;
+            background: rgba(0,0,0,0.6);
+            bottom: 0;
+            width: 100%;
+            color: #FFF;
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
+            text-shadow: 0 0 6px #000;
+            padding: 22px 0;
+
+            @include responsive-phone-retina() {
+                display: none;
+            }
+
+            @include responsive-phones() {
+                display: none;
             }
         }
 
