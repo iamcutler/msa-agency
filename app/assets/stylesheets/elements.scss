@@ -387,6 +387,11 @@ section.twilight {
                                 color: #a4a4a4;
                                 font-size: 14px;
                                 padding: 0 10px;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                text-overflow: '...';
+                                overflow: hidden;
+                                display: block;
                             }
 
                             .overlay-name, .overlay-position {
