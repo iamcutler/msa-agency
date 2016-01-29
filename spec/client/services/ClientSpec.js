@@ -97,4 +97,30 @@ describe('Service: Talent', () => {
             expect(categories).toEqual(['speaker', 'master_instructor', 'sytycd']);
         });
     });
+
+    describe('method: mapTitleFromCategory', () => {
+        it('should return designers from designer', () => {
+            expect(ClientService.mapTitleFromCategory('designer')).toBe('Designers');
+        });
+
+        it('should return choreographers from choreography', () => {
+            expect(ClientService.mapTitleFromCategory('choreography')).toBe('Choreographers');
+        });
+
+        it('should return producers from production', () => {
+            expect(ClientService.mapTitleFromCategory('production')).toBe('Producers');
+        });
+
+        it('should return speakers from speaker', () => {
+            expect(ClientService.mapTitleFromCategory('speaker')).toBe('Speakers');
+        });
+
+        it('should return Master Instructors from master_instructor', () => {
+            expect(ClientService.mapTitleFromCategory('master_instructor')).toBe('Master Instructors');
+        });
+
+        it('should return Master SYTYCD/DTWS from sytycd', () => {
+            expect(ClientService.mapTitleFromCategory('sytycd')).toBe('SYTYCD/DTWS');
+        });
+    });
 });

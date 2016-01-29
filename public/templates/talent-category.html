@@ -1,7 +1,7 @@
 <div ng-init="ClientCategoryCtrl.initialize()">
     <section class="twilight">
         <header class="section-header twilight">
-            {{ ::ClientCategoryCtrl.category.replace('_', ' ') }}
+            {{ ::ClientCategoryCtrl.clientTitle.replace('_', ' ') }}
         </header>
 
         <div class="section-placeholder-text" ng-if="!ClientCategoryCtrl.clients.length && !isLoadingPage">

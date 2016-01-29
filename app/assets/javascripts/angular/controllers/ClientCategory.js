@@ -7,6 +7,7 @@ export default class ClientCategoryController {
 
         this.category = $stateParams.category;
         this.clients = [];
+        this.clientTitle = this.clientService.mapTitleFromCategory(this.category);
         this.$rootScope.isLoadingPage = true;
     }
 

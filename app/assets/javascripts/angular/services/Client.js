@@ -74,4 +74,39 @@ export default class ClientService {
 
         return categoryArray;
     }
+
+    /**
+     * Map title based on category
+     *
+     * @param {String} category
+     * @returns {String}
+     */
+    mapTitleFromCategory(category) {
+        let mappedTitle = '';
+
+        switch(category) {
+            case 'choreography':
+                mappedTitle = 'Choreographers';
+                break;
+            case 'designer':
+                mappedTitle = 'Designers';
+                break;
+            case 'production':
+                mappedTitle = 'Producers';
+                break;
+            case 'speaker':
+                mappedTitle = 'Speakers';
+                break;
+            case 'master_instructor':
+                mappedTitle = 'Master Instructors';
+                break;
+            case 'sytycd':
+                mappedTitle = 'SYTYCD/DTWS';
+                break;
+            default:
+                mappedTitle = category;
+        }
+
+        return mappedTitle;
+    }
 }
