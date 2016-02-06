@@ -6,10 +6,10 @@ if @article
     json.featured @article.featured
 
     json.image do
-        json.thumb @article.image ? article.image.url(:thumb) : '/assets/images/img-placeholder.jpg'
-        json.square @article.image ? article.image.url(:square) : '/assets/images/img-placeholder.jpg'
-        json.medium @article.image ? article.image.url(:medium) : '/assets/images/img-placeholder.jpg'
-        json.large @article.image ? article.image.url(:large) : '/assets/images/img-placeholder.jpg'
+        json.thumb @article.image ? @article.image.url(:thumb) : '/assets/images/img-placeholder.jpg'
+        json.square @article.image ? @article.image.url(:square) : '/assets/images/img-placeholder.jpg'
+        json.medium @article.image ? @article.image.url(:medium) : '/assets/images/img-placeholder.jpg'
+        json.large @article.image ? @article.image.url(:large) : '/assets/images/img-placeholder.jpg'
     end
 
     json.slug @article.slug
