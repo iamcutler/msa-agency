@@ -352,16 +352,21 @@ section.twilight {
                         display: block;
 
                         img {
-                            position: absolute;
-                            left: 0;
+                            position: relative;
+                            top: 50%;
                             width: 100%;
                             min-height: $roster-slider-height;
+                            transform: translateY(-50%);
                         }
 
                         .overlay {
-                            position: relative;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
                             white-space: normal;
                             display: none;
+                            margin: auto;
 
                             .arrow {
                                 @include background-image('enter-arrow');
