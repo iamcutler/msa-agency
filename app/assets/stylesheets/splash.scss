@@ -39,7 +39,7 @@
     #splash-header-content {
         h1 {
             position: absolute;
-            @include background-image('brand-enter');
+            @include background-image('brand');
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
@@ -48,7 +48,7 @@
             width: 254px;
             height: 175px;
             margin-left: -127px;
-            margin-top: -124px;
+            margin-top: -84px;
             text-indent: -9999px;
             overflow: hidden;
 
@@ -190,8 +190,12 @@ a.choose-city {
         background-size: contain;
     }
 
-    span {
-        color: #FFF;
+    a {
+        text-decoration: none;
+        
+        span {
+            color: #FFF;
+        }
     }
 
     ul.social-icons {
