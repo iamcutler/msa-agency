@@ -8,7 +8,7 @@ export default function ClientSearchResult() {
         template: `
             <article>
                 <figure>
-                    <a ui-sref="app.talent.page({ slug: data.slug })">
+                    <a ui-sref="app.client-page({ slug: data.slug })">
                         <img ng-src="{{ data.default_image.sizes.medium }}">
                     </a>
                 </figure>
@@ -17,7 +17,7 @@ export default function ClientSearchResult() {
                     <span class="type">client</span>
 
                     <h2>
-                        <a ui-sref="app.talent.page({ slug: data.slug })">
+                        <a ui-sref="app.client-page({ slug: data.slug })">
                             {{ data.first_name }} {{ data.last_name }}
                         </a>
                     </h2>

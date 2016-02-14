@@ -40,11 +40,11 @@ angular.module('MSAAgency.directives')
                         </ul>
                         <ul>
                             <li>Talent</li>
-                            <li class="sub"><a ui-sref="app.talent.page({ slug: 'dance' })">Dance</a></li>
-                            <li class="sub"><a ui-sref="app.talent.page({ slug: 'commercial' })">Commercials</a></li>
-                            <li class="sub"><a ui-sref="app.talent.page({ slug: 'television-film' })">Televison/Film</a></li>
-                            <li class="sub"><a ui-sref="app.talent.page({ slug: 'musical-theatre' })">Musical Theatre</a></li>
-                            <li class="sub"><a ui-sref="app.talent.page({ slug: 'kids-teen' })">Kids &amp; Teens</a></li>
+                            <li class="sub"><a ui-sref="app.client-page({ slug: 'dance' })">Dance</a></li>
+                            <li class="sub"><a ui-sref="app.client-page({ slug: 'commercial' })">Commercials</a></li>
+                            <li class="sub"><a ui-sref="app.client-page({ slug: 'television-film' })">Televison/Film</a></li>
+                            <li class="sub"><a ui-sref="app.client-page({ slug: 'musical-theatre' })">Musical Theatre</a></li>
+                            <li class="sub"><a ui-sref="app.client-page({ slug: 'kids-teen' })">Kids &amp; Teens</a></li>
                         </ul>
                     </div>-->
                 </div>

@@ -105,7 +105,7 @@ export default function ClientRoster($timeout, $state) {
 
                     switch(scope.type) {
                         case 'talent':
-                            stateName = $state.href('app.talent.page', params);
+                            stateName = $state.href('app.client-page', params);
                             break;
                         case 'staff':
                             stateName = $state.href('app.staff-page', params);

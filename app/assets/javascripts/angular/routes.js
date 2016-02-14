@@ -63,11 +63,6 @@ angular.module('MSAAgency')
                 controller: 'LegacyController as LegacyCtrl',
                 templateUrl: 'templates/talent-legacy.html'
             })
-            .state('app.talent.page', {
-                url: '/:slug',
-                controller: 'ClientController as ClientCtrl',
-                templateUrl: 'templates/talent.html'
-            })
         // Directors
         .state('app.directors', {
             url: 'directors',
@@ -118,5 +113,11 @@ angular.module('MSAAgency')
         .state('app.error-404', {
             url: 'error/404',
             templateUrl: 'templates/404.html'
+        })
+        // Client dedicated page
+        .state('app.client-page', {
+            url: ':slug',
+            controller: 'ClientController as ClientCtrl',
+            templateUrl: 'templates/talent.html'
         });
 });
