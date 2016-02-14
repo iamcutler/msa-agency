@@ -514,15 +514,18 @@ section.twilight {
                 }
 
                 .arrow {
+                    position: absolute;
                     @include background-image('roster-slider-arrows');
                     background-repeat: no-repeat;
                     background-position: 0 0;
                     width: 16px;
                     height: 28px;
-                    margin: 48px auto auto;
+                    top: 50%;
+                    left: 16px;
                     display: block;
                     opacity: 0;
                     overflow: hidden;
+                    margin-top: -14px;
                     transition: all $transition-duration $transition-easing;
                 }
 
