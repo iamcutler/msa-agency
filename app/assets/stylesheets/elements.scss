@@ -540,7 +540,7 @@ section.twilight {
             }
 
             .thumbs {
-                height: 120px;
+                height: $roster-slider-height;
                 margin: 0 50px;
 
                 ul {
@@ -563,7 +563,7 @@ section.twilight {
 
                             .thumbnail {
                                 position: relative;
-                                height: 140px;
+                                height: 220px;
 
                                 img {
                                     @include opacity(0.5);
