@@ -33,5 +33,5 @@ ActiveAdmin.register ClientResume do
         actions
     end
 
-    permit_params :client, :project, :credit, :company, :job_type
+    permit_params :client_id, :project, :credit, :company, :job_type
 end
