@@ -175,10 +175,6 @@ header {
         }
 
         @include responsive-phone-retina() {
-            h1.logo {
-                display: none;
-            }
-
             h2 {
                 display: none;
             }
@@ -551,8 +547,7 @@ footer {
         }
 
         .addresses {
-            float: left;
-            width: 50%;
+            width: 100%;
 
             .address {
                 color: #898989;

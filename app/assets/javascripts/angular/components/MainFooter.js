@@ -21,7 +21,7 @@ angular.module('MSAAgency.directives')
                         </div>
                     </div>
 
-                    <div class="navigation">
+                    <!--<div class="navigation">
                         <ul>
                             <li><a ui-sref="splash">Home</a></li>
                             <li ng-if="AppCtrl.companyReelURL">
@@ -46,7 +46,7 @@ angular.module('MSAAgency.directives')
                             <li class="sub"><a ui-sref="app.talent.page({ slug: 'musical-theatre' })">Musical Theatre</a></li>
                             <li class="sub"><a ui-sref="app.talent.page({ slug: 'kids-teen' })">Kids &amp; Teens</a></li>
                         </ul>
-                    </div>
+                    </div>-->
                 </div>
 
                 <div class="clearfix"></div>

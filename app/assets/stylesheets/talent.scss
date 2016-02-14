@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 div.section-header {
     background: $primary-grey;
@@ -165,6 +166,30 @@ nav.talent-navigation {
             }
         }
     }
+
+    @include responsive-phones {
+        white-space: normal;
+
+        .app-container {
+            padding: 0;
+
+            a:link, a:visited {
+                width: 50%;
+            }
+        }
+    }
+
+    @include responsive-phone-retina {
+        white-space: normal;
+
+        .app-container {
+            padding: 0;
+
+            a:link, a:visited {
+                width: 50%;
+            }
+        }
+    }
 }
 
 // ----------------------------------------
@@ -178,7 +203,7 @@ section[id^='talent-'], section[id^='staff-'] {
 
 section#talent-reel {
     background: #000;
-    
+
     iframe {
         margin: auto;
         display: block;
@@ -265,6 +290,14 @@ section#talent-photos, section#staff-photos {
                 }
             }
         }
+
+        @include responsive-phones() {
+            width: 50%;
+        }
+
+        @include responsive-phone-retina() {
+            width: 50%;
+        }
     }
 }
 
@@ -325,6 +358,14 @@ section#talent-videos, section#talent-press, section#staff-videos, section#staff
                     font-size: 12px;
                 }
             }
+        }
+
+        @include responsive-phones() {
+            width: 50%;
+        }
+
+        @include responsive-phone-retina() {
+            width: 50%;
         }
     }
 }
