@@ -9,6 +9,7 @@ export default class ClientController {
 
         this.client = {};
         this.reelPresent = false;
+        this.resumeCount = 0;
         this.currentNavDestination = 'talent-bio';
     }
 
@@ -19,6 +20,7 @@ export default class ClientController {
         this.clientService.getBySlug(this.$stateParams.slug)
             .then(response => {
                 this.client = response;
+                this.resumeCount = this.clientService.getResumeCountFromCollection(this.client.resume);
 
                 // Check if client has a current reel
                 if(response.hasOwnProperty('reel')) {

@@ -1,4 +1,5 @@
 import { client1, ClientCollectionWithCategories1 } from '../fixtures/clients';
+import { ClientResume1 } from '../fixtures/resume';
 
 describe('Service: Talent', () => {
     var $rootScope, $scope, $q, $httpBackend;
@@ -121,6 +122,22 @@ describe('Service: Talent', () => {
 
         it('should return Master SYTYCD/DTWS from sytycd', () => {
             expect(ClientService.mapTitleFromCategory('sytycd')).toBe('SYTYCD/DTWS');
+        });
+    });
+
+    describe('method: getResumeCountFromCollection', () => {
+        it('should return a count of 3', () => {
+            var result = ClientService.getResumeCountFromCollection(ClientResume1);
+
+            expect(result).toBe(3);
+        });
+
+        it('should return a count of 0', () => {
+            ClientResume1.television.length = 0;
+
+            var result = ClientService.getResumeCountFromCollection(ClientResume1);
+
+            expect(result).toBe(0);
         });
     });
 });

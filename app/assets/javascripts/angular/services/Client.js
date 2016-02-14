@@ -109,4 +109,30 @@ export default class ClientService {
 
         return mappedTitle;
     }
+
+    /**
+     * Get count from collection of types
+     * @param {object} resume
+     * @param {array} resume.award_shows
+     * @param {array} resume.awards
+     * @param {array} resume.commercials
+     * @param {array} resume.corporate
+     * @param {array} resume.events
+     * @param {array} resume.film
+     * @param {array} resume.miscellaneous
+     * @param {array} resume.music_videos
+     * @param {array} resume.television
+     * @returns {number}
+     */
+    getResumeCountFromCollection(resume) {
+        let count = 0;
+
+        for(let res in resume) {
+            if(Array.isArray(resume[res])) {
+                count += resume[res].length;
+            }
+        }
+
+        return count;
+    }
 }

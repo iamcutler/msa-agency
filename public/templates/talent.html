@@ -29,7 +29,7 @@
             <a href="#"
                ng-class="{active: ClientCtrl.currentNavDestination === 'talent-resume'}"
                ng-click="ClientCtrl.setCurrentNavDestination('talent-resume')"
-               ng-if="!ClientCtrl.client.la_casting && ClientCtrl.client.resume.length">Resume</a>
+               ng-if="!ClientCtrl.client.la_casting && ClientCtrl.resumeCount">Resume</a>
             <!-- End Internal Resume -->
 
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-photos'}"
@@ -69,9 +69,9 @@
 
     <!-- Resume -->
     <a name="section-talent-resume"></a>
-    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Resume' : '' }}" ng-if="::ClientCtrl.client.resume.length"></sub-section-header>
+    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Resume' : '' }}" ng-if="ClientCtrl.resumeCount"></sub-section-header>
 
-    <section id="talent-resume" ng-if="::ClientCtrl.client.resume.length">
+    <section id="talent-resume" ng-if="ClientCtrl.resumeCount">
         <talent-resume title="Concerts/Tours/Events" data="ClientCtrl.client.resume.events"></talent-resume>
         <talent-resume title="Television" data="ClientCtrl.client.resume.television"></talent-resume>
         <talent-resume title="Award Shows" data="ClientCtrl.client.resume.award_shows"></talent-resume>

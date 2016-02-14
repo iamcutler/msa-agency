@@ -17,3 +17,14 @@ export function resume2() {
         type: "tour"
     };
 }
+
+export const ClientResume1 = {
+    "commercials":[],
+    "events":[],
+    "music_videos":[],
+    "television":[
+        {"id":3,"company":"","credit":"MSA!","project":"TESTING"},
+        {"id":11,"company":"Testing","credit":"Testing","project":"Testing 2"},
+        {"id":12,"company":"Testing","credit":"Testing","project":"Testing 2"}
+    ]
+};
