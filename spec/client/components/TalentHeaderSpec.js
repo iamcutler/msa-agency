@@ -14,7 +14,9 @@ describe('Component: TalentHeader', function() {
             /**
              * Scope
              */
+             $scope.client = client1();
              $scope.social = client1().social;
+             $scope.$digest();
 
             /**
              * Elements
@@ -23,7 +25,8 @@ describe('Component: TalentHeader', function() {
                 <talent-header
                     name="${client1().full_name}"
                     title="${client1().title}"
-                    social="social"></talent-header>
+                    social="social"
+                    slug="client.slug"></talent-header>
             `);
             elementWithHiddenElements = angular.element(`
                 <talent-header
@@ -66,6 +69,10 @@ describe('Component: TalentHeader', function() {
 
         it('should pass in hide-social-icons as true', () => {
             expect(elementWithHiddenElements.isolateScope().hideSocialIcons).toBe(true);
+        });
+
+        it('should pass client slug', () => {
+            expect(element.isolateScope().slug).toBe(client1().slug);
         });
     });
 });

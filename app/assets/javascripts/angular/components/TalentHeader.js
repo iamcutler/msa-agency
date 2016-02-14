@@ -10,7 +10,8 @@ export default function TalentHeader() {
             coverImage: '=',
             defaultImage: '=',
             hideBookBtn: '=',
-            hideSocialIcons: '='
+            hideSocialIcons: '=',
+            slug: '='
         },
         template: `
             <header class="talent" ng-class="{basic: basic}">
@@ -38,7 +39,18 @@ export default function TalentHeader() {
                         <a ui-sref="app.book-client({ client: name })" class="book-btn" ng-hide="hideBookBtn === true">
                             <span>Book</span>
                         </a>
-                        <a href="" class="share-btn">Share</a>
+                        <a href="#share" class="share-btn fancybox">Share</a>
+
+                        <!-- Share -->
+                        <div style="display:none">
+                            <div id="share">
+                                <div class="share-this" style="background: white;">
+                                    <span class="st_twitter" displayText="Tweet" st_title="{{ title }}" st_url="http://msaagency.com/{{ slug }}"></span>
+                                    <span class="st_facebook" displayText="Facebook" st_title="{{ title }}" st_url="http://msaagency.com/{{ slug }}"></span>
+                                    <span class="st_email" displayText="Email" st_title="{{ title }}" st_url="http://msaagency.com/{{ slug }}"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
