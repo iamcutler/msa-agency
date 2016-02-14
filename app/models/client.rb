@@ -26,9 +26,8 @@ class Client < ActiveRecord::Base
         page = page.to_i
         page = if page > 0 then page - 1 else page end
 
-        query = "%#{name.downcase}%"
-        first_name_match = arel_table[:first_name].matches(query)
-        last_name_match = arel_table[:last_name].matches(query)
+        first_name_match = arel_table[:first_name].matches("%#{name.split(" ")[0].downcase}%")
+        last_name_match = arel_table[:last_name].matches("%#{name.split(" ")[-1].downcase}%")
 
         where(first_name_match.or(last_name_match)).search_hidden(false).offset(page).limit(amount)
     end
