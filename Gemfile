@@ -32,6 +32,8 @@ gem 'instagram', '~> 1.1', '>= 1.1.6'
 # Admin control panel
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'active_admin_editor', github: 'boontdustie/active_admin_editor'
+gem "active_admin_import" , '2.1.2'
 
 # Asset management
 gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'

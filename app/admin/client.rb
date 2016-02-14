@@ -39,7 +39,7 @@ ActiveAdmin.register Client do
             input :title
             input :email
             input :phone
-            input :biography
+            input :biography, as: :html_editor
             input :website_link, placeholder: 'http://www.mysite.com'
             input :facebook_link, placeholder: 'http://www.facebook.com'
             input :twitter_link, placeholder: 'http://www.twitter.com'
