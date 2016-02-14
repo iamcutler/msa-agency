@@ -1,6 +1,14 @@
 ActiveAdmin.register ClientResume do
     menu priority: 3, label: 'Resumes'
 
+    filter :client_id, as: :select, collection: proc { Client.order(:first_name) }
+    filter :project
+    filter :credit
+    filter :company
+    filter :job_type
+
+    index download_links: [:csv]
+
     index do
         column :client
         column :project
