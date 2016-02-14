@@ -27,7 +27,7 @@ export default function Navigation() {
                     <div class="main-links">
                         <ul>
                             <li>
-                                <a ui-sref="app.home">Home</a>
+                                <a ui-sref="app.home" toggle-navigation>Home</a>
                             </li>
                             <li>
                                 <a ui-sref="app.about" toggle-navigation>About Us</a>
