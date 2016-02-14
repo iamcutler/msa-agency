@@ -1,3 +1,4 @@
+@import 'variables';
 @import 'mixins';
 
 @include responsive-phone-retina() {
@@ -82,7 +83,7 @@
 
                             .thumbnail {
                                 position: inherit;
-                                height: 120px;
+                                height: $roster-slider-height;
                                 max-height: 120px;
                                 overflow: hidden;
 
@@ -183,8 +184,8 @@
 
                             .thumbnail {
                                 position: inherit;
-                                height: 120px;
-                                max-height: 120px;
+                                height: $roster-slider-height;
+                                max-height: $roster-slider-height;
                                 overflow: hidden;
 
                                 img {
