@@ -21,16 +21,16 @@ class ClientPhoto < ActiveRecord::Base
     # Set cover boolean to false on all records
     def set_cover_photo
         # Update client record
-        if self.default?
-            Client.update(self.client_id, default_image_id: self.id)
+        if self.cover?
+            Client.update(self.client_id, cover_image_id: self.id)
         end
     end
 
     # Set default boolean to false on all records
     def set_default_photo
         # Update client record
-        if self.cover?
-            Client.update(self.client_id, cover_image_id: self.id)
+        if self.default?
+            Client.update(self.client_id, default_image_id: self.id)
         end
     end
 end
