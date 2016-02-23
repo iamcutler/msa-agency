@@ -250,6 +250,10 @@ section#talent-resume {
             margin-bottom: 4px;
             display: flex;
             justify-content: space-between;
+
+            > div {
+                max-width: (100% / 3);
+            }
         }
     }
 }
