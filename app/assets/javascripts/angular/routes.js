@@ -63,6 +63,12 @@ angular.module('MSAAgency')
                 controller: 'LegacyController as LegacyCtrl',
                 templateUrl: 'templates/talent-legacy.html'
             })
+        // Resume
+        .state('app.client-resume', {
+            url: 'resume/:slug',
+            controller: 'ClientResumeController as ClientResumeCtrl',
+            templateUrl: 'templates/client-resume.html'
+        })
         // Directors
         .state('app.directors', {
             url: 'directors',

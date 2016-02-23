@@ -34,6 +34,7 @@ import BookingController from './angular/controllers/Booking';
 import ClientCategoryController from './angular/controllers/ClientCategory';
 import ClientCategoriesController from './angular/controllers/ClientCategories';
 import ClientController from './angular/controllers/Client';
+import ClientResumeController from './angular/controllers/ClientResume';
 import ContactController from './angular/controllers/Contact';
 import DirectorsController from './angular/controllers/Directors';
 import FAQController from './angular/controllers/FAQ';
@@ -58,6 +59,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('ClientCategoryController', ClientCategoryController)
     .controller('ClientCategoriesController', ClientCategoriesController)
     .controller('ClientController', ClientController)
+    .controller('ClientResumeController', ClientResumeController)
     .controller('ContactController', ContactController)
     .controller('DirectorsController', DirectorsController)
     .controller('FAQController', FAQController)

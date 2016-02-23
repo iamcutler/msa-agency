@@ -660,3 +660,13 @@ footer {
         }
     }
 }
+
+@media print {
+    html main, body main {
+        margin-top: 0;
+    }
+
+    header.main, footer.main, nav {
+        display: none;
+    }
+}
