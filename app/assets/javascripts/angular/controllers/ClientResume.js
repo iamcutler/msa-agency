@@ -1,4 +1,5 @@
 export default class ClientResumeController {
+    // @ngInject
     constructor($state, $stateParams, ClientService) {
         this.$state = $state;
         this.$stateParams = $stateParams;
