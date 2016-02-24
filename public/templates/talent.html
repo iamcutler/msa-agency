@@ -70,7 +70,7 @@
 
     <!-- Resume -->
     <a name="section-talent-resume"></a>
-    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Resume' : '' }}" ng-if="ClientCtrl.resumeCount"></sub-section-header>
+    <client-resume-header title="{{ !ClientCtrl.client.basic ? 'Resume' : '' }}" client="ClientCtrl.client" ng-if="ClientCtrl.resumeCount"></client-resume-header>
 
     <section id="talent-resume" ng-if="ClientCtrl.resumeCount">
         <talent-resume title="Concerts/Tours/Events" data="ClientCtrl.client.resume.events"></talent-resume>

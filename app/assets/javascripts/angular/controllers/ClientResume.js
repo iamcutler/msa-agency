@@ -1,5 +1,6 @@
 export default class ClientResumeController {
-    constructor($stateParams, ClientService) {
+    constructor($state, $stateParams, ClientService) {
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.clientService = ClientService;
     }

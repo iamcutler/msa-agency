@@ -7,6 +7,22 @@ div.section-header {
     font-size: 18px;
     padding: 20px 0;
     text-transform: uppercase;
+
+    a.resume-download-btn:link,
+    a.resume-download-btn:visited {
+        float: right;
+        background: $secondary-grey;
+        color: white;
+        font-size: 14px;
+        text-decoration: none;
+        padding: 10px 14px;
+        margin-top: -7px;
+        transition: background $transition-duration $transition-easing;
+    }
+
+    a.resume-download-btn:hover {
+        background: #000;
+    }
 }
 
 div.section-placeholder-text {
