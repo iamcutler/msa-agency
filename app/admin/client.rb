@@ -74,6 +74,7 @@ ActiveAdmin.register Client do
                     ['Speaker', 'speaker'],
                     ['Designer', 'designer'],
                     ['Master Instructor', 'master_instructor'],
+                    ['Instructor', 'instructor'],
                     ['So You Think You Can Dance', 'sytycd'],
                     ['Commercial', 'commercial'],
                     ['Musical Theatre', 'musical_theatre'],
