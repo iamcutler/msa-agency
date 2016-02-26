@@ -1,4 +1,6 @@
 export default function TalentHeader() {
+    var domain = 'http://msaagency.com/';
+
     return {
         restrict: 'E',
         replace: true,
@@ -45,10 +47,30 @@ export default function TalentHeader() {
                         <!-- Share -->
                         <div style="display:none">
                             <div id="share">
-                                <div class="share-this" style="background: white;">
-                                    <span class="st_twitter" displayText="Tweet" st_title="{{ title }}" st_url="http://msaagency.com/{{ slug }}"></span>
-                                    <span class="st_facebook" displayText="Facebook" st_title="{{ title }}" st_url="http://msaagency.com/{{ slug }}"></span>
-                                    <span class="st_email" displayText="Email" st_title="{{ title }}" st_url="http://msaagency.com/{{ slug }}"></span>
+                                <div>
+                                    <a href="#"
+                                        socialshare
+                                        socialshare-provider="facebook"
+                                        socialshare-text="MSA Agency | {{ name }}"
+                                        socialshare-type="feed"
+                                        socialshare-url="${domain}{{ slug }}">
+                                            <i class="fa fa-facebook"></i> Facebook
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#"
+                                        socialshare
+                                        socialshare-provider="twitter"
+                                        socialshare-text="MSA Agency | {{ name }}"
+                                        socialshare-hashtags="msaagency, msafam"
+                                        socialshare-url="${domain}{{ slug }}">
+                                            <i class="fa fa-twitter"></i> Twitter
+                                    </a>
+                                </div>
+                                <div>
+                                    <a ng-href="mailto:insert_email_here?subject=${encodeURIComponent('MSA Agency |')} {{ name }}&body=Hi. Check out this MSA client at: ${domain}{{ slug }}">
+                                        <i class="fa fa-envelope"></i> Email
+                                    </a>
                                 </div>
                             </div>
                         </div>

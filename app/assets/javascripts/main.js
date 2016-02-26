@@ -5,6 +5,7 @@ require('angular-ui-router/build/angular-ui-router.min');
 require('angular-sanitize/angular-sanitize.min');
 require('./angular-smooth-scroll.min');
 require('ng-file-upload/dist/ng-file-upload-all.min');
+require('angular-socialshare/dist/angular-socialshare.min');
 
 // AngularJS
 angular.module('MSAAgency', [
@@ -15,7 +16,8 @@ angular.module('MSAAgency', [
   'ui.router',
   'ngSanitize',
   'smoothScroll',
-  'ngFileUpload'
+  'ngFileUpload',
+  '720kb.socialshare'
 ])
 .constant('ALLOWED_UPLOAD_TYPES', {
     list: ['jpg', 'jpeg', 'png', 'gif', 'mov', 'mp4', 'wmv', 'pdf']
