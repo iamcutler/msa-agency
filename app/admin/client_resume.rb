@@ -34,7 +34,8 @@ ActiveAdmin.register ClientResume do
                 ['Film', 'film'],
                 ['Miscellaneous', 'misc'],
                 ['Music Video', 'music video'],
-                ['Television', 'television']
+                ['Television', 'television'],
+                ['Theater', 'theater']
             ], include_blank: false
         end
 

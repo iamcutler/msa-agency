@@ -122,6 +122,7 @@ export default class ClientService {
      * @param {array} resume.miscellaneous
      * @param {array} resume.music_videos
      * @param {array} resume.television
+     * @param {array} resume.theater
      * @returns {number}
      */
     getResumeCountFromCollection(resume) {

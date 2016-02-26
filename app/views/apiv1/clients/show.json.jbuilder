@@ -54,6 +54,10 @@ json.resume do
     json.awards do
         json.array! @client.resume.where(job_type: 'award'), :id, :company, :credit, :project
     end
+
+    json.theater do
+        json.array! @client.resume.where(job_type: 'theater'), :id, :company, :credit, :project
+    end
 end
 
 # Cover client image
