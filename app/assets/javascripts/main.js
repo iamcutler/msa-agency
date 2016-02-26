@@ -5,7 +5,7 @@ require('angular-ui-router/build/angular-ui-router.min');
 require('angular-sanitize/angular-sanitize.min');
 require('./angular-smooth-scroll.min');
 require('ng-file-upload/dist/ng-file-upload-all.min');
-require('angular-socialshare/src/js/angular-socialshare');
+require('./angular-socialshare.min');
 
 // AngularJS
 angular.module('MSAAgency', [
