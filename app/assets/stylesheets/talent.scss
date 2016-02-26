@@ -269,6 +269,11 @@ section#talent-resume {
 
             > div {
                 max-width: (100% / 3);
+                word-wrap: break-word;
+
+                &:nth-last-child(1) {
+                    text-align: right;
+                }
             }
         }
     }
