@@ -34,7 +34,8 @@ describe('Component: TalentHeader', function() {
                     title="${client1().title}"
                     social="social"
                     hide-book-btn="true"
-                    hide-social-icons="true"></talent-header>
+                    hide-social-icons="true"
+                    hide-share-btn="true"></talent-header>
             `);
         });
     });
@@ -69,6 +70,10 @@ describe('Component: TalentHeader', function() {
 
         it('should pass in hide-social-icons as true', () => {
             expect(elementWithHiddenElements.isolateScope().hideSocialIcons).toBe(true);
+        });
+
+        it('should pass in hide-share-btn as true', () => {
+            expect(elementWithHiddenElements.isolateScope().hideShareBtn).toBe(true);
         });
 
         it('should pass client slug', () => {

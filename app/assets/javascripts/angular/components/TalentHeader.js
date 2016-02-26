@@ -11,6 +11,7 @@ export default function TalentHeader() {
             defaultImage: '=',
             hideBookBtn: '=',
             hideSocialIcons: '=',
+            hideShareBtn: '=',
             slug: '='
         },
         template: `
@@ -39,7 +40,7 @@ export default function TalentHeader() {
                         <a ui-sref="app.book-client({ client: name })" class="book-btn" ng-hide="hideBookBtn === true">
                             <span>Book</span>
                         </a>
-                        <a href="#share" class="share-btn fancybox">Share</a>
+                        <a href="#share" class="share-btn fancybox" ng-if="!hideShareBtn">Share</a>
 
                         <!-- Share -->
                         <div style="display:none">
