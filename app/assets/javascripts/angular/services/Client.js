@@ -101,7 +101,7 @@ export default class ClientService {
                 mappedTitle = 'Master Instructors';
                 break;
             case 'sytycd':
-                mappedTitle = 'SYTYCD/DTWS';
+                mappedTitle = 'SYTYCD/DWTS';
                 break;
             default:
                 mappedTitle = category;
