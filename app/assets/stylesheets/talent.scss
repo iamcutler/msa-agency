@@ -339,6 +339,11 @@ section#talent-videos, section#talent-press, section#staff-videos, section#staff
         padding: 0;
         cursor: pointer;
         display: inline-block;
+        vertical-align: top;
+
+        a:link, a:visited {
+            text-decoration: none;
+        }
 
         // 6th element and on
         &:nth-child(n+6) {
