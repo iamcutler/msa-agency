@@ -6,7 +6,7 @@ angular.module('MSAAgency.directives')
         template: `
             <header class="main" bg-transparent-scroll>
                 <h1 class="logo">
-                    <a ui-sref="home">McDonald / Selznick Agency</a>
+                    <a ui-sref="app.home">McDonald / Selznick Agency</a>
                 </h1>
 
                 <div class="right-col">
