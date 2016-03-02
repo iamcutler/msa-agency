@@ -95,7 +95,7 @@ describe('Service: Talent', () => {
         it('should return educators categories', () => {
             var categories = ClientService.getCategoriesFromParam('educators');
 
-            expect(categories).toEqual(['speaker', 'master_instructor', 'sytycd']);
+            expect(categories).toEqual(['speaker', 'master_instructor', 'instructor', 'sytycd']);
         });
     });
 

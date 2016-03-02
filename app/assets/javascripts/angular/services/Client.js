@@ -68,7 +68,7 @@ export default class ClientService {
                 categoryArray = ['choreography', 'director', 'production', 'designer'];
                 break;
             case 'educators':
-                categoryArray = ['speaker', 'master_instructor', 'sytycd'];
+                categoryArray = ['speaker', 'master_instructor', 'instructor', 'sytycd'];
                 break;
         }
 
