@@ -164,6 +164,10 @@ section#news-articles {
         border-top: 1px #CCC solid;
         clear: both;
 
+        a {
+            display: inherit;
+        }
+
         &:nth-child(1) {
             border-top: none !important;
         }
@@ -175,11 +179,6 @@ section#news-articles {
         // Full article styling
         &.full-article {
             border-bottom: 0;
-
-            a {
-                cursor: default;
-                pointer-events: none;
-            }
 
             p {
                 font-size: 16px;
