@@ -14,6 +14,22 @@ module Apiv1
                 @clientReel = @client.reel
                 @clientVideos = @client.videos.order(:order)
                 @clientPress = @client.press.order(:order)
+
+                begin
+                    # Add vimeo thumbnail if available
+                    @clientVideos.each do |v|
+                        if v.video_type == "vimeo"
+                            video = Vimeo::Simple::Video.info(v.video_id)
+
+                            Rails.logger.info video[0]
+                            if video
+                                v[:thumbnail] = video[0]['thumbnail_large'];
+                            end
+                        end
+                    end
+                rescue e
+                    Rails.logger.error "Error getting vimeos for client: #{@client}"
+                end
             else
                 render json: { error: 'Client not found' }, status: 404
             end

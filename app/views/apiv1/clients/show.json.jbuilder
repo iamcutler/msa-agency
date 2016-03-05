@@ -111,6 +111,7 @@ json.videos do
         json.id video.id
         json.video_id video.video_id
         json.title video.title
+        json.thumbnail video.thumbnail
         json.video_type video.video_type
         json.order video.order
     end

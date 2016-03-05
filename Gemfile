@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Social
 gem 'twitter', '5.15.0'
 gem 'instagram', '~> 1.1', '>= 1.1.6'
+gem 'vimeo', '1.5.4'
 
 # Admin control panel
 gem 'activeadmin', github: 'activeadmin'

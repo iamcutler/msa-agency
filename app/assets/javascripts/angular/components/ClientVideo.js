@@ -11,7 +11,7 @@ export default function ClientVideo() {
                     ng-switch-when="vimeo" data-fancybox-group="clent-video" title="{{ data.title }}">
 
                     <div class="thumb">
-                        <img ng-src="https://i.vimeocdn.com//video//{{ data.video_id }}_200x150.webp">
+                        <img ng-src="{{ data.thumbnail }}">
                     </div>
                     <figcaption>
                         <span class="title">{{ data.title }}</span>
