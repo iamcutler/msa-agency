@@ -100,6 +100,9 @@ export default class ClientService {
             case 'master_instructor':
                 mappedTitle = 'Master Instructors';
                 break;
+            case 'instructor':
+                mappedTitle = 'Instructors';
+                break;
             case 'sytycd':
                 mappedTitle = 'SYTYCD/DWTS';
                 break;

@@ -31,6 +31,6 @@ class News < ActiveRecord::Base
         subject_match = arel_table[:subject].matches(query)
         body_match = arel_table[:body].matches(query)
 
-        where(subject_match.or(body_match)).where(published: true).offset(page).limit(amount)
+        where(subject_match.or(body_match)).where(published: true).order(created_at: :desc).offset(page).limit(amount)
     end
 end

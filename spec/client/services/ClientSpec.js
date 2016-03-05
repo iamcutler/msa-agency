@@ -120,6 +120,10 @@ describe('Service: Talent', () => {
             expect(ClientService.mapTitleFromCategory('master_instructor')).toBe('Master Instructors');
         });
 
+        it('should return Instructors from instructor', () => {
+            expect(ClientService.mapTitleFromCategory('instructor')).toBe('Instructors');
+        });
+
         it('should return Master SYTYCD/DWTS from sytycd', () => {
             expect(ClientService.mapTitleFromCategory('sytycd')).toBe('SYTYCD/DWTS');
         });
