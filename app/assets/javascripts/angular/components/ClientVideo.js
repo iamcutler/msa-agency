@@ -6,10 +6,23 @@ export default function ClientVideo() {
             data: '='
         },
         template: `
-            <figure>
-                <a ng-href="http://www.youtube.com/embed/{{ data.video_id }}" class="fancybox" data-fancybox-group="clent-video" title="{{ data.title }}">
+            <figure ng-switch="data.video_type">
+                <a ng-href="https://player.vimeo.com/video/{{ data.video_id }}" class="fancybox"
+                    ng-switch-when="vimeo" data-fancybox-group="clent-video" title="{{ data.title }}">
+
                     <div class="thumb">
-                        <img ng-src="http://img.youtube.com/vi/{{ data.video_id }}/hqdefault.jpg" ng-if="data.video_type === 'youtube'">
+                        <img ng-src="https://i.vimeocdn.com//video//{{ data.video_id }}_200x150.webp">
+                    </div>
+                    <figcaption>
+                        <span class="title">{{ data.title }}</span>
+                    </figcaption>
+                </a>
+
+                <a ng-href="http://www.youtube.com/embed/{{ data.video_id }}" class="fancybox"
+                    ng-switch-default data-fancybox-group="clent-video" title="{{ data.title }}">
+
+                    <div class="thumb">
+                        <img ng-src="http://img.youtube.com/vi/{{ data.video_id }}/hqdefault.jpg">
                     </div>
                     <figcaption>
                         <span class="title">{{ data.title }}</span>
