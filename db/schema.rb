@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121025517) do
+ActiveRecord::Schema.define(version: 20160305170948) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -57,6 +57,13 @@ ActiveRecord::Schema.define(version: 20160121025517) do
     t.integer  "order",              limit: 4,     default: 0, null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
+  end
+
+  create_table "assets", force: :cascade do |t|
+    t.string   "storage_uid",  limit: 255
+    t.string   "storage_name", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "client_categories", force: :cascade do |t|
@@ -111,12 +118,12 @@ ActiveRecord::Schema.define(version: 20160121025517) do
 
   create_table "client_resumes", force: :cascade do |t|
     t.integer  "client_id",  limit: 4
-    t.string   "project",    limit: 255, null: false
-    t.string   "credit",     limit: 255
-    t.string   "company",    limit: 255
-    t.string   "job_type",   limit: 255, null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "project",    limit: 255, default: ""
+    t.string   "credit",     limit: 255, default: ""
+    t.string   "company",    limit: 255, default: ""
+    t.string   "job_type",   limit: 255,              null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "client_resumes", ["client_id"], name: "index_client_resumes_on_client_id", using: :btree
