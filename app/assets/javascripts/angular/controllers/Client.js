@@ -23,7 +23,7 @@ export default class ClientController {
                 this.resumeCount = this.clientService.getResumeCountFromCollection(this.client.resume);
 
                 // Check if client has a current reel
-                if(response.hasOwnProperty('reel')) {
+                if(response.hasOwnProperty('reel') && response.reel.video_id) {
                     this.reelPresent = true;
                 }
             })
