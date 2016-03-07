@@ -22,7 +22,7 @@ angular.module('MSAAgency.directives')
                         instagram="https://instagram.com/msaagency"
                         youtube="https://www.youtube.com/user/MSAGlobalLeader"></social-icons>
 
-                    <span class="powered-by">Powered By: <a href="">iamcutler</a></span>
+                    <span class="powered-by">Powered By: <a href="mailto:iamcutler@icloud.com">iamcutler</a></span>
                 </div>
             </footer>
         `

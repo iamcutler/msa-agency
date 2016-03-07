@@ -135,7 +135,7 @@
 
     @include responsive-phone-retina() {
         //display: none;
-        height: 54vw;
+        height: 64vw;
 
         .slide-navigation {
             display: none;
@@ -152,7 +152,7 @@
                     }
 
                     .play-btn {
-                        top: 25px;
+                        top: 38px;
                     }
 
                     .caption {
@@ -165,7 +165,7 @@
 
     @include responsive-phones() {
         //display: none;
-        height: 54vw;
+        height: 64vw;
 
         .slide-navigation {
             display: none;
@@ -182,7 +182,7 @@
                     }
 
                     .play-btn {
-                        top: 25px;
+                        top: 38px;
                     }
 
                     .caption {

@@ -623,7 +623,10 @@ footer {
 
         @include responsive-phones() {
             ul.social-icons {
-                display: none;
+                position: inherit;
+                left: auto;
+                bottom: auto;
+                margin: 0 0 16px 0;
             }
         }
 
@@ -654,7 +657,10 @@ footer {
             }
 
             ul.social-icons {
-                display: none;
+                position: inherit;
+                left: auto;
+                bottom: auto;
+                margin: 0 0 16px 0;
             }
         }
     }
