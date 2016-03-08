@@ -83,7 +83,7 @@ describe('Service: Talent', () => {
         it('should return dance categories', () => {
             var categories = ClientService.getCategoriesFromParam('dance');
 
-            expect(categories).toEqual(['on_camera', 'dance', 'kids_teen', 'speciality_act']);
+            expect(categories).toEqual(['on_camera', 'dance', 'kids_teen', 'specialty_act']);
         });
 
         it('should return creative categories', () => {

@@ -70,7 +70,7 @@ ActiveAdmin.register Client do
                     ['On Camera', 'on_camera'],
                     ['Dancer', 'dance'],
                     ['Kids & Teens', 'kids_teens'],
-                    ['Speciality Act', 'speciality_act'],
+                    ['Specialty Act', 'specialty_act'],
                     ['Speaker', 'speaker'],
                     ['Designer', 'designer'],
                     ['Master Instructor', 'master_instructor'],
