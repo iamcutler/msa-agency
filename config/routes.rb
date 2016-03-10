@@ -40,6 +40,8 @@ Rails.application.routes.draw do
         end
     end
 
-    root 'static_pages#index'
-    get "*path" => "static_pages#index"
+    root to: 'static_pages#index'
+    get "*path" => "static_pages#index", constraints: lambda { |request|
+        request.path =~ /^(?!\/admin)^(?!\/images)/
+    }
 end
