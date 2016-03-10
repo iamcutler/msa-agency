@@ -3,7 +3,7 @@
 </p>
 <%= semantic_form_for @active_admin_import_model, url: {action: :do_import}, html: {multipart: true} do |f| %>
     <%= f.inputs do %>
-        <%= f.input :client, as: :select, collection: Client.all %>
+        <%= f.input :client, as: :select, collection: Client.all.order(first_name: :asc) %>
         <%= f.input :file, as: :file %>
     <% end %>
 
