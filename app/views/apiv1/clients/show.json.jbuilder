@@ -20,7 +20,7 @@ end
 
 json.resume do
     json.commercials do
-        json.array! @client.resume.where(job_type: 'commerical'), :id, :company, :credit, :project
+        json.array! @client.resume.where(job_type: 'commercial'), :id, :company, :credit, :project
     end
 
     json.events do
