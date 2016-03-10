@@ -27,7 +27,7 @@ ActiveAdmin.register ClientResume do
                         },
                         back: proc { config.namespace.resource_for(ClientResume).route_collection_path } # redirect to resume index
 
-    csv force_quotes: true, column_names: false do
+    csv force_quotes: true, col_sep: ",", quote_char: "\"" do
         column :client_id
         column :project
         column :credit
