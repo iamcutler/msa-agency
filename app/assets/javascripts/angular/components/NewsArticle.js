@@ -21,7 +21,7 @@ export default function NewsArticle() {
 
                     <span class="timestamp">{{ data.created_at | date:'MMMM d, yyyy hh:mm a' : 'UTC' }}</span>
 
-                    <p>{{ data.body | limitTo: 400 | stripHTML }}</p>
+                    <p>{{ data.body | stripHTML | limitTo: 400 }}</p>
                 </a>
 
                 <div ng-if="full">
