@@ -60,8 +60,11 @@ ActiveAdmin.register ClientResume do
                 ['Concerts/Tours/Events', 'event'],
                 ['Corporate', 'corporate'],
                 ['Film', 'film'],
+                ['Industrials', 'industrials'],
                 ['Miscellaneous', 'misc'],
                 ['Music Video', 'music video'],
+                ['Print', 'print'],
+                ['Teaching', 'teaching'],
                 ['Television', 'television'],
                 ['Theater', 'theater']
             ], include_blank: false
