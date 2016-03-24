@@ -27,7 +27,7 @@ ActiveAdmin.register News do
     form do |f|
         inputs 'Details' do
             input :subject
-            input :body
+            input :body, as: :html_editor
             input :location, as: :select, collection: ['Los Angeles', 'New York', ['Los Angeles and New York', '']], include_blank: false
             input :featured
             input :image, as: :file, hint: f.object.image.present? ? image_tag(f.object.image.url(:thumb)) : content_tag(:span, "no image uploaded yet")
