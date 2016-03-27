@@ -166,7 +166,6 @@ section#news-articles {
 
         a {
             display: inline;
-            color: $msa-orange;
         }
 
         &:nth-child(1) {
@@ -180,6 +179,10 @@ section#news-articles {
         // Full article styling
         &.full-article {
             border-bottom: 0;
+
+            a {
+                color: $msa-orange;
+            }
 
             p {
                 font-size: 16px;
