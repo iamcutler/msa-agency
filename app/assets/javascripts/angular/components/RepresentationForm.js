@@ -209,7 +209,7 @@ export function RepresentationForm() {
                     </div>
 
                     <button type="submit" ng-class="{ submitting: RepresentationFormCtrl.isSubmitting }"
-                            ng-disabled="!RepresentationFormCtrl.representationForm.$valid || RepresentationFormCtrl.isSubmitting">
+                            ng-disabled="RepresentationFormCtrl.isSubmitting">
                             Submit
                     </button>
                 </form>
