@@ -25,7 +25,12 @@
     <script>
         $(document).ready(function() {
             $(".fancybox").fancybox({
-                helpers : { media: true },
+                helpers : {
+                    media: true,
+                    overlay: {
+                      locked: false
+                    }
+                },
                 youtube : { autoplay: 1 }
             });
         });

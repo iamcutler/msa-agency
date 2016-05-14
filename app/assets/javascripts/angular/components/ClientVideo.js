@@ -8,7 +8,7 @@ export default function ClientVideo() {
         template: `
             <figure ng-switch="data.video_type">
                 <a ng-href="https://player.vimeo.com/video/{{ data.video_id }}" class="fancybox"
-                    ng-switch-when="vimeo" data-fancybox-group="clent-video" title="{{ data.title }}">
+                    ng-switch-when="vimeo" title="{{ data.title }}">
 
                     <div class="thumb">
                         <img ng-src="{{ data.thumbnail }}">
@@ -19,7 +19,7 @@ export default function ClientVideo() {
                 </a>
 
                 <a ng-href="http://www.youtube.com/embed/{{ data.video_id }}" class="fancybox"
-                    ng-switch-default data-fancybox-group="clent-video" title="{{ data.title }}">
+                    ng-switch-default title="{{ data.title }}">
 
                     <div class="thumb">
                         <img ng-src="http://img.youtube.com/vi/{{ data.video_id }}/hqdefault.jpg">
