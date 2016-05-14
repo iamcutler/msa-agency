@@ -9,7 +9,7 @@ class Apiv1::FileUploadController < ApplicationController
         file_path = ''
 
         begin
-            file_path = "submissions/#{DateTime.now.to_date}/#{params[:file].original_filename}"
+            file_path = "submissions/#{DateTime.now.to_date}/#{params[:file].original_filename.gsub(/\s/, '_')}"
 
             s3 = Aws::S3::Resource.new(
                     region: S3_CONFIG['region'],

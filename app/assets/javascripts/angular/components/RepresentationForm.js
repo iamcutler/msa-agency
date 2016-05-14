@@ -316,7 +316,7 @@ export class RepresentationFormController {
             }
         } else {
             this.isSubmitting = false;
-            this.validationsErrors = RepresentationFormController.formatErrors('Required fields missing.');
+            this.validationsErrors = RepresentationFormController.formatErrors('Required fields missing. Make sure to also upload materials.');
         }
     }
 
