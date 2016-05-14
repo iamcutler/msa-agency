@@ -13,8 +13,8 @@ export default function TalentResume($timeout, $filter) {
 
                     <div class="resume-row" ng-repeat="res in resume track by $index">
                         <div>{{ res.project }}</div>
-                        <div>{{ res.company }}</div>
                         <div>{{ res.credit }}</div>
+                        <div>{{ res.company }}</div>
                     </div>
                 </div>
             </div>
