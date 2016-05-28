@@ -139,4 +139,21 @@ export default class ClientService {
 
         return count;
     }
+
+    /**
+     * Map category from URL parameter
+     *
+     * @param {string} category
+     * @returns {string}
+     **/
+    mapCategoryFromParam(category = '') {
+        switch(category) {
+            case 'choreographers':
+                return 'choreography';
+            case 'producers':
+                return 'production';
+            default:
+                return category;
+        }
+    }
 }

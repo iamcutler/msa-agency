@@ -1,7 +1,7 @@
 import { client1, ClientCollectionWithCategories1 } from '../fixtures/clients';
 import { ClientResume1 } from '../fixtures/resume';
 
-describe('Service: Talent', () => {
+describe('Service: Client', () => {
     var $rootScope, $scope, $q, $httpBackend;
     var ClientService;
 
@@ -142,6 +142,26 @@ describe('Service: Talent', () => {
             var result = ClientService.getResumeCountFromCollection(ClientResume1);
 
             expect(result).toBe(0);
+        });
+    });
+
+    describe('method: mapCategoryFromParam', () => {
+        it('return choregraphy from choreographers', () => {
+            var category = ClientService.mapCategoryFromParam('choreographers');
+
+            expect(category).toBe('choreography');
+        });
+
+        it('return production from producers', () => {
+            var category = ClientService.mapCategoryFromParam('producers');
+
+            expect(category).toBe('production');
+        });
+
+        it('return anything else not mapped', () => {
+            var category = ClientService.mapCategoryFromParam('dance');
+
+            expect(category).toBe('dance');
         });
     });
 });

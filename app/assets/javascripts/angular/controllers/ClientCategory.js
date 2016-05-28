@@ -21,7 +21,7 @@ export default class ClientCategoryController {
      * @param {String} category
      */
     getByCategory(category) {
-        this.clientService.getByCategory([category])
+        this.clientService.getByCategory([this.clientService.mapCategoryFromParam(category)])
             .then(response => {
                 this.clients = response;
             })
