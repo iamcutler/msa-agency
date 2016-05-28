@@ -18,8 +18,9 @@ export function SearchBar() {
 
 export class SearchBarController {
     // @ngInject
-    constructor($state) {
+    constructor($state, $document) {
         this.$state = $state;
+        this.$document = $document;
         this.q = ''; // Search string
     }
 
@@ -31,6 +32,9 @@ export class SearchBarController {
     {
         if(isValid) {
             this.$state.go('app.search', { q: this.q });
+
+            var sidebar = angular.element(this.$document[0].querySelector('#sidebar-nav'));
+            sidebar.removeClass('open');
 
             // Clear search string
             this.q = '';
