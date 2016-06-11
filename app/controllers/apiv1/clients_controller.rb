@@ -47,7 +47,7 @@ module Apiv1
             end
         end
 
-        # POST /clients/sort
+        # POST /clients/:id/sort
         def sort_resume_categories
             client_id = params[:id]
             categories = params[:categories]
