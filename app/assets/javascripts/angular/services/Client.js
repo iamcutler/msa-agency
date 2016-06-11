@@ -156,4 +156,43 @@ export default class ClientService {
                 return category;
         }
     }
+
+    /**
+     * Map resume title from category
+     *
+     * @param {string} category
+     * @returns {string}
+     */
+    mapResumeTitleFromCategory(category_name = '') {
+        switch(category_name) {
+            case 'event':
+                return 'Concerts/Tours/Events';
+            case 'television':
+                return 'Television';
+            case 'award_show':
+                return 'Award Shows';
+            case 'film':
+                return 'Film';
+            case 'commercial':
+                return 'Commercials';
+            case 'music_video':
+                return 'Music Videos';
+            case 'corporate':
+                return 'Corporate';
+            case 'misc':
+                return 'Miscellaneous';
+            case 'awards':
+                return 'Awards';
+            case 'theater':
+                return 'Theatre';
+            case 'print':
+                return 'Print';
+            case 'teaching':
+                return 'Teaching';
+            case 'industrials':
+                return 'Industrials';
+            default:
+                return '';
+        }
+    }
 }

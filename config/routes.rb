@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
         resources :clients, only: ['index', 'show']
         get 'clients-by-category', to: 'clients#find_by_categories'
+        post 'client-resume/:id/sort', to: 'clients#sort_resume_categories'
 
         resources :affiliate, only: ['index', 'show'], path: 'affiliates'
 

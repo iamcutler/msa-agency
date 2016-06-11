@@ -49,4 +49,14 @@ export default class ClientController {
             offset: 112
         });
     }
+
+    /**
+     * Map resume title from category
+     *
+     * @param {string} category
+     * @returns {string}
+     */
+    mapResumeTitleFromCategory(category) {
+        return this.clientService.mapResumeTitleFromCategory(category);
+    }
 }
