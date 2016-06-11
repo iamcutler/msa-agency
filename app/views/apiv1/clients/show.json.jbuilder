@@ -19,19 +19,22 @@ json.social do
 end
 
 json.resume_order do
-    json.array! @resumeOrder, :job_type, :order
+    json.array! @resumeOrder do |ro|
+        json.category ro.job_type.gsub(' ', '_').downcase
+        json.order ro.order
+    end
 end
 
 json.resume do
-    json.commercials do
+    json.commercial do
         json.array! @client.resume.where(job_type: 'commercial'), :id, :company, :credit, :project
     end
 
-    json.events do
+    json.event do
         json.array! @client.resume.where(job_type: 'event'), :id, :company, :credit, :project
     end
 
-    json.music_videos do
+    json.music_video do
         json.array! @client.resume.where(job_type: 'music video'), :id, :company, :credit, :project
     end
 
@@ -39,7 +42,7 @@ json.resume do
         json.array! @client.resume.where(job_type: 'television'), :id, :company, :credit, :project
     end
 
-    json.award_shows do
+    json.award_show do
         json.array! @client.resume.where(job_type: 'award show'), :id, :company, :credit, :project
     end
 
@@ -51,7 +54,7 @@ json.resume do
         json.array! @client.resume.where(job_type: 'corporate'), :id, :company, :credit, :project
     end
 
-    json.miscellaneous do
+    json.misc do
         json.array! @client.resume.where(job_type: 'misc'), :id, :company, :credit, :project
     end
 

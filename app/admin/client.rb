@@ -137,7 +137,7 @@ ActiveAdmin.register Client do
         end
 
         panel 'Resume Order' do
-            table_for client.resume_types, id: 'client-resume-ordering' do
+            table_for client.get_resume_types, id: 'client-resume-ordering' do
               column "Type", :job_type, :job_type
             end
         end

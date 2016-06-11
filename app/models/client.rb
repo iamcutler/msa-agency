@@ -32,7 +32,7 @@ class Client < ActiveRecord::Base
         where(first_name_match.or(last_name_match)).search_hidden(false).offset(page).limit(amount)
     end
 
-    def resume_types
+    def get_resume_types
         ClientResume.select(:job_type, :order).distinct(:job_type).where(client_id: self.id).order(:order)
     end
 

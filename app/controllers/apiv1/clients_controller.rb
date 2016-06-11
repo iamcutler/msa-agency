@@ -14,7 +14,7 @@ module Apiv1
                 @clientReel = @client.reel
                 @clientVideos = @client.videos.order(:order)
                 @clientPress = @client.press.order(:order)
-                @resumeOrder = @client.resume_types
+                @resumeOrder = @client.get_resume_types
 
                 begin
                     # Add vimeo thumbnail if available

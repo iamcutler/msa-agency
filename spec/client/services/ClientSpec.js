@@ -164,4 +164,84 @@ describe('Service: Client', () => {
             expect(category).toBe('dance');
         });
     });
+
+    describe('method: mapResumeTitleFromCategory', () => {
+        it('should return events title', () => {
+            const result = ClientService.mapResumeTitleFromCategory('event');
+
+            expect(result).toBe('Concerts/Tours/Events');
+        });
+
+        it('should return televison title', () => {
+            const result = ClientService.mapResumeTitleFromCategory('television');
+
+            expect(result).toBe('Television');
+        });
+
+        it('should return award shows title', () => {
+            const result = ClientService.mapResumeTitleFromCategory('award_show');
+
+            expect(result).toBe('Award Shows');
+        });
+
+        it('should return film title', () => {
+            const result = ClientService.mapResumeTitleFromCategory('film');
+
+            expect(result).toBe('Film');
+        });
+
+        it('should return commercials title', () => {
+            const result = ClientService.mapResumeTitleFromCategory('commercial');
+
+            expect(result).toBe('Commercials');
+        });
+
+        it('should return music video title', () => {
+            const result = ClientService.mapResumeTitleFromCategory('music_video');
+
+            expect(result).toBe('Music Videos');
+        });
+
+        it('should return corporate title', () => {
+            const result = ClientService.mapResumeTitleFromCategory('corporate');
+
+            expect(result).toBe('Corporate');
+        });
+
+        it('should return misc title', () => {
+            const result = ClientService.mapResumeTitleFromCategory('misc');
+
+            expect(result).toBe('Miscellaneous');
+        });
+
+        it('should return awards title', () => {
+            const result = ClientService.mapResumeTitleFromCategory('awards');
+
+            expect(result).toBe('Awards');
+        });
+
+        it('should return theater title', () => {
+            const result = ClientService.mapResumeTitleFromCategory('theater');
+
+            expect(result).toBe('Theatre');
+        });
+
+        it('should return print title', () => {
+            const result = ClientService.mapResumeTitleFromCategory('print');
+
+            expect(result).toBe('Print');
+        });
+
+        it('should return teaching title', () => {
+            const result = ClientService.mapResumeTitleFromCategory('teaching');
+
+            expect(result).toBe('Teaching');
+        });
+
+        it('should return industrials title', () => {
+            const result = ClientService.mapResumeTitleFromCategory('industrials');
+
+            expect(result).toBe('Industrials');
+        });
+    });
 });

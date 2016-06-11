@@ -3,7 +3,7 @@ import { client1 } from '../fixtures/clients';
 
 describe('Controller: Client', () => {
     var $rootScope, $scope, $controller, $q;
-    var ClientCtrl, ClientService, clientSpy, getBySlugSpy;
+    var ClientCtrl, ClientService, clientSpy, getBySlugSpy, mapResumeTitleSpy;
 
     beforeEach(() => {
         angular.mock.module('MSAAgency');
@@ -19,6 +19,7 @@ describe('Controller: Client', () => {
              * Spies
              */
             getBySlugSpy = spyOn(ClientService, 'getBySlug');
+            mapResumeTitleSpy = spyOn(ClientService, 'mapResumeTitleFromCategory').and.callThrough();
 
             ClientCtrl = $controller('ClientController as ClientCtrl', {
                 $scope: $scope,
@@ -72,6 +73,16 @@ describe('Controller: Client', () => {
 
         it('should call smooth scroll on destination', () => {
             expect(ClientCtrl.smoothScroll).toHaveBeenCalledWith(null, { offset: 112 });
+        });
+    });
+
+    describe('method: mapResumeTitleFromCategory', () => {
+        it('should call client service for title', () => {
+            const title = 'commercials';
+
+            ClientCtrl.mapResumeTitleFromCategory(title);
+
+            expect(ClientService.mapResumeTitleFromCategory).toHaveBeenCalledWith(title)
         });
     });
 });
