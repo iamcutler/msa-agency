@@ -31,4 +31,14 @@ class Client < ActiveRecord::Base
 
         where(first_name_match.or(last_name_match)).search_hidden(false).offset(page).limit(amount)
     end
+
+    def resume_types
+        ClientResume.select(:job_type, :order).distinct(:job_type).where(client_id: self.id).order(:order)
+    end
+
+    def save_resume_types(types = [])
+        types.each_with_index do |t, i|
+            self.resume.where(job_type: t).update_all(order: i + 1)
+        end
+    end
 end

@@ -68,3 +68,36 @@
         });
     }
 })();
+
+(function() {
+    function sendSortRequestOfModel(id, model_name) {
+        var categories = $('#' + model_name + ' tbody tr td');
+        var formData = [];
+
+        $.each(categories, function(index, row) {
+            formData.push($(row).text());
+        });
+
+        $.ajax({
+            type: 'post',
+            data: JSON.stringify({ categories: formData }),
+            contentType: 'application/json',
+            processData: false,
+            url: '/api/v1/client-resume/'+ id +'/sort'
+        });
+    }
+
+    $(document).ready(function() {
+        if ($('body.edit.admin_clients').length) {
+            var client_id = $('input#client_id').val();
+
+            $( '#client-resume-ordering tbody' ).sortable({
+                axis: 'y',
+                cursor: 'move',
+                update: function(event, ui) {
+                    sendSortRequestOfModel(client_id, 'client-resume-ordering')
+                }
+            }).disableSelection();
+        }
+    });
+})();

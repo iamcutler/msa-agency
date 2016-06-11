@@ -14,6 +14,7 @@ module Apiv1
                 @clientReel = @client.reel
                 @clientVideos = @client.videos.order(:order)
                 @clientPress = @client.press.order(:order)
+                @resumeOrder = @client.resume_types
 
                 begin
                     # Add vimeo thumbnail if available
@@ -43,6 +44,30 @@ module Apiv1
                 @clients = ClientCategory.findClients(categories).order("clients.first_name ASC")
             rescue
                 @clients = []
+            end
+        end
+
+        # POST /clients/sort
+        def sort_resume_categories
+            client_id = params[:id]
+            categories = params[:categories]
+
+            begin
+                if client_id && categories
+                    client = Client.find(client_id)
+
+                    if client
+                        # Save resume types for client
+                        client.save_resume_types(categories)
+
+                        return render json: { success: true }
+                    end
+                end
+
+                render json: { success: false }
+            rescue StandardError => e
+                Rails.logger.error e
+                render json: { success: false }
             end
         end
     end

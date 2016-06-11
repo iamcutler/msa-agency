@@ -18,6 +18,10 @@ json.social do
     json.youtube @client.youtube_link
 end
 
+json.resume_order do
+    json.array! @resumeOrder, :job_type, :order
+end
+
 json.resume do
     json.commercials do
         json.array! @client.resume.where(job_type: 'commercial'), :id, :company, :credit, :project

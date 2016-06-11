@@ -34,6 +34,7 @@ ActiveAdmin.register Client do
 
     form do |f|
         inputs 'Details' do
+            input :id, as: :hidden
             input :first_name
             input :last_name
             input :title
@@ -132,6 +133,12 @@ ActiveAdmin.register Client do
                 pr.input :order, placeholder: '0'
 
                 pr.actions
+            end
+        end
+
+        panel 'Resume Order' do
+            table_for client.resume_types, id: 'client-resume-ordering' do
+              column "Type", :job_type, :job_type
             end
         end
 
