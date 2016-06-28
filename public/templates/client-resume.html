@@ -3,19 +3,10 @@
     <sub-section-header title="Resume: {{ ClientResumeCtrl.client.name }}"></sub-section-header>
 
     <section id="talent-resume" ng-if="ClientResumeCtrl.resumeCount">
-        <talent-resume title="Concerts/Tours/Events" data="ClientResumeCtrl.client.resume.events"></talent-resume>
-        <talent-resume title="Television" data="ClientResumeCtrl.client.resume.television"></talent-resume>
-        <talent-resume title="Award Shows" data="ClientResumeCtrl.client.resume.award_shows"></talent-resume>
-        <talent-resume title="Film" data="ClientResumeCtrl.client.resume.film"></talent-resume>
-        <talent-resume title="Commercials" data="ClientResumeCtrl.client.resume.commercials"></talent-resume>
-        <talent-resume title="Music Videos" data="ClientResumeCtrl.client.resume.music_videos"></talent-resume>
-        <talent-resume title="Corporate" data="ClientResumeCtrl.client.resume.corporate"></talent-resume>
-        <talent-resume title="Miscellaneous" data="ClientResumeCtrl.client.resume.miscellaneous"></talent-resume>
-        <talent-resume title="Awards" data="ClientResumeCtrl.client.resume.awards"></talent-resume>
-        <talent-resume title="Theatre" data="ClientResumeCtrl.client.resume.theater"></talent-resume>
-        <talent-resume title="Print" data="ClientResumeCtrl.client.resume.print"></talent-resume>
-        <talent-resume title="Teaching" data="ClientResumeCtrl.client.resume.teaching"></talent-resume>
-        <talent-resume title="Industrials" data="ClientResumeCtrl.client.resume.industrials"></talent-resume>
+        <talent-resume ng-repeat="category in ClientResumeCtrl.client.resume_order"
+                       title="{{ ClientResumeCtrl.mapResumeTitleFromCategory(category.category) }}"
+                       data="ClientResumeCtrl.client.resume[category.category]">
+        </talent-resume>
     </section>
     <!-- End Resume -->
 </div>

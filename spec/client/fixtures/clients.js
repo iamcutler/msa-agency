@@ -14,6 +14,21 @@ export function client1() {
             twitter: "http://twitter.com/nappytabs",
             instagram: 'http://instagram.com/nappytabs',
             youtube: "http://www.youtube.com/user/Nappytabs"
+        },
+        resume_order: [
+            {"category":"corporate","order":1},
+            {"category":"award_show","order":2},
+            {"category":"misc","order":3},
+            {"category":"film","order":4},
+            {"category":"music_video","order":5},
+            {"category":"event","order":6},
+            {"category":"television","order":7},
+            {"category":"commercial","order":8}
+        ],
+        resume: {
+            commercial: [
+                { company: null, credit: "JLO / Iconol ", id: 1183059, project: "Loreal" }
+            ]
         }
     };
 }

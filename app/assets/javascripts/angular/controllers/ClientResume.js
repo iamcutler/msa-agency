@@ -4,6 +4,7 @@ export default class ClientResumeController {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.clientService = ClientService;
+        this.resumeCount = 0;
     }
 
     /**
@@ -14,7 +15,8 @@ export default class ClientResumeController {
             .then(response => {
                 this.client = {
                     name: response.full_name,
-                    resume: response.resume
+                    resume: response.resume,
+                    resume_order: response.resume_order
                 };
                 this.resumeCount = this.clientService.getResumeCountFromCollection(this.client.resume);
             })
@@ -25,5 +27,15 @@ export default class ClientResumeController {
                     console.error(err);
                 }
             });
+    }
+
+    /**
+     * Map resume title from category
+     *
+     * @param {string} category
+     * @returns {string}
+     */
+    mapResumeTitleFromCategory(category) {
+        return this.clientService.mapResumeTitleFromCategory(category);
     }
 }
