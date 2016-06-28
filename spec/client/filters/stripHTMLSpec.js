@@ -18,8 +18,14 @@ describe('filter: stripHTML', function() {
     });
 
     it('should remove non-breaking spaces', function() {
-        var input = '<a href="test">Anchor Tags</a> are used to <i>link</i>&nbsp; to other <strong>pages</strong> or <p>external sites</p>';
+        var input = 'Kenny Ortega is directing the Fox reboot of the movie TheRocky Horror Picture Show. &nbsp;Tony Testa is the Choreographer, with&nbsp;Jeff Mortensen assisting.&nbsp;&nbsp;&nbsp;';
 
-        expect(stripHTML(input)).toBe("Anchor Tags are used to link to other pages or external sites");
+        expect(stripHTML(input)).toBe("Kenny Ortega is directing the Fox reboot of the movie TheRocky Horror Picture Show.  Tony Testa is the Choreographer, with Jeff Mortensen assisting.   ");
+    });
+
+    it('should replace ampersand encoding', function() {
+        var input = 'Nappy &amp; Dumo';
+
+        expect(stripHTML(input)).toBe("Nappy & Dumo");
     });
 });
