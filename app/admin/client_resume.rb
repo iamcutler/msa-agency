@@ -49,7 +49,9 @@ ActiveAdmin.register ClientResume do
 
     form do |f|
         inputs "Details" do
-            input :client, include_blank: false
+            input :client, include_blank: false, :collection => Client.all.order(:first_name).map{ |u|
+                [ "#{u.first_name} #{u.last_name}", u.id ]
+            }
             input :project
             input :credit
             input :company
