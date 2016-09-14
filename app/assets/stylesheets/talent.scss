@@ -271,6 +271,7 @@ section#talent-resume {
                 width: (100% / 3);
                 word-wrap: break-word;
                 padding: 10px;
+                border-bottom: 1px #efefef solid !important;
 
                 // center sencond column
                 &:nth-child(2) {
