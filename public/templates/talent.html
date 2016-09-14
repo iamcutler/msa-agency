@@ -33,13 +33,13 @@
                ng-if="!ClientCtrl.client.la_casting && ClientCtrl.resumeCount">Resume</a>
             <!-- End Internal Resume -->
 
-            <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-photos'}"
-                        ng-click="ClientCtrl.setCurrentNavDestination('talent-photos')"
-                        ng-if="ClientCtrl.client.images.length">Photos</a>
-
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-videos'}"
                         ng-click="ClientCtrl.setCurrentNavDestination('talent-videos')"
                         ng-if="ClientCtrl.client.videos.length">Videos</a>
+
+            <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-photos'}"
+                        ng-click="ClientCtrl.setCurrentNavDestination('talent-photos')"
+                        ng-if="ClientCtrl.client.images.length">Photos</a>
 
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-press'}"
                         ng-click="ClientCtrl.setCurrentNavDestination('talent-press')"
@@ -79,17 +79,6 @@
     </section>
     <!-- End Resume -->
 
-    <!-- Photos -->
-    <a name="section-talent-photos"></a>
-    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Photos' : '' }}" ng-if="::ClientCtrl.client.images.length"></sub-section-header>
-
-    <section id="talent-photos" ng-if="::ClientCtrl.client.images.length">
-        <div class="app-container">
-            <client-image img="img.sizes" group="clientphotos" ng-repeat="img in ClientCtrl.client.images"></client-image>
-        </div>
-    </section>
-    <!-- End Photos -->
-
     <!-- Videos -->
     <a name="section-talent-videos"></a>
     <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Videos' : '' }}" ng-if="::ClientCtrl.client.videos.length"></sub-section-header>
@@ -100,6 +89,17 @@
         </div>
     </section>
     <!-- End Videos -->
+
+    <!-- Photos -->
+    <a name="section-talent-photos"></a>
+    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Photos' : '' }}" ng-if="::ClientCtrl.client.images.length"></sub-section-header>
+
+    <section id="talent-photos" ng-if="::ClientCtrl.client.images.length">
+        <div class="app-container">
+            <client-image img="img.sizes" group="clientphotos" ng-repeat="img in ClientCtrl.client.images"></client-image>
+        </div>
+    </section>
+    <!-- End Photos -->
 
     <!-- Press -->
     <a name="section-talent-press"></a>
