@@ -85,4 +85,32 @@ describe('Controller: Client', () => {
             expect(ClientService.mapResumeTitleFromCategory).toHaveBeenCalledWith(title)
         });
     });
+
+    describe('method: _getReelUrl', () => {
+        let id = '32452534';
+
+        it('should return youtube url', () => {
+            // given
+            // when
+            const result = ClientCtrl._getReelUrl(id, 'youtube');
+            // then
+            expect(result).toBe(`https://www.youtube.com/embed/${id}`);
+        });
+
+        it('should return vimeo url', () => {
+            // given
+            // when
+            const result = ClientCtrl._getReelUrl(id, 'vimeo');
+            // then
+            expect(result).toBe(`https://player.vimeo.com/video/${id}`);
+        });
+
+        it('should return null if type is not found', () => {
+            // given
+            // when
+            const result = ClientCtrl._getReelUrl(id, 'test');
+            // then
+            expect(result).toBeNull();
+        });
+    });
 });

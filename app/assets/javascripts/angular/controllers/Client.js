@@ -8,6 +8,7 @@ export default class ClientController {
         this.clientService = ClientService;
 
         this.client = {};
+        this.clientReelUrl = null;
         this.reelPresent = false;
         this.resumeCount = 0;
         this.currentNavDestination = 'talent-bio';
@@ -25,6 +26,8 @@ export default class ClientController {
                 // Check if client has a current reel
                 if(response.hasOwnProperty('reel') && response.reel.video_id) {
                     this.reelPresent = true;
+
+                    this.clientReelUrl = this._getReelUrl(response.reel.video_id, response.reel.video_type);
                 }
             })
             .catch(err => {
@@ -58,5 +61,24 @@ export default class ClientController {
      */
     mapResumeTitleFromCategory(category) {
         return this.clientService.mapResumeTitleFromCategory(category);
+    }
+
+    /**
+     * Get reel url
+     * 
+     * @param {String} id
+     * @param {String} type
+     * @returns {String}
+     * @private
+     */
+    _getReelUrl(id, type) {
+        switch(type) {
+            case 'youtube':
+                return `https://www.youtube.com/embed/${id}`;
+            case 'vimeo':
+                return `https://player.vimeo.com/video/${id}`;
+            default:
+                return null;
+        }
     }
 }
