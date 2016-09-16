@@ -36,6 +36,7 @@ ActiveAdmin.register ClientResume do
     end
 
     index download_links: [:csv]
+    index download_links: proc{ ClientResume.order(:order) }
 
     # Controller
     controller do
