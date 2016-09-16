@@ -71,7 +71,7 @@
 
 (function() {
     function sendSortRequestOfModel(id, model_name) {
-        var categories = $('#' + model_name + ' tbody tr td');
+        var categories = $('#' + model_name + ' tbody tr td:nth-child(2)');
         var formData = [];
 
         $.each(categories, function(index, row) {
@@ -88,16 +88,18 @@
     }
 
     $(document).ready(function() {
-        if ($('body.edit.admin_clients').length) {
-            var client_id = $('input#client_id').val();
+        if ($('body.index.admin_client_resumes').length) {
+            var client_id = $('select#q_client_id').val();
 
-            $( '#client-resume-ordering tbody' ).sortable({
-                axis: 'y',
-                cursor: 'move',
-                update: function(event, ui) {
-                    sendSortRequestOfModel(client_id, 'client-resume-ordering')
-                }
-            }).disableSelection();
+            if(client_id) {
+                $( '#index_table_client_resumes tbody' ).sortable({
+                    axis: 'y',
+                    cursor: 'move',
+                    update: function(event, ui) {
+                        sendSortRequestOfModel(client_id, 'index_table_client_resumes')
+                    }
+                }).disableSelection();
+            }
         }
     });
 })();

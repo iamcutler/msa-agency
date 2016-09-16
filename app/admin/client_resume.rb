@@ -37,6 +37,19 @@ ActiveAdmin.register ClientResume do
 
     index download_links: [:csv]
 
+    # Controller
+    controller do
+        before_filter :disable_pagination, :only => [:index]
+
+        # disable pagination on filtered clients
+        def disable_pagination
+            Rails.logger.debug params
+            if params[:q] && params[:q][:client_id_eq]
+                @per_page = ClientResume.count
+            end
+        end
+    end
+
     index do
         column :client
         column :project
