@@ -49,7 +49,7 @@ export default class ClientController {
 
         // todo: Refactor to directive
         this.smoothScroll(document.getElementById(destination), {
-            offset: 112
+            offset: 228
         });
     }
 

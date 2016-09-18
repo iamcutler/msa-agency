@@ -109,6 +109,7 @@ angular.module('MSAAgency.services', [])
 import AnimatedInput from './angular/directives/AnimatedInput';
 import BGTransparentScroll from './angular/directives/bgTransparentScroll';
 import ChooseCity from './angular/directives/ChooseCity';
+import ClientNavScroll from './angular/directives/ClientNavScroll';
 import GoToTopButton from './angular/directives/GoToTopButton';
 import LatestNews from './angular/directives/LatestNews';
 import MediaSlider from './angular/directives/MediaSlider';
@@ -146,6 +147,7 @@ angular.module('MSAAgency.directives', [])
     .directive('bookingForm', BookingForm)
     .directive('chooseCity', ChooseCity)
     .directive('clientImage', ClientImage)
+    .directive('clientNavScroll', ClientNavScroll)
     .directive('clientReel', ClientReel)
     .directive('clientResumeHeader', ClientResumeHeader)
     .directive('clientRoster', ClientRoster)

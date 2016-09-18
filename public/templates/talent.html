@@ -10,7 +10,7 @@
     </talent-header>
 
     <!-- Talent Navigation -->
-    <nav class="talent-navigation" ng-if="!ClientCtrl.client.basic">
+    <nav class="talent-navigation" ng-if="!ClientCtrl.client.basic" client-nav-scroll>
         <div class="app-container">
             <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-bio'}"
                         ng-click="ClientCtrl.setCurrentNavDestination('talent-bio')"
@@ -51,7 +51,7 @@
 
     <!-- Biography -->
     <a name="section-talent-bio"></a>
-    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Biography' : '' }}" ng-if="ClientCtrl.client.biography"></sub-section-header>
+    <sub-section-header id="biography-section-header" title="{{ !ClientCtrl.client.basic ? 'Biography' : '' }}" ng-if="ClientCtrl.client.biography"></sub-section-header>
 
     <section id="talent-bio" ng-if="ClientCtrl.client.biography">
         <div class="app-container" ng-bind-html="ClientCtrl.client.biography"></div>
