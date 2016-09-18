@@ -57,8 +57,10 @@ module Apiv1
                     client = Client.find(client_id)
 
                     if client
-                        # Save resume types for client
-                        client.save_resume_types(categories)
+                        # Iterator and update order
+                        categories.each_with_index do |c, i|
+                            client.resume.update(c, order: i + 1)
+                        end
 
                         return render json: { success: true }
                     end

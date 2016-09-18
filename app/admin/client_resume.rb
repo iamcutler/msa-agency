@@ -1,5 +1,6 @@
 ActiveAdmin.register ClientResume do
     menu priority: 3, label: 'Resumes'
+    config.sort_order = 'order_asc'
 
     filter :client_id, as: :select, collection: proc { Client.order(:first_name) }
     filter :project
@@ -36,6 +37,19 @@ ActiveAdmin.register ClientResume do
     end
 
     index download_links: [:csv]
+    index download_links: proc{ ClientResume.order(:order) }
+
+    # Controller
+    controller do
+        before_filter :disable_pagination, :only => [:index]
+
+        # disable pagination on filtered clients
+        def disable_pagination
+            if params[:q] && params[:q][:client_id_eq]
+                @per_page = ClientResume.count
+            end
+        end
+    end
 
     index do
         column :client
@@ -49,7 +63,9 @@ ActiveAdmin.register ClientResume do
 
     form do |f|
         inputs "Details" do
-            input :client, include_blank: false
+            input :client, include_blank: false, :collection => Client.all.order(:first_name).map{ |u|
+                [ "#{u.first_name} #{u.last_name}", u.id ]
+            }
             input :project
             input :credit
             input :company

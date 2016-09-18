@@ -25,6 +25,10 @@ div.section-header {
     }
 }
 
+#biography-section-header {
+    margin-top: 55px;
+}
+
 div.section-placeholder-text {
     color: #FFF;
     font-size: 24px;
@@ -145,9 +149,13 @@ header.talent {
 // Navigation
 // ----------------------------------------
 nav.talent-navigation {
+    position: absolute;
+    top: inherit;
     background: #1c1c1c;
+    width: 100%;
     white-space: nowrap;
     font-size: 0;
+    z-index: 10;
 
     a:link, a:visited {
         position: relative;
@@ -163,23 +171,6 @@ nav.talent-navigation {
 
         &:hover, &.active {
             background: $secondary-grey;
-        }
-
-        &.active {
-            &:after {
-                top: 100%;
-                left: 50%;
-                border: solid transparent;
-                content: " ";
-                height: 0;
-                width: 0;
-                position: absolute;
-                pointer-events: none;
-                border-color: rgba(136, 183, 213, 0);
-                border-top-color: $secondary-grey;
-                border-width: 12px;
-                margin-left: -12px;
-            }
         }
     }
 
@@ -271,6 +262,7 @@ section#talent-resume {
                 width: (100% / 3);
                 word-wrap: break-word;
                 padding: 10px;
+                border-bottom: 1px #efefef solid !important;
 
                 // center sencond column
                 &:nth-child(2) {
