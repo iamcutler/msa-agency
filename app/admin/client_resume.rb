@@ -1,5 +1,6 @@
 ActiveAdmin.register ClientResume do
     menu priority: 3, label: 'Resumes'
+    config.sort_order = 'order_asc'
 
     filter :client_id, as: :select, collection: proc { Client.order(:first_name) }
     filter :project
@@ -44,7 +45,6 @@ ActiveAdmin.register ClientResume do
 
         # disable pagination on filtered clients
         def disable_pagination
-            Rails.logger.debug params
             if params[:q] && params[:q][:client_id_eq]
                 @per_page = ClientResume.count
             end
