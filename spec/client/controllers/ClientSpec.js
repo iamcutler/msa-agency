@@ -72,7 +72,7 @@ describe('Controller: Client', () => {
         });
 
         it('should call smooth scroll on destination', () => {
-            expect(ClientCtrl.smoothScroll).toHaveBeenCalledWith(null, { offset: 112 });
+            expect(ClientCtrl.smoothScroll).toHaveBeenCalledWith(null, { offset: 228 });
         });
     });
 
