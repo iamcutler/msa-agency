@@ -121,6 +121,7 @@ import ToggleNavigation from './angular/directives/ToggleNavigation';
 // Components
 import BookingForm from './angular/components/BookingForm';
 import ClientImage from './angular/components/ClientImage';
+import ClientPress from './angular/components/ClientPress';
 import ClientReel from './angular/components/ClientReel';
 import ClientResumeHeader from './angular/components/ClientResumeHeader';
 import ClientRoster from './angular/components/ClientRoster';
@@ -148,6 +149,7 @@ angular.module('MSAAgency.directives', [])
     .directive('chooseCity', ChooseCity)
     .directive('clientImage', ClientImage)
     .directive('clientNavScroll', ClientNavScroll)
+    .directive('clientPress', ClientPress)
     .directive('clientReel', ClientReel)
     .directive('clientResumeHeader', ClientResumeHeader)
     .directive('clientRoster', ClientRoster)

@@ -110,7 +110,11 @@
 
     <section id="talent-press" ng-if="::ClientCtrl.client.press.length">
         <div class="app-container">
-            <client-image caption="{{ ::press.caption }}" img="press.sizes" group="clientpress" ng-repeat="press in ClientCtrl.client.press"></client-image>
+            <client-press ng-repeat="press in ClientCtrl.client.press"
+                          caption="{{ ::press.caption }}"
+                          destination="{{ ::press.link }}" 
+                          img="press.sizes">
+            </client-press>
         </div>
     </section>
     <!-- End Press -->
