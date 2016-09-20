@@ -155,7 +155,7 @@ nav.talent-navigation {
     width: 100%;
     white-space: nowrap;
     font-size: 0;
-    z-index: 10;
+    z-index: 9;
 
     a:link, a:visited {
         position: relative;
@@ -210,6 +210,15 @@ section[id^='talent-'], section[id^='staff-'] {
 
 section#talent-reel {
     background: #000;
+
+    .reel-container {
+        display: block;
+
+        &> div {
+            cursor: pointer;
+            pointer-events: none;
+        }
+    }
 
     iframe {
         margin: auto;

@@ -16,10 +16,9 @@
                         ng-click="ClientCtrl.setCurrentNavDestination('talent-bio')"
                         ng-if="ClientCtrl.client.biography">Biography</a>
 
-            <a ng-href="{{ ClientCtrl.clientReelUrl }}"
-               class="fancybox"
-               ng-class="{active: ClientCtrl.currentNavDestination === 'talent-reel'}"
-               ng-if="ClientCtrl.reelPresent">Reel</a>
+            <a href="#" ng-class="{active: ClientCtrl.currentNavDestination === 'talent-reel'}"
+                        ng-click="ClientCtrl.setCurrentNavDestination('talent-reel')"
+                        ng-if="ClientCtrl.reelPresent">Reel</a>
 
             <!-- LA Casting Resume -->
             <a ng-href="{{ ClientCtrl.client.la_casting_url }}"
@@ -58,6 +57,17 @@
     </section>
     <!-- End Biography -->
 
+    <!-- Reel -->
+    <a name="section-talent-reel"></a>
+    <sub-section-header title="{{ !ClientCtrl.client.basic ? 'Reel' : '' }}" ng-if="ClientCtrl.reelPresent"></sub-section-header>
+
+    <section id="talent-reel" ng-if="ClientCtrl.reelPresent">
+        <div class="app-container">
+            <client-reel src="{{ ::ClientCtrl.client.reel.video_id }}" type="{{ ::ClientCtrl.client.reel.video_type }}"></client-reel>
+        </div>
+    </section>
+    <!-- End Reel -->
+
     <!-- Resume -->
     <a name="section-talent-resume"></a>
     <client-resume-header title="{{ !ClientCtrl.client.basic ? 'Resume' : '' }}" client="ClientCtrl.client" ng-if="ClientCtrl.resumeCount"></client-resume-header>
@@ -75,6 +85,9 @@
 
     <section id="talent-videos" ng-if="::ClientCtrl.client.videos.length">
         <div class="app-container">
+            <!-- Reel in collections -->
+            <client-video data="ClientCtrl.client.reel" ng-if="ClientCtrl.reelPresent"></client-video>
+            <!-- End Reel -->
             <client-video data="video" ng-repeat="video in ClientCtrl.client.videos"></client-video>
         </div>
     </section>
@@ -97,7 +110,11 @@
 
     <section id="talent-press" ng-if="::ClientCtrl.client.press.length">
         <div class="app-container">
-            <client-image caption="{{ ::press.caption }}" img="press.sizes" group="clientpress" ng-repeat="press in ClientCtrl.client.press"></client-image>
+            <client-press ng-repeat="press in ClientCtrl.client.press"
+                          caption="{{ ::press.caption }}"
+                          destination="{{ ::press.link }}" 
+                          img="press.sizes">
+            </client-press>
         </div>
     </section>
     <!-- End Press -->

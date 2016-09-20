@@ -140,6 +140,7 @@ json.press do
     json.array! @clientPress do |press|
         json.id press.id
         json.caption press.caption
+        json.link press.link
         json.sizes do
             json.thumb press.image.url(:thumb)
             json.medium press.image.url(:medium)
