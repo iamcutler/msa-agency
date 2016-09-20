@@ -130,6 +130,7 @@ ActiveAdmin.register Client do
                 pr.input :_destroy, :as => :boolean
                 pr.input :image, as: :file, hint: pr.object.image.present? ? image_tag(pr.object.image.url(:thumb)) : content_tag(:span, "no image uploaded yet")
                 pr.input :caption
+                pr.input :link, placeholder: 'http://'
                 pr.input :order, placeholder: '0'
 
                 pr.actions
@@ -152,6 +153,6 @@ ActiveAdmin.register Client do
                   photos_attributes: [:id, :image, :caption, :cover, :default, :order, :_destroy],
                   reel_attributes: [:id, :video_id, :title, :video_type, :_destroy],
                   videos_attributes: [:id, :video_id, :title, :video_type, :order, :_destroy],
-                  press_attributes: [:id, :image, :caption, :order, :_destroy],
+                  press_attributes: [:id, :image, :caption, :link, :order, :_destroy],
                   categories_attributes: [:id, :category, :_destroy]
 end
