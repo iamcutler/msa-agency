@@ -47,8 +47,32 @@ module Apiv1
             end
         end
 
-        # POST /clients/:id/sort
+        # POST /client-resume/:id/sort
         def sort_resume_categories
+            client_id = params[:id]
+            categories = params[:categories]
+
+            begin
+                if client_id && categories
+                    client = Client.find(client_id)
+
+                    if client
+                        # Save resume types for client
+                        client.save_resume_types(categories)
+
+                        return render json: { success: true }
+                    end
+                end
+
+                render json: { success: false }
+            rescue StandardError => e
+                Rails.logger.error e
+                render json: { success: false }
+            end
+        end
+
+        # POST /client-resume/:id/resume/sort-records
+        def sort_resume_records
             client_id = params[:id]
             categories = params[:categories]
 
