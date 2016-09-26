@@ -89,7 +89,7 @@ describe('Service: Client', () => {
         it('should return creative categories', () => {
             var categories = ClientService.getCategoriesFromParam('creative');
 
-            expect(categories).toEqual(['choreography', 'stage_director', 'creative_director', 'music_director', 'video_director', 'production', 'designer']);
+            expect(categories).toEqual(['choreography', 'stage_director', 'creative_director', 'production', 'designer', 'music_director', 'video_director']);
         });
 
         it('should return educators categories', () => {
