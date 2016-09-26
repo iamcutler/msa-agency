@@ -30,6 +30,10 @@ gem 'twitter', '5.15.0'
 gem 'instagram', '~> 1.1', '>= 1.1.6'
 gem 'vimeo', '1.5.4'
 
+# PDF Generation
+gem 'prawn', '2.1.0'
+gem 'prawn-table', '0.2.2'
+
 # Admin control panel
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'

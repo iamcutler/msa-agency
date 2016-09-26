@@ -1,3 +1,5 @@
+require "#{Rails.root}/app/services/client-pdf"
+
 module Apiv1
     class ClientsController < ApplicationController
         # GET /clients
@@ -94,6 +96,25 @@ module Apiv1
             rescue StandardError => e
                 Rails.logger.error e
                 render json: { success: false }
+            end
+        end
+
+        # GET /clients/resume/{slug}.pdf
+        def resume_generation
+            client = Client.find_by_slug(params[:slug])
+
+            # if not found
+            if client.nil?
+              render :file => 'public/404.html', :status => :not_found, :layout => false
+            else
+              respond_to do |format|
+                format.pdf do
+                  pdf = ClientPdf.new(client, {
+                      :bottom_margin => 50
+                  })
+                  send_data pdf.render, filename: "#{client[:first_name]} #{client[:last_name]}.pdf", type: 'application/pdf'
+                end
+              end
             end
         end
     end
