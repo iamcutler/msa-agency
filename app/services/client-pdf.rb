@@ -27,7 +27,7 @@ class ClientPdf < Prawn::Document
             fill_color '343434'
             fill_and_stroke_rounded_rectangle [cursor-50, cursor], 540, 40, 0
             bounding_box([cursor - 35, cursor - 15], :width => 540) do
-                text "Resume: #{@client[:first_name]} #{@client[:last_name]}", size: 15, color: 'FFFFFF'
+                text "#{@client[:first_name]} #{@client[:last_name]}", size: 15, color: 'FFFFFF'
             end
         end
     end
