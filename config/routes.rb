@@ -2,6 +2,8 @@ Rails.application.routes.draw do
     devise_for :admin_users, ActiveAdmin::Devise.config
     ActiveAdmin.routes(self)
 
+    get 'clients/resume/:slug', to: 'apiv1/clients#resume_generation'
+
     scope '/api/v1', module: 'apiv1', as: 'apiv1', defaults: { format: 'json' } do
         get 'company', to: 'company#index'
 
