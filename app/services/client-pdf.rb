@@ -14,15 +14,21 @@ class ClientPdf < Prawn::Document
 
   def branding
     #This inserts an image in the pdf file and sets the size of the image
-    image "#{Rails.root}/app/assets/images/resume-logo.jpg", width: 100, position: :center
+    image "#{Rails.root}/app/assets/images/resume-logo.jpg", width: 540, position: :center
+
+    bounding_box([0, cursor - 10], width: 540, position: :center) do
+        text "<link href='www.msaagency.com'>www.msaagency.com</link>", inline_format: true, size: 12, align: :center
+
+        bounding_box([0, cursor - 15], width: 540) do
+            draw_text("LA - 323.957.6680", :at => [(bounds.left + 140), 0], :size => 13)
+            draw_text("NY - 646.237.6928", :at => [(bounds.left + 280), 0], :size => 13)
+        end
+    end
   end
 
   def header_bar
-    # The cursor for inserting content starts on the top left of the page. Here we move it down a little to create more space between the text and the image inserted above
-    y_position = cursor - 20
-
     # The bounding_box takes the x and y coordinates for positioning its content and some options to style it
-    bounding_box([0, y_position], :width => 540, :height => 40) do
+    bounding_box([10, cursor - 30], :width => 540, :height => 40) do
         stroke do
             fill_color '343434'
             fill_and_stroke_rounded_rectangle [cursor-50, cursor], 540, 40, 0
