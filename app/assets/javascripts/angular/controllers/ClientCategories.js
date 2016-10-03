@@ -45,6 +45,8 @@ export default class ClientCategoriesController {
                 this.masterInstructorClients = this.clientService.filterByCategory(response, 'master_instructor');
                 this.instructorClients = this.clientService.filterByCategory(response, 'instructor');
                 this.sytycdClients = this.clientService.filterByCategory(response, 'sytycd');
+                this.musicDirectorClients = this.clientService.filterByCategory(response, 'music_director');
+                this.videoDirectorClients = this.clientService.filterByCategory(response, 'video_director');
             });
     }
 }
