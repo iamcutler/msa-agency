@@ -10,7 +10,7 @@ export default function ClientResumeHeader() {
                 <div class="app-container">
                     {{ title }}
 
-                    <a class="resume-download-btn" ui-sref="app.client-resume({slug: client.slug})">
+                    <a ng-href="/clients/resume/{{client.slug}}.pdf" class="resume-download-btn" target="_blank">
                         Download Resume
                     </a>
                 </div>
