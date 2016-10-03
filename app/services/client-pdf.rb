@@ -14,16 +14,7 @@ class ClientPdf < Prawn::Document
 
   def branding
     #This inserts an image in the pdf file and sets the size of the image
-    image "#{Rails.root}/app/assets/images/resume-logo.jpg", width: 540, position: :center
-
-    bounding_box([0, cursor - 10], width: 540, position: :center) do
-        text "<link href='www.msaagency.com'>www.msaagency.com</link>", inline_format: true, size: 12, align: :center
-
-        bounding_box([0, cursor - 15], width: 540) do
-            draw_text("LA - 323.957.6680", :at => [(bounds.left + 140), 0], :size => 13)
-            draw_text("NY - 646.237.6928", :at => [(bounds.left + 280), 0], :size => 13)
-        end
-    end
+    image "#{Rails.root}/app/assets/images/resume-logo.png", width: 540, position: :center
   end
 
   def header_bar
