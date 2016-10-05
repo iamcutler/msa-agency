@@ -406,3 +406,11 @@ section#talent-videos, section#talent-press, section#staff-videos, section#staff
         }
     }
 }
+
+section#talent-press {
+    a.talent-press-link {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}

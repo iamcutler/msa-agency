@@ -55,13 +55,17 @@ class ClientPdf < Prawn::Document
       text "#{title}:", size: 15
     end
 
-    table(data, :width => 520,
+    table(data, :column_widths => 172,
                 :cell_style => {
                   :borders => [:bottom],
                   :border_width => 1,
                   :border_color => "EFEFEF"
                 }
-    )
+    ) do
+        column(0).style :align => :left
+        column(1).style :align => :center
+        column(2).style :align => :right 
+    end
   end
 
   def map_title_from_category(category)

@@ -10,8 +10,8 @@ export default function ClientPress() {
         template: `
             <figure>
                 <div class="thumb">
-                    <a ng-href="{{ destination }}" target="_blank" title="{{ caption }}">
-                        <img ng-src="{{ img.square }}">
+                    <a ng-href="{{ destination }}" class="talent-press-link" target="_blank" title="{{ caption }}">
+                        <img ng-src="{{ img.thumb }}">
                     </a>
                 </div>
 
