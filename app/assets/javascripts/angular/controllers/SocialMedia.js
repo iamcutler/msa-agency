@@ -5,11 +5,12 @@ const SOCIAL_YOUTUBE = 'social-youtube';
 
 export default class SocialMediaController {
     // @ngInject
-    constructor($rootScope, $stateParams, ClientService, SocialService) {
+    constructor($rootScope, $stateParams, ClientService, SocialService, PageSlideService) {
         // Dependencies
         this.$rootScope = $rootScope;
         this.clientService = ClientService;
         this.socialService = SocialService;
+        this.pageSlideService = PageSlideService;
 
         this.$rootScope.isLoadingPage = true;
         this.clients = {
@@ -18,6 +19,7 @@ export default class SocialMediaController {
             emerging: [],
             youtube: []
         };
+        this.slides = [];
         this.socialFeeds = {
             twitter: [],
             instagram: []
@@ -31,6 +33,19 @@ export default class SocialMediaController {
         this.getTwitterFeed();
         this.getInstagramFeed();
         this.getSocialVideos();
+        this.getPageSlides();
+    }
+
+    /**
+     * Get page slides
+     *
+     * @param {String} page
+     */
+    getPageSlides(page = 'social-media') {
+        return this.pageSlideService.getByPage(page)
+            .then(response => {
+                this.slides = response;
+            });
     }
 
     /**
