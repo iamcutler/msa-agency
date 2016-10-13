@@ -41,6 +41,7 @@ Rails.application.routes.draw do
         scope '/social' do
             get 'twitter', to: 'social#getTwitterFeed'
             get 'instagram', to: 'social#getInstagramFeed'
+            get 'videos', to: 'social#getSocialVideos'
         end
     end
 

@@ -40,6 +40,7 @@ import ClientResumeController from './angular/controllers/ClientResume';
 import ContactController from './angular/controllers/Contact';
 import DirectorsController from './angular/controllers/Directors';
 import FAQController from './angular/controllers/FAQ';
+import SocialMediaController from './angular/controllers/SocialMedia';
 import SplashController from './angular/controllers/Splash';
 import HomeController from './angular/controllers/Home';
 import LegacyController from './angular/controllers/Legacy';
@@ -65,6 +66,7 @@ angular.module('MSAAgency.controllers', [])
     .controller('ContactController', ContactController)
     .controller('DirectorsController', DirectorsController)
     .controller('FAQController', FAQController)
+    .controller('SocialMediaController', SocialMediaController)
     .controller('SplashController', SplashController)
     .controller('HomeController', HomeController)
     .controller('LegacyController', LegacyController)
@@ -136,6 +138,7 @@ import NewsSearchResult from './angular/components/NewsSearchResult';
 import OfficeLocations from './angular/components/OfficeLocations';
 import { RepresentationForm } from './angular/components/RepresentationForm';
 import { SearchBar } from './angular/components/SearchBar';
+import { SocialMediaVideosView } from './angular/components/SocialMediaVideos';
 import SocialSection from './angular/components/SocialSection';
 import SubSectionHeader from './angular/components/SubSectionHeader';
 import TalentHeader from './angular/components/TalentHeader';
@@ -170,6 +173,7 @@ angular.module('MSAAgency.directives', [])
     .directive('resizeElement', ResizeElement)
     .directive('representationForm', RepresentationForm)
     .directive('searchBar', SearchBar)
+    .directive('socialMediaVideosView', SocialMediaVideosView)
     .directive('socialSection', SocialSection)
     .directive('subSectionHeader', SubSectionHeader)
     .directive('talentHeader', TalentHeader)

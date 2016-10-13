@@ -1,0 +1,50 @@
+<div ng-init="SocialMediaCtrl.initialize()">
+    <media-slider data="SocialMediaCtrl.slides" ng-if="SocialMediaCtrl.slides.length"></media-slider>
+
+    <section class="twilight">
+        <header class="section-header twilight">
+            Social Media Influencers
+        </header>
+
+        <div class="section-placeholder-text" ng-if="!SocialMediaCtrl.totalClientCount && !isLoadingPage">
+            No current influencers
+        </div>
+
+        <client-roster type="talent"
+                       roster="SocialMediaCtrl.clients.top"
+                       title="Top"
+                       slider="true"
+                       ng-if="SocialMediaCtrl.clients.top.length && !isLoadingPage"></client-roster>
+
+        <client-roster type="talent"
+                       roster="SocialMediaCtrl.clients.trending"
+                       title="Trending"
+                       slider="true"
+                       ng-if="SocialMediaCtrl.clients.trending.length && !isLoadingPage"></client-roster>
+
+        <client-roster type="talent"
+                      roster="SocialMediaCtrl.clients.emerging"
+                      title="Emerging"
+                      slider="true"
+                      ng-if="SocialMediaCtrl.clients.emerging.length && !isLoadingPage"></client-roster>
+
+        <client-roster type="talent"
+                     roster="SocialMediaCtrl.clients.youtube"
+                     title="YouTube"
+                     slider="true"
+                     ng-if="SocialMediaCtrl.clients.youtube.length && !isLoadingPage"></client-roster>
+    </section>
+
+    <section id="talent-videos" ng-if="SocialMediaCtrl.socialVideos.length">
+        <social-media-videos-view
+            videos="SocialMediaCtrl.socialVideos">
+        </social-media-videos-view>
+    </section>
+
+    <social-section hide-icon="true"
+                    title="Feeds"
+                    no-bg="true"
+                    twitter="SocialMediaCtrl.socialFeeds.twitter"
+                    instagram="SocialMediaCtrl.socialFeeds.instagram">
+    </social-section>
+</div>

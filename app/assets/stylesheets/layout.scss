@@ -35,6 +35,14 @@ input, textarea, button {
     clear: both;
 }
 
+.no-padding {
+    padding: 0 !important;
+}
+
+.margin-b20 {
+    margin-bottom: 20px;
+}
+
 // Page loader
 .page-loader {
     background: image-url('loader-1-64x64.gif') center no-repeat;

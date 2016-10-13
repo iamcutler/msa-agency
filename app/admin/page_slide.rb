@@ -19,7 +19,7 @@ ActiveAdmin.register PageSlide do
             input :caption
             input :link, placeholder: 'http://www.msaagency.com'
             input :link_target, as: :select, hint: 'select to open in same window or new window', collection: [ '_self', '_blank' ], include_blank: false
-            input :section, as: :select, collection: [ 'home' ], include_blank: false
+            input :section, as: :select, collection: [ 'home', ['Social Media', 'social-media'] ], include_blank: false
             input :order
         end
 

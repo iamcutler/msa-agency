@@ -3,6 +3,8 @@ export default function SocialSection() {
         restrict: 'E',
         replace: true,
         scope: {
+            title: '@',
+            hideIcon: '@',
             twitter: '=',
             instagram: '='
         },
@@ -10,8 +12,13 @@ export default function SocialSection() {
             <section id="get-social">
                 <div class="app-container">
                     <header>
-                        <i></i>
-                        Social Media
+                        <i ng-hide="hideIcon"></i>
+
+                        <div ng-if="!title">Social Media</div>
+
+                        <header class="section-header no-padding" ng-if="title">
+                            {{ title }}
+                        </header>
                     </header>
 
                     <div class="social-feeds">

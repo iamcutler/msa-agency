@@ -28,5 +28,11 @@ module Apiv1
 
             render json: @feed
         end
+
+        def getSocialVideos
+            videos = SocialMediaVideo.all.order(:order)
+
+            render json: videos
+        end
     end
 end
