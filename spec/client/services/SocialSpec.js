@@ -16,7 +16,7 @@ describe('Service: Social', function() {
             /**
              * Spies
              */
-            spyOn($q, 'reject').and.callThrough();;
+            spyOn($q, 'reject').and.callThrough();
         });
     });
 
@@ -72,6 +72,15 @@ describe('Service: Social', function() {
             $httpBackend.flush();
 
             expect($q.reject).toHaveBeenCalled();
+        });
+    });
+
+    describe('method: getVideos', function() {
+        it('should call backend for video content', () => {
+            $httpBackend.expectGET('api/v1/social/videos').respond(200);
+
+            SocialService.getVideos();
+            $httpBackend.flush();
         });
     });
 });

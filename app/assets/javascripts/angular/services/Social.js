@@ -33,4 +33,9 @@ export default class SocialService {
             })
             .then(this.CommonService.handleHttpResponse('Error getting instagram feed'));
     }
+
+    getVideos() {
+        return this.$http.get('api/v1/social/videos')
+            .then(this.CommonService.handleHttpResponse('Error getting social videos'));
+    }
 }

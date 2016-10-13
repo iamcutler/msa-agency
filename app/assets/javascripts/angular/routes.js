@@ -104,6 +104,11 @@ angular.module('MSAAgency')
             controller: 'FAQController as FAQCtrl',
             templateUrl: 'templates/faq.html'
         })
+        .state('app.social-media', {
+            url: 'social-media',
+            controller: 'SocialMediaController as SocialMediaCtrl',
+            templateUrl: 'templates/social-media.html'
+        })
         // Contact
         .state('app.contact', {
             url: 'contact',

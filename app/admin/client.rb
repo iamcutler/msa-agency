@@ -80,7 +80,11 @@ ActiveAdmin.register Client do
                     ['Commercial', 'commercial'],
                     ['Musical Theatre', 'musical_theatre'],
                     ['Television/Film', 'television_film'],
-                    ['Legacy', 'legacy']
+                    ['Legacy', 'legacy'],
+                    ['Social Media: Top', 'social-top'],
+                    ['Social Media: Trending', 'social-trending'],
+                    ['Social Media: Emerging', 'social-emerging'],
+                    ['Social Media: YouTube', 'social-youtube']
                 ], include_blank: false
 
                 cat.actions
