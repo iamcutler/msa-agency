@@ -53,9 +53,10 @@ export default function Navigation() {
                                 </ul>
                             </li>
                             <li>
-                                <a ui-sref="app.talent.categories({ category: 'creative' })">Creative</a>
+                                <a ui-sref="app.talent.categories({ category: 'creative' })" toggle-navigation>Creative</a>
+
                                 <ul class="creative" resize-element resize-width="false" offset-top="112">
-                                <li><a ui-sref="app.talent.category({ category: 'choreographers' })" toggle-navigation>Choreographers</a></li>
+                                    <li><a ui-sref="app.talent.category({ category: 'choreographers' })" toggle-navigation>Choreographers</a></li>
                                     <li><a ui-sref="app.directors" toggle-navigation>Directors</a></li>
                                     <li><a ui-sref="app.talent.category({ category: 'producers' })" toggle-navigation>Producers</a></li>
                                     <li><a ui-sref="app.talent.category({ category: 'designer' })" toggle-navigation>Designers</a></li>
@@ -63,6 +64,7 @@ export default function Navigation() {
                             </li>
                             <li>
                                 <a ui-sref="app.talent.categories({ category: 'educators' })" toggle-navigation>Educators</a>
+
                                 <ul class="educators" resize-element resize-width="false" offset-top="112">
                                     <li><a ui-sref="app.talent.category({ category: 'speaker' })" toggle-navigation>Speakers</a></li>
                                     <li><a ui-sref="app.talent.category({ category: 'master_instructor' })" toggle-navigation>Masters</a></li>
