@@ -2,6 +2,9 @@ ActiveAdmin.register PageSlide do
     menu priority: 8
 
     index do
+        column "image" do |img|
+            image_tag(img.image(:thumb), width: 100)
+        end
         column :slide_type
         column :media_type
         column :media_source
