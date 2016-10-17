@@ -6,10 +6,11 @@ export default function ClientRoster($timeout, $state) {
             title: '@',
             type: '@',
             roster: '=',
-            slider: '@'
+            slider: '@',
+            showSocialStats: '@'
         },
         template: `
-            <div class="client-roster" ng-class="{slider: slider}">
+            <div class="client-roster" ng-class="{slider: slider, 'client-roster--stats': showSocialStats}">
                 <span class="title">{{ title }}</span>
 
                 <div class="roster">
@@ -30,6 +31,21 @@ export default function ClientRoster($timeout, $state) {
                                 </a>
 
                                 <span class="name">{{ member.full_name }}</span>
+
+                                <ul class="client-social-stats" ng-if="showSocialStats">
+                                    <li class="twitter" ng-if="::member.social.stats.twitter">
+                                        <i></i>
+                                        {{ ::member.social.stats.twitter | number }}
+                                    </li>
+                                    <li class="instagram" ng-if="::member.social.stats.instagram">
+                                        <i></i>
+                                        {{ ::member.social.stats.instagram | number }}
+                                    </li>
+                                    <li class="youtube" ng-if="::member.social.stats.youtube">
+                                        <i></i>
+                                        {{ ::member.social.stats.youtube | number }}
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
