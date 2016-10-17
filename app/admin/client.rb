@@ -141,6 +141,12 @@ ActiveAdmin.register Client do
             end
         end
 
+        f.inputs 'Social Statistics', for: [:social_stats, f.object.social_stats || ClientSocialStat.new] do |ss|
+            ss.input :twitter, type: 'number', placeholder: '0'
+            ss.input :instagram, type: 'number', placeholder: '0'
+            ss.input :youtube, type: 'number', placeholder: '0'
+        end
+
         panel 'Resume Order' do
             table_for client.get_resume_types, id: 'client-resume-ordering' do
               column "Type", :job_type
@@ -158,5 +164,6 @@ ActiveAdmin.register Client do
                   reel_attributes: [:id, :video_id, :title, :video_type, :_destroy],
                   videos_attributes: [:id, :video_id, :title, :video_type, :order, :_destroy],
                   press_attributes: [:id, :image, :caption, :link, :order, :_destroy],
-                  categories_attributes: [:id, :category, :_destroy]
+                  categories_attributes: [:id, :category, :_destroy],
+                  social_stats_attributes: [:twitter, :instagram, :youtube]
 end

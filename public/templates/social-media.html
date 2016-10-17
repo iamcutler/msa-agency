@@ -14,24 +14,28 @@
                        roster="SocialMediaCtrl.clients.top"
                        title="Top"
                        slider="true"
+                       show-social-stats="true"
                        ng-if="SocialMediaCtrl.clients.top.length && !isLoadingPage"></client-roster>
 
         <client-roster type="talent"
                        roster="SocialMediaCtrl.clients.trending"
                        title="Trending"
                        slider="true"
+                       show-social-stats="true"
                        ng-if="SocialMediaCtrl.clients.trending.length && !isLoadingPage"></client-roster>
 
         <client-roster type="talent"
                       roster="SocialMediaCtrl.clients.emerging"
                       title="Emerging"
                       slider="true"
+                      show-social-stats="true"
                       ng-if="SocialMediaCtrl.clients.emerging.length && !isLoadingPage"></client-roster>
 
         <client-roster type="talent"
                      roster="SocialMediaCtrl.clients.youtube"
                      title="YouTube"
                      slider="true"
+                     show-social-stats="true"
                      ng-if="SocialMediaCtrl.clients.youtube.length && !isLoadingPage"></client-roster>
     </section>
 

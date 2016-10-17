@@ -32,4 +32,14 @@ json.array! @clients do |client|
             end
         end
     end
+
+    json.social do
+        json.stats do
+            @socialStats = ClientSocialStat.where(client_id: client.id).first
+
+            json.twitter @socialStats ? @socialStats.twitter : 0
+            json.instagram @socialStats ? @socialStats.instagram : 0
+            json.youtube @socialStats ? @socialStats.youtube : 0
+        end
+    end
 end

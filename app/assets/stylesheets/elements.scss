@@ -376,6 +376,11 @@ section.twilight {
 .client-roster {
     margin-bottom: 50px;
 
+    &.client-roster--stats {
+        height: 330px;
+        margin-bottom: 0;
+    }
+
     span.title {
         color: $msa-orange;
         font-size: 20px;
@@ -388,7 +393,7 @@ section.twilight {
         .thumbs {
             position: relative;
 
-            ul {
+            > ul {
                 margin: 0;
                 padding: 0;
 
@@ -466,7 +471,6 @@ section.twilight {
                     }
 
                     .name {
-                        position: absolute;
                         width: 100%;
                         color: #FFF;
                         font-size: 14px;
@@ -474,6 +478,39 @@ section.twilight {
                         display: block;
                         margin-top: 10px;
                         white-space: normal;
+                    }
+
+                    ul.client-social-stats {
+                        position: inherit;
+                        top: auto;
+                        color: #FFF;
+                        margin: 12px 0;
+                        display: block;
+
+                        li {
+                            width: (100% / 3);
+                            font-size: 12px;
+
+                            i {
+                                @include background-image('client-social-icons');
+                                background-repeat: no-repeat;
+                                background-position: 0 0;
+                                width: 26px;
+                                height: 20px;
+                                margin: 0 auto 4px auto;
+                                display: block;
+                            }
+
+                            &.twitter {
+                                i { background-position: 0 0; }
+                            }
+                            &.instagram {
+                                i { background-position: -28px 0; }
+                            }
+                            &.youtube {
+                                i { background-position: -58px 0; }
+                            }
+                        }
                     }
 
                     // Hover state
@@ -492,6 +529,10 @@ section.twilight {
 
                         .name {
                             visibility: hidden;
+                        }
+
+                        ul.client-social-stats {
+                            display: none;
                         }
                     }
                 }
