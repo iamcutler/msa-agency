@@ -184,6 +184,13 @@
                         height: inherit;
                         padding-bottom: 80px;
 
+                        ul.client-social-stats {
+                            li {
+                                width: 30%;
+                                padding-bottom: 0;
+                            }
+                        }
+
                         // Hover state
                         &:hover {
                             width: (100% / 2) !important;
@@ -238,6 +245,13 @@
             width: 200px;
             margin-left: -90px;
             display: block;
+        }
+    }
+
+    ul.client-social-stats {
+        li {
+            width: 30%;
+            padding-bottom: 0;
         }
     }
 

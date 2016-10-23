@@ -377,7 +377,6 @@ section.twilight {
     margin-bottom: 50px;
 
     &.client-roster--stats {
-        height: 330px;
         margin-bottom: 0;
     }
 
@@ -485,11 +484,14 @@ section.twilight {
                         top: auto;
                         color: #FFF;
                         margin: 12px 0;
+                        padding: 0;
                         display: block;
+                        white-space: nowrap;
 
                         li {
                             width: (100% / 3);
                             font-size: 12px;
+                            margin-bottom: 10px;
 
                             i {
                                 @include background-image('client-social-icons');
