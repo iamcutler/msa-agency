@@ -81,10 +81,7 @@ ActiveAdmin.register Client do
                     ['Musical Theatre', 'musical_theatre'],
                     ['Television/Film', 'television_film'],
                     ['Legacy', 'legacy'],
-                    ['Social Media: Top', 'social-top'],
-                    ['Social Media: Trending', 'social-trending'],
-                    ['Social Media: Emerging', 'social-emerging'],
-                    ['Social Media: YouTube', 'social-youtube']
+                    ['Social Media Influencer', 'social-media-influencer']
                 ], include_blank: false
 
                 cat.actions

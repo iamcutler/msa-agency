@@ -6,37 +6,14 @@
             Social Media Influencers
         </header>
 
-        <div class="section-placeholder-text" ng-if="!SocialMediaCtrl.totalClientCount && !isLoadingPage">
+        <div class="section-placeholder-text" ng-if="!SocialMediaCtrl.clients.influencer && !isLoadingPage">
             No current influencers
         </div>
 
         <client-roster type="talent"
-                       roster="SocialMediaCtrl.clients.top"
-                       title="Top"
-                       slider="true"
+                       roster="SocialMediaCtrl.clients.influencer"
                        show-social-stats="true"
-                       ng-if="SocialMediaCtrl.clients.top.length && !isLoadingPage"></client-roster>
-
-        <client-roster type="talent"
-                       roster="SocialMediaCtrl.clients.trending"
-                       title="Trending"
-                       slider="true"
-                       show-social-stats="true"
-                       ng-if="SocialMediaCtrl.clients.trending.length && !isLoadingPage"></client-roster>
-
-        <client-roster type="talent"
-                      roster="SocialMediaCtrl.clients.emerging"
-                      title="Emerging"
-                      slider="true"
-                      show-social-stats="true"
-                      ng-if="SocialMediaCtrl.clients.emerging.length && !isLoadingPage"></client-roster>
-
-        <client-roster type="talent"
-                     roster="SocialMediaCtrl.clients.youtube"
-                     title="YouTube"
-                     slider="true"
-                     show-social-stats="true"
-                     ng-if="SocialMediaCtrl.clients.youtube.length && !isLoadingPage"></client-roster>
+                       ng-if="SocialMediaCtrl.clients.influencer.length && !isLoadingPage"></client-roster>
     </section>
 
     <section id="talent-videos" ng-if="SocialMediaCtrl.socialVideos.length">
