@@ -50,7 +50,7 @@ export default class SocialMediaController {
     getByCategory(category) {
         this.clientService.getByCategory([SOCIAL_INFLUENCER])
             .then(response => {
-                this.clients.influencer = this.clientService.filterByCategory(response, SOCIAL_INFLUENCER);
+                this.clients.influencer = this.clientService.sortBySocialStats(this.clientService.filterByCategory(response, SOCIAL_INFLUENCER));
             })
             .catch(err => console.log(err))
             .finally(() => this.$rootScope.isLoadingPage = false);

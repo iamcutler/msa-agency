@@ -195,4 +195,48 @@ export default class ClientService {
                 return '';
         }
     }
+
+    /**
+     * sort by social stats sum
+     */
+    sortBySocialStats(clients = []) {
+        return clients.reduce((acc, val, index) => {
+            if(!acc.length) {
+                acc.push(val);
+                return acc;
+            }
+
+            // get sum of current client
+            const currentSocialCount = this.getSocialStatSum(val.social.stats);
+
+            // Check previous records in accumulator
+            for(let i = 0, len = acc.length; i < len; i++) {
+                let prevSocialSum = this.getSocialStatSum(acc[i].social.stats);
+
+                if(currentSocialCount > prevSocialSum) {
+                    acc.splice(i, 0, val);
+                    return acc;
+                }
+            }
+
+            // push to accumulator if not found at a higher sum
+            acc.push(val);
+
+            return acc;
+        }, []);
+    }
+
+    /**
+     * Get sum of total social stats
+     *
+     * @param {object} stats
+     * @returns {number}
+     */
+    getSocialStatSum(stats = {}) {
+        return Object.keys(stats).reduce((acc, val) => {
+            if(typeof stats[val] !== 'number') return acc;
+
+            return acc += stats[val];
+        }, 0);
+    }
 }
