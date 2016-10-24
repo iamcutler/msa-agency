@@ -1,4 +1,10 @@
-import { client1, ClientCollectionWithCategories1 } from '../fixtures/clients';
+import {
+    client1,
+    ClientCollectionWithCategories1,
+    clientSocial1,
+    clientSocial2,
+    clientSocial3
+} from '../fixtures/clients';
 import { ClientResume1 } from '../fixtures/resume';
 
 describe('Service: Client', () => {
@@ -242,6 +248,34 @@ describe('Service: Client', () => {
             const result = ClientService.mapResumeTitleFromCategory('industrials');
 
             expect(result).toBe('Industrials');
+        });
+    });
+
+    describe('method: sortBySocialStats', () => {
+        it('should sort by social sum', () => {
+            // given
+            const clients = [clientSocial1, clientSocial2, clientSocial3];
+            // when
+            const result = ClientService.sortBySocialStats(clients);
+            // then
+            expect(result[0].id).toEqual(3);
+            expect(result[1].id).toEqual(2);
+            expect(result[2].id).toEqual(1);
+        });
+    });
+
+    describe('method: getSocialStatSum', () => {
+        it('return sum from social stats', () => {
+            // given
+            const stats = {
+                twitter: 400,
+                instagram: 100,
+                youtube: 10
+            };
+            // when
+            const result = ClientService.getSocialStatSum(stats);
+            // then
+            expect(result).toEqual(510);
         });
     });
 });
