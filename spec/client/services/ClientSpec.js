@@ -221,7 +221,7 @@ describe('Service: Client', () => {
         });
 
         it('should return awards title', () => {
-            const result = ClientService.mapResumeTitleFromCategory('awards');
+            const result = ClientService.mapResumeTitleFromCategory('award');
 
             expect(result).toBe('Awards');
         });

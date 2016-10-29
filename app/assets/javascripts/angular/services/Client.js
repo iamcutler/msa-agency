@@ -181,7 +181,7 @@ export default class ClientService {
                 return 'Corporate';
             case 'misc':
                 return 'Miscellaneous';
-            case 'awards':
+            case 'award':
                 return 'Awards';
             case 'theater':
                 return 'Theatre';
