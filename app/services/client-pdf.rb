@@ -52,7 +52,7 @@ class ClientPdf < Prawn::Document
 
   def build_resume_table(title, data)
     bounding_box([0, cursor - 40], :width => 540, :height => 50) do
-      text "#{title}:", size: 15
+      text "#{title}:", size: 15, color: 'EB7421'
     end
 
     table(data, :column_widths => 172,
