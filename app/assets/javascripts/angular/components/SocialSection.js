@@ -11,12 +11,10 @@ export default function SocialSection() {
         template: `
             <section id="get-social">
                 <div class="app-container">
-                    <header>
+                    <header ng-if="title">
                         <i ng-hide="hideIcon"></i>
 
-                        <div ng-if="!title">Social Media</div>
-
-                        <header class="section-header no-padding" ng-if="title">
+                        <header class="section-header no-padding">
                             {{ title }}
                         </header>
                     </header>

@@ -58,7 +58,7 @@ json.resume do
         json.array! @client.resume.where(job_type: 'misc'), :id, :company, :credit, :project
     end
 
-    json.awards do
+    json.award do
         json.array! @client.resume.where(job_type: 'award'), :id, :company, :credit, :project
     end
 

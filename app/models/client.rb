@@ -35,7 +35,7 @@ class Client < ActiveRecord::Base
     end
 
     def get_resume_types
-        ClientResume.select(:job_type, :order).distinct(:job_type).where(client_id: self.id).order(:order)
+        ClientResume.select(:job_type, :order).where(client_id: self.id).group(:job_type).order(:order)
     end
 
     def save_resume_types(types = [])
