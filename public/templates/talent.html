@@ -70,7 +70,10 @@
 
     <!-- Resume -->
     <a name="section-talent-resume"></a>
-    <client-resume-header title="{{ !ClientCtrl.client.basic ? 'Resume' : '' }}" client="ClientCtrl.client" ng-if="ClientCtrl.resumeCount"></client-resume-header>
+    <client-resume-header title="{{ !ClientCtrl.client.basic ? 'Resume' : '' }}"
+                          client="ClientCtrl.client"
+                          ng-if="ClientCtrl.resumeCount"
+                          ng-class="{'talent-header-margin': (!ClientCtrl.client.biography && !ClientCtrl.reelPresent)}"></client-resume-header>
 
     <section id="talent-resume" ng-if="ClientCtrl.resumeCount">
         <talent-resume ng-repeat="category in ClientCtrl.client.resume_order"
